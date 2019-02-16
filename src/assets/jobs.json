@@ -1,0 +1,67 @@
+{
+    "jobs": [
+        {
+            "company": {
+                "name": "VirtuOz",
+                "url": "https://www.virtuoz.com",
+                "crunchbase": "https://www.crunchbase.com/organization/virtuoz",
+                "picture": "https://i.pinimg.com/originals/f7/4f/20/f74f20b9ba045b671127ccf1f7b90447.png"
+            },
+            "title": ".NET Software Developer",
+            "tasks": [
+                {
+                    "header": "Integrated Microsoft Speech API 5.3 into a Virtual Intelligent Agent and built a unique speaking prototype",
+                    "details": "",
+                    "technologies": ["C#", ".NET", "Microsoft Speech API"]
+                }
+            ],
+            "start": "2006-08-01",
+            "end": "2007-06-01",
+            "location": {
+                "country": "France",
+                "city": "Paris"
+            }
+        },
+        {
+            "company": {
+                "name": "DataShaka",
+                "url": "https://www.virtuoz.com",
+                "crunchbase": "https://www.crunchbase.com/organization/virtuoz",
+                "picture": "https://i.pinimg.com/originals/f7/4f/20/f74f20b9ba045b671127ccf1f7b90447.png"
+            },
+            "title": "Fullstack Software Developer",
+            "tasks": [
+                {
+                    "header": "Accelerated company transition to a self-service platform",
+                    "details": [
+                        "Implemented a  Domain Specific Language for time-series data cleansing in C# & F#",
+                        "Optimized SQL database and SQL stored procedures and added Dapper ORM",
+                        "Day to day support to clients on SaaS"
+                    ],
+                    "technologies": ["C#", "F#", ".NET"]
+                },
+                {
+                    "header": "Formalized 1 mathematical model to fit customer data",
+                    "details": "",
+                    "technologies": []
+                },
+                {
+                    "header": "Wrote and/or tested social media APIs connectors (Twitter, Facebook, Sysomos)",
+                    "details": "",
+                    "technologies": []
+                },
+                {
+                    "header": "Improved code base by refactoring and using Design Patterns knowledge",
+                    "details": "",
+                    "technologies": ["NUnit"]
+                }
+            ],
+            "start": "2014-04-01",
+            "end": "2015-09-01",
+            "location": {
+                "country": "United Kingdom",
+                "city": "London"
+            }
+        }
+    ]
+}
