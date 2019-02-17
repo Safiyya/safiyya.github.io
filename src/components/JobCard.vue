@@ -8,33 +8,32 @@
         :title="job.company.name"
       >
       </div>
-     <div class="flex items-left flex-col ">
-        <p class="text-sm text-grey-dark flex items-center mb-1" >
+      <div class="flex items-left flex-col ">
+        <icon-with-text
+          :text="job.company.name"
+          :url="job.company.url"
+        >
           <img
             svg-inline
-            class="svg-icon mr-1"
-            src="../assets/zondicons/factory.svg"
-            alt="example"
+            src="@/assets/icons/home.svg"
+            :alt="text"
           />
-          <a :href="job.company.url">{{job.company.name}}</a>
-          
-        </p>
+        </icon-with-text>
 
-        <p class="text-sm text-grey-dark flex items-center mb-1">
+        <icon-with-text :text="job.location.city + ', ' +job.location.country">
           <img
             svg-inline
-            class="svg-icon mr-1"
-            src="../assets/zondicons/location.svg"
-            alt="example"
+            src="@/assets/icons/home.svg"
+            :alt="text"
           />
-          {{job.location.city}}, {{job.location.country}}
-        </p>
+        </icon-with-text>
+
       </div>
     </div>
 
     <div class="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
       <div class="mb-8">
-       
+
         <div class="text-black font-bold text-xl mb-2 flex">{{job.title}}</div>
 
         <ul
@@ -45,16 +44,14 @@
           <li class="text-left">{{task.header}}</li>
         </ul>
       </div>
-       <p class="text-sm text-grey-dark flex items-center mb-1">
-          <img
-            svg-inline
-            class="svg-icon mr-1"
-            src="../assets/zondicons/time.svg"
-            alt="example"
-          />
-          {{job.start}} until {{job.end}}
-        </p>
-      
+      <icon-with-text :text="job.start + '/' +job.end">
+        <img
+          svg-inline
+          src="../assets/icons/time.svg"
+          alt="example"
+        />
+      </icon-with-text>
+
     </div>
   </div>
 
@@ -63,8 +60,13 @@
 <script lang="ts">
 import { Vue, Component, Prop, Provide } from "vue-property-decorator";
 import Job from "@/models/job";
+import IconWithTextVue from "@/components/IconWithText.vue";
 
-@Component({})
+@Component({
+  components: {
+    "icon-with-text": IconWithTextVue
+  }
+})
 export default class JobCard extends Vue {
   @Prop() job: Job;
 }
