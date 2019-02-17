@@ -2,32 +2,161 @@
     "jobs": [
         {
             "company": {
-                "name": "VirtuOz",
-                "url": "https://www.virtuoz.com",
-                "crunchbase": "https://www.crunchbase.com/organization/virtuoz",
-                "picture": "https://i.pinimg.com/originals/f7/4f/20/f74f20b9ba045b671127ccf1f7b90447.png"
+                "name": "Kamkalima",
+                "url": "https://www.kamkalima.com",
+                "crunchbase": "",
+                "picture": "https://kamkalima.com/app/images/kk-logo.svg"
             },
-            "title": ".NET Software Developer",
+            "title": "Front-end Developer",
             "tasks": [
                 {
-                    "header": "Integrated Microsoft Speech API 5.3 into a Virtual Intelligent Agent and built a unique speaking prototype",
+                    "header": "Helped primary schools students improve their Arabic reading and comprehension skills by implementing Kamkalima student webapp from high-definition Adobe XD mockups",
                     "details": "",
-                    "technologies": ["C#", ".NET", "Microsoft Speech API"]
+                    "technologies": [
+                        "C#",
+                        ".NET",
+                        "Microsoft Speech API"
+                    ]
+                },
+                {
+                    "header": "Increased test coverage from 0% to 75%",
+                    "details": "",
+                    "technologies": [
+                        "C#",
+                        ".NET",
+                        "Microsoft Speech API"
+                    ]
                 }
             ],
-            "start": "2006-08-01",
-            "end": "2007-06-01",
+            "start": "2018-04-01",
+            "end": "2018-12-01",
+            "location": {
+                "country": "Lebanon",
+                "city": "Beirut"
+            }
+        },
+       
+        {
+            "company": {
+                "name": "Gretta",
+                "url": "https://www.gretta.com",
+                "crunchbase": "https://www.crunchbase.com/organization/gretta",
+                "picture": "https://pbs.twimg.com/profile_images/894777250528153600/Re_bmNMe_400x400.jpg"
+            },
+            "title": "Full Stack Javascript Developer ",
+            "tasks": [
+                {
+                    "header": "Increased test coverage from 0% to 40%  and set up CI/CD pipeline for a Node.js + Polymer app",
+                    "details": "",
+                    "technologies": [
+                        "C#",
+                        ".NET",
+                        "Microsoft Speech API"
+                    ]
+                },
+                {
+                    "header": "Wrote 2 algorithms to evaluate the accuracy of speech-to-text engines",
+                    "details": "",
+                    "technologies": [
+                        "C#",
+                        ".NET",
+                        "Microsoft Speech API"
+                    ]
+                }
+            ],
+            "start": "2017-04-01",
+            "end": "2017-07-01",
             "location": {
                 "country": "France",
                 "city": "Paris"
             }
         },
+       
+        {
+            "company": {
+                "name": "Eurofins UK",
+                "url": "https://www.eurofins.com/",
+                "crunchbase": "",
+                "picture": "https://cdnmedia.eurofins.com/corporate-eurofins/media/1004/logo.png"
+            },
+            "title": "Full Stack Developer / International Project Manager",
+            "tasks": [
+                {
+                    "header": "Deployed and adapted in-house software for 5 newly acquired sites across Europe (UK, Ireland, Italy, Denmark, Germany)",
+                    "details": "",
+                    "technologies": [
+                        "C#",
+                        ".NET",
+                        "ASP.NET"
+                    ]
+                },
+                {
+                    "header": "Full-cycle developments of Windows Forms used worldwide within company",
+                    "details": "",
+                    "technologies": [
+                        "C#",
+                        ".NET",
+                        "ASP.NET"
+                    ]
+                }
+            ],
+            "start": "2008-06-01",
+            "end": "2011-05-01",
+            "location": {
+                "country": "UK",
+                "city": "Wolverhampton"
+            }
+        },
+        {
+            "company": {
+                "name": "Eurofins US",
+                "url": "https://www.eurofins.com/",
+                "crunchbase": "",
+                "picture": "https://cdnmedia.eurofins.com/corporate-eurofins/media/1004/logo.png"
+            },
+            "title": "Lead Software Developer",
+            "tasks": [
+                {
+                    "header": "Single-handedly improved US branch legacy search system by cutting queries time by up to 67%",
+                    "details": "",
+                    "technologies": [
+                        "C#",
+                        ".NET",
+                        "ASP.NET"
+                    ]
+                },
+                {
+                    "header": "Led 5 deployments & enhancements to in-house software across the US  (Maryland, Iowa, Florida, Minnesota, Pennsylvania)",
+                    "details": "",
+                    "technologies": [
+                        "C#",
+                        ".NET",
+                        "ASP.NET"
+                    ]
+                },
+                {
+                    "header": "Delivered different ETL processes (.NET and Vb6) for several of US branch biggest customers",
+                    "details": "",
+                    "technologies": [
+                        "C#",
+                        ".NET",
+                        "ASP.NET"
+                    ]
+                }
+            ],
+            "start": "2011-05-01",
+            "end": "2014-04-01",
+            "location": {
+                "country": "US",
+                "city": "Baltimore, MD"
+            }
+        },
         {
             "company": {
                 "name": "DataShaka",
-                "url": "https://www.virtuoz.com",
+                "url": "https://www.datashaka.com",
                 "crunchbase": "https://www.crunchbase.com/organization/virtuoz",
-                "picture": "https://i.pinimg.com/originals/f7/4f/20/f74f20b9ba045b671127ccf1f7b90447.png"
+                "picture": "https://avatars1.githubusercontent.com/u/6972973?s=280&v=4"
             },
             "title": "Fullstack Software Developer",
             "tasks": [
@@ -38,7 +167,11 @@
                         "Optimized SQL database and SQL stored procedures and added Dapper ORM",
                         "Day to day support to clients on SaaS"
                     ],
-                    "technologies": ["C#", "F#", ".NET"]
+                    "technologies": [
+                        "C#",
+                        "F#",
+                        ".NET"
+                    ]
                 },
                 {
                     "header": "Formalized 1 mathematical model to fit customer data",
@@ -53,14 +186,98 @@
                 {
                     "header": "Improved code base by refactoring and using Design Patterns knowledge",
                     "details": "",
-                    "technologies": ["NUnit"]
+                    "technologies": [
+                        "NUnit"
+                    ]
                 }
             ],
             "start": "2014-04-01",
             "end": "2015-09-01",
             "location": {
-                "country": "United Kingdom",
+                "country": "UK",
                 "city": "London"
+            }
+        },
+        {
+            "company": {
+                "name": "DataShaka",
+                "url": "https://www.datashaka.com",
+                "crunchbase": "https://www.crunchbase.com/organization/virtuoz",
+                "picture": "https://avatars1.githubusercontent.com/u/6972973?s=280&v=4"
+            },
+            "title": "VP of Engineering",
+            "tasks": [
+                {
+                    "header": "Relentlessly found the fastest route to production while keeping high quality standards and a happy team ",
+                    "technologies": [
+                        "C#",
+                        "F#",
+                        ".NET"
+                    ]
+                },
+                {
+                    "header": "Reduced average benchmark queries time from 20 minutes to 40 seconds ",
+                    "details": "",
+                    "technologies": []
+                }
+            ],
+            "start": "2015-09-01",
+            "end": "2016-10-01",
+            "location": {
+                "country": "UK",
+                "city": "London"
+            }
+        },
+        {
+            "company": {
+                "name": "Optinac",
+                "url": "https://www.optinac-shop.com/",
+                "crunchbase": "",
+                "picture": "https://www.optinac-shop.com/img/optinac-logo-1497453648.jpg"
+            },
+            "title": "Web design & development",
+            "tasks": [
+                {
+                    "header": "Enabled small business owners to sell products online by developing eCommerce front-office and back-",
+                    "details": "",
+                    "technologies": [
+                        "C#",
+                        ".NET",
+                        "ASP.NET"
+                    ]
+                }
+            ],
+            "start": "2007-07-01",
+            "end": "2007-09-01",
+            "location": {
+                "country": "France",
+                "city": "Taverny"
+            }
+        },
+        {
+            "company": {
+                "name": "VirtuOz",
+                "url": "https://www.virtuoz.com",
+                "crunchbase": "https://www.crunchbase.com/organization/virtuoz",
+                "picture": "https://i.pinimg.com/originals/f7/4f/20/f74f20b9ba045b671127ccf1f7b90447.png"
+            },
+            "title": ".NET Software Developer",
+            "tasks": [
+                {
+                    "header": "Integrated Microsoft Speech API 5.3 into a Virtual Intelligent Agent and built a unique speaking prototype",
+                    "details": "",
+                    "technologies": [
+                        "C#",
+                        ".NET",
+                        "Microsoft Speech API"
+                    ]
+                }
+            ],
+            "start": "2006-08-01",
+            "end": "2007-06-01",
+            "location": {
+                "country": "France",
+                "city": "Paris"
             }
         }
     ]

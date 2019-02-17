@@ -1,16 +1,22 @@
 <template>
   <div
-    class="past-page"
+    class="past-page container mx-auto"
     v-if="isLoaded"
   >
     <h1>Stuff I've done</h1>
 
-    <template v-for="job in jobs">
-      <job-card
-        :job="job"
-        :key="job.start"
-      ></job-card>
-    </template>
+    <div class="flex flex-wrap -m-2">
+      <template v-for="job in jobs">
+        <div class="w-1/2 p-2 " :key="job.start">
+          <job-card
+            class=""
+            :job="job"
+            
+          ></job-card>
+        </div>
+
+      </template>
+    </div>
 
   </div>
 </template>
