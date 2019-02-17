@@ -33,14 +33,14 @@ import JobCard from "@/components/JobCard.vue";
   }
 })
 export default class PastPage extends Vue {
-  jobs: Job[] = [];
-  isLoaded: boolean = false;
+  private jobs: Job[] = [];
+  private isLoaded: boolean = false;
 
-  mounted() {
+  public mounted() {
     this.isLoaded = false;
     return jobsService
       .get()
-      .then(jobs => {
+      .then((jobs) => {
         this.jobs = jobs;
         this.isLoaded = true;
       })

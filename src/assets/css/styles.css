@@ -1,4 +1,7 @@
-.svg-icon{
-    display: inline-block;
+a{
+    @apply text-blue-darker no-underline ;
+}
 
+a:hover{
+    @apply underline;
 }

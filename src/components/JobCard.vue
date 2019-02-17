@@ -1,7 +1,7 @@
 <template>
 
-  <div class="max-w-md w-full  lg:flex ">
-    <div class="h-auto bg-grey-lightest flex flex-col justify-between border border-r-0 p-4 rounded-t lg:rounded-t-none lg:rounded-l text-center ">
+  <div class="max-w-md lg:h-80 w-full shadow-md rounded-lg lg:flex ">
+    <div class="h-auto bg-grey-lightest flex flex-col justify-between p-4 rounded-t lg:rounded-t-none lg:rounded-l text-center ">
       <div
         class="bg-cover company-picture w-48 h-48 mb-4"
         :style="'background-image: url('+job.company.picture+')'"
@@ -23,7 +23,7 @@
         <icon-with-text :text="job.location.city + ', ' +job.location.country">
           <img
             svg-inline
-            src="@/assets/icons/home.svg"
+            src="@/assets/icons/location.svg"
             :alt="text"
           />
         </icon-with-text>
@@ -31,23 +31,34 @@
       </div>
     </div>
 
-    <div class="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+    <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
       <div class="mb-8">
 
-        <div class="text-black font-bold text-xl mb-2 flex">{{job.title}}</div>
+        <div class="text-black font-bold text-2xl mb-2 flex">{{job.title}}</div>
 
         <ul
           class="text-grey-darker text-base list-reset"
           v-for="task in job.tasks"
           :key="task.header"
         >
-          <li class="text-left">{{task.header}}</li>
+          <li class="text-left ">
+            <span>
+              <img
+                class="w-6 h-6 mr-3 text-grey-light hover:text-blue fill-current float-left"
+                svg-inline
+                src="../assets/icons/checkmark-outline.svg"
+                alt="example"
+              />
+              <span>{{task.header}}</span>
+            </span>
+
+          </li>
         </ul>
       </div>
       <icon-with-text :text="job.start + '/' +job.end">
         <img
           svg-inline
-          src="../assets/icons/time.svg"
+          src="../assets/icons/calendar.svg"
           alt="example"
         />
       </icon-with-text>
@@ -80,5 +91,6 @@ export default class JobCard extends Vue {
 
   background-origin: content-box;
 }
+
 </style>
 

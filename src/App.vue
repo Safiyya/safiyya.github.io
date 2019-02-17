@@ -1,7 +1,7 @@
 <template>
-  <div id="app" class="">
+  <div id="app" class="bg-grey-lighter">
 
-    <nav class="flex items-center justify-between flex-wrap bg-grey-lightest text-2xl p-6">
+    <nav class="flex items-center justify-between flex-wrap  text-2xl p-6">
       <!-- <div class="flex items-center flex-no-shrink text-white mr-6">
         <svg
           class="fill-current h-8 w-8 mr-2"
