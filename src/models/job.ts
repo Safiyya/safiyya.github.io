@@ -8,10 +8,10 @@ export default class Job {
     title: string;
 
     tasks: Array<{
-        header: string,
-        details: string[],
-        technologies: string[]
+        header: string
     }>;
+
+    technologies: string[]
     start: string;
     end: string;
     location: {

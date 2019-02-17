@@ -5,28 +5,25 @@
                 "name": "Kamkalima",
                 "url": "https://www.kamkalima.com",
                 "crunchbase": "",
+                "industry": "Ed-tech",
                 "picture": "https://kamkalima.com/app/images/kk-logo.svg"
             },
             "title": "Front-end Developer",
             "tasks": [
                 {
-                    "header": "Helped primary schools students improve their Arabic reading and comprehension skills by implementing Kamkalima student webapp from high-definition Adobe XD mockups",
-                    "details": "",
-                    "technologies": [
-                        "C#",
-                        ".NET",
-                        "Microsoft Speech API"
-                    ]
+                    "header": "Helped primary schools students improve their Arabic reading and comprehension skills by implementing Kamkalima student webapp from high-definition Adobe XD mockups"
+               
+                   
                 },
                 {
-                    "header": "Increased test coverage from 0% to 75%",
-                    "details": "",
-                    "technologies": [
-                        "C#",
-                        ".NET",
-                        "Microsoft Speech API"
-                    ]
+                    "header": "Increased test coverage from 0% to 75%"
+                  
                 }
+            ],
+            "technologies": [
+                "Vue.js",
+                "Bootstrap",
+                "Jest"
             ],
             "start": "2018-04-01",
             "end": "2018-12-01",
@@ -35,34 +32,28 @@
                 "city": "Beirut"
             }
         },
-       
         {
             "company": {
                 "name": "Gretta",
                 "url": "https://www.gretta.com",
+                "industry": "Podcast",
                 "crunchbase": "https://www.crunchbase.com/organization/gretta",
                 "picture": "https://res-2.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1505154649/fqr5w0ef5dazjahvupje.png"
             },
             "title": "Full Stack Developer ",
             "tasks": [
                 {
-                    "header": "Increased test coverage from 0% to 40%  and set up CI/CD pipeline for a Node.js + Polymer app",
-                    "details": "",
-                    "technologies": [
-                        "C#",
-                        ".NET",
-                        "Microsoft Speech API"
-                    ]
+                    "header": "Increased test coverage from 0% to 40%  and set up CI/CD pipeline for a Node.js + Polymer app"
+                  
                 },
                 {
-                    "header": "Wrote 2 algorithms to evaluate the accuracy of speech-to-text engines",
-                    "details": "",
-                    "technologies": [
-                        "C#",
-                        ".NET",
-                        "Microsoft Speech API"
-                    ]
+                    "header": "Wrote 2 algorithms to evaluate the accuracy of speech-to-text engines"
+                   
                 }
+            ],
+            "technologies": [
+                "Polymer",
+                "Web Component Tester"
             ],
             "start": "2017-04-01",
             "end": "2017-07-01",
@@ -71,11 +62,11 @@
                 "city": "Paris"
             }
         },
-       
         {
             "company": {
                 "name": "Eurofins UK",
                 "url": "https://www.eurofins.com/",
+                "industry": "Food testing",
                 "crunchbase": "",
                 "picture": "https://cdnmedia.eurofins.com/corporate-eurofins/media/1004/logo.png"
             },
@@ -87,7 +78,7 @@
                     "technologies": [
                         "C#",
                         ".NET",
-                        "ASP.NET"
+                        "VB6"
                     ]
                 },
                 {
@@ -111,38 +102,25 @@
             "company": {
                 "name": "Eurofins US",
                 "url": "https://www.eurofins.com/",
+                "industry": "Food testing",
                 "crunchbase": "",
                 "picture": "https://cdnmedia.eurofins.com/corporate-eurofins/media/1004/logo.png"
             },
             "title": "Lead Software Developer",
             "tasks": [
                 {
-                    "header": "Single-handedly improved US branch legacy search system by cutting queries time by up to 67%",
-                    "details": "",
-                    "technologies": [
-                        "C#",
-                        ".NET",
-                        "ASP.NET"
-                    ]
+                    "header": "Improved US branch legacy search system by cutting queries time by up to 67%"
+                  
                 },
                 {
-                    "header": "Led 5 deployments & enhancements to in-house software across the US  (Maryland, Iowa, Florida, Minnesota, Pennsylvania)",
-                    "details": "",
-                    "technologies": [
-                        "C#",
-                        ".NET",
-                        "ASP.NET"
-                    ]
-                },
-                {
-                    "header": "Delivered different ETL processes (.NET and Vb6) for several of US branch biggest customers",
-                    "details": "",
-                    "technologies": [
-                        "C#",
-                        ".NET",
-                        "ASP.NET"
-                    ]
+                    "header": "Led 5 deployments & enhancements to in-house software across the US  (Maryland, Iowa, Florida, Minnesota, Pennsylvania)"
                 }
+            ],
+            "technologies": [
+                "C#",
+                "ASP.NET",
+                "Linq",
+                "jQuery"
             ],
             "start": "2011-05-01",
             "end": "2014-04-01",
@@ -155,41 +133,26 @@
             "company": {
                 "name": "DataShaka",
                 "url": "https://www.datashaka.com",
+                "industry": "Analytics",
                 "crunchbase": "https://www.crunchbase.com/organization/virtuoz",
                 "picture": "https://avatars1.githubusercontent.com/u/6972973?s=280&v=4"
             },
             "title": "Full Stack Developer",
             "tasks": [
                 {
-                    "header": "Accelerated company transition to a self-service platform",
-                    "details": [
-                        "Implemented a  Domain Specific Language for time-series data cleansing in C# & F#",
-                        "Optimized SQL database and SQL stored procedures and added Dapper ORM",
-                        "Day to day support to clients on SaaS"
-                    ],
-                    "technologies": [
-                        "C#",
-                        "F#",
-                        ".NET"
-                    ]
+                    "header": "Implemented a  Domain Specific Language for time-series data cleansing in C# & F#"
+         
                 },
                 {
-                    "header": "Formalized 1 mathematical model to fit customer data",
-                    "details": "",
-                    "technologies": []
-                },
-                {
-                    "header": "Wrote and/or tested social media APIs connectors (Twitter, Facebook, Sysomos)",
-                    "details": "",
-                    "technologies": []
-                },
-                {
-                    "header": "Improved code base by refactoring and using Design Patterns knowledge",
-                    "details": "",
-                    "technologies": [
-                        "NUnit"
-                    ]
+                    "header": "Formalized 1 mathematical model to fit customer data"
                 }
+            ],
+            "technologies": [
+                "C#",
+                ".NET",
+                "WebAPI",
+                "T-SQL",
+                "Microsoft Azure"
             ],
             "start": "2014-04-01",
             "end": "2015-09-01",
@@ -202,24 +165,27 @@
             "company": {
                 "name": "DataShaka",
                 "url": "https://www.datashaka.com",
+                "industry": "Analytics",
                 "crunchbase": "https://www.crunchbase.com/organization/virtuoz",
                 "picture": "https://avatars1.githubusercontent.com/u/6972973?s=280&v=4"
             },
             "title": "VP of Engineering",
             "tasks": [
                 {
-                    "header": "Relentlessly found the fastest route to production while keeping high quality standards and a happy team ",
-                    "technologies": [
-                        "C#",
-                        "F#",
-                        ".NET"
-                    ]
+                    "header": "Drove the fastest route to production while keeping high quality standards and a happy team "
+                 
                 },
                 {
-                    "header": "Reduced average benchmark queries time from 20 minutes to 40 seconds ",
-                    "details": "",
-                    "technologies": []
+                    "header": "Reduced average benchmark queries time from 20 minutes to 40 seconds "
                 }
+            ],
+            "technologies": [
+                "C#",
+                ".NET",
+                "WebAPI",
+                "T-SQL",
+                "Microsoft Azure",
+                "Powershell"
             ],
             "start": "2015-09-01",
             "end": "2016-10-01",
@@ -232,20 +198,24 @@
             "company": {
                 "name": "Optinac",
                 "url": "https://www.optinac-shop.com/",
+                "industry":"Pet store",
                 "crunchbase": "",
                 "picture": "https://www.optinac-shop.com/img/optinac-logo-1497453648.jpg"
             },
             "title": "Web design & development",
             "tasks": [
                 {
-                    "header": "Enabled small business owners to sell products online by developing eCommerce front-office and back-",
-                    "details": "",
-                    "technologies": [
-                        "C#",
-                        ".NET",
-                        "ASP.NET"
-                    ]
+                    "header": "Enabled small business owners to sell products online by developing eCommerce front-office and back-"
                 }
+            ],
+            "technologies": [
+                "C#",
+                ".NET",
+                "ASP.NET",
+                "jQuery",
+                "HTML",
+                "CSS",
+                "MySQL"
             ],
             "start": "2007-07-01",
             "end": "2007-09-01",
@@ -258,20 +228,20 @@
             "company": {
                 "name": "VirtuOz",
                 "url": "https://www.virtuoz.com",
+                "industry":"Artificial intelligence",
                 "crunchbase": "https://www.crunchbase.com/organization/virtuoz",
                 "picture": "https://i.pinimg.com/originals/f7/4f/20/f74f20b9ba045b671127ccf1f7b90447.png"
             },
             "title": ".NET Software Developer",
             "tasks": [
                 {
-                    "header": "Integrated Microsoft Speech API 5.3 into a Virtual Intelligent Agent and built a unique speaking prototype",
-                    "details": "",
-                    "technologies": [
-                        "C#",
-                        ".NET",
-                        "Microsoft Speech API"
-                    ]
+                    "header": "Integrated Microsoft Speech API 5.3 into a Virtual Intelligent Agent and built a unique speaking prototype"
                 }
+            ],
+            "technologies": [
+                "C#",
+                ".NET",
+                "Microsoft Speech API"
             ],
             "start": "2006-08-01",
             "end": "2007-06-01",

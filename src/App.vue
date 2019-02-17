@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="bg-grey-lighter">
+  <div id="app" class="bg-grey-lighter page-background">
 
     <nav class="flex items-center justify-between flex-wrap  text-2xl p-6">
       <!-- <div class="flex items-center flex-no-shrink text-white mr-6">
