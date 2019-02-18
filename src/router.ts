@@ -5,6 +5,7 @@ import Home from './views/Home.vue';
 Vue.use(Router);
 
 export default new Router({
+  mode:"history",
   routes: [
     {
       path: '/',
@@ -12,19 +13,29 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/past',
-      name: 'past',
-      component: () => import(/* webpackChunkName: "past" */ './views/Past.vue'),
+      path: '/jobs',
+      name: 'jobs',
+      component: () => import(/* webpackChunkName: "jobs" */ './views/Jobs.vue'),
     },
     {
-      path: '/present',
-      name: 'present',
-      component: () => import(/* webpackChunkName: "present" */ './views/Present.vue'),
+      path: '/projects',
+      name: 'projects',
+      component: () => import(/* webpackChunkName: "projects" */ './views/Projects.vue'),
     },
     {
-      path: '/likes',
-      name: 'likes',
-      component: () => import(/* webpackChunkName: "likes" */ './views/Likes.vue'),
+      path: '/skills',
+      name: 'skills',
+      component: () => import(/* webpackChunkName: "skills" */ './views/Skills.vue'),
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: () => import(/* webpackChunkName: "contact" */ './views/Contact.vue'),
+    },
+    {
+      path: '/bookshelf',
+      name: 'bookshelf',
+      component: () => import(/* webpackChunkName: "bookshelf" */ './views/Bookshelf.vue'),
     },
   ],
 });

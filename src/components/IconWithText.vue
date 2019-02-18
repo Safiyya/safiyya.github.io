@@ -10,6 +10,7 @@
     </span>
 
     <a v-if="url" :href="url" target="blank">{{text}}</a>
+    <router-link v-else-if="to" :to="to" active-class="active">{{text}}</router-link>
     <span v-else >{{text}}</span>
 
   </p>
@@ -21,7 +22,8 @@ import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 @Component({})
 export default class extends Vue {
   @Prop() text: string;
-  @Prop() url: string;
+  @Prop({required:false}) url: string;
+  @Prop({required:false}) to: string;
 }
 </script>
 
