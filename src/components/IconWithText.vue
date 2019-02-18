@@ -9,7 +9,7 @@
       
     </span>
 
-    <a v-if="url" :href="url">{{text}}</a>
+    <a v-if="url" :href="url" target="blank">{{text}}</a>
     <span v-else >{{text}}</span>
 
   </p>

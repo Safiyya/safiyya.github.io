@@ -2,6 +2,7 @@ export default class Job {
     company: {
         name: string,
         url: string,
+        industry:string,
         crunchbase: string,
         picture: string
     };
@@ -11,7 +12,8 @@ export default class Job {
         header: string
     }>;
 
-    technologies: string[]
+    technologies: string[];
+    
     start: string;
     end: string;
     location: {
