@@ -8,7 +8,8 @@
 
  
     </div>
-     <button class="flex flex-col justify-center items-center group my-8 bg-transparent border border-grey hover:border-white py-3 px-4 rounded text-grey hover:text-white font-bold text-xl uppercase" >
+     <button @click="moveDown()"
+     class="flex flex-col justify-center items-center group my-8 bg-transparent border border-grey hover:border-white py-3 px-4 rounded text-grey hover:text-white font-bold text-xl uppercase" >
        View my work
         <img class="w-4 h-4 text-grey group-hover:text-white fill-current m-2"
               svg-inline
@@ -16,15 +17,11 @@
               alt="About"
             />
        </button>
-
-
-    <!-- <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
   </div>
 </template>
  
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Emit } from "vue-property-decorator";
 import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 
 @Component({
@@ -32,7 +29,12 @@ import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
     HelloWorld
   }
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+ moveDown(){
+   this.$emit('move-down');
+ };
+
+}
 </script>
 
 <style scoped>

@@ -1,11 +1,17 @@
 <template>
-  <div id="app" class="h-screen"
-  >
 
-<!-- <nav class="bg-white mr-16 h-screen py-8 px-2">
-  <ul class="list-reset">
-    <li >
-     <navigation-pill class="text-blue fill-current"
+  <div
+    id="app"
+    class="h-screen"
+  >
+    <nav
+      class="bg-white mr-16 w-screen py-8 px-2 absolute"
+      v-if="isMenuVisible"
+    >
+      <ul class="list-reset flex">
+        <li>
+          <navigation-pill
+            class="text-blue fill-current"
             :text="'About'"
             :to="'/about'"
           >
@@ -14,9 +20,11 @@
               src="@/assets/icons/home.svg"
               alt="About"
             />
-          </navigation-pill> </li>
-    <li >
-   <navigation-pill class="text-red fill-current"
+          </navigation-pill>
+        </li>
+        <li>
+          <navigation-pill
+            class="text-red fill-current"
             :text="'Experience'"
             :to="'/jobs'"
           >
@@ -25,9 +33,11 @@
               src="@/assets/icons/portfolio.svg"
               alt="Experience"
             />
-          </navigation-pill> </li>
-    <li >
-   <navigation-pill class="flex-col"
+          </navigation-pill>
+        </li>
+        <li>
+          <navigation-pill
+            class="flex-col"
             :text="'Projects'"
             :to="'/projects'"
           >
@@ -36,9 +46,11 @@
               src="@/assets/icons/gift.svg"
               alt="Projects"
             />
-          </navigation-pill> </li>
-    <li >
-   <navigation-pill class="flex-col"
+          </navigation-pill>
+        </li>
+        <li>
+          <navigation-pill
+            class="flex-col"
             :text="'Skills'"
             :to="'/skills'"
           >
@@ -47,10 +59,11 @@
               src="@/assets/icons/code.svg"
               alt="Skills"
             />
-          </navigation-pill> 
-          </li>
-          <li>
-            <navigation-pill class="flex-col"
+          </navigation-pill>
+        </li>
+        <li>
+          <navigation-pill
+            class="flex-col"
             :text="'Bookshelf'"
             :to="'/bookshelf'"
           >
@@ -60,10 +73,11 @@
               alt="Bookshelf"
             />
           </navigation-pill>
-          </li>
+        </li>
 
-          <li>
-             <navigation-pill class="flex-col"
+        <li>
+          <navigation-pill
+            class="flex-col"
             :text="'Resume'"
             :to="'/resume'"
           >
@@ -73,9 +87,10 @@
               alt="Resume"
             />
           </navigation-pill>
-          </li>
-          <li>
-             <navigation-pill class="flex-col"
+        </li>
+        <li>
+          <navigation-pill
+            class="flex-col"
             :text="'Contact'"
             :to="'/contact'"
           >
@@ -85,24 +100,66 @@
               alt="Contact"
             />
           </navigation-pill>
-          </li>
-  </ul>
-</nav> -->
-<router-view />
-    
+        </li>
+      </ul>
+    </nav>
+
+    <full-page @on-leave="onLeave" @after-load="onLeave"
+      ref="fullpage"
+      :options="options"
+      id="fullpage"
+    >
+      <div class="section">
+        <home v-on:move-down="onMoveDown()"></home>
+      </div>
+      <div class="section">
+        Second section ...
+      </div>
+      <div class="section">
+        thrid section ...
+      </div>
+    </full-page>
+    <router-view />
   </div>
+
+  <!-- -->
+
 </template>
 
 <script lang="ts">
 import { Vue, Component, Prop, Provide } from "vue-property-decorator";
-import NavigationPillVue from '@/components/NavigationPill.vue';
+import Home from "@/views/Home.vue";
+import NavigationPillVue from "@/components/NavigationPill.vue";
 
 @Component({
   components: {
+    home: Home,
     "navigation-pill": NavigationPillVue
   }
 })
-export default class AppVue extends Vue {}
+export default class AppVue extends Vue {
+  options: any = {
+    menu: "#menu",
+    // afterLoad: this.onLeave,
+    afterLoad: this.onLeave,
+    // anchors: ["page1", "page2", "page3"],
+    // sectionsColor: ["#41b883", "#ff5f45", "#0798ec"]
+  };
+  isMenuVisible: boolean = false;
+
+  onMoveDown() {
+    this.$refs.fullpage.api.moveSectionDown();
+  }
+
+  onLeave(origin:any, destination:any, direction:any){
+    console.log(origin, destination, direction);
+    if(!origin) return;
+    this.isMenuVisible =  (origin.isFirst && direction==='down') 
+      || (destination.isFirst && direction==='up')
+      || (!origin.isFirst) 
+      || (!destination.isFirst) ;
+  }
+}
 </script>
 
 <style lang="scss">

@@ -1,3 +1,4 @@
 interface String {
-    formatDate(date: string):string;
-  }
+  formatDate(date: string): string;
+}
+
