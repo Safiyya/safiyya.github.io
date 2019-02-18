@@ -32,7 +32,7 @@ import JobCard from "@/components/JobCard.vue";
     "job-card": JobCard
   }
 })
-export default class PastPage extends Vue {
+export default class Experience extends Vue {
   private jobs: Job[] = [];
   private isLoaded: boolean = false;
 
