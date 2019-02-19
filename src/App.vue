@@ -5,7 +5,7 @@
     class="h-full"
   >
     <div class="header-menu hide z-10">
-      <header-menu id="header-menu"></header-menu>
+      <header-menu></header-menu>
     </div>
 
     <full-page
@@ -19,10 +19,11 @@
         <home v-on:move-down="onMoveDown()"></home>
       </div>
       <div class="section">
-        <about></about>
+        <about class="mt-32"></about>
       </div>
       <div class="section">
-        <experience></experience>
+        Experience
+        <!-- <experience></experience> -->
       </div>
       <div class="section">
         <projects></projects>
@@ -64,7 +65,7 @@ export default class AppVue extends Vue {
     anchors: ["home", "about", "experience", "portfolio", "contact"],
     onLeave: this.onLeave,
     afterLoad: this.afterLoad,
-    fitToSection: false
+    // fitToSection: false
   };
   isMenuVisible: boolean = false;
 
@@ -90,16 +91,14 @@ export default class AppVue extends Vue {
         "header-fixed"
       );
     }
-    
+
     if (destination.index == 1) {
-       
       (<HTMLElement>document.querySelector(".header-menu")).classList.remove(
         "header-fixed"
       );
     }
 
     if (destination.index == 0) {
-       
       (<HTMLElement>document.querySelector(".header-menu")).classList.add(
         "hide"
       );
@@ -126,15 +125,15 @@ export default class AppVue extends Vue {
   top: 0;
   left: 0;
   width: 100%;
-  height: 4rem;
+  height: 3rem;
   overflow: auto;
 }
 .header-menu.header-fixed {
   bottom: auto;
   margin-top: 0;
-  height: 4rem;
+  height: 3rem;
   overflow: auto;
-   -webkit-transition: all 750ms ease;
+  -webkit-transition: all 750ms ease;
   -moz-transition: all 750ms ease;
   -o-transition: all 750ms ease;
   transition: all 750ms ease;
