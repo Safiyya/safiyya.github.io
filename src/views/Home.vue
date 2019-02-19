@@ -9,7 +9,7 @@
  
     </div>
      <button @click="moveDown()"
-     class="flex justify-center items-center group my-8 bg-transparent border border-grey hover:border-white py-3 px-4 rounded text-grey hover:text-white font-bold text-xl uppercase" >
+     class="flex justify-center items-center group my-8 bg-transparent border-4 border-grey hover:border-white py-3 px-4 rounded text-grey hover:text-white font-bold text-xl uppercase" >
        View my work
         <img class="w-4 h-4 text-grey group-hover:text-white fill-current m-2"
               svg-inline

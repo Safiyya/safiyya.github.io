@@ -90,7 +90,7 @@ export default class AppVue extends Vue {
         "header-fixed"
       );
     }
-    //back to the 1st section
+    
     if (destination.index == 1) {
        
       (<HTMLElement>document.querySelector(".header-menu")).classList.remove(
@@ -118,10 +118,10 @@ export default class AppVue extends Vue {
 }
 
 .header-menu {
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all 750ms ease;
+  -moz-transition: all 750ms ease;
+  -o-transition: all 750ms ease;
+  transition: all 750ms ease;
   position: absolute;
   top: 0;
   left: 0;
@@ -133,17 +133,18 @@ export default class AppVue extends Vue {
   bottom: auto;
   margin-top: 0;
   height: 4rem;
-   -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
+  overflow: auto;
+   -webkit-transition: all 750ms ease;
+  -moz-transition: all 750ms ease;
+  -o-transition: all 750ms ease;
+  transition: all 750ms ease;
 }
 .header-menu.hide {
   overflow: hidden;
   height: 0;
-  -webkit-transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -o-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all 750ms ease;
+  -moz-transition: all 750ms ease;
+  -o-transition: all 750ms ease;
+  transition: all 750ms ease;
 }
 </style>
