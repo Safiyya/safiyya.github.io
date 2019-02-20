@@ -1,9 +1,9 @@
 <template>
 
-  <div class="max-w-md lg:h-96 w-full shadow-md rounded-lg lg:flex ">
+  <div class="max-w-md lg:h-96 w-full shadow-md rounded-lg lg:flex flex-col ">
     <div class="h-auto bg-grey-lightest flex flex-col justify-between p-4 rounded-t lg:rounded-t-none lg:rounded-l text-center ">
       <div
-        class="company-picture w-48 h-48 mb-4"
+        class="company-picture w-32 h-32 mb-4"
         :style="'background-image: url('+job.company.picture+')'"
         :title="job.company.name"
       >

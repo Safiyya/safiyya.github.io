@@ -6,7 +6,7 @@
 
     <div class="flex flex-wrap -m-2">
       <template v-for="job in jobs">
-        <div class="w-1/3 p-2 " :key="job.start">
+        <div class="w-1/4 p-2 " :key="job.start">
           <job-card
             class=""
             :job="job"

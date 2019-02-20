@@ -1,22 +1,34 @@
 <template>
-  <div class="home h-full w-full texture-background flex flex-col items-center justify-center">
+  <div class="wrapper home h-full w-full texture-background flex flex-col items-center justify-center">
 
-    <div class="text-grey-lighter text-5xl">
-      <div>Hello, I'm <span class="text-orange font-semibold">Safiyya Babio</span>.
+    <div
+      v-for="i in 250"
+      :key="i"
+      class="particle"
+      v-bind:class="getClass()"
+    ></div>
+
+    <div class="z-10 flex flex-col items-center justify-center">
+      <div class="text-grey-lighter text-5xl">
+        <div>Hi, I'm <span class="text-orange font-semibold">Safiyya Babio</span>.
+        </div>
+        <div>I'm a full-stack web developer.</div>
+
       </div>
-      <div>I'm a full-stack web developer.</div>
-
- 
+      <button
+        @click="moveDown()"
+        class="group rotate-on-hover flex justify-center items-center my-8 bg-transparent border-2 border-grey hover:border-white py-3 px-4 rounded text-grey hover:text-white font-bold text-xl uppercase"
+      >
+        Let's make something together
+        <img
+          class="w-4 h-4 text-grey group-hover:text-white fill-current m-2 "
+          svg-inline
+          src="@/assets/icons/arrow-thick-right.svg"
+          alt="About"
+        />
+      </button>
     </div>
-     <button @click="moveDown()"
-     class="group rotate-on-hover flex justify-center items-center my-8 bg-transparent border-2 border-grey hover:border-white py-3 px-4 rounded text-grey hover:text-white font-bold text-xl uppercase" >
-       Let's make something together
-        <img class="w-4 h-4 text-grey group-hover:text-white fill-current m-2 "
-              svg-inline
-              src="@/assets/icons/arrow-thick-right.svg"
-              alt="About"
-            />
-       </button>
+
   </div>
 </template>
  
@@ -30,47 +42,38 @@ import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
   }
 })
 export default class Home extends Vue {
- moveDown(){
-   this.$emit("move-down");
- };
+  moveDown() {
+    this.$emit("move-down");
+  }
 
+  getClass() {
+    let i = Math.floor(Math.random() * 25);
+    let j = Math.floor(Math.random() * 25);
+    return `elem${i} anim-delay${j} fill-current`;
+  }
 }
 </script>
 
 <style scoped>
-.rotate-on-hover > svg{
-  transform: rotate(0deg) ;
-  transition: all 250ms ease; 
+.rotate-on-hover > svg {
+  transform: rotate(0deg);
+  transition: all 250ms ease;
 }
 
-.rotate-on-hover:hover > svg{
-  transform: rotate(90deg) ;
-  transition: all 250ms ease; 
+.rotate-on-hover:hover > svg {
+  transform: rotate(90deg);
+  transition: all 250ms ease;
 }
-/* .home::before {
-    content: '';
-    position: absolute;
-    background: url(../assets/images/pezs.jpg) no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    
-    filter: blur(1px) grayscale(0.99);
-} */
-
 
 
 @-webkit-keyframes filter-animation {
   0% {
     -webkit-filter: blur(5px);
   }
-  
+
   100% {
     -webkit-filter: blur(0px);
   }
 }
-
-
 </style>
 
