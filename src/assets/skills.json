@@ -1,0 +1,108 @@
+{
+    "skills": [
+        {
+            "category": "Front-end",
+            "summary": "A great user experience is my first priority, I code interfaces that are fast and intuitive.",
+            "technologies": [
+                {
+                    "name": "HTML5 / CSS 3",
+                    "level": 4
+                },
+                {
+                    "name": "Javascript/Typescript",
+                    "level": 4
+                },
+                {
+                    "name": "Angular",
+                    "level": 5
+                },
+                {
+                    "name": "Vue.js",
+                    "level": 4
+                },
+                {
+                    "name": "D3.js",
+                    "level": 3
+                },
+                {
+                    "name": "UI Design",
+                    "level": 2
+                }
+            ]
+        },
+        {
+            "category": "Back-end",
+            "summary": "From API conception & integration to database optmization work, I have 10 years experience building solid back-ends.",
+            "technologies": [
+                {
+                    "name": "C# .NET WebAPI",
+                    "level": 5
+                },
+                {
+                    "name": "REST API",
+                    "level": 5
+                },
+                {
+                    "name": "SQL",
+                    "level": 4
+                },
+                {
+                    "name": "NoSQL",
+                    "level": 4
+                },
+                {
+                    "name": "Node.js",
+                    "level": 3
+                }
+            ]
+        },
+        {
+            "category": "Product",
+            "summary": "I worked in 5 early-stage startups and understand what it takes to take a product to market.",
+            "technologies": [
+                {
+                    "name": "UX",
+                    "level": 2
+                },
+                {
+                    "name": "Lean startup",
+                    "level": 4
+                },
+                {
+                    "name": "Kanban",
+                    "level": 4
+                },
+                {
+                    "name": "Agile",
+                    "level": 5
+                },
+                {
+                    "name": "Analytics",
+                    "level": 3
+                }
+            ]
+        },
+        {
+            "category": "Built with love",
+            "summary": "I deeply care about the end user as well as my fellow developers, I code in order to share.",
+            "technologies": [
+                {
+                    "name": "Unit testing",
+                    "level": 5
+                },
+                {
+                    "name": "Continuous integration/delivery",
+                    "level": 4
+                },
+                {
+                    "name": "Code reviews",
+                    "level": 5
+                },
+                {
+                    "name": "Quality control",
+                    "level": 4
+                }
+            ]
+        }
+    ]
+}

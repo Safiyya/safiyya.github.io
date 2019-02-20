@@ -22,8 +22,8 @@
         <about class="mt-32"></about>
       </div>
       <div class="section">
-        Experience
-        <!-- <experience></experience> -->
+        
+        <experience></experience>
       </div>
       <div class="section">
         <projects></projects>
@@ -109,7 +109,7 @@ export default class AppVue extends Vue {
 
 <style lang="scss">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

@@ -1,9 +1,9 @@
 <template>
-  <nav class="h-12 texture-background flex w-full border-b-4 border-orange">
+  <nav class="h-12 texture-background flex w-full border-b-4 border-teal">
 
     <div class="w-full block flex-grow lg:flex lg:items-center justify-start lg:w-auto">
       <div
-        class="text-xl mx-32 flex justify-between w-1/2"
+        class=" mx-32 flex justify-around w-1/2"
         id="header-menu"
       >
         <a
