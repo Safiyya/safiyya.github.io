@@ -3,7 +3,7 @@
   <div class="max-w-md lg:h-96 w-full shadow-md rounded-lg lg:flex ">
     <div class="h-auto bg-grey-lightest flex flex-col justify-between p-4 rounded-t lg:rounded-t-none lg:rounded-l text-center ">
       <div
-        class="bg-cover company-picture w-48 h-48 mb-4"
+        class="company-picture w-48 h-48 mb-4"
         :style="'background-image: url('+job.company.picture+')'"
         :title="job.company.name"
       >
@@ -50,14 +50,7 @@
         <span class="text-grey-dark text-left uppercase font-bold mb-4">
           {{job.start.formatDate()}} - {{job.end.formatDate()}}
         </span>
-         <!-- <icon-with-text :text="job.start.formatDate() + ' - ' +job.end.formatDate()">
-        <img
-          svg-inline
-          src="../assets/icons/calendar.svg"
-          alt="Dates"
-        />
-      </icon-with-text> -->
-        <ul
+        <!-- <ul
           class="text-grey-darker text-base list-reset mb-6 flex flex-grow flex-col"
           
         >
@@ -74,9 +67,9 @@
             </span>
 
           </li>
-        </ul>
+        </ul> -->
 
-        <div class="flex flex-wrap items-end">
+        <!-- <div class="flex flex-wrap items-end">
           <span v-for="tech in job.technologies" :key="tech"
             class="bg-blue-dark uppercase text-xs text-white font-bold py-2 px-4 rounded-full m-1"
           >
@@ -84,7 +77,7 @@
             </span>
 
           </span>
-        </div>
+        </div> -->
       </div>
 
 

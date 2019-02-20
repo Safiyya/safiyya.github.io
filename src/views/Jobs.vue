@@ -1,13 +1,12 @@
 <template>
   <div
-    class="past-page container mx-auto"
+    class="about py-24 h-full flex flex-col items-center container mx-auto"
     v-if="isLoaded"
   >
-    <h1>Stuff I've done</h1>
 
     <div class="flex flex-wrap -m-2">
       <template v-for="job in jobs">
-        <div class="w-1/2 p-2 " :key="job.start">
+        <div class="w-1/3 p-2 " :key="job.start">
           <job-card
             class=""
             :job="job"

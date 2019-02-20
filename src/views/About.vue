@@ -65,7 +65,7 @@
           class=" w-full  mt-2 flex flex-col"
         >
           <span class="mb-1 text-left">{{technology.name}}</span>
-          <div class="bg-grey-light">
+          <div class="bg-grey-lighter">
             <div
               class="bg-teal text-teal-lightest rounded-sm text-xs leading-none py-1 text-left px-2 "
               :style="{width: technology.level/5 * 100+ '%'}"
@@ -74,9 +74,15 @@
 
         </div>
       </div>
-      <div class="px-4 w-1/2 text-3xl bg-teal rounded-b text-teal-lightest flex items-center justify-end text-center">
-        {{activeSkill.summary}}
+      <div class="px-4 w-1/2 bg-transparent  flex flex-col items-center justify-start">
+        <div class="text-3xl text-center my-8">
+          {{activeSkill.tagline}}
+        </div>
+        <div class="w-2/3 text-left">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
       </div>
+
     </div>
 
   </div>

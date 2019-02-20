@@ -2,7 +2,8 @@
     "skills": [
         {
             "category": "Front-end",
-            "summary": "A great user experience is my first priority, I code interfaces that are fast and intuitive.",
+            "tagline": "The user experience is my first priority.",
+            "summary": "",
             "technologies": [
                 {
                     "name": "HTML5 / CSS 3",
@@ -25,14 +26,15 @@
                     "level": 3
                 },
                 {
-                    "name": "UI Design",
-                    "level": 2
+                    "name": "Bootstrap 4/Tailwind CSS",
+                    "level": 5
                 }
             ]
         },
         {
             "category": "Back-end",
-            "summary": "From API conception & integration to database optmization work, I have 10 years experience building solid back-ends.",
+            "tagline": "Extendable and robust back-ends",
+            "summary": "From API conception & integration to database optimization, I strive for clean and fast code.",
             "technologies": [
                 {
                     "name": "C# .NET WebAPI",
@@ -58,6 +60,7 @@
         },
         {
             "category": "Product",
+            "tagline" :"Ship early, ship often.",
             "summary": "I worked in 5 early-stage startups and understand what it takes to take a product to market.",
             "technologies": [
                 {
@@ -84,6 +87,7 @@
         },
         {
             "category": "Built with love",
+            "tagline":"I care so I test",
             "summary": "I deeply care about the end user as well as my fellow developers, I code in order to share.",
             "technologies": [
                 {
