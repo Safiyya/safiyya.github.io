@@ -9,9 +9,9 @@
  
     </div>
      <button @click="moveDown()"
-     class="flex justify-center items-center group my-8 bg-transparent border-4 border-grey hover:border-white py-3 px-4 rounded text-grey hover:text-white font-bold text-xl uppercase" >
+     class="group rotate-on-hover flex justify-center items-center my-8 bg-transparent border-2 border-grey hover:border-white py-3 px-4 rounded text-grey hover:text-white font-bold text-xl uppercase" >
        Let's make something together
-        <img class="w-4 h-4 text-grey group-hover:text-white fill-current m-2"
+        <img class="w-4 h-4 text-grey group-hover:text-teal fill-current m-2 "
               svg-inline
               src="@/assets/icons/arrow-thick-right.svg"
               alt="About"
@@ -38,6 +38,15 @@ export default class Home extends Vue {
 </script>
 
 <style scoped>
+.rotate-on-hover > svg{
+  transform: rotate(0deg) ;
+  transition: all 250ms ease; 
+}
+
+.rotate-on-hover:hover > svg{
+  transform: rotate(90deg) ;
+  transition: all 250ms ease; 
+}
 /* .home::before {
     content: '';
     position: absolute;

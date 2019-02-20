@@ -58,7 +58,7 @@
       class="w-full border-t-4 border-teal  flex flex-grow "
       v-if="isLoaded"
     >
-      <div class="w-1/2 px-4 h-auto">
+      <div class="w-1/2 px-4 h-auto my-3">
         <div
           v-for="technology in activeSkill.technologies"
           :key="technology.name"

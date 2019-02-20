@@ -56,7 +56,7 @@ export default class Badge extends Vue {
 .vertical-line::after {
   @apply border border-4 border-transparent;
   width: 0;
-  height: 4rem;
+  height: 3rem;
   display: block;
   content: "";
   left: 50%;
