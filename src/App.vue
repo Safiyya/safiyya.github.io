@@ -70,7 +70,7 @@ export default class AppVue extends Vue {
   isMenuVisible: boolean = false;
 
   onMoveDown() {
-    this.$refs.fullpage.api.moveSectionDown();
+    (<any>this.$refs.fullpage).api.moveSectionDown();
   }
 
   afterLoad(origin: any, destination: any, direction: any) {
