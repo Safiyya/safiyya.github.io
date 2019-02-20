@@ -1,57 +1,7 @@
 {
     "jobs": [
-        {
-            "company": {
-                "name": "www.ngmartin.com",
-                "url": "https://www.ngmartin.com",
-                "crunchbase": "",
-                "industry": "Personal website",
-                "picture": "https://static1.squarespace.com/static/5803abe33e00be5b9a9db870/t/5a51779fe2c483af0bef3c2b/1515351857815/IMG_5889.jpg?format=1500w"
-            },
-            "title": "Web Design",
-            "tasks": [
-                {
-                    "header": "Helped an academic put his works and publications online"
-               
-                   
-                }
-            ],
-            "technologies": [
-                "Squarespace"
-            ],
-            "start": "2017-11-01",
-            "end": "2017-12-01",
-            "location": {
-                "country": "Canada",
-                "city": "Vancouver"
-            }
-        },
-        {
-            "company": {
-                "name": "www.tabbcarpentry.com",
-                "url": "https://www.tabbcarpentry.com",
-                "crunchbase": "",
-                "industry": "Personal website",
-                "picture": "data:image/jpeg;base64,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"
-            },
-            "title": "Web Design",
-            "tasks": [
-                {
-                    "header": "Helped an small business owner showcase his work online"
-               
-                   
-                }
-            ],
-            "technologies": [
-                "Squarespace"
-            ],
-            "start": "2018-01-01",
-            "end": "2018-02-01",
-            "location": {
-                "country": "Canada",
-                "city": "Vancouver"
-            }
-        },
+       
+       
         {
             "company": {
                 "name": "Kamkalima",
@@ -61,6 +11,7 @@
                 "picture": "https://kamkalima.com/app/images/kk-logo.svg"
             },
             "title": "Front-end Developer",
+            "freelance":true,
             "tasks": [
                 {
                     "header": "Helped primary schools students improve their Arabic reading and comprehension skills by implementing Kamkalima student webapp from high-definition Adobe XD mockups"
@@ -95,6 +46,7 @@
                 "picture": "https://res-2.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1505154649/fqr5w0ef5dazjahvupje.png"
             },
             "title": "Full Stack Developer ",
+            "freelance":true,
             "tasks": [
                 {
                     "header": "Increased test coverage from 0% to 40%  and set up CI/CD pipeline for a Node.js + Polymer app"
@@ -119,58 +71,20 @@
         },
         {
             "company": {
-                "name": "Eurofins UK",
+                "name": "Eurofins UK & UK",
                 "url": "https://www.eurofins.com/",
                 "industry": "Food testing",
                 "crunchbase": "",
                 "picture": "https://cdnmedia.eurofins.com/corporate-eurofins/media/1004/logo.png"
             },
-            "title": "Project Manager",
-            "tasks": [
-                {
-                    "header": "Deployed and adapted in-house software for 5 newly acquired sites across Europe (UK, Ireland, Italy, Denmark, Germany)",
-                    "details": "",
-                    "technologies": [
-                        "C#",
-                        ".NET",
-                        "VB6",
-                        "SQL Server",
-                        "T-SQL"
-                    ]
-                },
-                {
-                    "header": "Full-cycle developments of Windows Forms used worldwide within company",
-                    "details": "",
-                    "technologies": [
-                        "C#",
-                        ".NET",
-                        "ASP.NET"
-                    ]
-                }
-            ],
-            "start": "2008-06-01",
-            "end": "2011-05-01",
-            "location": {
-                "country": "UK",
-                "city": "Wolverhampton"
-            }
-        },
-        {
-            "company": {
-                "name": "Eurofins US",
-                "url": "https://www.eurofins.com/",
-                "industry": "Food testing",
-                "crunchbase": "",
-                "picture": "https://cdnmedia.eurofins.com/corporate-eurofins/media/1004/logo.png"
-            },
-            "title": "Lead Software Developer",
+            "title": "Tech Lead",
             "tasks": [
                 {
                     "header": "Improved US branch legacy search system by cutting queries time by up to 67%"
                   
                 },
                 {
-                    "header": "Led 5 deployments & enhancements to in-house software across the US  (Maryland, Iowa, Florida, Minnesota, Pennsylvania)"
+                    "header": "Led 10 deployments & enhancements to in-house software across the US and Europe "
                 }
             ],
             "technologies": [
@@ -181,46 +95,11 @@
                 "HTML",
                 "CSS"
             ],
-            "start": "2011-05-01",
+            "start": "2008-05-01",
             "end": "2014-04-01",
             "location": {
                 "country": "US",
                 "city": "Baltimore, MD"
-            }
-        },
-        {
-            "company": {
-                "name": "DataShaka",
-                "url": "https://www.datashaka.com",
-                "industry": "Analytics",
-                "crunchbase": "https://www.crunchbase.com/organization/virtuoz",
-                "picture": "https://avatars1.githubusercontent.com/u/6972973?s=280&v=4"
-            },
-            "title": "Full Stack Developer",
-            "tasks": [
-                {
-                    "header": "Implemented a  Domain Specific Language for time-series data cleansing in C# & F#"
-         
-                },
-                {
-                    "header": "Formalized 1 mathematical model to fit customer data"
-                }
-            ],
-            "technologies": [
-                "C#",
-                ".NET",
-                "WebAPI",
-                "T-SQL",
-                "NUnit",
-                "Moq",
-                "Powershell",
-                "Microsoft Azure"
-            ],
-            "start": "2014-04-01",
-            "end": "2015-09-01",
-            "location": {
-                "country": "UK",
-                "city": "London"
             }
         },
         {
@@ -239,6 +118,13 @@
                 },
                 {
                     "header": "Reduced average benchmark queries time from 20 minutes to 40 seconds "
+                },
+                {
+                    "header": "Implemented a  Domain Specific Language for time-series data cleansing in C# & F#"
+         
+                },
+                {
+                    "header": "Formalized 1 mathematical model to fit customer data"
                 }
             ],
             "technologies": [
@@ -251,7 +137,7 @@
                 "Powershell",
                 "Team City"
             ],
-            "start": "2015-09-01",
+            "start": "2014-04-01",
             "end": "2016-10-01",
             "location": {
                 "country": "UK",
@@ -266,7 +152,7 @@
                 "crunchbase": "",
                 "picture": "https://www.optinac-shop.com/img/optinac-logo-1497453648.jpg"
             },
-            "title": "Web design & development",
+            "title": "Web designer",
             "tasks": [
                 {
                     "header": "Enabled small business owners to sell products online by developing eCommerce front-office and back-"
@@ -296,7 +182,7 @@
                 "crunchbase": "https://www.crunchbase.com/organization/virtuoz",
                 "picture": "https://i.pinimg.com/originals/f7/4f/20/f74f20b9ba045b671127ccf1f7b90447.png"
             },
-            "title": ".NET Software Developer",
+            "title": "Software Engineer",
             "tasks": [
                 {
                     "header": "Integrated Microsoft Speech API 5.3 into a Virtual Intelligent Agent and built a unique speaking prototype"

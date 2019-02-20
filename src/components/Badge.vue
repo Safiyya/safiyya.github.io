@@ -1,6 +1,6 @@
 <template>
   <div
-    class="group flex flex-col items-center vertical-line"
+    class="group flex flex-col items-center vertical-line "
     @mouseenter="setActive($event)"
     @mouseleave="setInactive($event)"
   >

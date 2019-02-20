@@ -22,7 +22,7 @@
         <about class="mt-32"></about>
       </div>
       <div class="section">
-        
+
         <experience></experience>
       </div>
       <div class="section">
@@ -64,7 +64,7 @@ export default class AppVue extends Vue {
 
     anchors: ["home", "about", "experience", "portfolio", "contact"],
     onLeave: this.onLeave,
-    afterLoad: this.afterLoad,
+    afterLoad: this.afterLoad
     // fitToSection: false
   };
   isMenuVisible: boolean = false;
@@ -83,6 +83,12 @@ export default class AppVue extends Vue {
         "hide"
       );
     }
+
+    // if (destination.index == 1) {
+    //   document.querySelectorAll(".badge").forEach((el: Element) => {
+    //     el.classList.add("flip-in-hor-bottom");
+    //   });
+    // }
   }
 
   onLeave(origin: any, destination: any, direction: any) {

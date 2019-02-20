@@ -6,6 +6,7 @@ export default class Job {
         crunchbase: string,
         picture: string
     };
+    freelance:boolean;
     title: string;
 
     tasks: Array<{

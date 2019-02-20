@@ -1,55 +1,40 @@
 <template>
 
-  <div class="max-w-md lg:h-96 w-full shadow-md rounded-lg lg:flex flex-col ">
-    <div class="h-auto bg-grey-lightest flex flex-col justify-between p-4 rounded-t lg:rounded-t-none lg:rounded-l text-center ">
+  <div class="max-w-md  w-full border rounded lg:flex flex-col ">
+    <div class="h-full w-full  flex flex-col justify-between p-4 rounded-t lg:rounded-t-none lg:rounded-l text-center ">
       <div
-        class="company-picture w-32 h-32 mb-4"
+        class="company-picture h-full"
         :style="'background-image: url('+job.company.picture+')'"
         :title="job.company.name"
       >
       </div>
-      <div class="flex items-left flex-col ">
-        <icon-with-text
-          :text="job.company.name"
-          :url="job.company.url"
-        >
-          <img
-            svg-inline
-            src="@/assets/icons/home.svg"
-            alt="Company name"
-          />
-        </icon-with-text>
 
-         <icon-with-text class=""
-          :text="job.company.industry"
-        >
-          <img
-            svg-inline
-            src="@/assets/icons/library.svg"
-            alt="Industry"
-          />
-        </icon-with-text>
-
-        <icon-with-text :text="job.location.city + ', ' +job.location.country">
-          <img
-            svg-inline
-            src="@/assets/icons/location.svg"
-            alt="Location"
-          />
-        </icon-with-text>
-
-     
-
-      </div>
     </div>
 
     <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
       <div class="flex flex-col flex-grow">
 
-        <div class="text-black font-bold text-2xl  flex">{{job.title}}</div>
-        <span class="text-grey-dark text-left uppercase font-bold mb-4">
-          {{job.start.formatDate()}} - {{job.end.formatDate()}}
-        </span>
+        <div class="text-black font-bold text-2xl  flex justify-start mb-6">{{job.title}}</div>
+  
+
+        <div class="flex items-left flex-col ">
+
+          <icon-with-text class="mb-2" :text="job.location.city + ', ' +job.location.country">
+            <img
+              svg-inline
+              src="../assets/icons/location.svg"
+              alt="Location"
+            />
+          </icon-with-text>
+          <icon-with-text :text="job.start.formatDate() + ' - ' +job.end.formatDate()">
+            <img
+              svg-inline
+              src="../assets/icons/calendar.svg"
+              alt="Location"
+            />
+          </icon-with-text>
+
+        </div>
         <!-- <ul
           class="text-grey-darker text-base list-reset mb-6 flex flex-grow flex-col"
           
@@ -79,7 +64,6 @@
           </span>
         </div> -->
       </div>
-
 
     </div>
   </div>

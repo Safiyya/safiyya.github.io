@@ -1,14 +1,14 @@
 <template>
   <div
-    class="about py-24 h-full flex flex-col items-center container mx-auto"
+    class="experience pt-24 h-full flex flex-col items-center container mx-auto"
     v-if="isLoaded"
   >
 
-    <div class="flex flex-wrap -m-2">
+    <div class="flex flex-wrap item-center justify-center w-full">
       <template v-for="job in jobs">
-        <div class="w-1/4 p-2 " :key="job.start">
+        <div class="w-1/4 m-3 box " :key="job.start">
           <job-card
-            class=""
+            class="content"
             :job="job"
             
           ></job-card>
@@ -51,5 +51,21 @@ export default class Experience extends Vue {
 </script>
 
 <style>
+.box {
+  position: relative;
+}
+.box:before {
+  content: "";
+  display: block;
+  padding-top: 100%; /* initial ratio of 1:1*/
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 </style>
 

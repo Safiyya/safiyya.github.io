@@ -104,6 +104,7 @@ export default class About extends Vue {
   activeSkill: Skill = {
     category: "",
     summary: "",
+    tagline : "",
     technologies: []
   };
 

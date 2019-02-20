@@ -1,8 +1,8 @@
 <template>
-  <p class="text-grey-dark flex items-center mb-1">
-    <span class="bg-grey-light rounded-full w-8 h-8 flex justify-center items-center mr-1">
+  <p class="text-black flex items-center mb-1">
+    <span class="rounded-full w-8 h-8 flex justify-center items-center mr-1">
 
-        <span class="svg-icon w-4 h-4 text-white fill-current">
+        <span class="svg-icon w-4 h-4 text-grey-dark fill-current">
             <slot ></slot>
         </span>
       
