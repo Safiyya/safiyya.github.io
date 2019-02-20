@@ -509,6 +509,7 @@ module.exports = {
     '1/6': '16.66667%',
     '5/6': '83.33333%',
     'full': '100%',
+    '2x': '200%',
     'screen': '100vw',
   },
 
@@ -549,6 +550,7 @@ module.exports = {
     '80': '20rem',
     '96': '24rem',
     'full': '100%',
+    '2x': '200%',
     'screen': '100vh',
   },
 
@@ -906,7 +908,7 @@ module.exports = {
     float: ['responsive'],
     fonts: ['responsive'],
     fontWeights: ['responsive', 'hover', 'focus'],
-    height: ['responsive'],
+    height: ['responsive','hover'],
     leading: ['responsive'],
     lists: ['responsive'],
     margin: ['responsive'],
@@ -937,7 +939,7 @@ module.exports = {
     verticalAlign: ['responsive'],
     visibility: ['responsive'],
     whitespace: ['responsive'],
-    width: ['responsive'],
+    width: ['responsive', 'hover'],
     zIndex: ['responsive'],
   },
 

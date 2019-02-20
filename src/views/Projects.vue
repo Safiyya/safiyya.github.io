@@ -1,6 +1,7 @@
 <template>
   <div class="bookshelf h-screen text-red">
-    Projects
+    // sticky popover
+
   </div>
 </template>
  

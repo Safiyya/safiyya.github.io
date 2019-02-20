@@ -1,6 +1,7 @@
 <template>
 
-  <div class="max-w-md  w-full border rounded lg:flex flex-col ">
+  <div class="w-full  border rounded flex flex-col overflow-hidden ">
+    <div v-if="job.freelance" class="corner-ribbon bg-teal text-teal-lightest top-right font-bold">Freelance</div>
     <div class="h-full w-full  flex flex-col justify-between p-4 rounded-t lg:rounded-t-none lg:rounded-l text-center ">
       <div
         class="company-picture h-full"
@@ -11,7 +12,7 @@
 
     </div>
 
-    <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+    <div class="rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
       <div class="flex flex-col flex-grow">
 
         <div class="text-black font-bold text-2xl  flex justify-start mb-6">{{job.title}}</div>

@@ -21,7 +21,7 @@
       >
         Let's make something together
         <img
-          class="w-4 h-4 text-grey group-hover:text-white fill-current m-2 "
+          class="w-8 h-8 text-grey group-hover:text-white fill-current m-2 "
           svg-inline
           src="@/assets/icons/arrow-thick-right.svg"
           alt="About"
