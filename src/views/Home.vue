@@ -15,13 +15,16 @@
         <div>I'm a full-stack web developer.</div>
 
       </div>
+
+      
       <button
         @click="moveDown()"
-        class="group rotate-on-hover flex justify-center items-center my-8 bg-transparent border-2 border-grey hover:border-white py-3 px-4 rounded text-grey hover:text-white font-bold text-xl uppercase"
+        class="group rotate-on-hover flex justify-center items-center my-8 
+        bg-transparent border-2 border-grey hover:border-white py-3 px-4 rounded text-grey hover:text-white font-bold text-xl uppercase"
       >
         Let's make something together
         <img
-          class="w-8 h-8 text-grey group-hover:text-white fill-current m-2 "
+          class="w-6 h-6 text-grey group-hover:text-white fill-current ml-2 "
           svg-inline
           src="@/assets/icons/arrow-thick-right.svg"
           alt="About"
@@ -51,6 +54,10 @@ export default class Home extends Vue {
     let j = Math.floor(Math.random() * 25);
     return `elem${i} anim-delay${j} fill-current`;
   }
+
+  mounted(){
+     
+  }
 }
 </script>
 
@@ -64,7 +71,6 @@ export default class Home extends Vue {
   transform: rotate(90deg);
   transition: all 250ms ease;
 }
-
 
 @-webkit-keyframes filter-animation {
   0% {

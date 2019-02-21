@@ -19,7 +19,7 @@
         <home v-on:move-down="onMoveDown()"></home>
       </div>
       <div class="section">
-        <about class="mt-32"></about>
+        <about ></about>
       </div>
       <div class="section">
 
@@ -47,6 +47,7 @@ import Experience from "@/views/Jobs.vue";
 import About from "@/views/About.vue";
 import Projects from "@/views/Projects.vue";
 import Contact from "@/views/Contact.vue";
+import Who from '@/views/Who.vue';
 
 @Component({
   components: {
@@ -55,6 +56,7 @@ import Contact from "@/views/Contact.vue";
     about: About,
     projects: Projects,
     contact: Contact,
+    who : Who,
     "header-menu": MenuVue
   }
 })
@@ -62,7 +64,7 @@ export default class AppVue extends Vue {
   options: any = {
     menu: "#header-menu",
 
-    anchors: ["home", "about", "experience", "portfolio", "contact"],
+    anchors: ["home","about", "experience", "portfolio", "contact"],
     onLeave: this.onLeave,
     afterLoad: this.afterLoad
     // fitToSection: false

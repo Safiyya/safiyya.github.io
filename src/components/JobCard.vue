@@ -8,7 +8,7 @@
       v-if="job.freelance"
       class="corner-ribbon bg-teal text-teal-lightest top-right font-bold"
     >Freelance</div>
-    <div class="h-full w-full  flex flex-col justify-between p-4 rounded-t lg:rounded-t-none lg:rounded-l text-center ">
+    <div class="h-full w-full p-4 flex flex-col justify-between rounded-t lg:rounded-t-none lg:rounded-l text-center ">
       <div
         class="company-picture h-full"
         :style="'background-image: url('+job.company.picture+')'"
@@ -23,12 +23,16 @@
 
         <div
           class="font-bold text-2xl  flex justify-start"
-          :class="{'mb-6':!job.isSelected, 'text-black':job.isSelected, 'text-grey':!job.isSelected, 'mb-2':job.isUnselected }"
-        >{{job.title}}</div>
+          :class="{'mb-6':!job.isSelected, 
+          'text-black':job.isSelected, 
+          'text-grey':job.isUnselected, 
+          'mb-2':job.isUnselected }"
+        >{{job.title}}
+        </div>
 
         <div
-          class="flex items-left flex-col "
-          :class="{'mb-6':job.isSelected }"
+          class="flex items-left justify-between"
+          :class="{'mb-6':job.isSelected, 'flex-col': job.isSelected, 'flex-row':job.isUnselected }"
         >
 
           <icon-with-text
@@ -57,6 +61,16 @@
               svg-inline
               src="../assets/icons/network.svg"
               alt="Dates"
+            />
+          </icon-with-text>
+          <icon-with-text
+            v-if="job.isSelected"
+            :text="job.company.industry"
+          >
+            <img
+              svg-inline
+              src="../assets/icons/library.svg"
+              alt="Industry"
             />
           </icon-with-text>
 

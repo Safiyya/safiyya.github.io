@@ -1,9 +1,9 @@
 <template>
   <div
-    class="experience py-24 h-full flex flex-col items-center container mx-auto"
+    class="experience pt-24 h-full flex flex-col justify-start items-center container mx-auto"
     v-if="isLoaded"
   >
-    <div class="grid item-center justify-start w-full relative">
+    <div class="grid item-center justify-start w-full relative flex-grow">
       <div
         v-for="job in jobs"
         @click.stop="toggleJobDetails(job)"
@@ -17,6 +17,16 @@
         ></job-card>
 
       </div>
+    </div>
+    <div class="h-48 flex items-center justify-around w-full px-48">
+      <a class="button" target="blank" href="https://www.visualcv.com/safiyyababio-fullstack/pdf/">
+      <img
+          class="w-4 h-4 fill-current mx-2 "
+          svg-inline
+          src="@/assets/icons/download.svg"
+          alt="About"
+        />
+      Download PDF </a>
     </div>
 
   </div>
@@ -84,7 +94,6 @@ export default class Experience extends Vue {
   grid-template-rows: repeat(6, 15%);
   grid-gap: 16px;
   grid-auto-flow: dense;
-  height: calc(100% - 1rem);
 }
 
 .grid-item {
@@ -108,7 +117,6 @@ export default class Experience extends Vue {
   grid-column: span 2;
   grid-row: 1 / span 4;
 }
-
 
 .grid-item.expanded {
   /* transition: transform 1000ms; */
