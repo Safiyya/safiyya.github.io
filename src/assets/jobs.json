@@ -113,29 +113,21 @@
             "title": "VP of Engineering",
             "tasks": [
                 {
-                    "header": "Drove the fastest route to production while keeping high quality standards and a happy team "
-                 
+                    "header": "Drove the fastest route to production while keeping high quality standards and a happy team "         
                 },
                 {
                     "header": "Reduced average benchmark queries time from 20 minutes to 40 seconds "
                 },
                 {
-                    "header": "Implemented a  Domain Specific Language for time-series data cleansing in C# & F#"
+                    "header": "Implemented a Domain Specific Language for time-series data cleansing"
          
-                },
-                {
-                    "header": "Formalized 1 mathematical model to fit customer data"
                 }
             ],
             "technologies": [
                 "C#",
                 ".NET",
                 "WebAPI",
-                "T-SQL",
-                "SQL Server",
-                "Microsoft Azure",
-                "Powershell",
-                "Team City"
+                "T-SQL"
             ],
             "start": "2014-04-01",
             "end": "2016-10-01",

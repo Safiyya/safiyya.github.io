@@ -21,4 +21,8 @@ export default class Job {
         country: string,
         city: string
     };
+
+
+    isSelected:boolean ;
+    isUnselected:boolean ;
 }
