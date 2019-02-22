@@ -20,19 +20,14 @@
         >
         </badge>
         <div
-          v-if="skill.isSelected"
-          class="w-1 h-12 border-transparent  border-2"
-          :class="{'border-teal':skill.isSelected}"
-        ></div>
-        <div
-          v-else
-          class="w-1 h-12 border-transparent group-hover:border-grey-light border-2"
-          :class="{'border-teal':skill.isSelected}"
+          class="w-1 py-6 border-transparent  border-2"
+          :class="{'border-teal':skill.isSelected, 'group-hover:border-grey-light':!skill.isSelected}"
         ></div>
 
       </div>
 
     </div>
+
 
     <div class="w-full border-t-4 border-teal  flex flex-grow ">
       <div class="w-1/2 px-4 h-auto my-3">
@@ -44,7 +39,7 @@
           <span class="mb-1 text-left">{{technology.name}}</span>
           <div class="bg-grey-lighter">
             <div
-              class="bg-teal text-teal-lightest rounded-sm text-xs leading-none py-1 text-left px-2 "
+              class="bg-teal text-teal-lightest rounded-sm text-xs leading-none py-1 text-left px-2"
               :style="{width: technology.level/5 * 100+ '%'}"
             >{{technology.level/5 * 100}}%</div>
           </div>
@@ -55,7 +50,7 @@
         <div class="text-3xl text-center my-8">
           {{selectedSkill.tagline}}
         </div>
-        <div class="w-2/3 text-left">
+        <div class="w-2/3 text-left text-lg">
           {{selectedSkill.summary}}
         </div>
       </div>
@@ -105,7 +100,4 @@ export default class About extends Vue {
   }
 }
 </script>
-
-<style scoped>
-</style>
 
