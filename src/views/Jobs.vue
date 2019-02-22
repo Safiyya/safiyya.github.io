@@ -20,7 +20,7 @@
     </div>
     <div class="h-32 flex items-center justify-around w-full px-48">
       <a
-        class="button"
+        class="button bg-teal "
         target="blank"
         href="https://www.visualcv.com/safiyyababio-fullstack/pdf/"
       >
@@ -63,7 +63,7 @@ export default class Experience extends Vue {
         })
         .then(() => {
           wrapGrid(document.querySelector(".grid") as HTMLElement, {
-            easing: "linear",
+            easing: "anticipate",
             duration: 750
           });
         })
@@ -134,21 +134,6 @@ export default class Experience extends Vue {
   grid-row: span 2;
 }
 
-.box {
-  position: relative;
-}
-.box:before {
-  content: "";
-  display: block;
-  padding-top: 100%;
-}
 
-.content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
 </style>
 
