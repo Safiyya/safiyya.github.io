@@ -20,7 +20,7 @@
           data-menuanchor="portfolio"
           href="/#portfolio"
           class="uppercase text-grey-lighter"
-        >Portfolio</a>
+        >Currently</a>
         <a
           data-menuanchor="contact"
           href="/#contact"

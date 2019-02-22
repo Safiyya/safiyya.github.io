@@ -12,8 +12,8 @@ import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 
 @Component({})
 export default class extends Vue {
-  @Prop() text: string;
-  @Prop() to: string;
+  @Prop() public text: string;
+  @Prop() public to: string;
 }
 </script>
 

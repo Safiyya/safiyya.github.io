@@ -1,9 +1,13 @@
 export default class Skill {
-    category: string
-    tagline:string
-    summary:string
-    technologies: Array<{
+    public category: string;
+    public iconUrl: string;
+    public tagline: string;
+    public summary: string;
+    public technologies: Array<{
         name: string,
-        level:number
+        level: number
     }>;
+
+    public isSelected: boolean;
 }
+

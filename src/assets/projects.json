@@ -1,5 +1,39 @@
 {
     "projects": [
+
+        {
+            "category": "This is me",
+            "iconUrl":"heroicons/heroicons-lg/heroicon-browser-lg.svg",
+            "tagline":"I just like what I do 🤓, do you? ",
+            "summary": "I want to be involved in projects that make a difference with people who are inhabited with a mission. This drove me to work with many early-stage startups (Ed Tech, Future of work, Podcasting...) and all of them have been transformative experiences.",
+            "technologies": [
+                {
+                    "name": "Remote working",
+                    "level": 5
+                },
+                {
+                    "name": "Learning UI design",
+                    "level": 2
+                },
+                {
+                    "name": "Playing the keys",
+                    "level": 3
+                },
+                {
+                    "name": "Listening to way.too.many. podcasts (50+)",
+                    "level": 5
+                },
+                {
+                    "name": "Dancing while coding",
+                    "level": 1
+                },
+                {
+                    "name": "Cooking then eating chocolate fudge brownies",
+                    "level": 5
+                }
+            ]
+        },
+
         {
             "company": {
                 "name": "www.ngmartin.com",

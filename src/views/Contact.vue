@@ -17,18 +17,7 @@
 import { Component, Vue } from "vue-property-decorator";
 
 @Component({})
-export default class Contact extends Vue {
-mounted(){
-     const myLandbotFrame = new LandbotFrameWidget({
-        index: 'https://landbot.io/u/H-138679-U2BSN7OUPPSEA7YS/index.html',
-        container: '#my-landbot',
-        // or
-        // container: document.getElementById('my-landbot'),
-      });
-}
-
-
-}
+export default class Contact extends Vue {}
 </script>
 
 <style scoped>

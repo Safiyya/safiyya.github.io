@@ -1,66 +1,43 @@
 <template>
-  <div class="about py-24 h-full flex flex-col items-center container mx-auto">
+  <div
+    class="about  py-24 h-full flex flex-col items-center container mx-auto"
+    v-if="isLoaded"
+  >
     <div class=" flex w-full items-start justify-between">
-      <badge
-        class="badge w-1/4 px-3 active"
-        :title="'Front-end'"
-        id="badge-0"
-        v-on:activate="showSkills($event, 0)"
-      >
-        <img
-          svg-inline
-          src="@/assets/heroicons/heroicons-lg/heroicon-browser-lg.svg"
-          alt="Front end"
-        />
-      </badge>
 
-      <badge
-        class="badge  w-1/4 px-3 "
-        :title="'Back-end'"
-        id="badge-1"
-        v-on:activate="showSkills($event,1)"
+      <div
+        v-for="skill in skills"
+        :key="skill.category"
+        class="flex flex-col items-center group"
       >
-        <img
-          svg-inline
-          src="@/assets/heroicons/heroicons-lg/heroicon-database-lg.svg"
-          alt="Fast"
-        />
-      </badge>
+        <badge
+          class="badge w-1/4 px-3 text-grey-light"
+          :class="{'text-teal':skill.isSelected}"
+          :title="skill.category"
+          :color="skill.isSelected ? 'teal' : 'grey-light'"
+          :icon-url="skill.iconUrl"
+          v-on:click.native="showSkill(skill)"
+        >
+        </badge>
+        <div
+          v-if="skill.isSelected"
+          class="w-1 h-12 border-transparent  border-2"
+          :class="{'border-teal':skill.isSelected}"
+        ></div>
+        <div
+          v-else
+          class="w-1 h-12 border-transparent group-hover:border-grey-light border-2"
+          :class="{'border-teal':skill.isSelected}"
+        ></div>
 
-      <badge
-        class="badge  w-1/4 px-3 "
-        :title="'Product'"
-        id="badge-2"
-        v-on:activate="showSkills($event,2)"
-      >
-        <img
-          svg-inline
-          src="@/assets/heroicons/heroicons-lg/heroicon-chart-lg.svg"
-          alt="Product"
-        />
-      </badge>
+      </div>
 
-      <badge
-        class="badge w-1/4 px-3 "
-        :title="'Built with love'"
-        id="badge-3"
-        v-on:activate="showSkills($event,3)"
-      >
-        <img
-          svg-inline
-          src="@/assets/heroicons/heroicons-lg/heroicon-heart-lg.svg"
-          alt="Quality"
-        />
-      </badge>
     </div>
 
-    <div
-      class="w-full border-t-4 border-teal  flex flex-grow "
-      v-if="isLoaded"
-    >
+    <div class="w-full border-t-4 border-teal  flex flex-grow ">
       <div class="w-1/2 px-4 h-auto my-3">
         <div
-          v-for="technology in activeSkill.technologies"
+          v-for="technology in selectedSkill.technologies"
           :key="technology.name"
           class=" w-full  mt-2 flex flex-col"
         >
@@ -76,10 +53,10 @@
       </div>
       <div class="px-4 w-1/2 bg-transparent  flex flex-col items-center justify-start">
         <div class="text-3xl text-center my-8">
-          {{activeSkill.tagline}}
+          {{selectedSkill.tagline}}
         </div>
         <div class="w-2/3 text-left">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          {{selectedSkill.summary}}
         </div>
       </div>
 
@@ -100,32 +77,31 @@ import Skill from "@/models/skill";
   }
 })
 export default class About extends Vue {
-  skills: Skill[] = [];
-  activeSkill: Skill = {
-    category: "",
-    summary: "",
-    tagline : "",
-    technologies: []
-  };
-
-  showSkills(isReset: boolean, i: number) {
-    this.activeSkill = !isReset ? this.skills[0] : this.skills[i];
-  }
-
+  private skills: Skill[] = [];
   private isLoaded: boolean = false;
 
   public mounted() {
     this.isLoaded = false;
     return skillsService
       .get()
-      .then(skills => {
+      .then((skills: Skill[]) => {
         this.skills = skills;
-        this.activeSkill = this.skills[0];
+        this.skills[0].isSelected = true;
         this.isLoaded = true;
       })
       .catch(() => {
         this.isLoaded = true;
       });
+  }
+
+  private get selectedSkill(): Skill {
+    return this.skills.filter((s: Skill) => s.isSelected)[0];
+  }
+
+  private showSkill(skill: Skill) {
+    this.skills.forEach((s: Skill) => {
+      s.isSelected = s.category === skill.category;
+    });
   }
 }
 </script>

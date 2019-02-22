@@ -18,15 +18,19 @@
 
       </div>
     </div>
-    <div class="h-48 flex items-center justify-around w-full px-48">
-      <a class="button" target="blank" href="https://www.visualcv.com/safiyyababio-fullstack/pdf/">
-      <img
+    <div class="h-32 flex items-center justify-around w-full px-48">
+      <a
+        class="button"
+        target="blank"
+        href="https://www.visualcv.com/safiyyababio-fullstack/pdf/"
+      >
+        <img
           class="w-4 h-4 fill-current mx-2 "
           svg-inline
           src="@/assets/icons/download.svg"
           alt="About"
         />
-      Download PDF </a>
+        Download PDF </a>
     </div>
 
   </div>
@@ -48,33 +52,17 @@ export default class Experience extends Vue {
   private jobs: Job[] = [];
   private isLoaded: boolean = false;
 
-  toggleJobDetails(job: Job) {
-    if (job.isSelected) {
-      this.jobs.forEach(j => {
-        j.isSelected = false;
-        j.isUnselected = false;
-      });
-    } else {
-      this.jobs.forEach(j => {
-        j.isSelected = false;
-        j.isUnselected = true;
-      });
-      job.isSelected = true;
-      job.isUnselected = false;
-    }
-  }
-
   public mounted() {
     this.$nextTick(() => {
       this.isLoaded = false;
       return jobsService
         .get()
-        .then(jobs => {
+        .then((jobs: Job[]) => {
           this.jobs = jobs;
           this.isLoaded = true;
         })
         .then(() => {
-          wrapGrid(<HTMLElement>document.querySelector(".grid"), {
+          wrapGrid(document.querySelector(".grid") as HTMLElement, {
             easing: "linear",
             duration: 750
           });
@@ -83,6 +71,22 @@ export default class Experience extends Vue {
           this.isLoaded = true;
         });
     });
+  }
+
+  private toggleJobDetails(job: Job) {
+    if (job.isSelected) {
+      this.jobs.forEach((j: Job) => {
+        j.isSelected = false;
+        j.isUnselected = false;
+      });
+    } else {
+      this.jobs.forEach((j: Job) => {
+        j.isSelected = false;
+        j.isUnselected = true;
+      });
+      job.isSelected = true;
+      job.isUnselected = false;
+    }
   }
 }
 </script>

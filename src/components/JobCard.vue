@@ -4,10 +4,10 @@
     class="w-full border rounded flex overflow-hidden "
     v-bind:class="{'flex-col': !job.isSelected, 'flex-row':job.isSelected}"
   >
-    <div
+    <!-- <div
       v-if="job.freelance"
       class="corner-ribbon bg-teal text-teal-lightest top-right font-bold"
-    >Freelance</div>
+    >Freelance</div> -->
     <div class="h-full w-full p-4 flex flex-col justify-between rounded-t lg:rounded-t-none lg:rounded-l text-center ">
       <div
         class="company-picture h-full"
@@ -131,7 +131,7 @@ import "../extensions/string.extensions";
   }
 })
 export default class JobCard extends Vue {
-  @Prop() job: Job;
+  @Prop() public job: Job;
 }
 </script>
 

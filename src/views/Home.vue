@@ -13,6 +13,7 @@
         <div>Hi, I'm <span class="text-orange font-semibold">Safiyya Babio</span>.
         </div>
         <div>I'm a full-stack web developer.</div>
+        <div class="mt-3">I'm available.</div>
 
       </div>
 
@@ -20,7 +21,7 @@
       <button
         @click="moveDown()"
         class="group rotate-on-hover flex justify-center items-center my-8 
-        bg-transparent border-2 border-grey hover:border-white py-3 px-4 rounded text-grey hover:text-white font-bold text-xl uppercase"
+        texture-background border-2 border-grey hover:border-white py-3 px-4 rounded text-grey hover:text-white font-bold text-xl uppercase"
       >
         Let's make something together
         <img
@@ -45,18 +46,14 @@ import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
   }
 })
 export default class Home extends Vue {
-  moveDown() {
+  private moveDown() {
     this.$emit("move-down");
   }
 
-  getClass() {
-    let i = Math.floor(Math.random() * 25);
-    let j = Math.floor(Math.random() * 25);
+  private getClass() {
+    const i = Math.floor(Math.random() * 25);
+    const j = Math.floor(Math.random() * 25);
     return `elem${i} anim-delay${j} fill-current`;
-  }
-
-  mounted(){
-     
   }
 }
 </script>

@@ -1,9 +1,11 @@
 {
     "skills": [
+        
         {
             "category": "Front-end",
+            "iconUrl":"heroicons/heroicons-lg/heroicon-browser-lg.svg",
             "tagline": "The user experience is my first priority.",
-            "summary": "",
+            "summary": "Modern web developement fascinates me. I think a lot about the users of my interfaces and how they perceive my interfaces. Pages with fast load times, simple layout with clever use of colors ... this is what I want to do.",
             "technologies": [
                 {
                     "name": "HTML5 / CSS 3",
@@ -33,8 +35,9 @@
         },
         {
             "category": "Back-end",
+            "iconUrl":"heroicons/heroicons-lg/heroicon-database-lg.svg",
             "tagline": "Extendable and robust back-ends",
-            "summary": "From API conception & integration to database optimization, I strive for clean and fast code.",
+            "summary": "From API conception & integration to database optimization, I strive for clean and fast code. I understand that requirements will change, the backend of a software should be flexible and modular enough to accomodate modifications.",
             "technologies": [
                 {
                     "name": "C# .NET WebAPI",
@@ -60,8 +63,9 @@
         },
         {
             "category": "Product",
+            "iconUrl":"heroicons/heroicons-lg/heroicon-chart-lg.svg",
             "tagline" :"Ship early, ship often.",
-            "summary": "I worked in 5 early-stage startups and understand what it takes to take a product to market.",
+            "summary": "I worked in 5 early-stage startups and understand what it takes to take a product to market. \"Build, Measure, Learn\" is my personal mantra.",
             "technologies": [
                 {
                     "name": "UX",
@@ -87,8 +91,9 @@
         },
         {
             "category": "Built with love",
-            "tagline":"I care so I test",
-            "summary": "I deeply care about the end user as well as my fellow developers, I code in order to share.",
+            "iconUrl":"heroicons/heroicons-lg/heroicon-heart-lg.svg",
+            "tagline":"I care so I test.",
+            "summary": "We all have been on the other side of a piece of software that is slow or buggy! The end users shouldn't have to pay for my daydreaming or my inevitable typos ... this is why I make unit testing my priority in each project I take on. As well as making my code more robust, it also makes it easier to passover to the next developers.",
             "technologies": [
                 {
                     "name": "Unit testing",
@@ -108,5 +113,6 @@
                 }
             ]
         }
+       
     ]
 }

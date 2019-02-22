@@ -19,10 +19,9 @@
         <home v-on:move-down="onMoveDown()"></home>
       </div>
       <div class="section">
-        <about ></about>
+        <about></about>
       </div>
       <div class="section">
-
         <experience></experience>
       </div>
       <div class="section">
@@ -47,41 +46,41 @@ import Experience from "@/views/Jobs.vue";
 import About from "@/views/About.vue";
 import Projects from "@/views/Projects.vue";
 import Contact from "@/views/Contact.vue";
-import Who from '@/views/Who.vue';
+import Who from "@/views/Who.vue";
 
 @Component({
   components: {
-    home: Home,
-    experience: Experience,
-    about: About,
-    projects: Projects,
-    contact: Contact,
-    who : Who,
+    "home": Home,
+    "experience": Experience,
+    "about": About,
+    "projects": Projects,
+    "contact": Contact,
+    "who": Who,
     "header-menu": MenuVue
   }
 })
 export default class AppVue extends Vue {
-  options: any = {
+  private options: any = {
     menu: "#header-menu",
 
-    anchors: ["home","about", "experience", "portfolio", "contact"],
+    anchors: ["home", "about", "experience", "portfolio", "contact"],
     onLeave: this.onLeave,
     afterLoad: this.afterLoad
     // fitToSection: false
   };
-  isMenuVisible: boolean = false;
+  private isMenuVisible: boolean = false;
 
-  onMoveDown() {
-    (<any>this.$refs.fullpage).api.moveSectionDown();
+  private onMoveDown() {
+    (this.$refs.fullpage as any).api.moveSectionDown();
   }
 
-  afterLoad(origin: any, destination: any, direction: any) {
-    if (destination.index == 0) {
-      (<HTMLElement>document.querySelector(".header-menu")).classList.add(
+  private afterLoad(origin: any, destination: any, direction: any) {
+    if (destination.index === 0) {
+      (document.querySelector(".header-menu") as HTMLElement).classList.add(
         "hide"
       );
     } else {
-      (<HTMLElement>document.querySelector(".header-menu")).classList.remove(
+      (document.querySelector(".header-menu") as HTMLElement).classList.remove(
         "hide"
       );
     }
@@ -93,21 +92,21 @@ export default class AppVue extends Vue {
     // }
   }
 
-  onLeave(origin: any, destination: any, direction: any) {
-    if (origin.index == 1) {
-      (<HTMLElement>document.querySelector(".header-menu")).classList.add(
+  private onLeave(origin: any, destination: any, direction: any) {
+    if (origin.index === 1) {
+      (document.querySelector(".header-menu") as HTMLElement).classList.add(
         "header-fixed"
       );
     }
 
-    if (destination.index == 1) {
-      (<HTMLElement>document.querySelector(".header-menu")).classList.remove(
+    if (destination.index === 1) {
+      (document.querySelector(".header-menu") as HTMLElement).classList.remove(
         "header-fixed"
       );
     }
 
-    if (destination.index == 0) {
-      (<HTMLElement>document.querySelector(".header-menu")).classList.add(
+    if (destination.index === 0) {
+      (document.querySelector(".header-menu") as HTMLElement).classList.add(
         "hide"
       );
     }

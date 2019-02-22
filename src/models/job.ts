@@ -1,28 +1,28 @@
 export default class Job {
-    company: {
+    public company: {
         name: string,
         url: string,
-        industry:string,
+        industry: string,
         crunchbase: string,
         picture: string
     };
-    freelance:boolean;
-    title: string;
+    public freelance: boolean;
+    public title: string;
 
-    tasks: Array<{
+    public tasks: Array<{
         header: string
     }>;
 
-    technologies: string[];
-    
-    start: string;
-    end: string;
-    location: {
+    public technologies: string[];
+
+    public start: string;
+    public end: string;
+    public location: {
         country: string,
         city: string
     };
 
 
-    isSelected:boolean ;
-    isUnselected:boolean ;
+    public isSelected: boolean;
+    public isUnselected: boolean;
 }
