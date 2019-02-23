@@ -1,3 +1,20 @@
 @tailwind preflight;
 @tailwind components;
 @tailwind utilities;
+
+@responsive {
+/* 
+    .grid-list {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(18, 1fr);
+        grid-auto-flow: dense;
+      }
+
+      .grid-card {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(6, 15%);
+        grid-auto-flow: dense;
+      } */
+  }

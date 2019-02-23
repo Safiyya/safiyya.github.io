@@ -2,24 +2,24 @@
 
   <div
     class="w-full border rounded flex overflow-hidden "
-    v-bind:class="{'flex-col': !job.isSelected, 'flex-row':job.isSelected}"
+    v-bind:class="{'flex-col ': !job.isSelected, 'flex-col md:flex-row':job.isSelected}"
   >
     <!-- <div
       v-if="job.freelance"
       class="corner-ribbon bg-teal text-teal-lightest top-right font-bold"
     >Freelance</div> -->
-    <div class="h-full w-full   p-4 flex flex-col rounded-t lg:rounded-t-none lg:rounded-l text-center "
-    :class="{'bg-grey-lightest':job.isSelected}">
+    <div class="w-full p-2 md:p-4 flex flex-col rounded-t lg:rounded-t-none lg:rounded-l text-center "
+    :class="{'bg-grey-lightest h:auto':job.isSelected, 'h-full':!job.isSelected}">
       <div
         class="company-picture "
-        :class="{'w-32 h-32 lg:w-48 lg:h-48 xl:w-64 xl:h-64 ':job.isSelected, 'h-full':!job.isSelected}"
+        :class="{'w-16 h-16 md:w-24 md:h-24 lg:w-48 lg:h-48 xl:w-64 xl:h-64 ':job.isSelected, 'h-full':!job.isSelected}"
         :style="'background-image: url('+job.company.picture+')'"
         :title="job.company.name"
       >
       </div>
 
       <div
-          class="flex items-left justify-between"
+          class="hidden md:flex items-left justify-between "
           :class="{'mb-6':job.isSelected, 'flex-col': job.isSelected, 'flex-row':job.isUnselected }"
         >
 
@@ -66,11 +66,11 @@
 
     </div>
 
-    <div class="rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-      <div class="flex flex-col flex-grow">
+    <div class="rounded-b lg:rounded-b-none w-full lg:rounded-r p-4 flex flex-col justify-center ">
+      <div class="flex flex-col lg:flex-grow">
 
         <div
-          class="font-bold text-base lg:text-2xl  flex justify-center"
+          class="font-bold text-sm md:text-base lg:text-2xl  flex justify-center"
           :class="{'mb-6':job.isSelected, 
           'text-black':job.isSelected, 
           'text-grey':job.isUnselected }"
@@ -80,7 +80,7 @@
         
         <ul
           v-if="job.isSelected"
-          class="text-grey-darker text-lg list-reset mb-6 flex  flex-col"
+          class="text-grey-darker text-lg list-reset mb-6 md:flex hidden flex-col"
         >
           <li
             v-for="task in job.tasks"
@@ -108,7 +108,7 @@
             v-for="(tech, ix) in job.technologies"
             :key="tech"
             :class="{'ml-0': ix==0}"
-            class="bg-grey-dark uppercase text-xs text-white font-bold py-1 px-3 rounded-full m-1"
+            class="whitespace-no-wrap bg-grey-dark uppercase text-xs text-white font-bold py-1 px-3 rounded-full m-1"
           >
             <span>{{tech}} </span>
 

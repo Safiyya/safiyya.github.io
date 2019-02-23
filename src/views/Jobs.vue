@@ -18,7 +18,7 @@
 
       </div>
     </div>
-    <div class="h-32 flex items-center justify-around w-full px-48">
+    <div class="h-32 flex items-start justify-around w-full px-48">
       <a
         class="button bg-teal "
         target="blank"
@@ -96,43 +96,28 @@ export default class Experience extends Vue {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(6, 15%);
-  grid-gap: 16px;
   grid-auto-flow: dense;
-}
-
-.grid-item {
-  /* transition: transform 1000ms; */
-  /* grid-column: span 1; */
-  grid-row: span 3;
-  transition: margin 250ms;
 }
 
 .grid-item:not(.expanded):hover {
   margin: -0.0175rem;
   transition: margin 250ms;
-  /* padding: 5px; */
-  /* animation: fadeIn 0.4s forwards;
-  animation-delay: 0.3s; */
 }
 
-.grid-item.expanding {
-  /* transition: transform 1000ms; */
-  background: red;
-  grid-column: span 2;
-  grid-row: 1 / span 4;
-}
+    .grid-item {
+        grid-column:span 1;
+        grid-row: span 3;
+    }
 
-.grid-item.expanded {
-  /* transition: transform 1000ms; */
-  grid-column: span 2;
-  grid-row: 1 / span 4;
-}
+    .grid-item.collapsed {
+        grid-column:span 1;
+        grid-row: span 2;
+    }
 
-.grid-item.collapsed {
-  /* transition: transform 1000ms; */
-  /* grid-column: span 1; */
-  grid-row: span 2;
-}
+    .grid-item.expanded {
+        grid-column: span 2;
+        grid-row: 1/ span 4;
+      }
 
 
 </style>
