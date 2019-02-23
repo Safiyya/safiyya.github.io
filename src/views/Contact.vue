@@ -1,32 +1,29 @@
 <template>
-  <div class="texture-background text-white contact py-24 h-full flex">
+  <div class="texture-background text-white contact py-24 h-full flex px-4 md:px-8">
 
-    <div class="flex lg:flex-row flex-col justify-center items-center container mx-auto">
-      <div class="box lg:w-2/5 w-64 mx-8">
-        <img
-          class="content rounded-full"
-          src="@/assets/images/profile_fit.png"
-          alt=""
-        >
+    <div class="flex flex-col sm:flex-row justify-around sm:justify-between items-center container mx-auto">
+      <div class="w-4/5 sm:w-1/3 box md:mx-auto">
+        <picture>
+          <source srcset="@/assets/images/profile_fit.webp">
+          <img
+            src="@/assets/images/profile_fit.jpg"
+            class="content rounded-full"
+          >
+        </picture>
       </div>
-       <div class="lg:w-3/5 flex flex-col justify-center items-center align-start">
+      <div class="w-full sm:w-1/2 flex flex-col justify-center items-center align-start">
+        
+          <span class="text-xl sm:text-2xl md:text-3xl my-4">I want to be involved in projects that make a difference with people who are inhabited with a mission. </span>
 
-      <span class="text-3xl my-4">I want to be involved in projects that make a difference with people who are inhabited with a mission. </span>
+          <a
+            class="button bg-teal text-base my-auto uppercase"
+            href="mailto:hello@safiyya.io"
+          >
+            Let's work together
+          </a>
+      </div>
 
-      <a
-        class="button bg-teal text-xl my-16"
-        href="mailto:hello@safiyya.io"
-      >
-        Let's work together
-      </a>
-       </div>
     </div>
-
-
-    <!-- <a href="mailto:info@example.com?bcc=mail2@example.com
-  &body=these%20mailto%0Alinks%20are%0Acool">
-      mailto links
-    </a> -->
 
   </div>
 </template>
