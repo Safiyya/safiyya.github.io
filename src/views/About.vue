@@ -36,7 +36,7 @@
           :key="technology.name"
           class="mt-2 mx-2 md:mx-0 flex flex-col"
         >
-          <span class="md:mb-1 text-left text-xs font-semibold bg-teal text-white py-1 px-3 rounded-full md:bg-white md:text-black  md:p-0 md:font-normal  md:text-base">{{technology.name}}</span>
+          <span class="md:mb-1 text-left text-xs font-semibold bg-grey-dark text-white py-1 px-3 rounded-full md:bg-white md:text-black  md:p-0 md:font-normal  md:text-base">{{technology.name}}</span>
           <div class="bg-grey-lighter hidden md:block">
             <div
               class="bg-teal text-teal-lightest rounded-sm text-xs leading-none py-1 text-left px-2"
