@@ -4,13 +4,13 @@
     id="app"
     class="h-full"
   >
-<span class="absolute text-red text-3xl" style="top:3rem">
+<!-- <span class="absolute text-red text-3xl" style="top:3rem">
   <span class="block sm:hidden">XS</span>
   <span class="hidden sm:block md:hidden">SM</span>
   <span class="hidden md:block lg:hidden">MD</span>
   <span class="hidden lg:block xl:hidden">LG</span>
   <span class="hidden xl:block">XL</span>
-</span>
+</span> -->
 
     <div class="header-menu hide z-10">
       <header-menu></header-menu>
