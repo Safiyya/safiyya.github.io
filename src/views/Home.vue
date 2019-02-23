@@ -8,12 +8,12 @@
       v-bind:class="getClass()"
     ></div>
 
-    <div class="z-10 flex flex-col items-center justify-center">
-      <div class="text-grey-lighter text-5xl">
+    <div class="z-10 flex flex-col items-center justify-center container mx-auto">
+      <div class="text-grey-lighter text-4xl md:text-5xl">
         <div>Hi, I'm <span class="text-orange font-semibold">Safiyya Babio</span>.
         </div>
         <div>I'm a full-stack web developer.</div>
-        <div class="mt-3">I'm available.</div>
+        <!-- <div class="mt-3">I'm available.</div> -->
 
       </div>
 
@@ -21,7 +21,7 @@
       <button
         @click="moveDown()"
         class="group rotate-on-hover flex justify-center items-center my-8 
-        texture-background border-2 border-grey hover:border-white py-3 px-4 rounded text-grey hover:text-white font-bold text-xl uppercase"
+        texture-background border-2 border-grey hover:border-white py-3 px-4 rounded text-grey hover:text-white font-bold text-xs sm:text-base md:text-xl uppercase"
       >
         Let's make something together
         <img

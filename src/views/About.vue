@@ -1,17 +1,17 @@
 <template>
   <div
-    class="about  py-24 h-full flex flex-col items-center container mx-auto"
+    class="about  py-16 pb-4 md:py-20 lg:py-32 px-8 lg:px-4 h-full flex flex-col items-center container mx-auto"
     v-if="isLoaded"
   >
-    <div class=" flex w-full items-start justify-between">
+    <div class=" flex flex-wrap md:flex-no-wrap md:flex-row w-full items-start justify-between mb-4 lg:mb-16">
 
       <div
         v-for="skill in skills"
         :key="skill.category"
-        class="flex flex-col items-center group"
+        class="flex flex-col items-center group flex-grow "
       >
         <badge
-          class="badge w-1/4 px-3 text-grey-light"
+          class="badge mx-2 text-grey-light"
           :class="{'text-teal':skill.isSelected}"
           :title="skill.category"
           :color="skill.isSelected ? 'teal' : 'grey-light'"
@@ -19,25 +19,25 @@
           v-on:click.native="showSkill(skill)"
         >
         </badge>
-        <div
+        <!-- <div
           class="w-1 py-6 border-transparent  border-2"
           :class="{'border-teal':skill.isSelected, 'group-hover:border-grey-light':!skill.isSelected}"
-        ></div>
+        ></div> -->
 
       </div>
 
     </div>
 
 
-    <div class="w-full border-t-4 border-teal  flex flex-grow ">
-      <div class="w-1/2 px-4 h-auto my-3">
+    <div class="flex w-full bg-grey-lightest md:bg-white p-4 md:p-0 md:border-t-4 border-teal flex-col-reverse md:flex-row ">
+      <div class="w-full md:w-1/2 h-auto mt-3 md:my-3 flex flex-wrap md:block">
         <div
           v-for="technology in selectedSkill.technologies"
           :key="technology.name"
-          class=" w-full  mt-2 flex flex-col"
+          class="mt-2 mx-2 md:mx-0 flex flex-col"
         >
-          <span class="mb-1 text-left">{{technology.name}}</span>
-          <div class="bg-grey-lighter">
+          <span class="md:mb-1 text-left text-xs font-semibold bg-teal text-white py-1 px-3 rounded-full md:bg-white md:text-black  md:p-0 md:font-normal  md:text-base">{{technology.name}}</span>
+          <div class="bg-grey-lighter hidden md:block">
             <div
               class="bg-teal text-teal-lightest rounded-sm text-xs leading-none py-1 text-left px-2"
               :style="{width: technology.level/5 * 100+ '%'}"
@@ -46,11 +46,11 @@
 
         </div>
       </div>
-      <div class="px-4 w-1/2 bg-transparent  flex flex-col items-center justify-start">
-        <div class="text-3xl text-center my-8">
+      <div class="px-4 md:w-1/2 bg-transparent  flex flex-col flex-grow items-center justify-start">
+        <div class="text-2xl md:text-3xl text-center my-4 md:my-8 hidden md:block">
           {{selectedSkill.tagline}}
         </div>
-        <div class="w-2/3 text-left text-lg">
+        <div class="w-full md:w-4/5 text-left text-sm sm:text-base lg:text-xl">
           {{selectedSkill.summary}}
         </div>
       </div>
