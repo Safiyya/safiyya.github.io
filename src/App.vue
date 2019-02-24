@@ -73,8 +73,9 @@ export default class AppVue extends Vue {
 
     anchors: ["home", "about", "experience", "portfolio", "contact"],
     onLeave: this.onLeave,
-    afterLoad: this.afterLoad
-    // fitToSection: false
+    afterLoad: this.afterLoad,
+    fitToSection:false,
+    autoScrolling:false,
   };
   private isMenuVisible: boolean = false;
 
@@ -136,7 +137,7 @@ export default class AppVue extends Vue {
   -moz-transition: all 750ms ease;
   -o-transition: all 750ms ease;
   transition: all 750ms ease;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
