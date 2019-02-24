@@ -1,6 +1,6 @@
 <template>
   <div
-    class="about  py-16 pb-4 md:py-20 lg:py-32 px-8 lg:px-4 h-full flex flex-col items-center container mx-auto"
+    class="about pt-16 h-full flex flex-col items-center container mx-auto"
     v-if="isLoaded"
   >
     <div class=" flex flex-wrap md:flex-no-wrap md:flex-row w-full items-start justify-between mb-4 lg:mb-16">

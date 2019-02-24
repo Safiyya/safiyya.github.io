@@ -4,7 +4,7 @@
     id="app"
     class="h-full"
   >
-<!-- <span class="absolute text-red text-3xl z-50" style="top:3rem">
+    <!-- <span class="absolute text-red text-3xl z-50" style="top:3rem">
   <span class="block sm:hidden">XS</span>
   <span class="hidden sm:block md:hidden">SM</span>
   <span class="hidden md:block lg:hidden">MD</span>
@@ -12,9 +12,7 @@
   <span class="hidden xl:block">XL</span>
 </span> -->
 
-    <div class="header-menu hide z-10">
-      <header-menu></header-menu>
-    </div>
+    <header-menu></header-menu>
 
     <full-page
       @on-leave="onLeave"
@@ -47,7 +45,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop, Provide } from "vue-property-decorator";
+import { Vue, Component, Prop, Provide, Watch } from "vue-property-decorator";
 import Home from "@/views/Home.vue";
 import MenuVue from "@/components/Menu.vue";
 import Experience from "@/views/Jobs.vue";
@@ -55,27 +53,59 @@ import About from "@/views/About.vue";
 import Projects from "@/views/Projects.vue";
 import Contact from "@/views/Contact.vue";
 import Who from "@/views/Who.vue";
+import { Route } from "vue-router";
 
 @Component({
   components: {
-    "home": Home,
-    "experience": Experience,
-    "about": About,
-    "projects": Projects,
-    "contact": Contact,
-    "who": Who,
+    home: Home,
+    experience: Experience,
+    about: About,
+    projects: Projects,
+    contact: Contact,
+    who: Who,
     "header-menu": MenuVue
   }
 })
 export default class AppVue extends Vue {
+  public mounted() {
+    let isMobile = false;
+    let nav = document.querySelector("nav") as HTMLElement;
+
+    var navPos = nav.getBoundingClientRect().top;
+    var lastPos = 0;
+
+    document.onscroll = (e: UIEvent) => {
+      var supportPageOffset = window.pageXOffset !== undefined;
+      var isCSS1Compat = (document.compatMode || "") === "CSS1Compat";
+
+      var scrollTop = supportPageOffset
+        ? window.pageYOffset
+        : isCSS1Compat
+        ? document.documentElement.scrollTop
+        : document.body.scrollTop;
+
+      var pos = scrollTop;
+
+      if (!isMobile) {
+        if (pos >= navPos + nav.offsetHeight && lastPos < pos) {
+          nav.classList.add("fixed");
+        }
+        if (pos < navPos && lastPos > pos) {
+          nav.classList.remove("fixed");
+        }
+        lastPos = pos;
+      }
+    };
+  }
+
   private options: any = {
     menu: "#header-menu",
 
     anchors: ["home", "about", "experience", "portfolio", "contact"],
     onLeave: this.onLeave,
     afterLoad: this.afterLoad,
-    fitToSection:false,
-    autoScrolling:false,
+    fitToSection: false,
+    autoScrolling: false
   };
   private isMenuVisible: boolean = false;
 
@@ -83,43 +113,9 @@ export default class AppVue extends Vue {
     (this.$refs.fullpage as any).api.moveSectionDown();
   }
 
-  private afterLoad(origin: any, destination: any, direction: any) {
-    if (destination.index === 0) {
-      (document.querySelector(".header-menu") as HTMLElement).classList.add(
-        "hide"
-      );
-    } else {
-      (document.querySelector(".header-menu") as HTMLElement).classList.remove(
-        "hide"
-      );
-    }
+  private afterLoad(origin: any, destination: any, direction: any) {}
 
-    // if (destination.index == 1) {
-    //   document.querySelectorAll(".badge").forEach((el: Element) => {
-    //     el.classList.add("flip-in-hor-bottom");
-    //   });
-    // }
-  }
-
-  private onLeave(origin: any, destination: any, direction: any) {
-    if (origin.index === 1) {
-      (document.querySelector(".header-menu") as HTMLElement).classList.add(
-        "header-fixed"
-      );
-    }
-
-    if (destination.index === 1) {
-      (document.querySelector(".header-menu") as HTMLElement).classList.remove(
-        "header-fixed"
-      );
-    }
-
-    if (destination.index === 0) {
-      (document.querySelector(".header-menu") as HTMLElement).classList.add(
-        "hide"
-      );
-    }
-  }
+  private onLeave(origin: any, destination: any, direction: any) {}
 }
 </script>
 
@@ -132,34 +128,8 @@ export default class AppVue extends Vue {
   color: #2c3e50;
 }
 
-.header-menu {
-  -webkit-transition: all 750ms ease;
-  -moz-transition: all 750ms ease;
-  -o-transition: all 750ms ease;
-  transition: all 750ms ease;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3rem;
-  overflow: auto;
-}
-.header-menu.header-fixed {
-  bottom: auto;
-  margin-top: 0;
-  height: 3rem;
-  overflow: auto;
-  -webkit-transition: all 750ms ease;
-  -moz-transition: all 750ms ease;
-  -o-transition: all 750ms ease;
-  transition: all 750ms ease;
-}
-.header-menu.hide {
-  overflow: hidden;
-  height: 0;
-  -webkit-transition: all 750ms ease;
-  -moz-transition: all 750ms ease;
-  -o-transition: all 750ms ease;
-  transition: all 750ms ease;
+.section:not:first-child {
+  height: calc(100% - 3rem);
+  padding-top: 3rem;
 }
 </style>

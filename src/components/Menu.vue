@@ -1,5 +1,5 @@
 <template>
-  <nav class="h-12 texture-background flex w-full border-b-4 border-teal">
+  <nav class="z-10 h-12 texture-background flex w-full border-b-4 border-teal">
 
     <div class="w-full block flex-grow flex items-center justify-start">
       <div
@@ -43,4 +43,21 @@ export default class extends Vue {}
 </script>
 
 <style>
+nav {
+  top: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+nav.fixed {
+  top: 0;
+  position: fixed;
+  animation: pop 1s;
+}
+
+@keyframes pop {
+  0% {
+    transform: translateY(-3rem);
+  }
+}
 </style>
