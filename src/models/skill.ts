@@ -9,5 +9,6 @@ export default class Skill {
     }>;
 
     public isSelected: boolean;
+    public resolvedIconUrl: string;
 }
 

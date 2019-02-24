@@ -15,8 +15,6 @@
     <header-menu></header-menu>
 
     <full-page
-      @on-leave="onLeave"
-      @after-load="onLeave"
       ref="fullpage"
       :options="options"
       id="fullpage"
@@ -24,11 +22,11 @@
       <div class="section">
         <home v-on:move-down="onMoveDown()"></home>
       </div>
-      <div class="section">
-        <about></about>
+      <div class="section fp-auto-height-responsive">
+          <about class="h-auto pt-16"></about>          
       </div>
-      <div class="section">
-        <experience></experience>
+      <div class="section fp-auto-height-responsive">
+        <experience class="h-auto"></experience>
       </div>
       <div class="section">
         <projects></projects>
@@ -37,7 +35,7 @@
         <contact></contact>
       </div>
     </full-page>
-    <router-view />
+    <!-- <router-view /> -->
   </div>
 
   <!-- -->
@@ -67,24 +65,33 @@ import { Route } from "vue-router";
   }
 })
 export default class AppVue extends Vue {
-  public mounted() {
-    let isMobile = false;
-    let nav = document.querySelector("nav") as HTMLElement;
+  private options: any = {
+    menu: "#header-menu",
 
-    var navPos = nav.getBoundingClientRect().top;
-    var lastPos = 0;
+    anchors: ["home", "about", "experience", "portfolio", "contact"],
+    fitToSection: false,
+    autoScrolling: false,
+    bigSectionsDestination: 'top'
+  };
+
+  public mounted() {
+    const isMobile = false;
+    const nav = document.querySelector("nav") as HTMLElement;
+
+    const navPos = nav.getBoundingClientRect().top;
+    let lastPos = 0;
 
     document.onscroll = (e: UIEvent) => {
-      var supportPageOffset = window.pageXOffset !== undefined;
-      var isCSS1Compat = (document.compatMode || "") === "CSS1Compat";
+      const supportPageOffset = window.pageXOffset !== undefined;
+      const isCSS1Compat = (document.compatMode || "") === "CSS1Compat";
 
-      var scrollTop = supportPageOffset
+      const scrollTop = supportPageOffset
         ? window.pageYOffset
         : isCSS1Compat
         ? document.documentElement.scrollTop
         : document.body.scrollTop;
 
-      var pos = scrollTop;
+      const pos = scrollTop;
 
       if (!isMobile) {
         if (pos >= navPos + nav.offsetHeight && lastPos < pos) {
@@ -98,24 +105,9 @@ export default class AppVue extends Vue {
     };
   }
 
-  private options: any = {
-    menu: "#header-menu",
-
-    anchors: ["home", "about", "experience", "portfolio", "contact"],
-    onLeave: this.onLeave,
-    afterLoad: this.afterLoad,
-    fitToSection: false,
-    autoScrolling: false
-  };
-  private isMenuVisible: boolean = false;
-
   private onMoveDown() {
     (this.$refs.fullpage as any).api.moveSectionDown();
   }
-
-  private afterLoad(origin: any, destination: any, direction: any) {}
-
-  private onLeave(origin: any, destination: any, direction: any) {}
 }
 </script>
 

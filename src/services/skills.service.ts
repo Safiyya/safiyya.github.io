@@ -6,7 +6,7 @@ class SkillsService {
 
     public get(): Promise<Skill[]> {
         (data.skills as Skill[]).forEach((s: Skill) => {
-            s.iconUrl = require(`@/assets/${s.iconUrl}`);
+            s.resolvedIconUrl = require(`@/assets/${s.iconUrl}`);
             s.isSelected = false;
         });
 

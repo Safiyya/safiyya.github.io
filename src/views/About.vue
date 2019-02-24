@@ -1,6 +1,6 @@
 <template>
   <div
-    class="about pt-16 h-full flex flex-col items-center container mx-auto"
+    class="about flex flex-col justify-center items-center container mx-auto"
     v-if="isLoaded"
   >
     <div class=" flex flex-wrap md:flex-no-wrap md:flex-row w-full items-start justify-between mb-4 lg:mb-16">
@@ -15,7 +15,7 @@
           :class="{'text-teal':skill.isSelected}"
           :title="skill.category"
           :color="skill.isSelected ? 'teal' : 'grey-light'"
-          :icon-url="skill.iconUrl"
+          :icon-url="skill.resolvedIconUrl"
           v-on:click.native="showSkill(skill)"
         >
         </badge>
@@ -29,15 +29,15 @@
     </div>
 
 
-    <div class="flex w-full bg-grey-lightest md:bg-white p-4 md:p-0 md:border-t-4 border-teal flex-col-reverse md:flex-row ">
+    <div class="flex w-full p-4 md:p-0 md:border-t-4 border-teal flex-col-reverse md:flex-row ">
       <div class="w-full md:w-1/2 h-auto mt-3 md:my-3 flex flex-wrap md:block">
         <div
           v-for="technology in selectedSkill.technologies"
           :key="technology.name"
           class="mt-2 mx-2 md:mx-0 flex flex-col"
         >
-          <span class="md:mb-1 text-left text-xs font-semibold bg-grey-dark text-white py-1 px-3 rounded-full md:bg-white md:text-black  md:p-0 md:font-normal  md:text-base">{{technology.name}}</span>
-          <div class="bg-grey-lighter hidden md:block">
+          <span class="mb-1 text-left text-xs bg-grey-dark py-1 px-3 rounded-full bg-white text-black  p-0 font-normal  text-base">{{technology.name}}</span>
+          <div class="bg-grey-lighter">
             <div
               class="bg-teal text-teal-lightest rounded-sm text-xs leading-none py-1 text-left px-2"
               :style="{width: technology.level/5 * 100+ '%'}"
@@ -47,12 +47,12 @@
         </div>
       </div>
       <div class="px-4 md:w-1/2 bg-transparent  flex flex-col flex-grow items-center justify-start">
-        <div class="text-2xl md:text-3xl text-center my-4 md:my-8 hidden md:block">
-          {{selectedSkill.tagline}}
-        </div>
-        <div class="w-full md:w-4/5 text-left text-sm sm:text-base lg:text-xl">
+        <div class="text-lg md:text-3xl text-center my-4 md:my-8">
           {{selectedSkill.summary}}
         </div>
+        <!-- <div class="w-full md:w-4/5 text-left text-sm sm:text-base lg:text-xl">
+          {{selectedSkill.summary}}
+        </div> -->
       </div>
 
     </div>

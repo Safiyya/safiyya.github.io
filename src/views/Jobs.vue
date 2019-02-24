@@ -1,13 +1,13 @@
 <template>
   <div
-    class="experience px-8 pt-24 h-full flex flex-col justify-start items-center container mx-auto"
+    class="experience  flex flex-col justify-start items-center container mx-auto"
     v-if="isLoaded"
   >
     <div class="grid item-center justify-start w-full relative flex-grow">
       <div
         v-for="job in jobs"
         @click.stop="toggleJobDetails(job)"
-        class="grid-item m-2 relative cursor-pointer bg-white "
+        class="grid-item m-2 relative cursor-pointer bg-white box "
         v-bind:class="{'expanded': job.isSelected, 'collapsed':job.isUnselected}"
         :key="job.start"
       >
@@ -38,8 +38,8 @@
 
 <script lang="ts">
 import { Vue, Component, Prop, Provide } from "vue-property-decorator";
-import { jobsService } from "../services/jobs.service";
-import Job from "../models/job";
+import { jobsService } from "@/services/jobs.service";
+import Job from "@/models/job";
 import JobCard from "@/components/JobCard.vue";
 import { wrapGrid } from "animate-css-grid";
 

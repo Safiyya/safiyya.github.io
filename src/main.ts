@@ -8,6 +8,7 @@ import "@/assets/css/tailwind.css";
 import "@/assets/css/styles.css";
 import "@/assets/css/background-animations.scss";
 import "@/assets/css/ribbon.css";
+import "fullpage.js/dist/fullpage.min.css";
 
 import "fullpage.js/vendors/scrolloverflow";
 import VueFullPage from "vue-fullpage.js";
