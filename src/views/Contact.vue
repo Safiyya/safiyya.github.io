@@ -37,27 +37,7 @@ import Badge from "@/components/Badge.vue";
     badge: Badge
   }
 })
-export default class Contact extends Vue {
-  faq: Array<{ question: string; answer: string }> = [
-    {
-      question: "Where can I see your work?",
-      answer: "This "
-    },
-    {
-      question: "Are you currently available?",
-      answer: "Yes! Email me about your project and we can take it from there."
-    },
-    {
-      question: "How much do you charge?",
-      answer:
-        "It really depends on the scope of your project. I have a discount price for charities and non-profit "
-    },
-    {
-      question: "What kind of work are you looking for?",
-      answer: ""
-    }
-  ];
-}
+export default class Contact extends Vue {}
 </script>
 
 <style scoped>
