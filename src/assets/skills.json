@@ -5,7 +5,7 @@
             "category": "Front-end",
             "iconUrl":"heroicons/heroicons-lg/heroicon-browser-lg.svg",
             "tagline": "Banish bad user experience",
-            "summary": "Fast load times, simple layouts and clever use of colors ... this is what I want to do.",
+            "summary": "Fast load times, simple layouts and clever use of color.",
             "technologies": [
                 {
                     "name": "HTML5 / CSS 3",
@@ -33,7 +33,7 @@
             "category": "Back-end",
             "iconUrl":"heroicons/heroicons-lg/heroicon-database-lg.svg",
             "tagline": "Flexible but robust",
-            "summary": "I strive for clean and fast code. I understand that requirements will change, the backend of a software should be flexible and modular enough to accomodate modifications.",
+            "summary": "My code is modular so that change of requirements is not an issue.",
             "technologies": [
                 {
                     "name": "C# .NET WebAPI",
@@ -61,7 +61,7 @@
             "category": "Product",
             "iconUrl":"heroicons/heroicons-lg/heroicon-chart-lg.svg",
             "tagline" :"Ship early, ship often.",
-            "summary": "\"Build, Measure, Learn\" is my personal mantra. I worked in 5 early-stage startups and understand what it takes to take a product to market.",
+            "summary": "\"Build, Measure, Learn\" is my personal mantra.",
             "technologies": [
                 {
                     "name": "UX",
@@ -89,7 +89,7 @@
             "category": "Built with love",
             "iconUrl":"heroicons/heroicons-lg/heroicon-heart-lg.svg",
             "tagline":"I care so I test.",
-            "summary": "The end users shouldn't have to pay for my daydreaming or my inevitable typos ... I make automated unit testing my crusade in each project.",
+            "summary": "I make automated unit testing my crusade in each project.",
             "technologies": [
                 {
                     "name": "Unit testing",
