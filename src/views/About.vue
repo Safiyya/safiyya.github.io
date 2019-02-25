@@ -9,7 +9,7 @@
       <div
         v-for="skill in skills"
         :key="skill.category"
-        class="flex flex-col items-center group w-full md:w-2/5  md:p-4 my-4 "
+        class="flex flex-col items-center group w-full md:flex-row  md:p-4 my-4 "
       >
         <badge
           class="badge mx-2 text-grey-dark "
@@ -25,50 +25,8 @@
             {{skill.tagline}}
           </span>
 
-          <div class="flex w-full">
-            <transition name="slide">
-              <div
-                v-show="expandedSkill.category !== skill.category"
-                class="slide w-full my-2 flex-1"
-              >
-                <div class="w-full">
-                  <div
-                    v-for="technology in skill.technologies"
-                    :key="technology.name"
-                    class="mt-2 mx-2 md:mx-0 flex flex-col"
-                  >
-                    <div class="bg-grey-lighter">
-                      <div
-                        class="bg-teal text-teal-lightest font-semibold rounded-sm text-xs leading-none py-1 text-left px-2"
-                        :style="{width: technology.level/5 * 100+ '%'}"
-                      >{{technology.name}}</div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </transition>
-            <transition name="slide">
-              <div
-                class="slide flex-1 flex flex-col w-full"
-                v-show="expandedSkill.category === skill.category"
-              >
-
-                <job-card
-                  class="my-2"
-                  v-for="job in jobs"
-                  :key="job.start"
-                  :job="job"
-                ></job-card>
-
-              </div>
-            </transition>
-          </div>
-
-        </div>
-
-        <button
-          class="bg-pink rounded-full w-8 h-8"
+          <button
+          class="bg-pink rounded-full w-8 h-8 my-2"
           @click="toggleJobs(skill)"
         >
           <template v-if="!expandedSkill.category">
@@ -96,6 +54,50 @@
             />
           </template>
         </button>
+
+          <div class="flex w-full">
+            <transition name="slide">
+              <div
+                v-show="expandedSkill.category !== skill.category"
+                class="w-full my-2"
+              >
+                <div class="w-full">
+                  <div
+                    v-for="technology in skill.technologies"
+                    :key="technology.name"
+                    class="mt-2 mx-2 md:mx-0 flex flex-col"
+                  >
+                    <div class="bg-grey-lighter">
+                      <div
+                        class="bg-teal text-teal-lightest font-semibold rounded-sm text-xs leading-none py-1 text-left px-2"
+                        :style="{width: technology.level/5 * 100+ '%'}"
+                      >{{technology.name}}</div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </transition>
+            <transition name="slide">
+              <div
+                class="flex flex-col sm:flex-row sm:flex-wrap sm:justify-between w-full"
+                v-show="expandedSkill.category === skill.category"
+              >
+<!-- <span>{{skill.summary}}</span> -->
+                <job-card
+                  class="sm:w-1/2 px-1 -mx-1 my-1"
+                  v-for="job in jobs"
+                  :key="job.start"
+                  :job="job"
+                ></job-card>
+
+              </div>
+            </transition>
+          </div>
+
+        </div>
+
+        
 
       </div>
 
@@ -169,16 +171,18 @@ export default class About extends Vue {
 .slide-enter-active {
   transition: all 1s ease;
   position:relative;
+  /* max-height: 100%; */
 }
 .slide-leave-active {
   transition: all 1s;
-  position:absolute;
+  position:fixed;
+  /* max-height: 0; */
 }
-.slide-enter,
-.slide-leave-to {
-  height: 100%;
+.slide-enter, .slide-leave-to {
+  /* height: 100%; */
   transform: translateX(100%);
-  width: 100%;
+  /* transform: translateY(-100%); */
+  /* width: 100%; */
   opacity: 0;
 }
 </style>

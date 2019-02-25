@@ -1,7 +1,7 @@
 <template>
 
   <div
-    class="w-full border rounded flex overflow-hidden "
+    class="border rounded flex overflow-hidden "
     v-bind:class="{'flex-col ': !job.isSelected, 'flex-col md:flex-row':job.isSelected}"
   >
     <div class="h-full w-full p-2 md:p-4 flex flex-row justify-between rounded-t lg:rounded-t-none lg:rounded-l text-center "
@@ -27,7 +27,7 @@
               alt="Location"
             />
           </icon-with-text>
-          <icon-with-text :text="job.start.formatDate() + ' - ' +job.end.formatDate()">
+          <icon-with-text class="invisible" :text="job.start.formatDate() + ' - ' +job.end.formatDate()">
             <img
               svg-inline
               src="../assets/icons/calendar.svg"

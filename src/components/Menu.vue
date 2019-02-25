@@ -1,5 +1,5 @@
 <template>
-  <nav class="z-10 h-12 texture-background flex w-full border-b-4 border-teal">
+  <nav class="z-10 h-12 texture-background flex w-screen border-b-4 border-teal">
 
     <div class="w-full block flex-grow flex items-center justify-start">
       <div v-scroll-spy-active="{selector: 'a.menu-link', class: 'active'}" v-scroll-spy-link

@@ -1,4 +1,5 @@
 const format = require("date-fns/format");
+const isValid = require("date-fns/is_valid")
 
 interface String {
     formatDate(date: string): string;
@@ -6,5 +7,5 @@ interface String {
 
 String.prototype.formatDate = function(date: string) {
     const s: string = String(this);
-    return format(new Date(s), "MMM YYYY");
+    return isValid(new Date(s)) ? format(new Date(s), "MMM YYYY") : s;
 };

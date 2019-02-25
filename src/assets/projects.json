@@ -2,6 +2,40 @@
     "projects": [
 
         {
+            "company": {
+                "name": "Maptio",
+                "url": "https://www.maptio.com",
+                "crunchbase": "",
+                "industry": "Self-management",
+                "picture": "https://app.maptio.com/assets/images/logo-full.png"
+            },
+            "title": "Technical cofounder",
+            "freelance":true,
+            "tasks": [
+            
+            ],
+            "technologies": [
+                "Angular",
+                "Bootstrap",
+                "Jest",
+                "D3.js",
+                "Lean Startup",
+                "UX",
+                "HTML",
+                "CSS",
+                "UX",
+                "Continuous integration/delivery",
+                "Unit Testing"
+            ],
+            "start": "2017-06-01",
+            "end": "present",
+            "location": {
+                "country": "Remote",
+                "city": ""
+            }
+        },
+
+        {
             "category": "This is me",
             "iconUrl":"heroicons/heroicons-lg/heroicon-browser-lg.svg",
             "tagline":"I just like what I do 🤓, do you? ",

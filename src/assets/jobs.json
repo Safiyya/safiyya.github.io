@@ -73,6 +73,8 @@
                 "SonarQube",
                 "Lean Startup",
                 "Unit Testing",
+                "HTML",
+                "CSS",
                 "Continuous integration/delivery"
             ],
             "start": "2017-04-01",
@@ -105,8 +107,6 @@
                 "ASP.NET MVC",
                 "Linq",
                 "jQuery",
-                "HTML",
-                "CSS",
                 "Agile"
             ],
             "start": "2008-05-01",
@@ -170,8 +170,6 @@
                 }
             ],
             "technologies": [
-                "C#",
-                ".NET",
                 "ASP.NET",
                 "jQuery",
                 "HTML",
