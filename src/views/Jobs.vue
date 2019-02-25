@@ -1,6 +1,6 @@
 <template>
   <div
-    class="experience  flex flex-col justify-start items-center container mx-auto"
+    class="experience flex flex-col justify-start items-center container mx-auto"
     v-if="isLoaded"
   >
     <div class="grid item-center justify-start w-full relative flex-grow">

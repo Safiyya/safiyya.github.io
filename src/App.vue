@@ -42,7 +42,7 @@
       class="section"
       id="contact-section"
     >
-      <contact></contact>
+      <contact class="pt-16 p-4 h-screen"></contact>
     </div>
 
   </div>
@@ -72,7 +72,6 @@ import { Route } from "vue-router";
   }
 })
 export default class AppVue extends Vue {
-
   public mounted() {
     const isMobile = false;
     const nav = document.querySelector("nav") as HTMLElement;

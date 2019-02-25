@@ -1,5 +1,5 @@
 <template>
-  <div class="texture-background text-white contact py-24 h-full flex px-4 md:px-8">
+  <div class="texture-background text-white contact flex px-4 md:px-8">
 
     <div class="flex flex-col sm:flex-row justify-around sm:justify-between items-center container mx-auto">
       <div class="w-4/5 sm:w-1/3 box md:mx-auto">
