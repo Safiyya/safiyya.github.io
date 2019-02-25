@@ -8,10 +8,20 @@ class SkillsService {
         (data.skills as Skill[]).forEach((s: Skill) => {
             s.resolvedIconUrl = require(`@/assets/${s.iconUrl}`);
             s.isSelected = false;
+            s.technologies.sort(this.sortBy('level', 'desc'));
         });
 
         return Promise.resolve(data.skills as Skill[]);
     }
+
+    private sortBy(key: string, order: 'asc' | 'desc') {
+        return (a: any, b: any) => (
+            a[key] > b[key])
+            ? (order === 'asc' ? 1 : -1)
+            : ((b[key] > a[key])
+                ? (order === 'asc' ? -1 : 1)
+                : 0);
+    };
 }
 
 export const skillsService = new SkillsService();

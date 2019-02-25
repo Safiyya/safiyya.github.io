@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper home h-full w-full texture-background flex flex-col items-center justify-center">
+  <div class="wrapper home texture-background flex flex-col items-center justify-center">
 
     <div
       v-for="i in 250"

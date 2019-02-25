@@ -3,15 +3,16 @@
     class="about flex flex-col justify-center items-center container mx-auto"
     v-if="isLoaded"
   >
-    <div class=" flex flex-wrap md:flex-no-wrap md:flex-row w-full items-start justify-between mb-4 lg:mb-16">
+
+    <div class=" flex flex-wrap w-full items-start justify-between mb-4 ">
 
       <div
         v-for="skill in skills"
         :key="skill.category"
-        class="flex flex-col items-center group flex-grow "
+        class="flex flex-col items-center group w-full md:w-1/2  md:p-4 my-4 "
       >
         <badge
-          class="badge mx-2 text-grey-light"
+          class="badge mx-2 text-grey-dark "
           :class="{'text-teal':skill.isSelected}"
           :title="skill.category"
           :color="skill.isSelected ? 'teal' : 'grey-light'"
@@ -19,17 +20,38 @@
           v-on:click.native="showSkill(skill)"
         >
         </badge>
-        <!-- <div
-          class="w-1 py-6 border-transparent  border-2"
-          :class="{'border-teal':skill.isSelected, 'group-hover:border-grey-light':!skill.isSelected}"
-        ></div> -->
+
+        <div class="w-full">
+          <span class="w-full text-lg md:text-lg ">
+            {{skill.tagline}}
+          </span>
+          <div class="w-full my-2">
+            <div class="">
+              <div
+                v-for="technology in skill.technologies"
+                :key="technology.name"
+                class="mt-2 mx-2 md:mx-0 flex flex-col"
+              >
+                <div class="bg-grey-lighter">
+                  <div
+                    class="bg-teal text-teal-lightest font-semibold rounded-sm text-xs leading-none py-1 text-left px-2"
+                    :style="{width: technology.level/5 * 100+ '%'}"
+                  >{{technology.name}}</div>
+                </div>
+
+              </div>
+            </div>
+            <div class="hidden text-base text-left mt-2">
+              {{skill.summary}}
+            </div>
+          </div>
+        </div>
 
       </div>
 
     </div>
 
-
-    <div class="flex w-full p-4 md:p-0 md:border-t-4 border-teal flex-col-reverse md:flex-row ">
+    <!-- <div class="hidden w-full p-4 md:p-0 md:border-t-4 border-teal flex-col-reverse md:flex-row ">
       <div class="w-full md:w-1/2 h-auto mt-3 md:my-3 flex flex-wrap md:block">
         <div
           v-for="technology in selectedSkill.technologies"
@@ -50,12 +72,9 @@
         <div class="text-lg md:text-3xl text-center my-4 md:my-8">
           {{selectedSkill.summary}}
         </div>
-        <!-- <div class="w-full md:w-4/5 text-left text-sm sm:text-base lg:text-xl">
-          {{selectedSkill.summary}}
-        </div> -->
       </div>
 
-    </div>
+    </div> -->
 
   </div>
 </template>
@@ -81,7 +100,7 @@ export default class About extends Vue {
       .get()
       .then((skills: Skill[]) => {
         this.skills = skills;
-        this.skills[0].isSelected = true;
+        // this.skills[0].isSelected = true;
         this.isLoaded = true;
       })
       .catch(() => {
@@ -89,9 +108,9 @@ export default class About extends Vue {
       });
   }
 
-  private get selectedSkill(): Skill {
-    return this.skills.filter((s: Skill) => s.isSelected)[0];
-  }
+  // private get selectedSkill(): Skill {
+  //   return this.skills.filter((s: Skill) => s.isSelected)[0];
+  // }
 
   private showSkill(skill: Skill) {
     this.skills.forEach((s: Skill) => {

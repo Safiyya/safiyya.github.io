@@ -4,8 +4,8 @@
         {
             "category": "Front-end",
             "iconUrl":"heroicons/heroicons-lg/heroicon-browser-lg.svg",
-            "tagline": "Banish bad user experience",
-            "summary": "Fast load times, simple layouts and clever use of color.",
+            "tagline": "Fast load times & simple layouts",
+            "summary": "The user experience is my first priority. I want to build products that people love to use.",
             "technologies": [
                 {
                     "name": "HTML5 / CSS 3",
@@ -32,8 +32,8 @@
         {
             "category": "Back-end",
             "iconUrl":"heroicons/heroicons-lg/heroicon-database-lg.svg",
-            "tagline": "Flexible but robust",
-            "summary": "My code is modular so that change of requirements is not an issue.",
+            "tagline": "My code is modular and robust",
+            "summary": "My code is modular and robust. Iterating fast is not an issue.",
             "technologies": [
                 {
                     "name": "C# .NET WebAPI",
@@ -69,7 +69,7 @@
                 },
                 {
                     "name": "Lean startup",
-                    "level": 4
+                    "level": 5
                 },
                 {
                     "name": "Kanban",
@@ -77,7 +77,7 @@
                 },
                 {
                     "name": "Agile",
-                    "level": 5
+                    "level": 4
                 },
                 {
                     "name": "Analytics",
