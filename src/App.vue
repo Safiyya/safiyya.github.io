@@ -108,7 +108,8 @@ export default class AppVue extends Vue {
   }
 
   private onMoveDown() {
-    (this.$refs.fullpage as any).api.moveSectionDown();
+    this.$scrollTo(1);
+    // (this.$refs.fullpage as any).api.moveSectionDown();
   }
 }
 </script>

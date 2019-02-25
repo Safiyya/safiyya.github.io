@@ -14,7 +14,8 @@ import Scrollspy from 'vue2-scrollspy';
 
 Vue.use(Scrollspy, {
   data: "section",
-  allowNoActive: true
+  allowNoActive: true,
+  time:500
 });
 Vue.use(VueSimpleSVG);
 Vue.config.productionTip = false;
