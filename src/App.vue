@@ -14,37 +14,39 @@
 
     <header-menu></header-menu>
 
-    <div
-      class="section"
-      id="home-section"
-    >
-      <home v-on:move-down="onMoveDown()"></home>
-    </div>
-    <div
-      class="section"
-      id="about-section"
-    >
-      <about class="pt-16 p-4"></about>
-    </div>
-    <div
-      class="section"
-      id="experience-section"
-    >
-      <experience class="pt-16 p-4"></experience>
-    </div>
-    <div
-      class="section"
-      id="projects-section"
-    >
-      <projects></projects>
-    </div>
-    <div
-      class="section"
-      id="contact-section"
-    >
-      <contact class="pt-16 p-4 h-screen"></contact>
-    </div>
+    <div v-scroll-spy>
 
+      <div
+        class="section"
+        id="home-section"
+      >
+        <home v-on:move-down="onMoveDown()"></home>
+      </div>
+      <div
+        class="section"
+        id="about-section"
+      >
+        <about class="pt-16 p-4"></about>
+      </div>
+      <div
+        class="section"
+        id="experience-section"
+      >
+        <experience class="pt-16 p-4"></experience>
+      </div>
+      <div
+        class="section"
+        id="projects-section"
+      >
+        <projects></projects>
+      </div>
+      <div
+        class="section"
+        id="contact-section"
+      >
+        <contact class="pt-16 p-4 h-screen"></contact>
+      </div>
+    </div>
   </div>
 
 </template>
@@ -72,6 +74,8 @@ import { Route } from "vue-router";
   }
 })
 export default class AppVue extends Vue {
+  private section: number = 1;
+
   public mounted() {
     const isMobile = false;
     const nav = document.querySelector("nav") as HTMLElement;

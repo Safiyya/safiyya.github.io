@@ -10,13 +10,13 @@ import "@/assets/css/background-animations.scss";
 import "@/assets/css/ribbon.css";
 
 import VueSimpleSVG from "vue-simple-svg";
-import VueScrollto from "vue-scrollto";
+import Scrollspy from 'vue2-scrollspy';
 
-
+Vue.use(Scrollspy, {
+  data: "section",
+  allowNoActive: true
+});
 Vue.use(VueSimpleSVG);
-Vue.use(VueScrollto)
-
-// Vue.use(VueFullPage);
 Vue.config.productionTip = false;
 
 new Vue({

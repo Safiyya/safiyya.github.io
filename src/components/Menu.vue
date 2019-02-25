@@ -2,27 +2,32 @@
   <nav class="z-10 h-12 texture-background flex w-full border-b-4 border-teal">
 
     <div class="w-full block flex-grow flex items-center justify-start">
-      <div
+      <div v-scroll-spy-active="{selector: 'a.menu-link', class: 'active'}" v-scroll-spy-link
         class="md:mx-32 flex justify-around md:w-1/2 w-full text-xs md:text-base"
         id="header-menu"
       >
+           <a
+        v-scroll-spy-link id="home"
+          href="#home"
+          class="hidden menu-link uppercase text-grey-lighter"
+        >Home</a>
         <a
-        v-scroll-to="'#about-section'" id="about"
+        v-scroll-spy-link id="about"
           href="#about"
           class="menu-link uppercase text-grey-lighter"
         >About</a>
         <a
-        v-scroll-to="'#experience-section'" id="experience"
+        v-scroll-spy-link id="experience"
           href="/#experience"
           class="menu-link uppercase text-grey-lighter"
         >Experience</a>
         <a
-        v-scroll-to="'#projects-section'" id="projects"
+        v-scroll-spy-link id="projects"
           href="/#portfolio"
           class="menu-link uppercase text-grey-lighter"
         >Currently</a>
         <a
-        v-scroll-to="'#contact-section'" id="contact"
+        v-scroll-spy-link id="contact"
           href="/#contact"
           class="menu-link uppercase text-grey-lighter"
         >Contact</a>
