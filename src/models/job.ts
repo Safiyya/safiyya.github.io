@@ -23,6 +23,6 @@ export default class Job {
     };
 
 
-    public isSelected: boolean;
-    public isUnselected: boolean;
+    public isSelected: boolean =false;
+    public isUnselected: boolean = false;
 }

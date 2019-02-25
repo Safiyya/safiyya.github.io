@@ -19,6 +19,11 @@
                    
                 },
                 {
+                    "header": "Taught best practices in Agile, unit testing and continuous integration "
+               
+                   
+                },
+                {
                     "header": "Increased test coverage from 0% to 75%"
                   
                 }
@@ -27,8 +32,13 @@
                 "Vue.js",
                 "Bootstrap",
                 "Jest",
-                "HTML5",
-                "CSS3"
+                "HTML",
+                "Agile",
+                "Kanban",
+                "CSS",
+                "UX",
+                "Continuous integration/delivery",
+                "Unit Testing"
             ],
             "start": "2018-04-01",
             "end": "2018-12-01",
@@ -60,7 +70,10 @@
             "technologies": [
                 "Polymer",
                 "Web Component Tester",
-                "SonarQube"
+                "SonarQube",
+                "Lean Startup",
+                "Unit Testing",
+                "Continuous integration/delivery"
             ],
             "start": "2017-04-01",
             "end": "2017-07-01",
@@ -71,7 +84,7 @@
         },
         {
             "company": {
-                "name": "Eurofins UK & UK",
+                "name": "Eurofins",
                 "url": "https://www.eurofins.com/",
                 "industry": "Food testing",
                 "crunchbase": "",
@@ -93,7 +106,8 @@
                 "Linq",
                 "jQuery",
                 "HTML",
-                "CSS"
+                "CSS",
+                "Agile"
             ],
             "start": "2008-05-01",
             "end": "2014-04-01",
@@ -127,7 +141,12 @@
                 "C#",
                 ".NET",
                 "WebAPI",
-                "T-SQL"
+                "T-SQL",
+                "REST API",
+                "Agile",
+                "Kanban",
+                "Unit Testing",
+                "Continuous integration/delivery"
             ],
             "start": "2014-04-01",
             "end": "2016-10-01",

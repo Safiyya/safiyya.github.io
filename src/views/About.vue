@@ -9,7 +9,7 @@
       <div
         v-for="skill in skills"
         :key="skill.category"
-        class="flex flex-col items-center group w-full md:w-1/2  md:p-4 my-4 "
+        class="flex flex-col items-center group w-full md:w-2/5  md:p-4 my-4 "
       >
         <badge
           class="badge mx-2 text-grey-dark "
@@ -17,64 +17,89 @@
           :title="skill.category"
           :color="skill.isSelected ? 'teal' : 'grey-light'"
           :icon-url="skill.resolvedIconUrl"
-          v-on:click.native="showSkill(skill)"
         >
         </badge>
 
-        <div class="w-full">
+        <div class="w-full relative">
           <span class="w-full text-lg md:text-lg ">
             {{skill.tagline}}
           </span>
-          <div class="w-full my-2">
-            <div class="">
+
+          <div class="flex w-full">
+            <transition name="slide">
               <div
-                v-for="technology in skill.technologies"
-                :key="technology.name"
-                class="mt-2 mx-2 md:mx-0 flex flex-col"
+                v-show="expandedSkill.category !== skill.category"
+                class="slide w-full my-2 flex-1"
               >
-                <div class="bg-grey-lighter">
+                <div class="w-full">
                   <div
-                    class="bg-teal text-teal-lightest font-semibold rounded-sm text-xs leading-none py-1 text-left px-2"
-                    :style="{width: technology.level/5 * 100+ '%'}"
-                  >{{technology.name}}</div>
+                    v-for="technology in skill.technologies"
+                    :key="technology.name"
+                    class="mt-2 mx-2 md:mx-0 flex flex-col"
+                  >
+                    <div class="bg-grey-lighter">
+                      <div
+                        class="bg-teal text-teal-lightest font-semibold rounded-sm text-xs leading-none py-1 text-left px-2"
+                        :style="{width: technology.level/5 * 100+ '%'}"
+                      >{{technology.name}}</div>
+                    </div>
+
+                  </div>
                 </div>
+              </div>
+            </transition>
+            <transition name="slide">
+              <div
+                class="slide flex-1 flex flex-col w-full"
+                v-show="expandedSkill.category === skill.category"
+              >
+
+                <job-card
+                  class="my-2"
+                  v-for="job in jobs"
+                  :key="job.start"
+                  :job="job"
+                ></job-card>
 
               </div>
-            </div>
-            <div class="hidden text-base text-left mt-2">
-              {{skill.summary}}
-            </div>
+            </transition>
           </div>
+
         </div>
+
+        <button
+          class="bg-pink rounded-full w-8 h-8"
+          @click="toggleJobs(skill)"
+        >
+          <template v-if="!expandedSkill.category">
+            <img
+              class="w-1/2 h-1/2"
+              svg-inline
+              src="../assets/icons/navigation-more.svg"
+              alt="Location"
+            />
+          </template>
+          <template v-else>
+            <img
+              v-show="expandedSkill.category=== skill.category"
+              class="w-1/2 h-1/2"
+              svg-inline
+              src="../assets/icons/close.svg"
+              alt="Location"
+            />
+            <img
+              v-show="expandedSkill.category!== skill.category"
+              class="w-1/2 h-1/2"
+              svg-inline
+              src="../assets/icons/navigation-more.svg"
+              alt="Location"
+            />
+          </template>
+        </button>
 
       </div>
 
     </div>
-
-    <!-- <div class="hidden w-full p-4 md:p-0 md:border-t-4 border-teal flex-col-reverse md:flex-row ">
-      <div class="w-full md:w-1/2 h-auto mt-3 md:my-3 flex flex-wrap md:block">
-        <div
-          v-for="technology in selectedSkill.technologies"
-          :key="technology.name"
-          class="mt-2 mx-2 md:mx-0 flex flex-col"
-        >
-          <span class="mb-1 text-left text-xs bg-grey-dark py-1 px-3 rounded-full bg-white text-black  p-0 font-normal  text-base">{{technology.name}}</span>
-          <div class="bg-grey-lighter">
-            <div
-              class="bg-teal text-teal-lightest rounded-sm text-xs leading-none py-1 text-left px-2"
-              :style="{width: technology.level/5 * 100+ '%'}"
-            >{{technology.level/5 * 100}}%</div>
-          </div>
-
-        </div>
-      </div>
-      <div class="px-4 md:w-1/2 bg-transparent  flex flex-col flex-grow items-center justify-start">
-        <div class="text-lg md:text-3xl text-center my-4 md:my-8">
-          {{selectedSkill.summary}}
-        </div>
-      </div>
-
-    </div> -->
 
   </div>
 </template>
@@ -83,15 +108,21 @@
 import { Component, Vue } from "vue-property-decorator";
 import Badge from "@/components/Badge.vue";
 import { skillsService } from "@/services/skills.service";
+import { jobsService } from "@/services/jobs.service";
 import Skill from "@/models/skill";
+import Job from "@/models/job";
+import JobCard from "@/components/JobCard.vue";
 
 @Component({
   components: {
-    badge: Badge
+    badge: Badge,
+    "job-card": JobCard
   }
 })
 export default class About extends Vue {
   private skills: Skill[] = [];
+  private jobs: Job[] = [];
+  private expandedSkill: Skill = new Skill();
   private isLoaded: boolean = false;
 
   public mounted() {
@@ -100,7 +131,6 @@ export default class About extends Vue {
       .get()
       .then((skills: Skill[]) => {
         this.skills = skills;
-        // this.skills[0].isSelected = true;
         this.isLoaded = true;
       })
       .catch(() => {
@@ -108,15 +138,48 @@ export default class About extends Vue {
       });
   }
 
-  // private get selectedSkill(): Skill {
-  //   return this.skills.filter((s: Skill) => s.isSelected)[0];
-  // }
+  private toggleJobs(skill: Skill) {
+    this.expandedSkill.category === skill.category
+      ? this.hideJobs(skill)
+      : this.showJobs(skill);
+  }
 
-  private showSkill(skill: Skill) {
-    this.skills.forEach((s: Skill) => {
-      s.isSelected = s.category === skill.category;
+  private showJobs(skill: Skill) {
+    this.fetchJobs(skill).then(() => {
+      this.expandedSkill = skill;
     });
+  }
+
+  private hideJobs(skill: Skill) {
+    this.expandedSkill = new Skill();
+  }
+
+  private fetchJobs(skill: Skill) {
+    return jobsService
+      .filterByTechnologies(skill.technologies.map(t => t.name))
+      .then((jobs: Job[]) => {
+        this.jobs = jobs;
+      });
   }
 }
 </script>
+<style scoped>
+
+
+.slide-enter-active {
+  transition: all 1s ease;
+  position:relative;
+}
+.slide-leave-active {
+  transition: all 1s;
+  position:absolute;
+}
+.slide-enter,
+.slide-leave-to {
+  height: 100%;
+  transform: translateX(100%);
+  width: 100%;
+  opacity: 0;
+}
+</style>
 

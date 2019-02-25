@@ -8,12 +8,20 @@
             "summary": "The user experience is my first priority. I want to build products that people love to use.",
             "technologies": [
                 {
-                    "name": "HTML5 / CSS 3",
+                    "name": "HTML",
                     "level": 4
                 },
                 {
-                    "name": "Javascript/Typescript",
+                    "name": "CSS",
                     "level": 4
+                },
+                {
+                    "name": "Javascript",
+                    "level": 4
+                },
+                {
+                    "name": "Typescript",
+                    "level": 5
                 },
                 {
                     "name": "Angular",
@@ -21,7 +29,7 @@
                 },
                 {
                     "name": "Vue.js",
-                    "level": 4
+                    "level": 5
                 },
                 {
                     "name": "D3.js",
@@ -36,7 +44,11 @@
             "summary": "My code is modular and robust. Iterating fast is not an issue.",
             "technologies": [
                 {
-                    "name": "C# .NET WebAPI",
+                    "name": "C#",
+                    "level": 5
+                },
+                {
+                    "name": ".NET WebAPI",
                     "level": 5
                 },
                 {

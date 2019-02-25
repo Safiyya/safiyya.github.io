@@ -14,6 +14,19 @@ class JobsService {
         });
         return Promise.resolve(sorted);
     }
+
+    public filterByTechnologies(technologies: string[]): Promise<Job[]> {
+        return Promise.resolve(
+            (data.jobs as Job[]).filter((j:Job)=>{
+                return this.intersection([j.technologies, technologies]).length > 0
+            })
+        );
+    }
+
+    private intersection(arrays: any[][]): any[]{
+        return arrays.reduce((a, b) => a.filter(c => b.includes(c)))
+    }
+
 }
 
 export const jobsService = new JobsService();

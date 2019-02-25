@@ -8,7 +8,7 @@
 
     </span>
 
-    <span class="text-sm font-semibold text-grey">
+    <span class="font-semibold text-grey">
       <a
         v-if="url"
         :href="url"

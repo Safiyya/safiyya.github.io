@@ -4,28 +4,22 @@
     class="w-full border rounded flex overflow-hidden "
     v-bind:class="{'flex-col ': !job.isSelected, 'flex-col md:flex-row':job.isSelected}"
   >
-    <!-- <div
-      v-if="job.freelance"
-      class="corner-ribbon bg-teal text-teal-lightest top-right font-bold"
-    >Freelance</div> -->
-    <div class="w-full p-2 md:p-4 flex flex-col rounded-t lg:rounded-t-none lg:rounded-l text-center "
-    :class="{'bg-grey-lightest h:auto':job.isSelected, 'h-full':!job.isSelected}">
+    <div class="h-full w-full p-2 md:p-4 flex flex-row justify-between rounded-t lg:rounded-t-none lg:rounded-l text-center "
+   >
       <div
-        class="company-picture "
-        :class="{'w-16 h-16 md:w-24 md:h-24 lg:w-48 lg:h-48 xl:w-64 xl:h-64 ':job.isSelected, 'h-full':!job.isSelected}"
+        class="company-picture w-2/5"
         :style="'background-image: url('+job.company.picture+')'"
         :title="job.company.name"
       >
       </div>
 
       <div
-          class="hidden md:flex items-left justify-between "
+          class="flex flex-col items-left justify-between text-xs"
           :class="{'mb-6':job.isSelected, 'flex-col': job.isSelected, 'flex-row':job.isUnselected }"
         >
 
           <icon-with-text
-            v-if="job.isSelected"
-            :text="job.location.city + ', ' +job.location.country"
+            :text="job.location.country"
           >
             <img
               svg-inline
@@ -33,7 +27,7 @@
               alt="Location"
             />
           </icon-with-text>
-          <icon-with-text v-if="job.isSelected" :text="job.start.formatDate() + ' - ' +job.end.formatDate()">
+          <icon-with-text :text="job.start.formatDate() + ' - ' +job.end.formatDate()">
             <img
               svg-inline
               src="../assets/icons/calendar.svg"
@@ -41,7 +35,6 @@
             />
           </icon-with-text>
           <icon-with-text
-            v-if="job.isSelected"
             :url="job.company.url"
             :text="job.company.name"
           >
@@ -52,7 +45,6 @@
             />
           </icon-with-text>
           <icon-with-text
-            v-if="job.isSelected"
             :text="job.company.industry"
           >
             <img
@@ -66,7 +58,7 @@
 
     </div>
 
-    <div class="rounded-b lg:rounded-b-none w-full lg:rounded-r p-4 flex flex-col justify-center ">
+    <div v-if="false" class="rounded-b lg:rounded-b-none w-full lg:rounded-r p-4 flex flex-col justify-center ">
       <div class="flex flex-col lg:flex-grow">
 
         <div
@@ -80,7 +72,7 @@
         
         <ul
           v-if="job.isSelected"
-          class="text-grey-darker text-lg list-reset mb-6 md:flex hidden flex-col"
+          class="text-grey-darker text-lg list-reset mb-6 flex flex-col"
         >
           <li
             v-for="task in job.tasks"
