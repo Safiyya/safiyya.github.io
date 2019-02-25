@@ -14,31 +14,38 @@
 
     <header-menu></header-menu>
 
-    <full-page
-      ref="fullpage"
-      :options="options"
-      id="fullpage"
+    <div
+      class="section"
+      id="home-section"
     >
-      <div class="section">
-        <home v-on:move-down="onMoveDown()"></home>
-      </div>
-      <div class="section fp-auto-height-responsive">
-          <about class="h-auto pt-16"></about>          
-      </div>
-      <div class="section fp-auto-height-responsive">
-        <experience class="h-auto"></experience>
-      </div>
-      <div class="section">
-        <projects></projects>
-      </div>
-      <div class="section">
-        <contact></contact>
-      </div>
-    </full-page>
-    <!-- <router-view /> -->
-  </div>
+      <home v-on:move-down="onMoveDown()"></home>
+    </div>
+    <div
+      class="section"
+      id="about-section"
+    >
+      <about class="pt-16 p-4"></about>
+    </div>
+    <div
+      class="section"
+      id="experience-section"
+    >
+      <experience class="pt-16 p-4"></experience>
+    </div>
+    <div
+      class="section"
+      id="projects-section"
+    >
+      <projects></projects>
+    </div>
+    <div
+      class="section"
+      id="contact-section"
+    >
+      <contact></contact>
+    </div>
 
-  <!-- -->
+  </div>
 
 </template>
 
@@ -65,14 +72,6 @@ import { Route } from "vue-router";
   }
 })
 export default class AppVue extends Vue {
-  private options: any = {
-    menu: "#header-menu",
-
-    anchors: ["home", "about", "experience", "portfolio", "contact"],
-    fitToSection: false,
-    autoScrolling: false,
-    bigSectionsDestination: 'top'
-  };
 
   public mounted() {
     const isMobile = false;

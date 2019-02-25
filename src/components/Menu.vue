@@ -7,24 +7,24 @@
         id="header-menu"
       >
         <a
-          data-menuanchor="about"
+        v-scroll-to="'#about-section'" id="about"
           href="#about"
-          class="uppercase text-grey-lighter"
+          class="menu-link uppercase text-grey-lighter"
         >About</a>
         <a
-          data-menuanchor="experience"
+        v-scroll-to="'#experience-section'" id="experience"
           href="/#experience"
-          class="uppercase text-grey-lighter"
+          class="menu-link uppercase text-grey-lighter"
         >Experience</a>
         <a
-          data-menuanchor="portfolio"
+        v-scroll-to="'#projects-section'" id="projects"
           href="/#portfolio"
-          class="uppercase text-grey-lighter"
+          class="menu-link uppercase text-grey-lighter"
         >Currently</a>
         <a
-          data-menuanchor="contact"
+        v-scroll-to="'#contact-section'" id="contact"
           href="/#contact"
-          class="uppercase text-grey-lighter"
+          class="menu-link uppercase text-grey-lighter"
         >Contact</a>
       </div>
 

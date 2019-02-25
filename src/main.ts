@@ -8,15 +8,15 @@ import "@/assets/css/tailwind.css";
 import "@/assets/css/styles.css";
 import "@/assets/css/background-animations.scss";
 import "@/assets/css/ribbon.css";
-import "fullpage.js/dist/fullpage.min.css";
-
-import "fullpage.js/vendors/scrolloverflow";
-import VueFullPage from "vue-fullpage.js";
 
 import VueSimpleSVG from "vue-simple-svg";
-Vue.use(VueSimpleSVG);
+import VueScrollto from "vue-scrollto";
 
-Vue.use(VueFullPage);
+
+Vue.use(VueSimpleSVG);
+Vue.use(VueScrollto)
+
+// Vue.use(VueFullPage);
 Vue.config.productionTip = false;
 
 new Vue({
