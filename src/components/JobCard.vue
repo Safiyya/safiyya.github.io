@@ -58,6 +58,19 @@
 
     </div>
 
+    <div 
+          v-if="job.isSelected" class="flex flex-wrap items-end">
+          <span
+            v-for="(tech, ix) in job.technologies"
+            :key="tech"
+            :class="{'ml-0': ix==0}"
+            class="whitespace-no-wrap bg-grey-dark uppercase text-xs text-white font-bold py-1 px-3 rounded-full m-1"
+          >
+            <span>{{tech}} </span>
+
+          </span>
+        </div>
+
     <div v-if="false" class="rounded-b lg:rounded-b-none w-full lg:rounded-r p-4 flex flex-col justify-center ">
       <div class="flex flex-col lg:flex-grow">
 
@@ -92,20 +105,7 @@
           </li>
         </ul>
 
-        <div
-          v-if="job.isSelected"
-          class="flex flex-wrap items-end"
-        >
-          <span
-            v-for="(tech, ix) in job.technologies"
-            :key="tech"
-            :class="{'ml-0': ix==0}"
-            class="whitespace-no-wrap bg-grey-dark uppercase text-xs text-white font-bold py-1 px-3 rounded-full m-1"
-          >
-            <span>{{tech}} </span>
-
-          </span>
-        </div>
+        
       </div>
 
     </div>

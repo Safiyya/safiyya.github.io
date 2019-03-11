@@ -1,9 +1,8 @@
 {
     "skills": [
-        
         {
             "category": "Front-end",
-            "iconUrl":"heroicons/heroicons-lg/heroicon-browser-lg.svg",
+            "iconUrl": "heroicons/heroicons-lg/heroicon-browser-lg.svg",
             "tagline": "Fast load times & simple layouts",
             "summary": "The user experience is my first priority. I want to build products that people love to use.",
             "technologies": [
@@ -39,7 +38,7 @@
         },
         {
             "category": "Back-end",
-            "iconUrl":"heroicons/heroicons-lg/heroicon-database-lg.svg",
+            "iconUrl": "heroicons/heroicons-lg/heroicon-database-lg.svg",
             "tagline": "My code is modular and robust",
             "summary": "My code is modular and robust. Iterating fast is not an issue.",
             "technologies": [
@@ -71,8 +70,8 @@
         },
         {
             "category": "Product",
-            "iconUrl":"heroicons/heroicons-lg/heroicon-chart-lg.svg",
-            "tagline" :"Ship early, ship often.",
+            "iconUrl": "heroicons/heroicons-lg/heroicon-chart-lg.svg",
+            "tagline": "Ship early, ship often.",
             "summary": "\"Build, Measure, Learn\" is my personal mantra.",
             "technologies": [
                 {
@@ -99,8 +98,8 @@
         },
         {
             "category": "Built with love",
-            "iconUrl":"heroicons/heroicons-lg/heroicon-heart-lg.svg",
-            "tagline":"I care so I test.",
+            "iconUrl": "heroicons/heroicons-lg/heroicon-heart-lg.svg",
+            "tagline": "I care so I test.",
             "summary": "I make automated unit testing my crusade in each project.",
             "technologies": [
                 {
@@ -110,9 +109,20 @@
                 {
                     "name": "Continuous integration/delivery",
                     "level": 4
+                },
+                {
+                    "name": "Code versionning",
+                    "level": 5
+                },
+                {
+                    "name": "Code review",
+                    "level": 4
+                },
+                {
+                    "name": "Pair programming",
+                    "level": 4
                 }
             ]
         }
-       
     ]
 }
