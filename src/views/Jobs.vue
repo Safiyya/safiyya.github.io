@@ -52,26 +52,26 @@ export default class Experience extends Vue {
   private jobs: Job[] = [];
   private isLoaded: boolean = false;
 
-  public mounted() {
-    this.$nextTick(() => {
-      this.isLoaded = false;
-      return jobsService
-        .get()
-        .then((jobs: Job[]) => {
-          this.jobs = jobs;
-          this.isLoaded = true;
-        })
-        .then(() => {
-          wrapGrid(document.querySelector(".grid") as HTMLElement, {
-            easing: "anticipate",
-            duration: 750
-          });
-        })
-        .catch(() => {
-          this.isLoaded = true;
-        });
-    });
-  }
+  // public mounted() {
+  //   this.$nextTick(() => {
+  //     this.isLoaded = false;
+  //     return jobsService
+  //       .get()
+  //       .then((jobs: Job[]) => {
+  //         this.jobs = jobs;
+  //         this.isLoaded = true;
+  //       })
+  //       .then(() => {
+  //         wrapGrid(document.querySelector(".grid") as HTMLElement, {
+  //           easing: "anticipate",
+  //           duration: 750
+  //         });
+  //       })
+  //       .catch(() => {
+  //         this.isLoaded = true;
+  //       });
+  //   });
+  // }
 
   private toggleJobDetails(job: Job) {
     if (job.isSelected) {

@@ -31,122 +31,103 @@
             </div>
           </div>
 
-          <div class="flex w-full md:w-1/2">
-            <!-- <transition name="slide"> -->
-            <div
-              v-show="expandedSkill.category !== skill.category"
-              class="w-full"
-            >
-              <div class="w-full">
-                <div
-                  v-for="technology in skill.technologies"
-                  :key="technology.name"
-                  class="mb-2 md:mx-0 flex flex-col"
-                >
-                  <div class="bg-grey-lighter">
+          <carousel
+            class="border rounded p-2"
+            :perPage="1"
+            :loop=true
+            :paginationEnabled=true
+            :paginationActiveColor="'#f6993f'"
+            :navigate-to="currentSlide"
+          >
+            <slide>
+              <div class="flex flex-col w-full md:w-1/2">
+                <div class="w-full">
+                  <div class="w-full">
                     <div
-                      class="bg-teal text-teal-lightest font-semibold rounded-sm text-xs leading-none py-1 text-left px-2"
-                      :style="{width: technology.level/5 * 100+ '%'}"
-                    >{{technology.name}}</div>
-                  </div>
+                      v-for="technology in skill.technologies"
+                      :key="technology.name"
+                      class="mb-2 md:mx-0 flex flex-col"
+                    >
+                      <div class="bg-grey-lighter">
+                        <div
+                          class="bg-teal text-teal-lightest font-semibold rounded-sm text-xs leading-none py-1 text-left px-2"
+                          :style="{width: technology.level/5 * 100+ '%'}"
+                        >{{technology.name}}</div>
+                      </div>
 
+                    </div>
+                  </div>
                 </div>
+                <!-- <button
+              class="text-xs text-orange-lightest uppercase flex justify-center items-center bg-orange p-2 rounded my-2"
+              @click="showJobs(skill)"
+            >
+              Learn more
+
+            </button> -->
               </div>
-            </div>
-            <!-- </transition> -->
-            <!-- <transition name="slide">
-              <div
-                class="block w-full"
-                v-show="expandedSkill.category === skill.category"
+
+            </slide>
+            <template v-for="job in fetchJobs(skill)">
+              <slide
+                class="h-full"
+                :key="job.start"
               >
                 <job-card
-                  class=" px-1 -mx-1 my-1"
-                  v-for="job in jobs"
-                  :key="job.start"
+                  class="h-full bg-white rounded"
                   :job="job"
-                ></job-card>
+                >
+                  <button
+                    class="text-xs text-orange uppercase flex justify-center items-center p-2 rounded my-2"
+                    @click="openJob(job)"
+                  >
+                    Learn more
 
-              </div>
-            </transition> -->
-          </div>
+                  </button>
+                </job-card>
+
+              </slide>
+            </template>
+
+          </carousel>
 
         </div>
 
-        <button
-          class="text-xs text-orange-lightest uppercase flex justify-center items-center bg-orange p-2 rounded my-2"
-          @click="showJobs(skill)"
-        >
-        Learn more
-          <!-- <img
-            class="w-1/2 h-1/2 text-white fill-current "
-            svg-inline
-            src="../assets/icons/navigation-more.svg"
-            alt="Location"
-          /> -->
-
-        </button>
-
       </div>
 
     </div>
-    <div
-      v-if="expandedSkill.category"
-      style="top:0;left:0;overflow-y:auto"
-      class="w-screen h-screen flex flex-col fixed bg-white z-20 "
-    >
-      <carousel class="h-full"
-        :perPage="1"
-        :loop=true
-        :paginationEnabled=false
-        :navigate-to="currentSlide"
+    <transition name="slide-down">
+
+      <div
+        v-if="selectedJob.start"
+        style="top:0;left:0;overflow-y:auto"
+        class="fixed w-screen h-screen flex flex-col  bg-white z-20 "
       >
-        <template v-for="job in jobs">
-          <slide class="h-full" :key="job.start">
-            <job-card
-              class="h-full"
-              :job="job"
-            ></job-card>
-          </slide>
-        </template>
+        <job-card
+                  class="h-full "
+                  :job="selectedJob" 
+                  :is-expanded=true 
+                >
+                </job-card>
 
-      </carousel>
+        <div
+          class="h-8  py-1 absolute"
+          style="top:0;right:0;"
+        >
+          <button
+            class="h-6 w-6 m-2 text-grey-dark fill-current"
+            style="bottom:0;right:0"
+            @click="hideJobs()"
+          >
+            <img
+              svg-inline
+              src="../assets/icons/close.svg"
+              alt="Close"
+            /></button>
+        </div>
 
-      <div class="w-full flex justify-around mb-12 items-center px-2" >
-        <button
-          @click="prev()"
-          class="h-8 w-8  rounded-full bg-orange text-orange-lightest fill-current"
-        >
-          <img
-            svg-inline
-            src="../assets/icons/cheveron-left.svg"
-            alt="Close"
-          />
-        </button>
-        <button
-          class="h-8 w-8 rounded-full bg-orange text-orange-lightest fill-current"
-          @click="next()"
-        >
-          <img
-            svg-inline
-            src="../assets/icons/cheveron-right.svg"
-            alt="Close"
-          />
-        </button>
       </div>
-      <div class="h-8  py-1 absolute" style="top:0;right:0;">
-        <button class="h-6 w-6 m-2 text-grey-light fill-current"
-          style="bottom:0;right:0"
-          @click="hideJobs()"
-        >
-          <img
-            svg-inline
-            src="../assets/icons/close.svg"
-            alt="Close"
-          /></button>
-      </div>
-
-    </div>
-
+    </transition>
   </div>
 </template>
  
@@ -171,6 +152,7 @@ export default class About extends Vue {
   private skills: Skill[] = [];
   private jobs: Job[] = [];
   private expandedSkill: Skill = new Skill();
+  private selectedJob:Job = new Job();
   private isLoaded: boolean = false;
   private currentSlide: number = 0;
   private currentSlidesLength: number = 0;
@@ -188,64 +170,72 @@ export default class About extends Vue {
       });
   }
 
-  private next() {
-    if (this.currentSlide + 1 < this.currentSlidesLength)
-      this.currentSlide += 1;
+  private openJob(job:Job){
+    this.selectedJob =job;
   }
 
-  private prev() {
-    if (this.currentSlide - 1 >= 0) this.currentSlide -= 1;
-  }
+  // private toggleJobs(skill: Skill) {
+  //   this.expandedSkill.category === skill.category
+  //     ? this.hideJobs(skill)
+  //     : this.showJobs(skill);
+  // }
 
-  private toggleJobs(skill: Skill) {
-    this.expandedSkill.category === skill.category
-      ? this.hideJobs(skill)
-      : this.showJobs(skill);
-  }
-
-  private showJobs(skill: Skill) {
-    this.fetchJobs(skill)
-      .then(() => {
-        this.$emit("disable-scroll");
-      })
-      .then(() => {
-        this.expandedSkill = skill;
-        this.currentSlide = 0;
-      });
-  }
+  // private showJobs(skill: Skill) {
+  //   return fetchJobs(skill)
+  //     .then(() => {
+  //       // this.$emit("disable-scroll");
+  //     })
+  //     .then(() => {
+  //       this.expandedSkill = skill;
+  //       this.currentSlide = 0;
+  //     });
+  // }
 
   private hideJobs(skill: Skill) {
     this.expandedSkill = new Skill();
-    this.$emit("enable-scroll");
+    this.selectedJob = new Job();
+    // this.$emit("enable-scroll");
   }
 
   private fetchJobs(skill: Skill) {
-    return jobsService
-      .filterByTechnologies(skill.technologies.map(t => t.name))
-      .then((jobs: Job[]) => {
-        this.jobs = jobs;
-        this.currentSlidesLength = this.jobs.length;
-      });
+    return jobsService.filterByTechnologies(
+      skill.technologies.map(t => t.name)
+    );
+    // .then((jobs: Job[]) => {
+    //   this.jobs = jobs;
+    //   this.currentSlidesLength = this.jobs.length;
+    // });
   }
 }
 </script>
 <style scoped>
-.slide-enter-active {
+/* .slide-enter-active {
   transition: all 1s ease;
   position: relative;
-  /* max-height: 100%; */
 }
 .slide-leave-active {
   transition: all 1s;
   position: fixed;
-  /* max-height: 0; */
 }
 .slide-enter,
 .slide-leave-to {
-  /* height: 100%; */
   transform: translateX(100%);
+  opacity: 0;
+} */
+
+.slide-down-enter-active {
+  transition: all 400ms ease;
+  /* transform: translateY(+100%); */
+}
+.slide-down-leave-active {
+  transition: all 400ms;
+  transform: scale(1);
+  opacity: 1;
+}
+.slide-down-enter,
+.slide-down-leave-to {
+  transform: scale(0);
   /* transform: translateY(-100%); */
-  /* width: 100%; */
   opacity: 0;
 }
 </style>
