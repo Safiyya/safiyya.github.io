@@ -39,8 +39,8 @@
         {
             "category": "Back-end",
             "iconUrl": "heroicons/heroicons-lg/heroicon-database-lg.svg",
-            "tagline": "My code is modular and robust",
-            "summary": "My code is modular and robust. Iterating fast is not an issue.",
+            "tagline": "Modular but robust",
+            "summary": "I know that requirements evolve, my code is robust and well-tested while accomodating a fast iterating business.",
             "technologies": [
                 {
                     "name": "C#",
@@ -72,7 +72,7 @@
             "category": "Product",
             "iconUrl": "heroicons/heroicons-lg/heroicon-chart-lg.svg",
             "tagline": "Ship early, ship often.",
-            "summary": "\"Build, Measure, Learn\" is my personal mantra.",
+            "summary": "\"Build, Measure, Learn\" is my personal mantra. I know that business decisions are impacted by software and communicate these in a timely manner.",
             "technologies": [
                 {
                     "name": "UX",
@@ -100,7 +100,7 @@
             "category": "Built with love",
             "iconUrl": "heroicons/heroicons-lg/heroicon-heart-lg.svg",
             "tagline": "I care so I test.",
-            "summary": "I make automated unit testing my crusade in each project.",
+            "summary": "I make automated unit testing my crusade in each project. I strive to be a reliable and fast coder, this is wehy unit tests is my favourite safety net.",
             "technologies": [
                 {
                     "name": "Unit testing",

@@ -11,6 +11,11 @@ import "@/assets/css/ribbon.css";
 
 import VueSimpleSVG from "vue-simple-svg";
 import Scrollspy from 'vue2-scrollspy';
+import VueCarousel from 'vue-carousel';
+
+Vue.use(VueCarousel, {
+  perPage:1
+});
 
 Vue.use(Scrollspy, {
   data: "section",

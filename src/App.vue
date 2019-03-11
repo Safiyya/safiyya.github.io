@@ -20,13 +20,13 @@
         class="section"
         id="home-section"
       >
-        <home class="h-screen w-full" v-on:move-down="onMoveDown()"></home>
+        <home class="h-screen w-full" v-on:move-down="onMoveDown()" ></home>
       </div>
       <div
         class="section"
         id="about-section"
       >
-        <about class="pt-8 md:pt-16  p-4"></about>
+        <about class="pt-8 md:pt-16  p-4" v-on:disable-scroll="disableScrolling()" v-on:enable-scroll="enableScrolling()"></about>
       </div>
       <div
         class="section"
@@ -107,9 +107,21 @@ export default class AppVue extends Vue {
     };
   }
 
+
+  private disableScrolling(){
+    console.log("disable scrolling");
+    (document.querySelector("body") as HTMLBodyElement).style.overflow ="hidden";
+  }
+
+  private enableScrolling(){
+    console.log("enable scrolling");
+    (document.querySelector("body") as HTMLBodyElement).style.overflow ="auto";
+    
+  }
+
   private onMoveDown() {
+    console.log("onMoveDown");
     (this as any).$scrollTo(1);
-    // (this.$refs.fullpage as any).api.moveSectionDown();
   }
 }
 </script>

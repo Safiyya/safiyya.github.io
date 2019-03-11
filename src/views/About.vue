@@ -21,39 +21,39 @@
         </badge>
 
         <div
-          class="w-full md:flex md:items-stretch relative"
+          class="w-full mx-2 md:flex md:items-stretch relative"
           v-bind:class="{'md:flex-row':six%2===0, 'md:flex-row-reverse':six%2>0}"
         >
-          <div class="w-full text-lg md:text-lg md:w-2/5 md:p-3 text-left ">
-            <div class="font-bold mb-3">{{skill.tagline}}</div>
-            <div >
+          <div class="w-full  md:w-1/2 md:p-5 text-left mb-3 ">
+            <div class="font-bold mb-3 text-center">{{skill.tagline}}</div>
+            <div class="text-grey-darker">
               {{skill.summary}}
             </div>
           </div>
 
-          <div class="flex w-full">
-            <transition name="slide">
-              <div
-                v-show="expandedSkill.category !== skill.category"
-                class="w-full"
-              >
-                <div class="w-full">
-                  <div
-                    v-for="technology in skill.technologies"
-                    :key="technology.name"
-                    class="mb-2 mx-2 md:mx-0 flex flex-col"
-                  >
-                    <div class="bg-grey-lighter">
-                      <div
-                        class="bg-teal text-teal-lightest font-semibold rounded-sm text-xs leading-none py-1 text-left px-2"
-                        :style="{width: technology.level/5 * 100+ '%'}"
-                      >{{technology.name}}</div>
-                    </div>
-
+          <div class="flex w-full md:w-1/2">
+            <!-- <transition name="slide"> -->
+            <div
+              v-show="expandedSkill.category !== skill.category"
+              class="w-full"
+            >
+              <div class="w-full">
+                <div
+                  v-for="technology in skill.technologies"
+                  :key="technology.name"
+                  class="mb-2 md:mx-0 flex flex-col"
+                >
+                  <div class="bg-grey-lighter">
+                    <div
+                      class="bg-teal text-teal-lightest font-semibold rounded-sm text-xs leading-none py-1 text-left px-2"
+                      :style="{width: technology.level/5 * 100+ '%'}"
+                    >{{technology.name}}</div>
                   </div>
+
                 </div>
               </div>
-            </transition>
+            </div>
+            <!-- </transition> -->
             <!-- <transition name="slide">
               <div
                 class="block w-full"
@@ -72,28 +72,57 @@
 
         </div>
 
-        <!-- <button
+        <button
           class="bg-pink rounded-full w-8 h-8 my-2"
-          @click="toggleJobs(skill)"
+          @click="showJobs(skill)"
         >
-        <img
-              class="w-1/2 h-1/2"
-              svg-inline
-              src="../assets/icons/navigation-more.svg"
-              alt="Location"
-            />
-         
-        </button> -->
+          <img
+            class="w-1/2 h-1/2"
+            svg-inline
+            src="../assets/icons/navigation-more.svg"
+            alt="Location"
+          />
+
+        </button>
 
       </div>
 
+    </div>
+    <div
+      v-if="expandedSkill.category"
+      style="top:0;left:0;overflow-y:auto"
+      class="w-screen h-screen fixed p-3 bg-white z-20"
+    >
+      <carousel :perPage="1">
+        <template v-for="job in jobs">
+          <slide :key="job.start">
+            <job-card
+              :job="job"
+            ></job-card>
+          </slide>
+        </template>
+
+      </carousel>
+
+      <button
+        class="fixed h-8 w-8 text-grey fill-current"
+        style="bottom:0;right:0"
+        @click="hideJobs()"
+      >
+        <img
+          svg-inline
+          src="../assets/icons/close.svg"
+          alt="Close"
+        /></button>
     </div>
 
   </div>
 </template>
  
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Emit } from "vue-property-decorator";
+import { Carousel, Slide } from "vue-carousel";
+
 import Badge from "@/components/Badge.vue";
 import { skillsService } from "@/services/skills.service";
 import { jobsService } from "@/services/jobs.service";
@@ -133,13 +162,18 @@ export default class About extends Vue {
   }
 
   private showJobs(skill: Skill) {
-    this.fetchJobs(skill).then(() => {
-      this.expandedSkill = skill;
-    });
+    this.fetchJobs(skill)
+      .then(() => {
+        this.$emit("disable-scroll");
+      })
+      .then(() => {
+        this.expandedSkill = skill;
+      });
   }
 
   private hideJobs(skill: Skill) {
     this.expandedSkill = new Skill();
+    this.$emit("enable-scroll");
   }
 
   private fetchJobs(skill: Skill) {

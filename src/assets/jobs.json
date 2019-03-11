@@ -8,7 +8,8 @@
                 "url": "https://www.kamkalima.com",
                 "crunchbase": "",
                 "industry": "Ed-tech",
-                "picture": "https://kamkalima.com/app/images/kk-logo.svg"
+                "picture": "https://kamkalima.com/app/images/kk-logo.svg",
+                "vision":"Kamkalima helps students perfect their arabic written and verbal skills with a fun and playful webapp."
             },
             "title": "Front-end Developer",
             "freelance":true,
@@ -33,9 +34,9 @@
                 "Bootstrap",
                 "Jest",
                 "HTML",
+                "CSS",
                 "Agile",
                 "Kanban",
-                "CSS",
                 "UX",
                 "Continuous integration/delivery",
                 "Unit Testing"
@@ -53,7 +54,9 @@
                 "url": "https://www.gretta.com",
                 "industry": "Podcast",
                 "crunchbase": "https://www.crunchbase.com/organization/gretta",
-                "picture": "https://res-2.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1505154649/fqr5w0ef5dazjahvupje.png"
+                "picture": "https://res-2.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1505154649/fqr5w0ef5dazjahvupje.png",
+                "vision":"Gretta's sleek webapp allow podcasts listeners to share highlights of their favorite episodes with the touch of a button."
+           
             },
             "title": "Full Stack Developer ",
             "freelance":true,
@@ -122,7 +125,8 @@
                 "url": "https://www.datashaka.com",
                 "industry": "Analytics",
                 "crunchbase": "https://www.crunchbase.com/organization/virtuoz",
-                "picture": "https://avatars1.githubusercontent.com/u/6972973?s=280&v=4"
+                "picture": "https://avatars1.githubusercontent.com/u/6972973?s=280&v=4",
+                "vision":"DataShaka's platform allows data-driven decision makers to unify their time-series data with a suite of powerful tools and algorithms."
             },
             "title": "VP of Engineering",
             "tasks": [
