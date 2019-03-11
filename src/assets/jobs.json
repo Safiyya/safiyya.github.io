@@ -1,7 +1,5 @@
 {
     "jobs": [
-       
-       
         {
             "company": {
                 "name": "Kamkalima",
@@ -9,24 +7,19 @@
                 "crunchbase": "",
                 "industry": "Ed-tech",
                 "picture": "https://kamkalima.com/app/images/kk-logo.svg",
-                "vision":"Kamkalima helps students perfect their arabic written and verbal skills with a fun and playful webapp."
+                "vision": "Kamkalima helps students perfect their arabic written and verbal skills with a fun and playful webapp."
             },
             "title": "Front-end Developer",
-            "freelance":true,
+            "freelance": true,
             "tasks": [
                 {
                     "header": "Implemented Kamkalima student webapp new design from high-definition Adobe XD mockups"
-               
-                   
                 },
                 {
                     "header": "Taught best practices in Agile, unit testing and continuous integration "
-               
-                   
                 },
                 {
                     "header": "Increased test coverage from 0% to 75%"
-                  
                 }
             ],
             "technologies": [
@@ -55,19 +48,16 @@
                 "industry": "Podcast",
                 "crunchbase": "https://www.crunchbase.com/organization/gretta",
                 "picture": "https://res-2.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1505154649/fqr5w0ef5dazjahvupje.png",
-                "vision":"Gretta's sleek webapp allow podcasts listeners to share highlights of their favorite episodes with the touch of a button."
-           
+                "vision": "Gretta's sleek webapp allows podcasts listeners to share highlights of their favorite episodes with an automated transcript."
             },
             "title": "Full Stack Developer ",
-            "freelance":true,
+            "freelance": true,
             "tasks": [
                 {
                     "header": "Increased test coverage from 0% to 40%  and set up CI/CD pipeline for a Node.js + Polymer app"
-                  
                 },
                 {
                     "header": "Wrote 2 algorithms to evaluate the accuracy of speech-to-text engines"
-                   
                 }
             ],
             "technologies": [
@@ -99,7 +89,6 @@
             "tasks": [
                 {
                     "header": "Improved US branch legacy search system by cutting queries time by up to 67%"
-                  
                 },
                 {
                     "header": "Led 10 deployments & enhancements to in-house software across the US and Europe "
@@ -126,19 +115,18 @@
                 "industry": "Analytics",
                 "crunchbase": "https://www.crunchbase.com/organization/virtuoz",
                 "picture": "https://avatars1.githubusercontent.com/u/6972973?s=280&v=4",
-                "vision":"DataShaka's platform allows data-driven decision makers to unify their time-series data with a suite of powerful tools and algorithms."
+                "vision": "DataShaka's platform allows data-driven decision makers to unify their time-series data with a suite of powerful tools and algorithms."
             },
             "title": "VP of Engineering",
             "tasks": [
                 {
-                    "header": "Drove the fastest route to production while keeping high quality standards and a happy team "         
+                    "header": "Drove the fastest route to production while keeping high quality standards and a happy team "
                 },
                 {
                     "header": "Reduced average benchmark queries time from 20 minutes to 40 seconds "
                 },
                 {
                     "header": "Implemented a Domain Specific Language for time-series data cleansing"
-         
                 }
             ],
             "technologies": [
@@ -163,9 +151,10 @@
             "company": {
                 "name": "Optinac",
                 "url": "https://www.optinac-shop.com/",
-                "industry":"Pet store",
+                "industry": "Pet store",
                 "crunchbase": "",
-                "picture": "https://studl.com/assets/uploads/logo_entreprises/40995/logo5a057bee1c48b2.21305590.png"
+                "picture": "https://studl.com/assets/uploads/logo_entreprises/40995/logo5a057bee1c48b2.21305590.png",
+                "vision": "Optinac is one's of France top online pet shop, designed for healthy pets and recommended by veterinarians."
             },
             "title": "Web designer",
             "tasks": [
@@ -191,9 +180,10 @@
             "company": {
                 "name": "VirtuOz",
                 "url": "https://www.virtuoz.com",
-                "industry":"A.I.",
+                "industry": "A.I.",
                 "crunchbase": "https://www.crunchbase.com/organization/virtuoz",
-                "picture": "https://i.pinimg.com/originals/f7/4f/20/f74f20b9ba045b671127ccf1f7b90447.png"
+                "picture": "https://i.pinimg.com/originals/f7/4f/20/f74f20b9ba045b671127ccf1f7b90447.png",
+                "vision": "VirtuOz's friendly & intelligent bots were the first face French online consumers saw in the late 2000s on major retail website."
             },
             "title": "Software Engineer",
             "tasks": [

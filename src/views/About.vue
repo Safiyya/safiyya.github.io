@@ -91,12 +91,18 @@
     <div
       v-if="expandedSkill.category"
       style="top:0;left:0;overflow-y:auto"
-      class="w-screen h-screen fixed p-3 bg-white z-20"
+      class="w-screen h-screen flex flex-col fixed bg-white z-20 "
     >
-      <carousel :perPage="1">
+      <carousel class=""
+        :perPage="1"
+        :loop=true
+        :paginationEnabled=false
+        :navigate-to="currentSlide"
+      >
         <template v-for="job in jobs">
           <slide :key="job.start">
             <job-card
+              class="h-full"
               :job="job"
             ></job-card>
           </slide>
@@ -104,16 +110,41 @@
 
       </carousel>
 
-      <button
-        class="fixed h-8 w-8 text-grey fill-current"
-        style="bottom:0;right:0"
-        @click="hideJobs()"
-      >
-        <img
-          svg-inline
-          src="../assets/icons/close.svg"
-          alt="Close"
-        /></button>
+      <div class="flex flex-shrink-0 h-16 flex justify-around items-center py-3 ">
+        <button
+          @click="prev()"
+          class="h-8 w-8 bg-teal rounded-full text-teal-lightest fill-current"
+        >
+          <img
+            svg-inline
+            src="../assets/icons/cheveron-left.svg"
+            alt="Close"
+          />
+        </button>
+        {{currentSlide+1}}/{{currentSlidesLength}}
+        <button
+          class="h-8 w-8 bg-teal rounded-full text-teal-lightest fill-current"
+          @click="next()"
+        >
+          <img
+            svg-inline
+            src="../assets/icons/cheveron-right.svg"
+            alt="Close"
+          />
+        </button>
+      </div>
+      <div class="h-8  py-1 absolute" style="top:0;right:0;">
+        <button class="h-8 w-8 text-grey-light fill-current"
+          style="bottom:0;right:0"
+          @click="hideJobs()"
+        >
+          <img
+            svg-inline
+            src="../assets/icons/close.svg"
+            alt="Close"
+          /></button>
+      </div>
+
     </div>
 
   </div>
@@ -141,6 +172,8 @@ export default class About extends Vue {
   private jobs: Job[] = [];
   private expandedSkill: Skill = new Skill();
   private isLoaded: boolean = false;
+  private currentSlide: number = 0;
+  private currentSlidesLength: number = 0;
 
   public mounted() {
     this.isLoaded = false;
@@ -153,6 +186,15 @@ export default class About extends Vue {
       .catch(() => {
         this.isLoaded = true;
       });
+  }
+
+  private next() {
+    if (this.currentSlide + 1 < this.currentSlidesLength)
+      this.currentSlide += 1;
+  }
+
+  private prev() {
+    if (this.currentSlide - 1 >= 0) this.currentSlide -= 1;
   }
 
   private toggleJobs(skill: Skill) {
@@ -181,6 +223,7 @@ export default class About extends Vue {
       .filterByTechnologies(skill.technologies.map(t => t.name))
       .then((jobs: Job[]) => {
         this.jobs = jobs;
+        this.currentSlidesLength = this.jobs.length;
       });
   }
 }

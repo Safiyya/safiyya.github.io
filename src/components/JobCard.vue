@@ -1,9 +1,9 @@
 <template>
 
   <div
-    class="border rounded flex overflow-hidden flex-col "
+    class=" flex overflow-hidden flex-col "
   >
-    <div class="h-48 w-full flex flex-row justify-between rounded-t lg:rounded-t-none lg:rounded-l text-center ">
+    <div class="h-64 w-full flex flex-row justify-between rounded-t lg:rounded-t-none lg:rounded-l text-center ">
       <div
         class="company-picture w-full h-full p-3"
         :style="'background-image: url('+job.company.picture+')'"
@@ -52,7 +52,7 @@
       class="flex flex-wrap items-end px-2 my-3"
     >
       <span
-        v-for="(tech, ix) in job.technologies"
+        v-for="(tech, ix) in job.technologies.slice(0,8)"
         :key="tech"
         :class="{'ml-0': ix==0}"
         class="whitespace-no-wrap bg-grey-dark uppercase text-xs text-white font-bold py-1 px-3 rounded-full m-1"
@@ -61,7 +61,7 @@
 
       </span>
     </div>
-     <div
+     <div v-if=false
       class="flex  flex-row items-left justify-between text-xs my-2 px-2"
       :class="{'mb-6':job.isSelected, 'flex-col': job.isSelected, 'flex-row':job.isUnselected }"
     >
