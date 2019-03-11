@@ -73,15 +73,16 @@
         </div>
 
         <button
-          class="bg-pink rounded-full w-8 h-8 my-2"
+          class="text-xs text-orange-lightest uppercase flex justify-center items-center bg-orange p-2 rounded my-2"
           @click="showJobs(skill)"
         >
-          <img
-            class="w-1/2 h-1/2"
+        Learn more
+          <!-- <img
+            class="w-1/2 h-1/2 text-white fill-current "
             svg-inline
             src="../assets/icons/navigation-more.svg"
             alt="Location"
-          />
+          /> -->
 
         </button>
 
@@ -93,14 +94,14 @@
       style="top:0;left:0;overflow-y:auto"
       class="w-screen h-screen flex flex-col fixed bg-white z-20 "
     >
-      <carousel class=""
+      <carousel class="h-full"
         :perPage="1"
         :loop=true
         :paginationEnabled=false
         :navigate-to="currentSlide"
       >
         <template v-for="job in jobs">
-          <slide :key="job.start">
+          <slide class="h-full" :key="job.start">
             <job-card
               class="h-full"
               :job="job"
@@ -110,10 +111,10 @@
 
       </carousel>
 
-      <div class="w-full absolute flex justify-between items-center px-2" style="top:16rem">
+      <div class="w-full flex justify-around mb-12 items-center px-2" >
         <button
           @click="prev()"
-          class="h-8 w-8  rounded-full text-orange fill-current"
+          class="h-8 w-8  rounded-full bg-orange text-orange-lightest fill-current"
         >
           <img
             svg-inline
@@ -122,7 +123,7 @@
           />
         </button>
         <button
-          class="h-8 w-8 rounded-full text-orange fill-current"
+          class="h-8 w-8 rounded-full bg-orange text-orange-lightest fill-current"
           @click="next()"
         >
           <img
@@ -133,7 +134,7 @@
         </button>
       </div>
       <div class="h-8  py-1 absolute" style="top:0;right:0;">
-        <button class="h-8 w-8 text-grey-light fill-current"
+        <button class="h-6 w-6 m-2 text-grey-light fill-current"
           style="bottom:0;right:0"
           @click="hideJobs()"
         >
@@ -209,6 +210,7 @@ export default class About extends Vue {
       })
       .then(() => {
         this.expandedSkill = skill;
+        this.currentSlide = 0;
       });
   }
 

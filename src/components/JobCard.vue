@@ -61,7 +61,7 @@
 
       </span>
     </div>
-     <div v-if=false
+     <div 
       class="flex  flex-row items-left justify-between text-xs my-2 px-2"
       :class="{'mb-6':job.isSelected, 'flex-col': job.isSelected, 'flex-row':job.isUnselected }"
     >
