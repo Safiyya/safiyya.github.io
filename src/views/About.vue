@@ -110,10 +110,10 @@
 
       </carousel>
 
-      <div class="flex flex-shrink-0 h-16 flex justify-around items-center py-3 ">
+      <div class="w-full absolute flex justify-between items-center px-2" style="top:16rem">
         <button
           @click="prev()"
-          class="h-8 w-8 bg-teal rounded-full text-teal-lightest fill-current"
+          class="h-8 w-8  rounded-full text-orange fill-current"
         >
           <img
             svg-inline
@@ -121,9 +121,8 @@
             alt="Close"
           />
         </button>
-        {{currentSlide+1}}/{{currentSlidesLength}}
         <button
-          class="h-8 w-8 bg-teal rounded-full text-teal-lightest fill-current"
+          class="h-8 w-8 rounded-full text-orange fill-current"
           @click="next()"
         >
           <img

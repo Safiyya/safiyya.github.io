@@ -52,7 +52,7 @@
       class="flex flex-wrap items-end px-2 my-3"
     >
       <span
-        v-for="(tech, ix) in job.technologies.slice(0,8)"
+        v-for="(tech, ix) in job.technologies"
         :key="tech"
         :class="{'ml-0': ix==0}"
         class="whitespace-no-wrap bg-grey-dark uppercase text-xs text-white font-bold py-1 px-3 rounded-full m-1"
