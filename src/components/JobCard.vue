@@ -3,7 +3,7 @@
   <div class=" flex overflow-hidden flex-col ">
     <div
       v-if="!isExpanded"
-      v-bind:class="{'h-32':!isExpanded}"
+      v-bind:class="{'h-32 lg:h-48':!isExpanded}"
       class="w-full flex flex-row justify-between rounded-t lg:rounded-t-none lg:rounded-l text-center "
     >
       <div
