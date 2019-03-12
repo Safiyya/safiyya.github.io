@@ -74,7 +74,7 @@
 
     <div class="hidden md:block">
 
-      <div class="grid h-screen w-screen">
+      <div class="grid h-screen w-screen p-8">
         <div
           v-for="(skill, six) in skills"
           :key="six"
@@ -99,66 +99,76 @@
 
         </div>
         <div
-          class="grid-item cell-1 z-10 bg-grey-lighter"
+          class="grid-item cell-1 z-10 "
           v-if="expandedSkillIndex !==0 && expandedSkillIndex!==1"
         >
-          <portal-target name="cell-1">
+          <portal-target
+            class="h-full"
+            name="cell-1"
+          >
           </portal-target>
         </div>
         <div
-          class="grid-item cell-2 z-10 bg-grey-lighter"
+          class="grid-item cell-2 z-10 "
           v-if="expandedSkillIndex !==0 && expandedSkillIndex!==2"
         >
-          <portal-target name="cell-2">
+          <portal-target
+            class="h-full"
+            name="cell-2"
+          >
           </portal-target>
         </div>
         <div
-          class="grid-item cell-3 z-10 bg-grey-lighter"
+          class="grid-item cell-3 z-10"
           v-if="expandedSkillIndex !==0 && expandedSkillIndex!==3"
         >
-          <portal-target name="cell-3">
+          <portal-target
+            class="h-full"
+            name="cell-3"
+          >
           </portal-target>
         </div>
         <div
-          class="grid-item cell-4 z-10 bg-grey-lighter"
+          class="grid-item cell-4 z-10"
           v-if="expandedSkillIndex !==0 && expandedSkillIndex!==4"
         >
-          <portal-target name="cell-4">
+          <portal-target
+            class="h-full"
+            name="cell-4"
+          >
           </portal-target>
         </div>
       </div>
 
     </div>
 
-    <portal v-bind:to="'cell-'+taglineLocation">
-      <div
-        ref="skill-tagline"
-        class="hidden md:flex w-1/2"
-      >
-        <div class="font-bold mb-3 text-grey-dark text-center">{{expandedSkill.tagline}}</div>
-        <div class="text-grey-darker md:hidden">
+    <portal
+      class="h-full"
+      v-bind:to="'cell-'+taglineLocation"
+    >
+      <div class="flex flex-col justify-center p-4 h-full">
+        <div class="text-3xl">
           {{expandedSkill.summary}}
         </div>
       </div>
     </portal>
 
-    <portal v-bind:to="'cell-'+technologiesLocation">
-      <div
-        ref="skill-tech"
-        class="hidden md:flex  w-1/2"
-      >
+    <portal
+      class="h-full"
+      v-bind:to="'cell-'+technologiesLocation"
+    >
+      <div class="h-full p-4">
         <skill-technologies-list :skill="expandedSkill"></skill-technologies-list>
 
       </div>
     </portal>
-    <portal v-bind:to="'cell-'+jobsLocation">
-      <div
-        ref="skill-jobs"
-        class="hidden md:flex  w-1/2"
-        v-if="expandedSkill"
-      >
+    <portal
+      class="h-full"
+      v-bind:to="'cell-'+jobsLocation"
+    >
+      <div v-if="expandedSkill">
         <carousel
-          class="md:w-1/2  md:bg-grey-lightest md:rounded border border-grey-lightest rounded p-2"
+          class="border border-grey-lightest rounded p-2"
           :perPage="1"
           :loop=true
           :paginationEnabled=true
@@ -192,6 +202,7 @@ import JobCard from "@/components/JobCard.vue";
 import SkillTechnologiesList from "@/components/SkillTechnologiesList.vue";
 import SkillJob from "@/components/SkillJobs.vue";
 import Modal from "@/components/Modal.vue";
+import { wrapGrid } from "animate-css-grid";
 
 @Component({
   components: {
@@ -223,6 +234,12 @@ export default class About extends Vue {
         this.skills = skills;
         this.isLoaded = true;
       })
+      .then(() => {
+        wrapGrid(document.querySelector(".grid") as HTMLElement, {
+          easing: "anticipate",
+          duration: 750
+        });
+      })
       .catch(() => {
         this.isLoaded = true;
       });
@@ -234,6 +251,7 @@ export default class About extends Vue {
 
   private close() {
     this.expandedSkill = new Skill();
+    this.expandedSkillIndex = 0;
   }
 
   private fetchJobs(skill: Skill) {
@@ -252,16 +270,16 @@ export default class About extends Vue {
       this.jobsLocation = 4;
     } else if (index === 2) {
       this.taglineLocation = 1;
-      this.technologiesLocation = 3;
-      this.jobsLocation = 4;
+      this.technologiesLocation = 4;
+      this.jobsLocation = 3;
     } else if (index === 3) {
       this.taglineLocation = 4;
       this.technologiesLocation = 1;
       this.jobsLocation = 2;
     } else if (index === 4) {
       this.taglineLocation = 3;
-      this.technologiesLocation = 1;
-      this.jobsLocation = 2;
+      this.technologiesLocation = 2;
+      this.jobsLocation = 1;
     }
   }
 }

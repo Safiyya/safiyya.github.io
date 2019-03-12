@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-center vertical-line cursor-pointer">
-   <div class="circle w-32 h-32 lg:w-48 lg:h-48 my-3 rounded-full flex justify-center items-center" :class="'bg-'+color">
+   <div class="circle w-32 h-32 md:w-48 md:h-48 my-3 rounded-full flex justify-center items-center" :class="'bg-'+color">
       <simple-svg class="flex justify-center"
         :filepath="iconUrl"
         :width="'50%'"
