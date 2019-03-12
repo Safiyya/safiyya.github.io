@@ -5,13 +5,13 @@
     class="h-full"
   >
  
-    <!-- <span class="fixed text-red text-3xl z-50" style="top:3rem">
+    <span class="fixed text-red text-3xl z-50" style="top:3rem">
   <span class="block sm:hidden">XS</span>
   <span class="hidden sm:block md:hidden">SM</span>
   <span class="hidden md:block lg:hidden">MD</span>
   <span class="hidden lg:block xl:hidden">LG</span>
   <span class="hidden xl:block">XL</span>
-</span> -->
+</span>
 
  
     <header-menu></header-menu>
@@ -49,7 +49,7 @@
         <contact class="pt-16 p-4 h-screen"></contact>
       </div>
     </div>
-    <portal-target slim  :transition="{ name: 'scale-center'}" name="modal"></portal-target>
+    <portal-target slim :transition="{ name: 'scale-center'}" name="modal"></portal-target>
   </div>
 
 </template>

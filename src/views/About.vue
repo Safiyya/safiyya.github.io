@@ -13,12 +13,12 @@
 
         <div class="w-full mx-2 flex flex-col relative md:flex-row md:justify-center">
 
-          <div class="w-full md:w-1/2 md:p-5  text-left mb-3 ">
+          <div class="w-full md:w-1/2 flex flex-col items-center  text-left mb-3 md:mb-0 ">
             <badge
               class="badge mx-2 text-grey-darker"
               :class="{'text-teal':skill.isSelected}"
               :title="skill.category"
-              :color="skill.isSelected ? 'teal' : 'orange'"
+              :color="skill.isSelected ? 'teal' : 'grey-lightest'"
               :icon-url="skill.resolvedIconUrl"
             >
             </badge>
@@ -27,8 +27,8 @@
               {{skill.summary}}
             </div>
             <button
-              class="text-xs text-orange uppercase flex justify-center items-center p-2 rounded my-2"
-              @click="openJob(job)"
+              class="text-center text-xs bg-orange text-white uppercase flex justify-center items-center p-2 rounded my-2"
+              @click="openSkill(skill)"
             >
               Learn more
 
@@ -52,15 +52,27 @@
                   class="h-full"
                   :key="jix"
                 >
-                <skill-job :job="job"></skill-job>
-   
-
+                  <skill-job :job="job"></skill-job>
                 </slide>
               </template>
-
             </carousel>
           </div>
 
+        </div>
+
+        <div class="md:flex">
+          <portal
+            to="modal"
+            v-if="expandedSkill.summary"
+          >
+            <div
+              style="top:0;left:0;overflow-y:auto"
+              class="fixed w-screen h-screen flex flex-col  bg-white z-20 "
+            >
+              {{expandedSkill.summary}}
+            </div>
+
+          </portal>
         </div>
 
       </div>
@@ -79,15 +91,15 @@ import { jobsService } from "@/services/jobs.service";
 import Skill from "@/models/skill";
 import Job from "@/models/job";
 import JobCard from "@/components/JobCard.vue";
-import SkillTechnologiesList from '@/components/SkillTechnologiesList.vue';
-import SkillJob from '@/components/SkillJobs.vue';
+import SkillTechnologiesList from "@/components/SkillTechnologiesList.vue";
+import SkillJob from "@/components/SkillJobs.vue";
 
 @Component({
   components: {
     badge: Badge,
     "job-card": JobCard,
-    "skill-technologies-list":SkillTechnologiesList,
-    "skill-job":SkillJob
+    "skill-technologies-list": SkillTechnologiesList,
+    "skill-job": SkillJob
   }
 })
 export default class About extends Vue {
@@ -112,13 +124,8 @@ export default class About extends Vue {
       });
   }
 
-  private openJob(job: Job) {
-    this.selectedJob = job;
-  }
-
-  private hideJobs(skill: Skill) {
-    this.expandedSkill = new Skill();
-    this.selectedJob = new Job();
+  private openSkill(skill: Skill) {
+    this.expandedSkill = skill;
   }
 
   private fetchJobs(skill: Skill) {
@@ -129,7 +136,5 @@ export default class About extends Vue {
 }
 </script>
 <style scoped>
-
-
 </style>
 

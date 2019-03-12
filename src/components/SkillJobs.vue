@@ -6,50 +6,21 @@
     >
       <button
         class="text-xs text-orange uppercase flex justify-center items-center p-2 rounded my-2"
-        @click="open()"
+        @click="openModal()"
       >
         Learn more
 
       </button>
     </job-card>
-    <portal
-      to="modal"
-      v-if="isSelected"
-    >
 
-      <!-- <transition name="slide-down"> -->
-
-        <div 
-          style="top:0;left:0;overflow-y:auto"
-          class="fixed w-screen h-screen flex flex-col  bg-white z-20 "
-        >
-          <job-card
-            class="h-full "
-            :job="job"
-            :is-expanded=true
-          >
-          </job-card>
-
-          <div
-            class="h-8  py-1 absolute"
-            style="top:0;right:0;"
-          >
-            <button
-              class="h-6 w-6 m-2 text-grey-dark fill-current"
-              style="bottom:0;right:0"
-              @click="close()"
-            >
-              <img
-                svg-inline
-                src="../assets/icons/close.svg"
-                alt="Close"
-              /></button>
-          </div>
-
-        </div>
-      <!-- </transition> -->
-    </portal>
-
+    <modal ref="modal">
+      <job-card
+        class="h-full"
+        :job="job"
+        :is-expanded=true
+      >
+      </job-card>
+    </modal>
   </div>
 
 </template>
@@ -58,10 +29,12 @@
 import { Component, Vue, Prop } from "vue-property-decorator";
 import Job from "@/models/job";
 import JobCard from "@/components/JobCard.vue";
+import Modal from '@/components/Modal.vue';
 
 @Component({
   components: {
-    "job-card": JobCard
+    "job-card": JobCard,
+    "modal":Modal
   }
 })
 export default class SkillJob extends Vue {
@@ -69,12 +42,8 @@ export default class SkillJob extends Vue {
 
   public isSelected: boolean = false;
 
-  open() {
-    this.isSelected = true;
-  }
-
-  close() {
-    this.isSelected = false;
+  openModal(){
+      (this.$refs.modal as Modal).open();
   }
 }
 </script>
