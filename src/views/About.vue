@@ -4,136 +4,68 @@
     v-if="isLoaded"
   >
 
-  <div class="hidden md:block">
-
-  </div>
-
-
     <div class=" flex flex-wrap w-full  items-start justify-between mb-4 ">
-
       <div
         v-for="(skill, six) in skills"
         :key="skill.category"
-        class="flex flex-col items-center group  w-full  my-4 "
+        class="flex flex-col items-center group md:w-1/2 w-full my-4 "
       >
 
-        <div
-          class="w-full mx-2 flex flex-col relative"
-        >
+        <div class="w-full mx-2 flex flex-col relative md:flex-row md:justify-center">
 
-          <div class="w-full text-left mb-3 ">
+          <div class="w-full md:w-1/2 md:p-5  text-left mb-3 ">
             <badge
-              class="badge mx-2 text-grey-dark"
+              class="badge mx-2 text-grey-darker"
               :class="{'text-teal':skill.isSelected}"
               :title="skill.category"
-              :color="skill.isSelected ? 'teal' : 'grey-lighter'"
+              :color="skill.isSelected ? 'teal' : 'orange'"
               :icon-url="skill.resolvedIconUrl"
             >
             </badge>
-            <div class="font-bold mb-3 text-center">{{skill.tagline}}</div>
-            <div class="text-grey-darker ">
+            <div class="font-bold mb-3 text-grey-dark text-center">{{skill.tagline}}</div>
+            <div class="text-grey-darker md:hidden">
               {{skill.summary}}
             </div>
-          </div>
-
-<carousel
-            class=" border border-grey-lightest rounded p-2"
-            :perPage="1"
-            :loop=true
-            :paginationEnabled=true
-            :paginationActiveColor="'#f6993f'"
-            :navigate-to="currentSlide"
-          >
-            <slide>
-              <div class="flex flex-col w-full">
-                <div class="w-full">
-                  <div class="w-full">
-                    <div
-                      v-for="technology in skill.technologies"
-                      :key="technology.name"
-                      class="mb-2 flex flex-col"
-                    >
-                      <div class="bg-grey-lighter">
-                        <div
-                          class="bg-teal text-teal-lightest font-semibold rounded-sm text-xs leading-none py-1 text-left px-2"
-                          :style="{width: technology.level/5 * 100+ '%'}"
-                        >{{technology.name}}</div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-                <!-- <button
-              class="text-xs text-orange-lightest uppercase flex justify-center items-center bg-orange p-2 rounded my-2"
-              @click="showJobs(skill)"
+            <button
+              class="text-xs text-orange uppercase flex justify-center items-center p-2 rounded my-2"
+              @click="openJob(job)"
             >
               Learn more
 
-            </button> -->
-              </div>
+            </button>
+          </div>
 
-            </slide>
-            <template v-for="job in fetchJobs(skill)">
-              <slide
-                class="h-full"
-                :key="job.start"
-              >
-                <job-card
-                  class="h-full bg-white rounded"
-                  :job="job"
-                >
-                  <button
-                    class="text-xs text-orange uppercase flex justify-center items-center p-2 rounded my-2"
-                    @click="openJob(job)"
-                  >
-                    Learn more
-
-                  </button>
-                </job-card>
-
+          <div class="md:hidden">
+            <carousel
+              class="md:w-1/2  md:bg-grey-lightest md:rounded border border-grey-lightest rounded p-2"
+              :perPage="1"
+              :loop=true
+              :paginationEnabled=true
+              :paginationActiveColor="'#f6993f'"
+              :navigate-to="currentSlide"
+            >
+              <slide>
+                <skill-technologies-list :skill="skill"></skill-technologies-list>
               </slide>
-            </template>
+              <template v-for="(job, jix) in fetchJobs(skill)">
+                <slide
+                  class="h-full"
+                  :key="jix"
+                >
+                <skill-job :job="job"></skill-job>
+   
 
-          </carousel>
-          
+                </slide>
+              </template>
+
+            </carousel>
+          </div>
 
         </div>
 
       </div>
 
     </div>
-    <transition name="slide-down">
-
-      <div
-        v-if="selectedJob.start"
-        style="top:0;left:0;overflow-y:auto"
-        class="fixed w-screen h-screen flex flex-col  bg-white z-20 "
-      >
-        <job-card
-          class="h-full "
-          :job="selectedJob"
-          :is-expanded=true
-        >
-        </job-card>
-
-        <div
-          class="h-8  py-1 absolute"
-          style="top:0;right:0;"
-        >
-          <button
-            class="h-6 w-6 m-2 text-grey-dark fill-current"
-            style="bottom:0;right:0"
-            @click="hideJobs()"
-          >
-            <img
-              svg-inline
-              src="../assets/icons/close.svg"
-              alt="Close"
-            /></button>
-        </div>
-
-      </div>
-    </transition>
   </div>
 </template>
  
@@ -147,11 +79,15 @@ import { jobsService } from "@/services/jobs.service";
 import Skill from "@/models/skill";
 import Job from "@/models/job";
 import JobCard from "@/components/JobCard.vue";
+import SkillTechnologiesList from '@/components/SkillTechnologiesList.vue';
+import SkillJob from '@/components/SkillJobs.vue';
 
 @Component({
   components: {
     badge: Badge,
-    "job-card": JobCard
+    "job-card": JobCard,
+    "skill-technologies-list":SkillTechnologiesList,
+    "skill-job":SkillJob
   }
 })
 export default class About extends Vue {
@@ -180,69 +116,20 @@ export default class About extends Vue {
     this.selectedJob = job;
   }
 
-  // private toggleJobs(skill: Skill) {
-  //   this.expandedSkill.category === skill.category
-  //     ? this.hideJobs(skill)
-  //     : this.showJobs(skill);
-  // }
-
-  // private showJobs(skill: Skill) {
-  //   return fetchJobs(skill)
-  //     .then(() => {
-  //       // this.$emit("disable-scroll");
-  //     })
-  //     .then(() => {
-  //       this.expandedSkill = skill;
-  //       this.currentSlide = 0;
-  //     });
-  // }
-
   private hideJobs(skill: Skill) {
     this.expandedSkill = new Skill();
     this.selectedJob = new Job();
-    // this.$emit("enable-scroll");
   }
 
   private fetchJobs(skill: Skill) {
     return jobsService.filterByTechnologies(
       skill.technologies.map(t => t.name)
     );
-    // .then((jobs: Job[]) => {
-    //   this.jobs = jobs;
-    //   this.currentSlidesLength = this.jobs.length;
-    // });
   }
 }
 </script>
 <style scoped>
-/* .slide-enter-active {
-  transition: all 1s ease;
-  position: relative;
-}
-.slide-leave-active {
-  transition: all 1s;
-  position: fixed;
-}
-.slide-enter,
-.slide-leave-to {
-  transform: translateX(100%);
-  opacity: 0;
-} */
 
-.slide-down-enter-active {
-  transition: all 400ms ease;
-  /* transform: translateY(+100%); */
-}
-.slide-down-leave-active {
-  transition: all 400ms;
-  transform: scale(1);
-  opacity: 1;
-}
-.slide-down-enter,
-.slide-down-leave-to {
-  transform: scale(0);
-  /* transform: translateY(-100%); */
-  opacity: 0;
-}
+
 </style>
 

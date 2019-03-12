@@ -12,6 +12,8 @@ import "@/assets/css/ribbon.css";
 import VueSimpleSVG from "vue-simple-svg";
 import Scrollspy from 'vue2-scrollspy';
 import VueCarousel from 'vue-carousel';
+import PortalVue from 'portal-vue'
+
 
 Vue.use(VueCarousel, {
   perPage:1
@@ -23,6 +25,7 @@ Vue.use(Scrollspy, {
   time:500
 });
 Vue.use(VueSimpleSVG);
+Vue.use(PortalVue)
 Vue.config.productionTip = false;
 
 new Vue({

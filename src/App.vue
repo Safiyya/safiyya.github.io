@@ -4,6 +4,7 @@
     id="app"
     class="h-full"
   >
+ 
     <!-- <span class="fixed text-red text-3xl z-50" style="top:3rem">
   <span class="block sm:hidden">XS</span>
   <span class="hidden sm:block md:hidden">SM</span>
@@ -12,6 +13,7 @@
   <span class="hidden xl:block">XL</span>
 </span> -->
 
+ 
     <header-menu></header-menu>
 
     <div v-scroll-spy>
@@ -47,6 +49,7 @@
         <contact class="pt-16 p-4 h-screen"></contact>
       </div>
     </div>
+    <portal-target slim  :transition="{ name: 'scale-center'}" name="modal"></portal-target>
   </div>
 
 </template>
@@ -138,5 +141,19 @@ export default class AppVue extends Vue {
 .section:not:first-child {
   height: calc(100% - 3rem);
   padding-top: 3rem;
+}
+
+.scale-center-enter-active {
+  transition: all 400ms ease;
+}
+.scale-center-leave-active {
+  transition: all 400ms;
+  transform: scale(1);
+  opacity: 1;
+}
+.scale-center-enter,
+.scale-center-leave-to {
+  transform: scale(0);
+  opacity: 0;
 }
 </style>
