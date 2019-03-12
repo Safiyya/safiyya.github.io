@@ -111,16 +111,7 @@ export default class AppVue extends Vue {
   }
 
 
-  private disableScrolling(){
-    console.log("disable scrolling");
-    (document.querySelector("body") as HTMLBodyElement).style.overflow ="hidden";
-  }
 
-  private enableScrolling(){
-    console.log("enable scrolling");
-    (document.querySelector("body") as HTMLBodyElement).style.overflow ="auto";
-    
-  }
 
   private onMoveDown() {
     console.log("onMoveDown");

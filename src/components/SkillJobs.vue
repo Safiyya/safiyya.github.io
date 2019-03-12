@@ -13,7 +13,7 @@
       </button>
     </job-card>
 
-    <modal ref="modal">
+    <modal ref="modal" :fullscreen=true>
       <job-card
         class="h-full"
         :job="job"
