@@ -156,6 +156,7 @@ export default class JobCard extends Vue {
 .blur {
   filter: blur(10px) opacity(0.5);
   transform: scale(2);
+  pointer-events: none;
 }
 </style>
 
