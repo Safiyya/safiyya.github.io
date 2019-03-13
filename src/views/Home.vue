@@ -23,7 +23,7 @@
         class="group rotate-on-hover flex justify-center items-center my-8 
         texture-background border-2 border-grey hover:border-white py-3 px-4 rounded text-grey hover:text-white font-bold text-xs sm:text-base md:text-xl uppercase"
       >
-        Let's make something together
+        Let's work together
         <img
           class="w-6 h-6 text-grey group-hover:text-white fill-current ml-2 "
           svg-inline

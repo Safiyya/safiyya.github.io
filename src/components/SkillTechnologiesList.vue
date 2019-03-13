@@ -9,7 +9,7 @@
         >
           <div class="bg-grey-lighter rounded-sm">
             <div
-              class="bg-teal text-teal-lightest font-semibold rounded-sm text-xs md:text-lg leading-none py-1 text-left px-2"
+              class="bg-teal uppercase text-teal-lightest font-semibold rounded-sm text-xs md:text-base leading-none py-1 text-left px-2"
               :style="{width: technology.level/5 * 100+ '%'}"
             >{{technology.name}}</div>
           </div>

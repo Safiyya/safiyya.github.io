@@ -84,7 +84,7 @@
           @click="toggle(skills[i-1])"
           :class="{
             'opacity-25': isAnyOpen() && !skills[i-1].isSelected,
-            'active texture-background shadow-lg  text-grey-lightest flex flex-col' :skills[i-1].isSelected, 
+            'active texture-background shadow-lg text-grey-lightest flex flex-col' :skills[i-1].isSelected, 
             'flex flex-col justify-center':!skills[i-1].isSelected,
             'bg-teal text-teal-lightest': (i===1 || i==4) && !skills[i-1].isSelected}"
         >
@@ -105,7 +105,7 @@
               >
               </badge>
               <div class="font-bold mb-3 text-center">{{skills[i-1].tagline}}</div>
-              
+
             </div>
 
             <div
@@ -125,17 +125,17 @@
 
           </div>
 
-<div
-                v-show="skills[i-1].isSelected"
-                class="p-4 bg-grey-lightest text-grey-darkest"
-              >
-                <div class="text-center text-2xl ">
-                  {{skills[i-1].summary}}
-                </div>
-              </div>
+          <div
+            v-show="skills[i-1].isSelected"
+            class="p-4 bg-grey-lightest text-grey-darkest"
+          >
+            <div class="text-center text-2xl ">
+              {{skills[i-1].summary}}
+            </div>
+          </div>
 
           <div
-            class="w-full flex rounded"
+            class="w-full flex py-8"
             v-show="skills[i-1].isSelected"
           >
 
