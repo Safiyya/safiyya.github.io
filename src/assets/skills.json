@@ -72,7 +72,7 @@
             "category": "Product",
             "iconUrl": "heroicons/heroicons-lg/heroicon-chart-lg.svg",
             "tagline": "Ship early, ship often.",
-            "summary": "\"Build, Measure, Learn\" is my personal mantra. I know that business decisions are impacted by software and communicate these in a timely manner.",
+            "summary": "\"Build, Measure, Learn\" is my personal mantra. Business decisions are impacted by software and communicate these in a timely manner.",
             "technologies": [
                 {
                     "name": "UX",

@@ -80,21 +80,22 @@
           v-for="i in 4"
           :key="i"
           :id="'cell-'+i"
-          class="w-1/2 absolute"
+          class="w-1/2 absolute text-grey-darkest"
           @click="toggle(skills[i-1])"
           :class="{
             'opacity-25': isAnyOpen() && !skills[i-1].isSelected,
-            'active texture-background shadow-lg px-4 text-grey-lightest flex flex-col' :skills[i-1].isSelected, 
+            'active texture-background shadow-lg  text-grey-lightest flex flex-col' :skills[i-1].isSelected, 
             'flex flex-col justify-center':!skills[i-1].isSelected,
             'bg-teal text-teal-lightest': (i===1 || i==4) && !skills[i-1].isSelected}"
         >
           <!-- <button @click="close(skills[i-1])">close</button> -->
+
           <div
-            class="flex"
+            class="flex px-8"
             :class="{'justify-center':!skills[i-1].isSelected, 'justify-start py-20 lg:py-12 w-full':skills[i-1].isSelected}"
           >
 
-            <div :class="{'w-1/2':skills[i-1].isSelected}">
+            <div :class="{'w-2/5':skills[i-1].isSelected}">
 
               <badge
                 class="badge mx-2"
@@ -104,13 +105,14 @@
               >
               </badge>
               <div class="font-bold mb-3 text-center">{{skills[i-1].tagline}}</div>
-
+              
             </div>
 
             <div
               v-show="skills[i-1].isSelected"
-              class="w-1/2 p-4 flex justify-center"
+              class="w-3/5 py-4 flex justify-center"
             >
+
               <div class="w-full">
 
                 <skill-technologies-list
@@ -123,40 +125,32 @@
 
           </div>
 
+<div
+                v-show="skills[i-1].isSelected"
+                class="p-4 bg-grey-lightest text-grey-darkest"
+              >
+                <div class="text-center text-2xl ">
+                  {{skills[i-1].summary}}
+                </div>
+              </div>
+
           <div
-            class="w-full flex"
-            v-if="skills[i-1].isSelected"
+            class="w-full flex rounded"
+            v-show="skills[i-1].isSelected"
           >
 
-            <div class="w-full">
-              <carousel
-                :paginationEnabled=false
-                :paginationActiveColor="'#f6993f'"
-                :navigate-to="currentSlide"
-              >
-                <slide>
-                  <div
-                    v-show="skills[i-1].isSelected"
-                    class="flex items-center justify-center p-4 "
-                  >
-                    <div class="text-3xl text-grey-lightest w-4/5">
-                      {{skills[i-1].summary}}
-                    </div>
-                  </div>
-                </slide>
-                <template v-for="(job, jix) in fetchJobs(skills[i-1])">
-                  <slide
-                    :key="jix"
-                  >
-                    <skill-job
-                      class="w-full"
-                      :job="job"
-                    ></skill-job>
-                  </slide>
-                </template>
-              </carousel>
-              <div class="text-grey-lightest">
-                <button @click.stop="currentSlide-=1">
+            <div class="w-full flex items-center">
+
+              <template v-for="(job, jix) in fetchJobs(skills[i-1])">
+
+                <skill-job
+                  :key="jix"
+                  class="w-full"
+                  :job="job"
+                ></skill-job>
+              </template>
+              <!-- <div class="text-grey-lightest">
+                <button @click.stop="prev()">
                   <img
                     class="w-6 h-6 fill-current text-grey-lightest "
                     svg-inline
@@ -164,8 +158,8 @@
                     alt="Previous"
                   />
                 </button>
-                {{currentSlide}}
-                <button @click.stop="currentSlide+=1">
+
+                <button @click.stop="next()">
                   <img
                     class="w-6 h-6 fill-current text-grey-lightest "
                     svg-inline
@@ -175,7 +169,7 @@
 
                 </button>
 
-              </div>
+              </div> -->
             </div>
 
           </div>
@@ -216,6 +210,8 @@ export default class About extends Vue {
   private skills: Skill[] = [];
   private expandedSkill: Skill = new Skill();
   private isLoaded: boolean = false;
+  private currentSlideMin: number = 0;
+  private currentSlideMax: number = 1;
   private currentSlide: number = 0;
 
   public mounted() {
@@ -235,11 +231,18 @@ export default class About extends Vue {
     (this.$refs.modal as Modal).open();
   }
 
+  prev() {
+    return [(this.currentSlideMin -= 1), (this.currentSlideMax -= 1)];
+  }
+
+  next() {
+    return [(this.currentSlideMin += 1), (this.currentSlideMax += 1)];
+  }
+
   toggle(skill: Skill) {
     if (skill.isSelected) {
       // opened => just close it
       skill.isSelected = false;
-      this.currentSlide = 0;
     } else {
       // closed, open and close any other
       this.skills.forEach(s => (s.isSelected = false));
