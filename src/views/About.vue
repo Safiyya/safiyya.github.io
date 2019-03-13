@@ -269,8 +269,8 @@ export default class About extends Vue {
 }
 .panel > div.active {
   transition: all 400ms;
-  width: 90%;
-  height: 90%;
+  width: 85%;
+  height: 85%;
   z-index: 10;
 }
 
