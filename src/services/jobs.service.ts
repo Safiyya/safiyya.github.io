@@ -16,7 +16,7 @@ class JobsService {
     }
 
     public filterByTechnologies(technologies: string[]): Job[] {
-        return (data.jobs as Job[]).filter((j:Job)=>{
+        return this.get().filter((j:Job)=>{
                 return this.intersection([j.technologies, technologies]).length > 0
             })
         
