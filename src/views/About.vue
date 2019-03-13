@@ -72,36 +72,54 @@
 
     </div>
 
-    <div class="hidden md:block">
+    <div class="hidden md:block h-screen">
 
-      <div class="w-screen h-screen panel relative p-12">
+      <div class="h-screen w-screen panel relative p-12 ">
+          <button v-show="isAnyOpen()"
+          class="h-6 w-6 m-2 absolute text-grey-dark z-20 fill-current"
+          style="top:0;right:0" @click="close()"
+        >
+          <img
+            svg-inline
+            src="../assets/icons/close.svg"
+            alt="Close"
+          />
+          </button>
         <div
           v-for="i in 4"
           :key="i"
           :id="'cell-'+i"
           class="w-1/2 absolute"
           @click="skills[i-1].isSelected=!skills[i-1].isSelected"
-          :class="{'active bg-white flex flex-wrap':skills[i-1].isSelected, 'flex flex-col justify-center':!skills[i-1].isSelected}"
+          :class="{
+            'opacity-25 pointer-events-none': isAnyOpen() && !skills[i-1].isSelected,
+            'active bg-white shadow-lg px-16':skills[i-1].isSelected, 
+            'flex flex-col justify-center':!skills[i-1].isSelected,
+            'bg-teal text-teal-lightest': (i===1 || i==4) && !skills[i-1].isSelected}"
         >
+    
           <div
             class="flex"
-            :class="{'justify-center':!skills[i-1].isSelected, 'justify-start px-4 pt-12 w-full texture-background':skills[i-1].isSelected}"
+            :class="{'justify-center':!skills[i-1].isSelected, 'justify-start pt-12 w-full bg-white':skills[i-1].isSelected}"
           >
+             
             <div :class="{'w-1/2':skills[i-1].isSelected}">
+
+            
               <badge
-                class="badge mx-2 text-grey-darker"
+                class="badge mx-2"
                 :title="skills[i-1].category"
                 :color="'grey-lightest'"
                 :icon-url="skills[i-1].resolvedIconUrl"
               >
               </badge>
-              <div class="font-bold mb-3 text-grey text-center">{{skills[i-1].tagline}}</div>
-              
+              <div class="font-bold mb-3 text-center">{{skills[i-1].tagline}}</div>
+
             </div>
 
             <div
-              v-if="skills[i-1].isSelected"
-              class="w-1/2 p-4 flex justify-center"
+              v-show="skills[i-1].isSelected"
+              class="w-1/2 flex justify-center"
             >
               <div class="w-full">
 
@@ -116,151 +134,34 @@
           </div>
 
           <div
-            v-if="skills[i-1].isSelected"
-            class="bg-teal w-full rounded flex items-center justify-center p-4 "
+            v-show="skills[i-1].isSelected"
+            class="bg-teal w-full flex items-center justify-center p-4 "
           >
             <div class="text-3xl text-teal-lightest w-4/5">
               {{skills[i-1].summary}}
             </div>
           </div>
 
-          <div v-if="skills[i-1].isSelected" class="w-full flex justify-around">
-            <!-- <carousel
-              class="border border-grey-lightest rounded p-2"
-              :perPage="1"
-              :loop=true
-              :paginationEnabled=true
-              :paginationActiveColor="'#f6993f'"
-              :navigate-to="currentSlide"
-            > -->
-              <div class="w-1/3 border-2 border-l border-teal" v-for="(job, jix) in fetchJobs(skills[i-1])" :key="jix">
-                <!-- <slide
-                  class="h-full"
-                  :key="jix"
-                > -->
-                  <skill-job  :job="job" ></skill-job>
-                <!-- </slide> -->
-              </div>
-            <!-- </carousel> -->
+          <div
+            v-show="skills[i-1].isSelected"
+            class="w-full flex justify-around"
+          >
+            <div
+              class="w-1/3"
+              v-for="(job, jix) in fetchJobs(skills[i-1])"
+              :key="jix"
+            >
+
+              <skill-job :job="job"></skill-job>
+            </div>
           </div>
+          
 
         </div>
       </div>
-
-      <!-- <div class=" hidden grid h-screen w-screen p-8">
-        <div
-          v-for="(skill, six) in skills"
-          :key="six"
-          class="grid-item"
-          v-bind:class="{
-            ['cell-'+(six+1)]:true, 
-            'hidden':expandedSkillIndex!== 0 && expandedSkillIndex !==six+1}"
-        >
-          <div>
-            <badge
-              class="badge mx-2 text-grey-darker"
-              :class="{'text-teal':skill.isSelected}"
-              :title="skill.category"
-              :color="expandedSkillIndex!== 0 && expandedSkillIndex ===six+1 ? 'teal' : 'grey-lightest'"
-              :icon-url="skill.resolvedIconUrl"
-              @click.native="showExpandedSkill(skill, six+1)"
-            >
-            </badge>
-            <div class="font-bold mb-3 text-grey-dark text-center">{{skill.tagline}}</div>
-            <div class="text-grey-darker md:hidden">
-              {{skill.summary}}
-            </div>
-          </div>
-
-        </div>
-        <div
-          class="grid-item cell-1 z-10 "
-          v-if="expandedSkillIndex !==0 && expandedSkillIndex!==1"
-        >
-          <portal-target
-            class="h-full"
-            name="cell-1"
-          >
-          </portal-target>
-        </div>
-        <div
-          class="grid-item cell-2 z-10 "
-          v-if="expandedSkillIndex !==0 && expandedSkillIndex!==2"
-        >
-          <portal-target
-            class="h-full"
-            name="cell-2"
-          >
-          </portal-target>
-        </div>
-        <div
-          class="grid-item cell-3 z-10"
-          v-if="expandedSkillIndex !==0 && expandedSkillIndex!==3"
-        >
-          <portal-target
-            class="h-full"
-            name="cell-3"
-          >
-          </portal-target>
-        </div>
-        <div
-          class="grid-item cell-4 z-10"
-          v-if="expandedSkillIndex !==0 && expandedSkillIndex!==4"
-        >
-          <portal-target
-            class="h-full"
-            name="cell-4"
-          >
-          </portal-target>
-        </div>
-      </div> -->
 
     </div>
 
-    <!-- <portal
-      class="h-full "
-      v-bind:to="'cell-'+taglineLocation"
-    >
-      <div class="bg-grey-darkest rounded text-white flex flex-col justify-center p-4 h-full">
-        <div class="text-3xl">
-          {{expandedSkill.summary}}
-        </div>
-      </div>
-    </portal>
-
-    <portal
-      class="h-full"
-      v-bind:to="'cell-'+technologiesLocation"
-    >
-      <div class="h-full p-4">
-        <skill-technologies-list :skill="expandedSkill"></skill-technologies-list>
-
-      </div>
-    </portal>
-    <portal
-      class="h-full"
-      v-bind:to="'cell-'+jobsLocation"
-    >
-      <div v-if="expandedSkill">
-        <carousel
-          class="border border-grey-lightest rounded p-2"
-          :perPage="1"
-          :loop=true
-          :paginationEnabled=true
-          :paginationActiveColor="'#f6993f'"
-          :navigate-to="currentSlide"
-        >
-          <template v-for="(job, jix) in fetchJobs(expandedSkill)">
-            <slide
-              class="h-full"
-              :key="jix"
-            >
-              <skill-job :job="job"></skill-job>
-            </slide>
-          </template>
-        </carousel>
-      </div>
-    </portal> -->
   </div>
 </template>
  
@@ -327,8 +228,11 @@ export default class About extends Vue {
   }
 
   private close() {
-    this.expandedSkill = new Skill();
-    this.expandedSkillIndex = 0;
+   this.skills.forEach(s => s.isSelected = false)
+  }
+
+  private isAnyOpen(){
+    return this.skills.find(s => s.isSelected === true)
   }
 
   private fetchJobs(skill: Skill) {
@@ -396,34 +300,31 @@ export default class About extends Vue {
 
 .panel > div {
   transition: all 400ms;
-  height: 60%;
+  height: 50%;
+  z-index: 0;
 }
 .panel > div.active {
   transition: all 400ms;
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   z-index: 10;
 }
 
 #cell-1 {
   top: 0;
   left: 0;
-  /* background: blue; */
 }
 #cell-2 {
   top: 0;
   right: 0;
-  /* background: rgb(197, 201, 197); */
 }
 #cell-3 {
   bottom: 0;
   left: 0;
-  /* background: orange; */
 }
 #cell-4 {
   bottom: 0;
   right: 0;
-  /* background: red; */
 }
 </style>
 

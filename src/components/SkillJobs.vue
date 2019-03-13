@@ -6,7 +6,7 @@
     >
       <button
         class="text-xs text-orange uppercase flex justify-center items-center p-2 rounded my-2"
-        @click="openModal()"
+        @click.stop="openModal()"
       >
         Learn more
 

@@ -28,7 +28,7 @@
         class="section"
         id="about-section"
       >
-        <about class="pt-8 md:pt-8  p-4" v-on:disable-scroll="disableScrolling()" v-on:enable-scroll="enableScrolling()"></about>
+        <about class="pt-8 md:pt-12  p-4" v-on:disable-scroll="disableScrolling()" v-on:enable-scroll="enableScrolling()"></about>
       </div>
       <div
         class="section"
