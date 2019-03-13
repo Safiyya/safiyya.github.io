@@ -40,7 +40,7 @@
             "category": "Back-end",
             "iconUrl": "heroicons/heroicons-lg/heroicon-database-lg.svg",
             "tagline": "Modular and robust",
-            "summary": "I know that requirements evolve, my code is robust and well-tested while accomodating a fast iterating business.",
+            "summary": "Requirements evolve, my code is robust and well-tested while accomodating a fast iterating business.",
             "technologies": [
                 {
                     "name": "C#",
