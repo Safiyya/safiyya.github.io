@@ -84,14 +84,14 @@
           @click="toggle(skills[i-1])"
           :class="{
             'opacity-25': isAnyOpen() && !skills[i-1].isSelected,
-            'active bg-white shadow-lg px-16':skills[i-1].isSelected, 
+            'active texture-background shadow-lg px-4 text-grey-lightest flex flex-col' :skills[i-1].isSelected, 
             'flex flex-col justify-center':!skills[i-1].isSelected,
             'bg-teal text-teal-lightest': (i===1 || i==4) && !skills[i-1].isSelected}"
         >
           <!-- <button @click="close(skills[i-1])">close</button> -->
           <div
             class="flex"
-            :class="{'justify-center':!skills[i-1].isSelected, 'justify-start pt-12 w-full bg-white':skills[i-1].isSelected}"
+            :class="{'justify-center':!skills[i-1].isSelected, 'justify-start py-20 lg:py-12 w-full':skills[i-1].isSelected}"
           >
 
             <div :class="{'w-1/2':skills[i-1].isSelected}">
@@ -109,7 +109,7 @@
 
             <div
               v-show="skills[i-1].isSelected"
-              class="w-1/2 flex justify-center"
+              class="w-1/2 p-4 flex justify-center"
             >
               <div class="w-full">
 
@@ -124,26 +124,60 @@
           </div>
 
           <div
-            v-show="skills[i-1].isSelected"
-            class="bg-teal w-full flex items-center justify-center p-4 "
+            class="w-full flex"
+            v-if="skills[i-1].isSelected"
           >
-            <div class="text-3xl text-teal-lightest w-4/5">
-              {{skills[i-1].summary}}
-            </div>
-          </div>
 
-          <div
-            v-show="skills[i-1].isSelected"
-            class="w-full flex justify-around"
-          >
-            <div
-              class="w-1/3"
-              v-for="(job, jix) in fetchJobs(skills[i-1])"
-              :key="jix"
-            >
+            <div class="w-full">
+              <carousel
+                :paginationEnabled=false
+                :paginationActiveColor="'#f6993f'"
+                :navigate-to="currentSlide"
+              >
+                <slide>
+                  <div
+                    v-show="skills[i-1].isSelected"
+                    class="flex items-center justify-center p-4 "
+                  >
+                    <div class="text-3xl text-grey-lightest w-4/5">
+                      {{skills[i-1].summary}}
+                    </div>
+                  </div>
+                </slide>
+                <template v-for="(job, jix) in fetchJobs(skills[i-1])">
+                  <slide
+                    :key="jix"
+                  >
+                    <skill-job
+                      class="w-full"
+                      :job="job"
+                    ></skill-job>
+                  </slide>
+                </template>
+              </carousel>
+              <div class="text-grey-lightest">
+                <button @click.stop="currentSlide-=1">
+                  <img
+                    class="w-6 h-6 fill-current text-grey-lightest "
+                    svg-inline
+                    src="@/assets/icons/cheveron-left.svg"
+                    alt="Previous"
+                  />
+                </button>
+                {{currentSlide}}
+                <button @click.stop="currentSlide+=1">
+                  <img
+                    class="w-6 h-6 fill-current text-grey-lightest "
+                    svg-inline
+                    src="@/assets/icons/cheveron-right.svg"
+                    alt="Next"
+                  />
 
-              <skill-job :job="job"></skill-job>
+                </button>
+
+              </div>
             </div>
+
           </div>
 
         </div>
@@ -186,17 +220,15 @@ export default class About extends Vue {
 
   public mounted() {
     this.isLoaded = false;
-    return (
-      skillsService
-        .get()
-        .then((skills: Skill[]) => {
-          this.skills = skills;
-          this.isLoaded = true;
-        })
-        .catch(() => {
-          this.isLoaded = true;
-        })
-    );
+    return skillsService
+      .get()
+      .then((skills: Skill[]) => {
+        this.skills = skills;
+        this.isLoaded = true;
+      })
+      .catch(() => {
+        this.isLoaded = true;
+      });
   }
 
   private openSkillModal(skill: Skill) {
@@ -207,9 +239,10 @@ export default class About extends Vue {
     if (skill.isSelected) {
       // opened => just close it
       skill.isSelected = false;
+      this.currentSlide = 0;
     } else {
       // closed, open and close any other
-      this.skills.forEach(s => s.isSelected=false)
+      this.skills.forEach(s => (s.isSelected = false));
       skill.isSelected = !skill.isSelected;
     }
   }
@@ -223,7 +256,6 @@ export default class About extends Vue {
       ? jobsService.filterByTechnologies(skill.technologies.map(t => t.name))
       : [];
   }
-
 }
 </script>
 <style scoped>
