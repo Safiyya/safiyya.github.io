@@ -75,37 +75,27 @@
     <div class="hidden md:block h-screen">
 
       <div class="h-screen w-screen panel relative p-12 ">
-          <button v-show="isAnyOpen()"
-          class="h-6 w-6 m-2 absolute text-grey-dark z-20 fill-current"
-          style="top:0;right:0" @click="close()"
-        >
-          <img
-            svg-inline
-            src="../assets/icons/close.svg"
-            alt="Close"
-          />
-          </button>
+
         <div
           v-for="i in 4"
           :key="i"
           :id="'cell-'+i"
           class="w-1/2 absolute"
-          @click="skills[i-1].isSelected=!skills[i-1].isSelected"
+          @click="toggle(skills[i-1])"
           :class="{
-            'opacity-25 pointer-events-none': isAnyOpen() && !skills[i-1].isSelected,
+            'opacity-25': isAnyOpen() && !skills[i-1].isSelected,
             'active bg-white shadow-lg px-16':skills[i-1].isSelected, 
             'flex flex-col justify-center':!skills[i-1].isSelected,
             'bg-teal text-teal-lightest': (i===1 || i==4) && !skills[i-1].isSelected}"
         >
-    
+          <!-- <button @click="close(skills[i-1])">close</button> -->
           <div
             class="flex"
             :class="{'justify-center':!skills[i-1].isSelected, 'justify-start pt-12 w-full bg-white':skills[i-1].isSelected}"
           >
-             
+
             <div :class="{'w-1/2':skills[i-1].isSelected}">
 
-            
               <badge
                 class="badge mx-2"
                 :title="skills[i-1].category"
@@ -155,7 +145,6 @@
               <skill-job :job="job"></skill-job>
             </div>
           </div>
-          
 
         </div>
       </div>
@@ -191,16 +180,9 @@ import { wrapGrid } from "animate-css-grid";
 })
 export default class About extends Vue {
   private skills: Skill[] = [];
-  private jobs: Job[] = [];
   private expandedSkill: Skill = new Skill();
-  private expandedSkillIndex: number = 0;
-  private selectedJob: Job = new Job();
   private isLoaded: boolean = false;
   private currentSlide: number = 0;
-  private currentSlidesLength: number = 0;
-  private taglineLocation: number = 0;
-  private jobsLocation: number = 0;
-  private technologiesLocation: number = 0;
 
   public mounted() {
     this.isLoaded = false;
@@ -211,12 +193,6 @@ export default class About extends Vue {
           this.skills = skills;
           this.isLoaded = true;
         })
-        // .then(() => {
-        //   wrapGrid(document.querySelector(".grid") as HTMLElement, {
-        //     easing: "easeIn",
-        //     duration: 750
-        //   });
-        // })
         .catch(() => {
           this.isLoaded = true;
         })
@@ -227,12 +203,19 @@ export default class About extends Vue {
     (this.$refs.modal as Modal).open();
   }
 
-  private close() {
-   this.skills.forEach(s => s.isSelected = false)
+  toggle(skill: Skill) {
+    if (skill.isSelected) {
+      // opened => just close it
+      skill.isSelected = false;
+    } else {
+      // closed, open and close any other
+      this.skills.forEach(s => s.isSelected=false)
+      skill.isSelected = !skill.isSelected;
+    }
   }
 
-  private isAnyOpen(){
-    return this.skills.find(s => s.isSelected === true)
+  private isAnyOpen() {
+    return this.skills.find(s => s.isSelected === true);
   }
 
   private fetchJobs(skill: Skill) {
@@ -241,63 +224,9 @@ export default class About extends Vue {
       : [];
   }
 
-  private showExpandedSkill(skill: Skill, index: number) {
-    this.expandedSkill = skill;
-    this.expandedSkillIndex = index;
-    // this.skills = this.skills.slice(index, 1);
-    if (index === 1) {
-      this.taglineLocation = 2;
-      this.technologiesLocation = 3;
-      this.jobsLocation = 4;
-    } else if (index === 2) {
-      this.taglineLocation = 1;
-      this.technologiesLocation = 4;
-      this.jobsLocation = 3;
-    } else if (index === 3) {
-      this.taglineLocation = 4;
-      this.technologiesLocation = 1;
-      this.jobsLocation = 2;
-    } else if (index === 4) {
-      this.taglineLocation = 3;
-      this.technologiesLocation = 2;
-      this.jobsLocation = 1;
-    }
-  }
 }
 </script>
 <style scoped>
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 40%);
-  grid-auto-flow: dense;
-}
-
-.grid-item {
-  grid-column: span 1;
-  grid-row: span 1;
-}
-
-.grid-item.cell-1 {
-  grid-column-start: 1 / span 1;
-  grid-row-start: 1 / span 1;
-}
-
-.grid-item.cell-2 {
-  grid-column: 2 / span 1;
-  grid-row: 1 / span 1;
-}
-
-.grid-item.cell-3 {
-  grid-column: 1 / span 1;
-  grid-row: 2 / span 1;
-}
-
-.grid-item.cell-4 {
-  grid-column: 2 / span 1;
-  grid-row: 2 / span 1;
-}
-
 .panel > div {
   transition: all 400ms;
   height: 50%;
