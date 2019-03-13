@@ -149,27 +149,6 @@
                   :job="job"
                 ></skill-job>
               </template>
-              <!-- <div class="text-grey-lightest">
-                <button @click.stop="prev()">
-                  <img
-                    class="w-6 h-6 fill-current text-grey-lightest "
-                    svg-inline
-                    src="@/assets/icons/cheveron-left.svg"
-                    alt="Previous"
-                  />
-                </button>
-
-                <button @click.stop="next()">
-                  <img
-                    class="w-6 h-6 fill-current text-grey-lightest "
-                    svg-inline
-                    src="@/assets/icons/cheveron-right.svg"
-                    alt="Next"
-                  />
-
-                </button>
-
-              </div> -->
             </div>
 
           </div>
