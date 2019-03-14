@@ -73,11 +73,11 @@
     </div>
 
     <div class="hidden md:block h-screen">
-      <div
+      <!-- <div
         class=" text-red text-xl w-full"
         v-for="(s, ix) in skills"
         :key="ix"
-      >{{ix}} {{s.isSelected}}</div>
+      >{{ix}} {{s.isSelected}}</div> -->
 
       <div class="h-screen w-screen panel relative p-12 ">
 
@@ -93,7 +93,7 @@
             'flex flex-col justify-center cursor-pointer' :!skills[i-1].isSelected,
             'bg-teal text-teal-lightest': (i===1 || i==4) && !skills[i-1].isSelected}"
         >
-          <button-close v-show="skills[i-1].isSelected" class="absolute h-8 w-8" @close.stop="toggle(skills[i-1])"></button-close>
+          <button-close v-show="skills[i-1].isSelected" class="absolute h-8 w-8" @click.native.stop="toggle(skills[i-1])"></button-close>
 
           <div
             class="flex px-8"
@@ -140,16 +140,16 @@
           </div>
 
           <div
-            class="w-full flex py-8 flex-grow"
-            v-show="skills[i-1].isSelected"
+            class="w-full flex flex-grow"
+            v-show="skills[i-1].isSelected && i!==4"
           >
-            <div class="w-full flex items-center justify-between">
+            <div class="w-full flex items-stretch justify-between mb-12">
 
               <template v-for="(job, jix) in fetchJobs(skills[i-1])">
 
                 <skill-job
                   :key="jix"
-                  class="w-full "
+                  class="w-full"
                   :job="job"
                 ></skill-job>
               </template>

@@ -1,6 +1,6 @@
 <template>
 
-  <div class=" flex flex-col ">
+  <div class=" flex flex-col justify-around ">
     <div
       v-if="!isExpanded"
       v-bind:class="{'h-32 lg:h-32':!isExpanded}"
@@ -17,20 +17,20 @@
 
     <div
       v-if="isExpanded"
-      class="m-2 p-2 rounded h-48 relative flex flex-col justify-between"
+      class="m-2 p-2 rounded h-48 md:h-auto relative flex flex-col justify-between"
     >
       <div
-        class="absolute blur company-picture w-full h-full p-3"
+        class="absolute md:hidden blur company-picture w-full h-full p-3"
         :style="'background-image: url('+job.company.picture+')'"
       >
       </div>
-      <div class="text-lg my-3 text-left ">
+      <div class="text-lg md:text-sm md:text-grey-darker my-3 text-left ">
 
         {{job.company.vision}}
       </div>
 
       <div
-        class="flex  flex-row items-left justify-between text-xs mt-5"
+        class="flex flex-row items-left justify-between text-xs mt-5"
         :class="{'mb-6':job.isSelected, 'flex-col': job.isSelected, 'flex-row':job.isUnselected }"
       >
         <icon-with-text
@@ -76,14 +76,14 @@
 
     <div v-bind:class="{'bg-grey-darkest md:bg-transparent text-grey-lightest flex-1':isExpanded}">
 
-      <div class="text-xl font-semibold py-3  flex flex-col justify-center">
-        {{job.title}}
+      <div class="text-xl font-semibold py-3 md:py-0 flex flex-col justify-center">
+        <span :class="{'md:hidden ':isExpanded}">{{job.title}}</span>
         <slot></slot>
       </div>
 
       <div
         v-if="isExpanded"
-        class="flex flex-wrap items-end px-2 my-3"
+        class="flex flex-wrap items-end px-2 my-3 md:my-0"
       >
         <span
           v-for="(tech, ix) in job.technologies"
@@ -96,10 +96,10 @@
       </div>
 
       <div
-        v-if="isExpanded"
+        v-if="false"
         class="rounded-b lg:rounded-b-none w-full lg:rounded-r p-4 flex flex-col justify-center "
       >
-        <div class="flex flex-col lg:flex-grow">
+        <div class="md:hidden flex flex-col lg:flex-grow">
 
           <ul class=" text-lg list-reset mb-6 flex flex-col">
             <li

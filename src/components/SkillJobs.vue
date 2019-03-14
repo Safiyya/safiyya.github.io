@@ -1,7 +1,7 @@
 <template>
-  <div :class="{'max-h-full overflow-y-auto overflow-x-hidden':isExpanded}">
+  <div :class="{'max-h-full overflow-y-auto overflow-x-hidden bg-grey-lightest rounded-b' :isExpanded}">
     <job-card
-      class="h-full bg-white md:bg-transparent rounded"
+      class="h-full bg-white md:bg-transparent rounded relative"
       :job="job"
       :is-expanded="isExpanded"
     >
@@ -12,13 +12,20 @@
         Learn more
 
       </button>
+
       <button
-        class="hidden md:block text-xs text-orange uppercase flex justify-center items-center p-2 rounded my-2"
-        @click.stop="toggleJob()"
+        v-show="!isExpanded"
+        class="hidden md:flex text-xs text-orange uppercase  justify-center items-center p-2 rounded my-2"
+        @click.stop="isExpanded=true"
       >
-        {{ isExpanded ? "Close" : "Learn more"}}
+        Learn more
 
       </button>
+      <button-close
+        v-show="isExpanded"
+        @click.native.stop="isExpanded=false"
+        class="hidden md:block absolute w-4 h-4 m-1" style="top:0;right:0;"
+      ></button-close>
     </job-card>
 
     <modal
@@ -54,16 +61,17 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 import Job from "@/models/job";
 import JobCard from "@/components/JobCard.vue";
 import Modal from "@/components/Modal.vue";
+import ButtonClose from "@/components/buttons/ButtonClose.vue";
 
 @Component({
   components: {
     "job-card": JobCard,
-    modal: Modal
+    modal: Modal,
+    "button-close": ButtonClose
   }
 })
 export default class SkillJob extends Vue {
   @Prop() public job: Job;
-  
 
   public isExpanded: boolean = false;
 
