@@ -1,6 +1,6 @@
 <template>
 
-  <div class=" flex overflow-hidden flex-col ">
+  <div class=" flex flex-col ">
     <div
       v-if="!isExpanded"
       v-bind:class="{'h-32 lg:h-32':!isExpanded}"
@@ -74,7 +74,7 @@
 
     </div>
 
-    <div v-bind:class="{'bg-grey-darkest text-grey-lightest flex-1':isExpanded}">
+    <div v-bind:class="{'bg-grey-darkest md:bg-transparent text-grey-lightest flex-1':isExpanded}">
 
       <div class="text-xl font-semibold py-3  flex flex-col justify-center">
         {{job.title}}

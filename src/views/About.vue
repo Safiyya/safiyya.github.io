@@ -73,6 +73,11 @@
     </div>
 
     <div class="hidden md:block h-screen">
+      <div
+        class=" text-red text-xl w-full"
+        v-for="(s, ix) in skills"
+        :key="ix"
+      >{{ix}} {{s.isSelected}}</div>
 
       <div class="h-screen w-screen panel relative p-12 ">
 
@@ -84,11 +89,11 @@
           @click="toggle(skills[i-1])"
           :class="{
             'opacity-25': isAnyOpen() && !skills[i-1].isSelected,
-            'active texture-background shadow-lg text-grey-lightest flex flex-col' :skills[i-1].isSelected, 
-            'flex flex-col justify-center':!skills[i-1].isSelected,
+            'active texture-background shadow-lg text-grey-lightest flex flex-col cursor-auto' :skills[i-1].isSelected, 
+            'flex flex-col justify-center cursor-pointer' :!skills[i-1].isSelected,
             'bg-teal text-teal-lightest': (i===1 || i==4) && !skills[i-1].isSelected}"
         >
-          <!-- <button @click="close(skills[i-1])">close</button> -->
+          <button-close v-show="skills[i-1].isSelected" class="absolute h-8 w-8" @close.stop="toggle(skills[i-1])"></button-close>
 
           <div
             class="flex px-8"
@@ -135,17 +140,16 @@
           </div>
 
           <div
-            class="w-full flex py-8"
+            class="w-full flex py-8 flex-grow"
             v-show="skills[i-1].isSelected"
           >
-
-            <div class="w-full flex items-center">
+            <div class="w-full flex items-center justify-between">
 
               <template v-for="(job, jix) in fetchJobs(skills[i-1])">
 
                 <skill-job
                   :key="jix"
-                  class="w-full"
+                  class="w-full "
                   :job="job"
                 ></skill-job>
               </template>
@@ -175,6 +179,7 @@ import SkillTechnologiesList from "@/components/SkillTechnologiesList.vue";
 import SkillJob from "@/components/SkillJobs.vue";
 import Modal from "@/components/Modal.vue";
 import { wrapGrid } from "animate-css-grid";
+import ButtonClose from "@/components/buttons/ButtonClose.vue";
 
 @Component({
   components: {
@@ -182,7 +187,8 @@ import { wrapGrid } from "animate-css-grid";
     "job-card": JobCard,
     "skill-technologies-list": SkillTechnologiesList,
     "skill-job": SkillJob,
-    modal: Modal
+    modal: Modal,
+    "button-close": ButtonClose
   }
 })
 export default class About extends Vue {
@@ -219,6 +225,7 @@ export default class About extends Vue {
   }
 
   toggle(skill: Skill) {
+    console.log("toggle", skill.category);
     if (skill.isSelected) {
       // opened => just close it
       skill.isSelected = false;
@@ -248,8 +255,8 @@ export default class About extends Vue {
 }
 .panel > div.active {
   transition: all 400ms;
-  width: 85%;
-  height: 85%;
+  width: 90%;
+  height: 90%;
   z-index: 10;
 }
 
@@ -257,17 +264,48 @@ export default class About extends Vue {
   top: 0;
   left: 0;
 }
+#cell-1.active{
+  @apply rounded-br-lg;
+}
+#cell-1 > button{
+  bottom: 0;
+  right:0;
+}
+
 #cell-2 {
   top: 0;
   right: 0;
 }
+#cell-2.active{
+  @apply rounded-bl-lg;
+}
+#cell-2 > button{
+  bottom: 0;
+  left:0;
+}
+
 #cell-3 {
   bottom: 0;
   left: 0;
 }
+#cell-3.active{
+  @apply rounded-tr-lg;
+}
+#cell-3 > button{
+  top: 0;
+  right:0;
+}
+
 #cell-4 {
   bottom: 0;
   right: 0;
+}
+#cell-4.active{
+  @apply rounded-tl-lg;
+}
+#cell-4 > button{
+  top: 0;
+  left:0;
 }
 </style>
 
