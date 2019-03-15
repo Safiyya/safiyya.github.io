@@ -69,7 +69,7 @@
         class="my-4"
         @click.native="goToPage(2)"
         :icon-url="require('@/assets/heroicons/heroicons-sm/heroicon-puzzle-sm.svg')"
-        :text="'Currently'"
+        :text="'Projects'"
       ></button-section>
       <button-section
         class=""

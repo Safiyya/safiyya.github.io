@@ -7,8 +7,8 @@
       class="flex justify-center items-center " 
       :class="{'rotate':isRotate}"
       :filepath="iconUrl"
-      :width="'50%'"
-      :height="'50%'"
+      :width="'60%'"
+      :height="'60%'"
     />
     <span class="text-xs lg:text-sm">{{text}}</span>
   </button>
