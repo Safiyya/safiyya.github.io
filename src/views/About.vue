@@ -74,7 +74,6 @@
     </div>
 
     <div class="hidden md:block h-screen relative">
-      {{isVisible}}
       <a
         target="blank"
         href="https://www.visualcv.com/safiyyababio-fullstack/"
