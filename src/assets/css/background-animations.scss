@@ -194,7 +194,7 @@
 		//for demo:
 		$duration: 15 + random(5);
 		animation: animation#{$i} linear #{$duration}s infinite;
-		$size: 12px + random(20);
+		$size: 1px + random(20);
 		height: $size;
 		width: $size;
 		$imglist: url('../particles/particle3.svg'),

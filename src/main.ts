@@ -6,13 +6,17 @@ import "./registerServiceWorker";
 
 import "@/assets/css/tailwind.css";
 import "@/assets/css/styles.css";
+import "@/assets/css/animations.css";
 import "@/assets/css/background-animations.scss";
 import "@/assets/css/ribbon.css";
 
 import VueSimpleSVG from "vue-simple-svg";
 import Scrollspy from 'vue2-scrollspy';
 import VueCarousel from 'vue-carousel';
-import PortalVue from 'portal-vue'
+import PortalVue from 'portal-vue';
+import VueSplitCharacters from 'vue-split-characters';
+
+Vue.use(VueSplitCharacters);
 
 
 Vue.use(VueCarousel, {
