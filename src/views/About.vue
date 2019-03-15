@@ -4,7 +4,6 @@
     class="about flex flex-col justify-center items-center container mx-auto"
     v-if="isLoaded"
   >
-    <!-- <button @click="close()">CLose</button> -->
 
     <modal
       ref="modal"

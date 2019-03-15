@@ -35,7 +35,7 @@
   callback: onAboutVisibilityChanged,
   once: true,
   intersection: {
-    threshold: 1,
+    threshold: 0.99,
   },
 }"
           :is-visible="isAboutVisible"
@@ -48,7 +48,7 @@
         class="section"
         id="projects-section"
       >
-        <projects></projects>
+        <projects class="pt-12 mt-6 md:p-0"></projects>
       </div>
       <div
         class="section"

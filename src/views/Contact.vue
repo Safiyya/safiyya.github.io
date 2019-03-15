@@ -7,7 +7,7 @@
           <source srcset="@/assets/images/profile_fit.webp">
           <img
             src="@/assets/images/profile_fit.jpg"
-            class="content rounded-full"
+            class="grayscale content rounded-full"
           >
         </picture>
       </div>
@@ -41,5 +41,9 @@ export default class Contact extends Vue {}
 </script>
 
 <style scoped>
+
+.grayscale{
+  filter:grayscale(0.9)
+}
 </style>
 
