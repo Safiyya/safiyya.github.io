@@ -45,7 +45,7 @@ button:focus {
 
 
 a.button{
-    @apply cursor-pointer text-white font-bold py-4 px-4 rounded-full flex items-center;
+    @apply cursor-pointer bg-pink no-underline text-white font-bold py-4 px-4 rounded-full flex items-center;
 }
 
 .pill{
@@ -53,7 +53,7 @@ a.button{
 }
 
 a.button:hover{
-    @apply bg-orange-dark;
+    @apply bg-pink-dark;
 }
 
 .texture-background {

@@ -16,7 +16,7 @@
           <span class="text-xl sm:text-2xl md:text-3xl my-4">I want to be involved in projects that make a difference with people who are inhabited with a mission. </span>
 
           <a
-            class="button bg-teal text-base my-auto uppercase"
+            class="button bg-grey text-base my-auto uppercase"
             href="mailto:hello@safiyya.io"
           >
             Let's work together
