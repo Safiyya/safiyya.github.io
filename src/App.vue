@@ -4,16 +4,15 @@
     id="app"
     class="h-full"
   >
- 
-    <span class="fixed text-red text-3xl z-50" style="top:3rem">
+
+    <!-- <span class="fixed text-red text-3xl z-50" style="top:3rem">
   <span class="block sm:hidden">XS</span>
   <span class="hidden sm:block md:hidden">SM</span>
   <span class="hidden md:block lg:hidden">MD</span>
   <span class="hidden lg:block xl:hidden">LG</span>
   <span class="hidden xl:block">XL</span>
-</span>
+</span> -->
 
- 
     <header-menu></header-menu>
 
     <div v-scroll-spy>
@@ -22,20 +21,29 @@
         class="section"
         id="home-section"
       >
-        <home class="h-screen w-full" v-on:show-page="onShowPage($event)" ></home>
-      </div>
-      <div
-        class="section mt-1"
-        id="about-section"
-      >
-        <about class="pt-8  md:p-0"></about>
+        <home
+          class="h-screen w-full pb-1"
+          v-on:show-page="onShowPage($event)"
+        ></home>
       </div>
       <div
         class="section"
-        id="experience-section"
+        id="about-section"
       >
-        <experience class="pt-16 p-4"></experience>
+        <about
+          v-observe-visibility="{
+  callback: onAboutVisibilityChanged,
+  once: true,
+  intersection: {
+    threshold: 1,
+  },
+}"
+          :is-visible="isAboutVisible"
+          class="pt-8 mt-1 md:p-0"
+        ></about>
       </div>
+
+
       <div
         class="section"
         id="projects-section"
@@ -49,7 +57,11 @@
         <contact class="pt-16 p-4 h-screen"></contact>
       </div>
     </div>
-    <portal-target slim :transition="{ name: 'scale-center'}" name="modal"></portal-target>
+    <portal-target
+      slim
+      :transition="{ name: 'scale-center'}"
+      name="modal"
+    ></portal-target>
   </div>
 
 </template>
@@ -78,6 +90,7 @@ import { Route } from "vue-router";
 })
 export default class AppVue extends Vue {
   private section: number = 1;
+  private isAboutVisible: boolean = false;
 
   public mounted() {
     const isMobile = false;
@@ -110,10 +123,11 @@ export default class AppVue extends Vue {
     };
   }
 
+  private onAboutVisibilityChanged(isVisible: boolean, entry: any) {
+    this.isAboutVisible = isVisible;
+  }
 
-
-
-  private onShowPage(index:number) {
+  private onShowPage(index: number) {
     console.log("onMoveDown", index);
     (this as any).$scrollTo(index);
   }

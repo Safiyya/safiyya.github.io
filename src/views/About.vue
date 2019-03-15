@@ -1,9 +1,6 @@
 <template>
   <div
-    v-observe-visibility="{
-  callback: onVisibilityChanged,
-  once: true
-}"
+   
     class="about flex flex-col justify-center items-center container mx-auto"
     v-if="isLoaded"
   >
@@ -77,10 +74,15 @@
     </div>
 
     <div class="hidden md:block h-screen relative">
-
-      <a target="blank" href="https://www.visualcv.com/safiyyababio-fullstack/" v-show="!isAnyOpen() && isVisible" style="top:calc(50% - 8rem);left:calc(50% - 8rem);" 
-      class="absolute flex items-center justify-center rounded-full w-64 h-64 z-20 bg-white text-grey-darker hover:text-pink text-2xl">
-        <span>Download CV</span>  
+      {{isVisible}}
+      <a
+        target="blank"
+        href="https://www.visualcv.com/safiyyababio-fullstack/"
+        v-show="!isAnyOpen() && isVisible"
+        style="top:calc(50% - 8rem);left:calc(50% - 8rem);"
+        class="absolute flex items-center justify-center rounded-full w-64 h-64 z-20 bg-white text-grey-darker hover:text-pink text-2xl"
+      >
+        <span>Download CV</span>
       </a>
 
       <div class="h-screen w-screen panel relative p-12 ">
@@ -180,7 +182,7 @@
 </template>
  
 <script lang="ts">
-import { Component, Vue, Emit } from "vue-property-decorator";
+import { Component, Vue, Emit, Prop } from "vue-property-decorator";
 import { Carousel, Slide } from "vue-carousel";
 
 import Badge from "@/components/Badge.vue";
@@ -206,13 +208,14 @@ import ButtonClose from "@/components/buttons/ButtonClose.vue";
   }
 })
 export default class About extends Vue {
+  @Prop() isVisible:boolean;
+
   private skills: Skill[] = [];
   private expandedSkill: Skill = new Skill();
   private isLoaded: boolean = false;
   private currentSlideMin: number = 0;
   private currentSlideMax: number = 1;
   private currentSlide: number = 0;
-  private isVisible: boolean = false;
 
   public mounted() {
     this.isLoaded = false;
@@ -231,11 +234,7 @@ export default class About extends Vue {
     (this.$refs.modal as Modal).open();
   }
 
-  private onVisibilityChanged(isVisible: boolean, entry: any) {
-    this.isVisible = isVisible;
-    console.log(isVisible, entry);
-  }
-
+ 
   prev() {
     return [(this.currentSlideMin -= 1), (this.currentSlideMax -= 1)];
   }
