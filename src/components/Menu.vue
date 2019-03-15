@@ -15,7 +15,7 @@
         v-scroll-spy-link id="about"
           href="#about"
           class="menu-link uppercase text-grey-lighter"
-        >About</a>
+        >Skills</a>
         <!-- <a
         v-scroll-spy-link id="experience"
           href="/#experience"
@@ -25,7 +25,7 @@
         v-scroll-spy-link id="projects"
           href="/#portfolio"
           class="menu-link uppercase text-grey-lighter"
-        >Currently</a>
+        >Projects</a>
         <a
         v-scroll-spy-link id="contact"
           href="/#contact"

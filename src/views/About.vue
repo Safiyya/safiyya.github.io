@@ -98,7 +98,7 @@
             'slide-in-br':isVisible && i===4,
             'opacity-0':!isVisible,
             'opacity-25': isAnyOpen() && !skills[i-1].isSelected,
-            'active texture-background shadow-lg text-grey-lightest flex flex-col cursor-auto' :skills[i-1].isSelected, 
+            'active shadow-lg flex flex-col cursor-auto' :skills[i-1].isSelected, 
             'flex flex-col justify-center cursor-pointer' :!skills[i-1].isSelected,
             'bg-white text-grey-darker': (i===1 || i==4),
             'texture-background text-grey-lightest': (i===2 || i==3) }"

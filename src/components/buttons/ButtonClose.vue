@@ -1,6 +1,6 @@
 <template>
   <button
-    class="m-2 text-grey-dark fill-current hover:text-orange"
+    class="m-2 text-grey-dark fill-current hover:text-pink"
     @click="close()"
   >
     <img

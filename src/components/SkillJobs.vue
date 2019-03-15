@@ -6,7 +6,7 @@
       :is-expanded="isExpanded"
     >
       <button
-        class="md:hidden text-xs text-orange uppercase flex justify-center items-center p-2 rounded my-2"
+        class="md:hidden text-xs text-pink uppercase flex justify-center items-center p-2 rounded my-2"
         @click.stop="openModal()"
       >
         Learn more
@@ -15,7 +15,7 @@
 
       <button
         v-show="!isExpanded"
-        class="hidden md:flex text-xs text-orange uppercase  justify-center items-center p-2 rounded my-2"
+        class="hidden md:flex text-xs text-pink uppercase  justify-center items-center p-2 rounded my-2"
         @click.stop="isExpanded=true"
       >
         Learn more
