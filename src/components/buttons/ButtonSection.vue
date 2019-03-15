@@ -1,16 +1,16 @@
 <template>
   <button
     @click="goToPage(2)"
-    class="button-link"
+    class="button-link w-32 h-32 sm:w-24 sm:h-24 md:w-32 md:h-32 "
   >
     <simple-svg
-      class="flex justify-center w-12 h-12" 
+      class="flex justify-center items-center " 
       :class="{'rotate':isRotate}"
       :filepath="iconUrl"
-      :width="'100%'"
-      :height="'100%'"
+      :width="'50%'"
+      :height="'50%'"
     />
-    <span>{{text}}</span>
+    <span class="text-xs lg:text-sm">{{text}}</span>
   </button>
 </template>
 
@@ -37,7 +37,7 @@ export default class ButtonSection extends Vue {
 
   transform: scale(1);
   transition: all 250ms ease;
-  @apply w-32 h-32 bg-grey-darkest flex flex-col items-center justify-center items-center my-8 border-0 p-4 rounded-full;
+  @apply bg-grey-darkest flex flex-col items-center justify-center items-center border-0 rounded-full;
 }
 
 .button-link:hover{
@@ -47,7 +47,7 @@ export default class ButtonSection extends Vue {
 }
 
 .button-link > span {
-  @apply uppercase text-sm my-2 text-grey-light;
+  @apply uppercase  my-2 text-grey-light;
 }
 
 .button-link:hover > span {

@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper home texture-background flex flex-col items-center justify-center">
+  <div class="wrapper p-4 home texture-background flex flex-col items-center justify-around md:justify-center">
 
     <!-- <div
       v-for="i in 250"
@@ -7,7 +7,7 @@
       class="particle"
       v-bind:class="getClass()"
     ></div> -->
-    <div class="align-self-center flex text-5xl flex-col items-center justify-center container mx-auto">
+    <div class="align-self-center flex text-4xl md:text-5xl flex-col items-center justify-center container mx-auto">
       <div class="sentence">
         <span>H</span>
         <span>i</span>
@@ -20,7 +20,8 @@
         <span class="text-pink-dark">Safiyya Babio</span>
         <span>.</span>
       </div>
-      <div class="sentence">
+      <div class="flex flex-col md:flex-row">
+<div class="sentence my-3">
         <span>I</span>
         <span>'</span>
         <span>m</span>
@@ -38,6 +39,9 @@
         <span>c</span>
         <span>k</span>
         <span>&nbsp;</span>
+
+      </div>
+      <div class="sentence my-3">
         <span>d</span>
         <span>e</span>
         <span>v</span>
@@ -49,29 +53,33 @@
         <span>r</span>
         <span>.</span>
       </div>
+      </div>
+      
       <!-- <span class="fade-in vibrate">BUTTON</span> -->
-     
 
     </div>
-     <div class="slide-in-bottom flex w-3/5 justify-around my-16">
-        <button-section
-          @click.native="goToPage(1)"
-          :icon-url="require('@/assets/heroicons/heroicons-sm/heroicon-tools-sm.svg')"
-          :text="'Skills'"
-        ></button-section>
-        <button-section
-          @click.native="goToPage(2)"
-          :icon-url="require('@/assets/heroicons/heroicons-sm/heroicon-puzzle-sm.svg')"
-          :text="'Currently'"
-        ></button-section>
-        <button-section
-          @click.native="goToPage(3)"
-          :is-rotate=true
-          :icon-url="require('@/assets/heroicons/heroicons-sm/heroicon-paper-airplane-sm.svg')"
-          :text="'Contact'"
-        ></button-section>
+    <div class="slide-in-bottom flex flex-wrap items-center lg:flex-row w-full lg:w-3/5 justify-around my-4 lg:my-16">
+      <button-section
+        class=""
+        @click.native="goToPage(1)"
+        :icon-url="require('@/assets/heroicons/heroicons-sm/heroicon-tools-sm.svg')"
+        :text="'Skills'"
+      ></button-section>
+      <button-section
+        class="my-4"
+        @click.native="goToPage(2)"
+        :icon-url="require('@/assets/heroicons/heroicons-sm/heroicon-puzzle-sm.svg')"
+        :text="'Currently'"
+      ></button-section>
+      <button-section
+        class=""
+        @click.native="goToPage(3)"
+        :is-rotate=true
+        :icon-url="require('@/assets/heroicons/heroicons-sm/heroicon-paper-airplane-sm.svg')"
+        :text="'Contact'"
+      ></button-section>
 
-      </div>
+    </div>
 
   </div>
 </template>
@@ -126,8 +134,6 @@ export default class Home extends Vue {
   transform: rotate(90deg);
   transition: all 250ms ease;
 }
-
-
 
 .sentence {
   position: relative;
