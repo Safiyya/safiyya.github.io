@@ -76,12 +76,12 @@
 
     </div>
 
-    <div class="hidden md:block h-screen">
-      <!-- <div
-        class=" text-red text-xl w-full"
-        v-for="(s, ix) in skills"
-        :key="ix"
-      >{{ix}} {{s.isSelected}}</div> -->
+    <div class="hidden md:block h-screen relative">
+
+      <a target="blank" href="https://www.visualcv.com/safiyyababio-fullstack/" v-show="!isAnyOpen() && isVisible" style="top:calc(50% - 8rem);left:calc(50% - 8rem);" 
+      class="absolute flex items-center justify-center rounded-full w-64 h-64 z-20 bg-white text-grey-darker hover:text-pink text-2xl">
+        <span>Download CV</span>  
+      </a>
 
       <div class="h-screen w-screen panel relative p-12 ">
 
@@ -99,7 +99,7 @@
             'opacity-0':!isVisible,
             'opacity-25': isAnyOpen() && !skills[i-1].isSelected,
             'active shadow-lg flex flex-col cursor-auto' :skills[i-1].isSelected, 
-            'flex flex-col justify-center cursor-pointer' :!skills[i-1].isSelected,
+            'flex flex-col justify-center cursor-pointer hover:text-pink' :!skills[i-1].isSelected,
             'bg-white text-grey-darker': (i===1 || i==4),
             'texture-background text-grey-lightest': (i===2 || i==3) }"
         >
