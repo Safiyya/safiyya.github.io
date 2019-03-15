@@ -1,5 +1,9 @@
 <template>
   <div
+    v-observe-visibility="{
+  callback: onVisibilityChanged,
+  once: true
+}"
     class="about flex flex-col justify-center items-center container mx-auto"
     v-if="isLoaded"
   >
@@ -85,15 +89,25 @@
           v-for="i in 4"
           :key="i"
           :id="'cell-'+i"
-          class="w-1/2 absolute text-grey-darkest"
+          class="cell w-1/2 absolute text-grey-darkest"
           @click="toggle(skills[i-1])"
           :class="{
+            'slide-in-tl':isVisible && i===1,
+            'slide-in-tr':isVisible && i===2,
+            'slide-in-bl':isVisible && i===3,
+            'slide-in-br':isVisible && i===4,
+            'opacity-0':!isVisible,
             'opacity-25': isAnyOpen() && !skills[i-1].isSelected,
             'active texture-background shadow-lg text-grey-lightest flex flex-col cursor-auto' :skills[i-1].isSelected, 
             'flex flex-col justify-center cursor-pointer' :!skills[i-1].isSelected,
-            'bg-teal text-teal-lightest': (i===1 || i==4) && !skills[i-1].isSelected}"
+            'bg-white text-grey-darker': (i===1 || i==4),
+            'texture-background text-grey-lightest': (i===2 || i==3) }"
         >
-          <button-close v-show="skills[i-1].isSelected" class="absolute h-8 w-8" @click.native.stop="toggle(skills[i-1])"></button-close>
+          <button-close
+            v-show="skills[i-1].isSelected"
+            class="absolute h-8 w-8"
+            @click.native.stop="toggle(skills[i-1])"
+          ></button-close>
 
           <div
             class="flex px-8"
@@ -198,6 +212,7 @@ export default class About extends Vue {
   private currentSlideMin: number = 0;
   private currentSlideMax: number = 1;
   private currentSlide: number = 0;
+  private isVisible: boolean = false;
 
   public mounted() {
     this.isLoaded = false;
@@ -214,6 +229,11 @@ export default class About extends Vue {
 
   private openSkillModal(skill: Skill) {
     (this.$refs.modal as Modal).open();
+  }
+
+  private onVisibilityChanged(isVisible: boolean, entry: any) {
+    this.isVisible = isVisible;
+    console.log(isVisible, entry);
   }
 
   prev() {
@@ -263,49 +283,58 @@ export default class About extends Vue {
 #cell-1 {
   top: 0;
   left: 0;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
 }
-#cell-1.active{
+#cell-1.active {
   @apply rounded-br-lg;
 }
-#cell-1 > button{
+#cell-1 > button {
   bottom: 0;
-  right:0;
+  right: 0;
 }
 
 #cell-2 {
   top: 0;
   right: 0;
+  -webkit-animation-delay: 250ms;
+  animation-delay: 250ms;
 }
-#cell-2.active{
+#cell-2.active {
   @apply rounded-bl-lg;
 }
-#cell-2 > button{
+#cell-2 > button {
   bottom: 0;
-  left:0;
+  left: 0;
 }
 
 #cell-3 {
   bottom: 0;
   left: 0;
+  -webkit-animation-delay: 500ms;
+  animation-delay: 500ms;
 }
-#cell-3.active{
+#cell-3.active {
   @apply rounded-tr-lg;
 }
-#cell-3 > button{
+#cell-3 > button {
   top: 0;
-  right:0;
+  right: 0;
 }
 
 #cell-4 {
   bottom: 0;
   right: 0;
+
+  -webkit-animation-delay: 750ms;
+  animation-delay: 750ms;
 }
-#cell-4.active{
+#cell-4.active {
   @apply rounded-tl-lg;
 }
-#cell-4 > button{
+#cell-4 > button {
   top: 0;
-  left:0;
+  left: 0;
 }
 </style>
 

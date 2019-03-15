@@ -15,7 +15,9 @@ import Scrollspy from 'vue2-scrollspy';
 import VueCarousel from 'vue-carousel';
 import PortalVue from 'portal-vue';
 import VueSplitCharacters from 'vue-split-characters';
-
+import VueObserveVisibility from 'vue-observe-visibility'
+ 
+Vue.use(VueObserveVisibility)
 Vue.use(VueSplitCharacters);
 
 

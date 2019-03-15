@@ -7,7 +7,7 @@
       class="particle"
       v-bind:class="getClass()"
     ></div> -->
-    <div class=" flex text-5xl flex-col items-center justify-center container mx-auto">
+    <div class="align-self-center flex text-5xl flex-col items-center justify-center container mx-auto">
       <div class="sentence">
         <span>H</span>
         <span>i</span>
@@ -17,8 +17,8 @@
         <span>'</span>
         <span>m</span>
         <span>&nbsp;</span>
-        <span class="text-orange">Safiyya Babio</span>
-        <span >.</span>
+        <span class="text-pink-dark">Safiyya Babio</span>
+        <span>.</span>
       </div>
       <div class="sentence">
         <span>I</span>
@@ -47,48 +47,31 @@
         <span>p</span>
         <span>e</span>
         <span>r</span>
-        <span >.</span>
+        <span>.</span>
       </div>
       <!-- <span class="fade-in vibrate">BUTTON</span> -->
-      <div class="slide-in-bottom">
-<button
-        @click="moveDown()"
-        class=" move-down-on-hover flex justify-center items-center my-8 
-        border-4  p-4 rounded-full "
-      >
-        <img
-          class="w-8 h-8 text-grey-lighter group-hover:text-white fill-current "
-          svg-inline
-          src="@/assets/icons/cheveron-down.svg"
-          alt="About"
-        />
-      </button>
-      </div>
-      
-      <!-- <div class="sentence"  v-split-characters:span>I'm a full-stack web developer.</div> -->
+     
+
     </div>
+     <div class="slide-in-bottom flex w-3/5 justify-around my-16">
+        <button-section
+          @click.native="goToPage(1)"
+          :icon-url="require('@/assets/heroicons/heroicons-sm/heroicon-tools-sm.svg')"
+          :text="'Skills'"
+        ></button-section>
+        <button-section
+          @click.native="goToPage(2)"
+          :icon-url="require('@/assets/heroicons/heroicons-sm/heroicon-puzzle-sm.svg')"
+          :text="'Currently'"
+        ></button-section>
+        <button-section
+          @click.native="goToPage(3)"
+          :is-rotate=true
+          :icon-url="require('@/assets/heroicons/heroicons-sm/heroicon-paper-airplane-sm.svg')"
+          :text="'Contact'"
+        ></button-section>
 
-    <!-- <div class="z-10 flex flex-col items-center justify-center container mx-auto">
-      <div class="text-grey-lighter text-4xl md:text-5xl">
-        <div class="letters">Hi, I'm <span class="letters text-orange font-semibold">Safiyya Babio</span>.
-        </div>
-        <div class="letters">I'm a full-stack web developer.</div>
-      </div> -->
-
-    <!-- <button
-        @click="moveDown()"
-        class="group rotate-on-hover flex justify-center items-center my-8 
-        texture-background border-2 border-grey hover:border-white py-3 px-4 rounded text-grey hover:text-white font-bold text-xs sm:text-base md:text-xl uppercase"
-      >
-        Let's work together
-        <img
-          class="w-6 h-6 text-grey group-hover:text-white fill-current ml-2 "
-          svg-inline
-          src="@/assets/icons/arrow-thick-right.svg"
-          alt="About"
-        />
-      </button> -->
-    <!-- </div> -->
+      </div>
 
   </div>
 </template>
@@ -96,15 +79,17 @@
 <script lang="ts">
 import { Component, Vue, Emit } from "vue-property-decorator";
 import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import ButtonSection from "@/components/buttons/ButtonSection.vue";
 
 @Component({
   components: {
-    HelloWorld
+    HelloWorld,
+    "button-section": ButtonSection
   }
 })
 export default class Home extends Vue {
-  private moveDown() {
-    this.$emit("move-down");
+  private goToPage(index: number) {
+    this.$emit("show-page", index);
   }
 
   private getClass() {
@@ -128,6 +113,10 @@ export default class Home extends Vue {
   }
 } */
 
+.button-link:hover > span {
+  @apply text-pink;
+}
+
 .rotate-on-hover > svg {
   transform: rotate(0deg);
   transition: all 250ms ease;
@@ -138,35 +127,25 @@ export default class Home extends Vue {
   transition: all 250ms ease;
 }
 
-.move-down-on-hover{
-  transform: translateY(0px);
-  transition: all 250ms ease;
-}
 
-
-.move-down-on-hover:hover{
-  transform: translateY(1rem);
-  transition: all 250ms ease;
-}
 
 .sentence {
   position: relative;
   @apply text-grey-lightest
-  /* background: white; */
+  /* background: white; */;
 }
 
 .sentence span {
   opacity: 0;
-    /* font-size: 25px;
+  /* font-size: 25px;
   line-height: 25px; */
   display: inline-block;
   -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  transform-style: preserve-3d;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-          
+  animation-fill-mode: forwards;
 }
 
 .sentence span:nth-of-type(1n) {
@@ -175,8 +154,8 @@ export default class Home extends Vue {
   transform: translateY(-100%);
   -webkit-animation-name: enter;
   animation-name: enter;
-    -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s;
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
 }
 
 .sentence span:nth-of-type(2n) {
@@ -185,8 +164,8 @@ export default class Home extends Vue {
   transform: translateY(100%);
   -webkit-animation-name: enter-bottom;
   animation-name: enter-bottom;
-    -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 
 .sentence span:nth-of-type(3n) {
@@ -195,8 +174,8 @@ export default class Home extends Vue {
   transform: translateY(100%);
   -webkit-animation-name: enter;
   animation-name: enter;
-    -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 
 .sentence span:nth-of-type(4n) {
@@ -205,8 +184,8 @@ export default class Home extends Vue {
   transform: translateY(100%);
   -webkit-animation-name: enter-bottom;
   animation-name: enter-bottom;
-    -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 
 .sentence span:nth-of-type(5n) {
@@ -215,8 +194,8 @@ export default class Home extends Vue {
   transform: translateY(100%);
   -webkit-animation-name: enter;
   animation-name: enter;
-    -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
 @-webkit-keyframes enter {

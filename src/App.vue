@@ -22,10 +22,10 @@
         class="section"
         id="home-section"
       >
-        <home class="h-screen w-full" v-on:move-down="onMoveDown()" ></home>
+        <home class="h-screen w-full" v-on:show-page="onShowPage($event)" ></home>
       </div>
       <div
-        class="section"
+        class="section mt-1"
         id="about-section"
       >
         <about class="pt-8  md:p-0"></about>
@@ -113,9 +113,9 @@ export default class AppVue extends Vue {
 
 
 
-  private onMoveDown() {
-    console.log("onMoveDown");
-    (this as any).$scrollTo(1);
+  private onShowPage(index:number) {
+    console.log("onMoveDown", index);
+    (this as any).$scrollTo(index);
   }
 }
 </script>

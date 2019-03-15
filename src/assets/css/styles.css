@@ -1,5 +1,5 @@
 :root{
-    --accent: #F6993F;
+    --accent: #F66D9B;
     --black:#22292f;
     --white:#f8fafc;
     --outline:#613B1F;
@@ -17,7 +17,7 @@ a:hover{
 
 a.active{
     transition: all 1000ms;
-    @apply text-orange;
+    @apply text-pink;
 }
 
 
@@ -25,9 +25,13 @@ button:focus {
     outline: 0; 
 }
 
-.heroicon-outline {
+.heroicon-lg > .heroicon-outline {
     fill: var(--grey);
 }
+.heroicon-sm > .heroicon-outline {
+    fill: var(--black);
+}
+
 .heroicon-shadows {
     display: none;
 }
