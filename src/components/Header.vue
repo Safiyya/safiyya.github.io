@@ -1,5 +1,5 @@
 <template>
-  <nav class="py-20  flex uppercase font-bold">
+  <nav class="py-20  flex uppercase font-bold text-secondary">
     <a
       id="home"
       href="#home"

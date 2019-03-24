@@ -20,6 +20,17 @@ b, .text-bold{
     
 }
 
+a{
+    @apply text-secondary border-transparent border-b-4;
+}
+
+a:hover{
+    @apply border-secondary border-b-4;
+}
+
+button.primary{
+    @apply border-0;
+}
 
 
 /* :root{

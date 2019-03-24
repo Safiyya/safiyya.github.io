@@ -17,7 +17,7 @@
           and early-stage startups.
         </div>
 
-        <button class="text-bold uppercase border rounded-full p-3 my-5">
+        <button class="primary text-bold bg-primary text-white uppercase border rounded-full p-3 my-5">
           What do you need?
         </button>
 
