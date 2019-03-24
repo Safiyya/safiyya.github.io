@@ -47,12 +47,12 @@ b, .text-bold{
     
 }
 
-a{
+a:not(.social){
     letter-spacing: 0.5px;
     @apply text-secondary-darker border-transparent border-b-4;
 }
 
-a:hover{
+a:not(.social):hover{
     @apply border-secondary-darker border-b-4;
 }
 

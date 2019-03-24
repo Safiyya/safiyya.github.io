@@ -1,10 +1,10 @@
 <template>
 
-  <div class=" flex flex-col justify-around box  bg-grey-light ">
+  <card>
     <div
       @mouseover="toggleDetails()"
       @mouseout="toggleDetails()"
-      class="content company-background rounded-lg flex justify-center items-center"
+      class="w-full h-full company-background rounded-lg flex justify-center items-center"
       :style="!!job.company.background && 'background-image: url('+job.company.background+')'"
       :class="{'bg-gradient-secondary': !job.company.background}"
     >
@@ -44,7 +44,7 @@
       </div>
 
     </div>
-  </div>
+  </card>
 
 </template>
 
@@ -53,10 +53,12 @@ import { Vue, Component, Prop, Provide } from "vue-property-decorator";
 import Job from "@/models/job";
 import IconWithTextVue from "@/components/IconWithText.vue";
 import "../extensions/string.extensions";
+import Card from "@/components/cards/Card.vue";
 
 @Component({
   components: {
-    "icon-with-text": IconWithTextVue
+    "icon-with-text": IconWithTextVue,
+    card: Card
   }
 })
 export default class JobCard extends Vue {
@@ -102,23 +104,6 @@ export default class JobCard extends Vue {
   filter: blur(10px) opacity(0.5);
   transform: scale(2);
   pointer-events: none;
-}
-
-.box {
-  position: relative;
-}
-.box:before {
-  content: "";
-  display: block;
-  padding-top: 100%;
-}
-
-.content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
 </style>
 

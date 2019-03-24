@@ -16,7 +16,9 @@
     <home style="height:calc(100vh - 16rem + 3rem)" class="px-32 "></home>
     <about></about>
     <skills></skills>
-    <experience class="px-32"></experience>
+    <experience class="px-32 mb-32"></experience>
+    <currently></currently>
+     <contact ></contact>
     <div>
 
     </div>
@@ -32,7 +34,7 @@ import Experience from "@/views/Experience.vue";
 import About from "@/views/About.vue";
 import Projects from "@/views/Projects.vue";
 import Contact from "@/views/Contact.vue";
-import Who from "@/views/Who.vue";
+import Currently from "@/views/Currently.vue";
 import { Route } from "vue-router";
 import HeaderVue from "@/components/Header.vue";
 import Skills from '@/views/Skills.vue';
@@ -41,6 +43,7 @@ import Skills from '@/views/Skills.vue';
   components: {
     home: Home,
     experience: Experience,
+    currently:Currently,
     about: About,
     skills:Skills,
     projects: Projects,
