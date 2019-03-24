@@ -35,6 +35,25 @@
         <job-card :job="job"></job-card>
       </div>
     </div>
+
+    <div class="w-full flex flex-col items-center my-8">
+      <h4 class="my-4">Want to see more of my code?</h4>
+      <div class="w-2/3 flex justify-between">
+        <button-secondary
+          :text="'Github'"
+          :icon-url="require('@/assets/icons/github.svg')"
+        ></button-secondary>
+            <button-secondary
+          :text="'Stack overflow'"
+          :icon-url="require('@/assets/icons/dribble.svg')"
+        ></button-secondary>
+        <button-secondary
+          :text="'Dribble'"
+          :icon-url="require('@/assets/icons/dribble.svg')"
+        ></button-secondary>
+      </div>
+
+    </div>
   </div>
 
 </template>
@@ -45,11 +64,13 @@ import ButtonRadioSkill from "@/components/buttons/ButtonRadioSkill.vue";
 import Job from "@/models/job";
 import JobCard from "@/components/JobCard.vue";
 import { jobsService } from "@/services/jobs.service";
+import Button from "@/components/buttons/Button.vue";
 
 @Component({
   components: {
     "button-radio-skill": ButtonRadioSkill,
-    "job-card": JobCard
+    "job-card": JobCard,
+    "button-secondary": Button
   }
 })
 export default class Experience extends Vue {
@@ -74,7 +95,7 @@ export default class Experience extends Vue {
   }
 
   private mounted() {
-    this.onSelect(this.selectedSkill)
+    this.onSelect(this.selectedSkill);
   }
 }
 </script>

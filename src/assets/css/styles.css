@@ -26,7 +26,7 @@ h3{
     font-size: 2rem;
     letter-spacing: 1.04px;
     font-weight: 400;
-    @apply text-secondary-darkest;
+    @apply text-secondary-darker;
 }
 
 
@@ -49,15 +49,19 @@ b, .text-bold{
 
 a{
     letter-spacing: 0.5px;
-    @apply text-secondary-darkest border-transparent border-b-4;
+    @apply text-secondary-darker border-transparent border-b-4;
 }
 
 a:hover{
-    @apply border-secondary-darkest border-b-4;
+    @apply border-secondary-darker border-b-4;
 }
 
 button.primary{
     @apply border-0;
+}
+
+button:focus {
+    outline: 0; 
 }
 
 

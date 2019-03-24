@@ -50,7 +50,7 @@ let colors = {
   'grey-darkest': '#3d4852',
   'grey-darker': '#606f7b',
   'grey-dark': '#8795a1',
-  'grey': '#b8c2cc',
+  'grey': '#597480',
   'grey-light': '#efefef',
   'grey-lighter': '#f1f5f8',
   'grey-lightest': '#FCFCFC',
@@ -59,7 +59,8 @@ let colors = {
   'primary':'#F5A802',
   'primary-darker':'#EF8500',
 
-  'secondary-darkest':'#006675',
+  'secondary-darker':'#006675',
+  'secondary-darkest':'#0B2A38',
 
   'secondary':'#439BA8',
 
@@ -974,6 +975,13 @@ module.exports = {
       // center: true,
       // padding: '1rem',
     }),
+    require('./plugins/gradient')({
+      gradients: {
+        'primary': [colors['blue'], colors['green']],
+        'secondary': [colors['secondary'], colors['secondary-darkest']],
+      },
+      variants: ['responsive', 'hover'],
+    })
   ],
 
 
