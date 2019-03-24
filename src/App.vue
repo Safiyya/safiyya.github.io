@@ -13,7 +13,8 @@
   >
 
     <header-menu class="mx-32"></header-menu>
-    <home class=""></home>
+    <home style="height:calc(100vh - 16rem + 3rem)" class="px-32 "></home>
+    <about></about>
     <div>
 
     </div>
@@ -40,7 +41,6 @@ import HeaderVue from "@/components/Header.vue";
     about: About,
     projects: Projects,
     contact: Contact,
-    who: Who,
     "header-menu": HeaderVue
   }
 })

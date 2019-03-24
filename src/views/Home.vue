@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-betwen relative px-32 h-screen">
+  <div class="flex justify-betwen">
 
     <div class="flex-grow">
       <div class="hero">
@@ -10,12 +10,15 @@
     <div class="flex flex-col">
       <div class="flex flex-col items-center pt-32 mt-16">
         <h1 class=" text-right">Full-stack developer &amp; designer</h1>
-        <div class="text-xl subtitle pt-2 ">
+       <h4>
+    <div class="text-xl subtitle pt-2 ">
           Reliable software from the ground up for small business owners
         </div>
         <div class="text-xl subtitle  ">
           and early-stage startups.
         </div>
+       </h4>
+     
 
         <button class="primary text-bold bg-primary text-white uppercase border rounded-full p-3 my-5">
           What do you need?
