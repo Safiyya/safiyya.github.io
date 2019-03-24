@@ -3,7 +3,6 @@ body {
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     @apply text-black bg-grey-lightest;
   }
 
@@ -21,10 +20,24 @@ h2{
     @apply text-3xl;
 }
 
+h3{
+    font-family: "Abril Fatface", Helvetica, serif;
+    font-size: 2rem;
+    letter-spacing: 1.04px;
+    font-weight: 400;
+    @apply text-secondary-darkest;
+}
+
+
 h4{
     font-family: "Fira Sans", Helvetica, Arial, sans-serif;
     font-weight: 300;
     @apply text-xl;
+}
+
+h6{
+    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+    @apply text-sm font-bold text-primary uppercase; 
 }
 
 b, .text-bold{

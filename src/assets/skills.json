@@ -4,35 +4,31 @@
             "category": "Front-end",
             "iconUrl": "heroicons/heroicons-lg/heroicon-browser-lg.svg",
             "tagline": "Fast load times & intuitive layouts",
-            "summary": "The user experience is my first priority. I want to build products that people love to use.",
+            "headline": "User experience is my first priority",
+            "summary": [
+                "I want to build products that people love to use.  My skills range from modern javascript frameworks to simple SKetch designs, I can make  your online presentce a delight for your customers or users",
+                "A slow website is the online equivalent of being late for a meeting, let me make sure that you’re always on time."
+            ],
             "technologies": [
                 {
-                    "name": "HTML",
-                    "level": 4
-                },
-                {
-                    "name": "CSS",
-                    "level": 4
-                },
-                {
-                    "name": "Javascript",
-                    "level": 4
-                },
-                {
-                    "name": "Typescript",
+                    "name": "HTML/CSS",
                     "level": 5
                 },
                 {
-                    "name": "Angular",
+                    "name": "Typescript/Javascript",
                     "level": 5
                 },
                 {
-                    "name": "Vue.js",
+                    "name": "Angular/Vue.js",
                     "level": 5
                 },
                 {
                     "name": "D3.js",
-                    "level": 3
+                    "level": 4
+                },
+                {
+                    "name": "Sketch",
+                    "level": 2
                 }
             ]
         },
@@ -40,7 +36,11 @@
             "category": "Back-end",
             "iconUrl": "heroicons/heroicons-lg/heroicon-database-lg.svg",
             "tagline": "Modular and robust",
-            "summary": "Requirements evolve, my code is robust and well-tested while accomodating a fast iterating business.",
+            "headline": "My code is made for a fast iterating business",
+            "summary": [
+                "Requirements evolve and priorities change. I dont live in a software ivory tower and understand that code is only a mean not the goal.",
+                "To serve your product needs, I strive to make my code modular and easy to modify while keeping a high quality standard. "
+            ],
             "technologies": [
                 {
                     "name": "C#",
@@ -72,7 +72,10 @@
             "category": "Product",
             "iconUrl": "heroicons/heroicons-lg/heroicon-chart-lg.svg",
             "tagline": "Ship early, ship often.",
-            "summary": "\"Build, Measure, Learn\" is my personal mantra. Business decisions are impacted by software and communicate these in a timely manner.",
+            "headline": "\"Build, Measure, Learn\" is my personal mantra",
+            "summary": [
+                "My startup experience taught me to be data-driven. Metrics are an important part of a product release cycle and I get excited about setting up analytics and helping you optimize for success."
+            ], 
             "technologies": [
                 {
                     "name": "UX",
@@ -97,10 +100,14 @@
             ]
         },
         {
-            "category": "Built with love",
+            "category": "Testing",
             "iconUrl": "heroicons/heroicons-lg/heroicon-heart-lg.svg",
-            "tagline": "I care so I test.",
-            "summary": "I make automated unit testing my crusade in each project. I strive to be a reliable and fast coder, this is wehy unit tests is my favourite safety net.",
+            "tagline": "Built with love",
+            "headline": "I care so I test...relentlessly",
+            "summary": [
+                "Untested software is a ticking time bomb. The users shouldn’t have to pay for my occasional daydreaming or invevitable typos, so I test so users dont have to.",
+                "I have taught quality code practices to junior developers with success and helped them make more reliable software. "
+            ],
             "technologies": [
                 {
                     "name": "Unit testing",

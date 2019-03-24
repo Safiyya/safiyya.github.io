@@ -1,6 +1,6 @@
 <template>
   <div class="bg-secondary flex flex-col items-center py-24 text-white">
-    <div class="w-3/5">
+    <div class="w-3/5 text-center">
       <h2 class="text">
         Hi, I'm Safiyya. Nice to meet you.
       </h2>

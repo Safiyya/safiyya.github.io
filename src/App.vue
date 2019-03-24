@@ -15,6 +15,7 @@
     <header-menu class="mx-32"></header-menu>
     <home style="height:calc(100vh - 16rem + 3rem)" class="px-32 "></home>
     <about></about>
+    <skills></skills>
     <div>
 
     </div>
@@ -33,12 +34,14 @@ import Contact from "@/views/Contact.vue";
 import Who from "@/views/Who.vue";
 import { Route } from "vue-router";
 import HeaderVue from "@/components/Header.vue";
+import Skills from '@/views/Skills.vue';
 
 @Component({
   components: {
     home: Home,
     experience: Experience,
     about: About,
+    skills:Skills,
     projects: Projects,
     contact: Contact,
     "header-menu": HeaderVue

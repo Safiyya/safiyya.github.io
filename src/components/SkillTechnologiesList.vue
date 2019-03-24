@@ -5,11 +5,11 @@
         <div
           v-for="technology in skill.technologies"
           :key="technology.name"
-          class="mb-2 md:mb-4 flex flex-col"
+          class="my-12 flex flex-col"
         >
-          <div class="bg-grey-lighter rounded-sm">
+          <div class=" rounded-sm">
             <div
-              class="bg-grey-darker uppercase text-grey-lightest font-semibold rounded-sm text-xs md:text-base leading-none py-1 text-left px-2"
+              class="pl-32 font-semibold bg-primary-darker text-white rounded-sm  leading-none py-3 text-left"
               :style="{width: technology.level/5 * 100+ '%'}"
             >{{technology.name}}</div>
           </div>

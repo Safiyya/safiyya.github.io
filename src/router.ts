@@ -31,11 +31,6 @@ export default new Router({
       path: "/contact",
       name: "contact",
       component: () => import(/* webpackChunkName: "contact" */ "./views/Contact.vue")
-    },
-    {
-      path: "/bookshelf",
-      name: "bookshelf",
-      component: () => import(/* webpackChunkName: "bookshelf" */ "./views/Bookshelf.vue")
     }
   ]
 });

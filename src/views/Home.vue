@@ -11,10 +11,10 @@
       <div class="flex flex-col items-center pt-32 mt-16">
         <h1 class=" text-right">Full-stack developer &amp; designer</h1>
        <h4>
-    <div class="text-xl subtitle pt-2 ">
+    <div class="text-xl text-center subtitle pt-2 ">
           Reliable software from the ground up for small business owners
         </div>
-        <div class="text-xl subtitle  ">
+        <div class="text-xl text-center subtitle  ">
           and early-stage startups.
         </div>
        </h4>
