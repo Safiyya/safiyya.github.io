@@ -5,6 +5,7 @@
       :key="skill.category"
       :skill="skill"
       :even="six % 2 ===0"
+      :triangle="six === 1 || six===2"
     >
     </skill-section>
   </div>
