@@ -10,10 +10,10 @@
           class=" bg-white border-0 rounded-lg  shadow-lg h-full"
           :class="{'rounded-l-none mr-20':even, 'rounded-r-none ml-20':!even}"
         >
-          <skill-list class="py-4 pr-4" :skill="skill"></skill-list>
+          <skill-list class="py-4 pr-16" :skill="skill"></skill-list>
         </div>
       </div>
-      <div class="w-2/5 p-16 flex flex-col items-start"
+      <div class="w-2/5 py-16 flex flex-col items-start"
       :class="{'pl-0':!even}">
         <h6>{{skill.tagline}}</h6>
         <h3>{{skill.headline}}</h3>
