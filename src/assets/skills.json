@@ -35,8 +35,8 @@
         {
             "category": "Back-end",
             "iconUrl": "heroicons/heroicons-lg/heroicon-database-lg.svg",
-            "tagline": "Modular and robust",
-            "headline": "My code is made for a fast iterating business",
+            "tagline": "Flexible and robust architecture",
+            "headline": "My code is made for a fast growing business",
             "summary": [
                 "Requirements evolve and priorities change. I dont live in a software ivory tower and understand that code is only a mean not the goal.",
                 "To serve your product needs, I strive to make my code modular and easy to modify while keeping a high quality standard. "
@@ -87,7 +87,7 @@
             "category": "Testing",
             "iconUrl": "heroicons/heroicons-lg/heroicon-heart-lg.svg",
             "tagline": "Built with love",
-            "headline": "I care so I test...relentlessly",
+            "headline": "I care so I test...thoroughly",
             "summary": [
                 "Untested software is a ticking time bomb. The users shouldn’t have to pay for my occasional daydreaming or invevitable typos, so I test so users dont have to.",
                 "I have taught quality code practices to junior developers with success and helped them make more reliable software. "
