@@ -2,6 +2,74 @@
     "jobs": [
         {
             "company": {
+                "name": "NG Martin",
+                "url": "https://www.ngmartin.io",
+                "crunchbase": "",
+                "industry": "",
+                "picture": "",
+                "background":"https://static1.squarespace.com/static/5803abe33e00be5b9a9db870/t/5a517746e4966ba79af99631/1515289030133/IMG_1382.jpg",
+                "vision": "NG Martin is a Visiting Assistant Professor of Philosophy at Lebanese American University."
+            },
+            "title": "Front-end Developer",
+            "tasks": [
+                {
+                    "header": "Implemented Kamkalima student webapp new design from high-definition Adobe XD mockups"
+                },
+                {
+                    "header": "Increased test coverage from 0% to 75%"
+                }
+            ],
+            "technologies": [
+                "Vue.js",
+                "Bootstrap",
+                "Jest",
+                "HTML",
+                "CSS",
+                "UX"
+            ],
+            "start": "2018-04-01",
+            "end": "2018-12-01",
+            "location": {
+                "country": "Lebanon",
+                "city": "Beirut"
+            }
+        },
+        {
+            "company": {
+                "name": "Safiyya.io",
+                "url": "https://www.safiyya.io",
+                "crunchbase": "",
+                "industry": "",
+                "picture": "/img/hero.png",
+                "background":"",
+                "vision": "This very website was designed and developed from scratch."
+            },
+            "title": "Front-end Developer",
+            "tasks": [
+                {
+                    "header": "Implemented Kamkalima student webapp new design from high-definition Adobe XD mockups"
+                },
+                {
+                    "header": "Increased test coverage from 0% to 75%"
+                }
+            ],
+            "technologies": [
+                "Vue.js",
+                "Bootstrap",
+                "Jest",
+                "HTML",
+                "CSS",
+                "UX"
+            ],
+            "start": "2018-04-01",
+            "end": "2018-12-01",
+            "location": {
+                "country": "Lebanon",
+                "city": "Beirut"
+            }
+        },
+        {
+            "company": {
                 "name": "Kamkalima",
                 "url": "https://www.kamkalima.com",
                 "crunchbase": "",
