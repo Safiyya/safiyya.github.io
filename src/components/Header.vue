@@ -1,5 +1,28 @@
 <template>
-  <nav class="z-50 h-12 texture-background border-b-4 border-teal flex w-screen">
+  <nav class="py-20  flex uppercase font-bold">
+    <a
+      id="home"
+      href="#home"
+      class="no-underline"
+    >About me</a>
+      <a
+      id="recent"
+      href="#recent"
+      class="mx-32 no-underline"
+    >Recent work</a>
+     <a
+      id="current"
+      href="#current"
+      class="no-underline"
+    >Currently</a>
+     <a
+      id="contact"
+      href="#contact"
+      class="ml-auto no-underline"
+    >Get in touch</a>
+  </nav>
+
+  <!-- <nav class="z-50 h-12 texture-background border-b-4 border-teal flex w-screen">
 
     <div class="w-full block flex-grow flex items-center justify-start">
       <div v-scroll-spy-active="{selector: 'a.menu-link', class: 'active'}" v-scroll-spy-link
@@ -16,11 +39,6 @@
           href="#about"
           class="menu-link uppercase text-grey-lighter"
         >Skills</a>
-        <!-- <a
-        v-scroll-spy-link id="experience"
-          href="/#experience"
-          class="menu-link uppercase text-grey-lighter"
-        >Experience</a> -->
         <a
         v-scroll-spy-link id="projects"
           href="/#portfolio"
@@ -35,7 +53,7 @@
 
     </div>
 
-  </nav>
+  </nav> -->
 </template>
 
 <script lang="ts">
@@ -48,7 +66,7 @@ export default class extends Vue {}
 </script>
 
 <style>
-nav {
+/* nav {
   top: 100%;
   position: absolute;
   width: 100%;
@@ -64,5 +82,5 @@ nav.fixed {
   0% {
     transform: translateY(-3rem);
   }
-}
+} */
 </style>

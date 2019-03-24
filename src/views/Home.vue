@@ -1,83 +1,27 @@
 <template>
-  <div class="wrapper p-4 home texture-background flex flex-col items-center justify-around md:justify-center">
+  <div class="flex justify-betwen relative px-32 h-screen">
 
-    <!-- <div
-      v-for="i in 250"
-      :key="i"
-      class="particle"
-      v-bind:class="getClass()"
-    ></div> -->
-    <div class="align-self-center flex text-4xl md:text-5xl flex-col items-center justify-center container mx-auto">
-      <div class="sentence">
-        <span>H</span>
-        <span>i</span>
-        <span>,</span>
-        <span>&nbsp;</span>
-        <span>I</span>
-        <span>'</span>
-        <span>m</span>
-        <span>&nbsp;</span>
-        <span class="text-pink-dark">Safiyya Babio</span>
-        <span>.</span>
-      </div>
-      <div class="flex flex-col md:flex-row">
-<div class="sentence my-3">
-        <span>I</span>
-        <span>'</span>
-        <span>m</span>
-        <span>&nbsp;</span>
-        <span>a</span>
-        <span>&nbsp;</span>
-        <span>f</span>
-        <span>u</span>
-        <span>l</span>
-        <span>l</span>
-        <span>-</span>
-        <span>s</span>
-        <span>t</span>
-        <span>a</span>
-        <span>c</span>
-        <span>k</span>
-        <span>&nbsp;</span>
+    <div class="flex-grow">
+      <div class="hero">
 
       </div>
-      <div class="sentence my-3">
-        <span>d</span>
-        <span>e</span>
-        <span>v</span>
-        <span>e</span>
-        <span>l</span>
-        <span>o</span>
-        <span>p</span>
-        <span>e</span>
-        <span>r</span>
-        <span>.</span>
-      </div>
-      </div>
-      
-      <!-- <span class="fade-in vibrate">BUTTON</span> -->
 
     </div>
-    <div class="slide-in-bottom flex flex-wrap items-center lg:flex-row w-full lg:w-3/5 justify-around my-4 lg:my-16">
-      <button-section
-        class=""
-        @click.native="goToPage(1)"
-        :icon-url="require('@/assets/heroicons/heroicons-sm/heroicon-tools-sm.svg')"
-        :text="'Skills'"
-      ></button-section>
-      <button-section
-        class="my-4"
-        @click.native="goToPage(2)"
-        :icon-url="require('@/assets/heroicons/heroicons-sm/heroicon-puzzle-sm.svg')"
-        :text="'Projects'"
-      ></button-section>
-      <button-section
-        class=""
-        @click.native="goToPage(3)"
-        :is-rotate=true
-        :icon-url="require('@/assets/heroicons/heroicons-sm/heroicon-paper-airplane-sm.svg')"
-        :text="'Contact'"
-      ></button-section>
+    <div class="flex flex-col">
+      <div class="flex flex-col items-center pt-32 mt-16">
+        <h1 class=" text-right">Full-stack developer &amp; designer</h1>
+        <div class="text-xl subtitle pt-2 ">
+          Reliable software from the ground up for small business owners
+        </div>
+        <div class="text-xl subtitle  ">
+          and early-stage startups.
+        </div>
+
+        <button class="text-bold uppercase border rounded-full p-3 my-5">
+          What do you need?
+        </button>
+
+      </div>
 
     </div>
 
@@ -109,6 +53,18 @@ export default class Home extends Vue {
 </script>
 
 <style scoped lang="css">
+.subtitle {
+  letter-spacing: 0.65px;
+}
+
+.hero {
+  background: url("../assets/images/hero-cropped.png") no-repeat;
+  background-size: contain;
+  background-position-x: right;
+  background-position-y: top;
+  height: 100%;
+}
+
 /* 
 
 @-webkit-keyframes filter-animation {

@@ -1,4 +1,28 @@
-:root{
+body {
+    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
+
+
+h1{
+    font-family: "Abril Fatface", Helvetica, serif;
+    font-size: 2.5rem;
+    letter-spacing: 0.88px;
+}
+
+b, .text-bold{
+    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    
+}
+
+
+
+/* :root{
     --accent: #F66D9B;
     --black:#22292f;
     --white:#f8fafc;
@@ -78,4 +102,4 @@ a.button:hover{
     left: 0;
     bottom: 0;
     right: 0;
-  }
+  } */
