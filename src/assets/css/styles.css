@@ -8,7 +8,7 @@
 
 a{
     @apply text-blue-darker no-underline ;
-    transition: all 1000ms;
+    transition: all 400ms;
 }
 
 a:hover{
@@ -16,7 +16,7 @@ a:hover{
 }
 
 a.active{
-    transition: all 1000ms;
+    transition: all 400ms;
     @apply text-pink;
 }
 

@@ -5,21 +5,22 @@
             "tagline": "Mapping for self-managed organisations.",
             "link": {
                 "label": "Maptio",
-                "url": "http://maptio.com"
+                "url": "http://maptio.com",
+                "image":"https://app.maptio.com/assets/images/circles.png"
             },
             "summary": [
                 "I cofounded Maptio in 2016 with Tom Nixon",
-                " Maptio helps self-managed organizations reduce stress and duplication of effort by providing intuitive maps",
-                "visualise who's responsible for what; who's helping who; and how the overall vision breaks down into the smaller ideas contributing to it "
-            ],
+                " Maptio helps self-managed organizations reduce stress and duplication of effort by providing intuitive maps"
+             ],
             "images": []
         },
         {
             "name": "Safiyya.io",
-            "tagline": "Made with ❤️, from scratch.",
+            "tagline": "This website, made with ❤️, from scratch.",
             "link": {
                 "label": "GitHub",
-                "url": "https://github.com/Safiyya/safiyya.github.io/tree/development"
+                "url": "https://github.com/Safiyya/safiyya.github.io/tree/development",
+                "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Font_Awesome_5_brands_github.svg/991px-Font_Awesome_5_brands_github.svg.png"
             },
             "summary": []
         },
@@ -28,7 +29,8 @@
             "tagline": "I'm learning UI design!",
             "link": {
                 "label": "LearnUI",
-                "url": "https://learnui.design/"
+                "url": "https://learnui.design/",
+                "image":"https://transcriptdivas.com/wp-content/uploads/2017/05/icon-academic@2x.png"
             },
             "summary": [
                 "I always was fascinated by UI design and I'm taking the first step towards being a better designer myself"
@@ -36,19 +38,11 @@
         },
         {
             "name": "NG Martin",
-            "tagline": "A clean philosophy wesbite",
+            "tagline": "Squarespace redesign",
             "link": {
                 "label": "NGMartin",
-                "url": "https://ngmartin.com"
-            },
-            "summary": []
-        },
-        {
-            "name": "Stack overflow",
-            "tagline": "",
-            "link": {
-                "label": "Stack Overflow",
-                "url": "https://stackoverflow.com/users/7092722/safiyya"
+                "url": "https://ngmartin.com",
+                "image":"http://www.logospng.com/images/10/installation-guides-survicate-10261.png"
             },
             "summary": []
         }

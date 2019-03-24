@@ -3,7 +3,8 @@ export default class Project {
     public tagline: string;
     public link: {
         label: string,
-        url: string
+        url: string, 
+        image?:string
     }
     public summary: string[];
     public images: string[];

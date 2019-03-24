@@ -76,7 +76,8 @@
       <a
         target="blank"
         href="https://www.visualcv.com/safiyyababio-fullstack/"
-        v-show="!isAnyOpen() && isVisible"
+        v-show="!isAnyOpen()"
+        :class="{'bg-pink':!isVisible}"
         style="top:calc(50% - 8rem);left:calc(50% - 8rem);"
         class="absolute flex items-center justify-center rounded-full w-64 h-64 z-20 bg-white text-grey-darker hover:text-pink text-2xl"
       >
