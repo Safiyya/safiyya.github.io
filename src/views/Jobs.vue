@@ -19,18 +19,7 @@
       </div>
     </div>
     <div class="h-32 flex items-start justify-around w-full px-48">
-      <a
-        class="button bg-teal "
-        target="blank"
-        href="https://www.visualcv.com/safiyyababio-fullstack/pdf/"
-      >
-        <img
-          class="w-4 h-4 fill-current mx-2 "
-          svg-inline
-          src="@/assets/icons/download.svg"
-          alt="About"
-        />
-        Download PDF </a>
+  
     </div>
 
   </div>

@@ -5,6 +5,7 @@ export default class Job {
         industry: string,
         crunchbase: string,
         picture: string,
+        background?: string,
         vision:string
     };
     public freelance: boolean;
