@@ -3,7 +3,7 @@
 <template>
 
   <div>
-    <button
+    <a :href="url"  target="blank"
       class="secondary"
     >
       <span class="rounded-full h-12 w-12">
@@ -18,7 +18,7 @@
       <span
         class="mx-3  text-black uppercase"
       > {{text}}</span>
-    </button>
+    </a>
   </div>
 
 </template>
@@ -30,24 +30,25 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 export default class Button extends Vue {
   @Prop() text: string;
   @Prop() iconUrl: string;
+  @Prop() url: string;
 }
 </script>
 
 <style scoped lang="css">
 
-button.secondary{
+a.secondary{
 @apply text-sm font-bold flex items-center  text-white rounded-full pr-3 bg-white border border-grey;
 }
 
-button.secondary > span:first-child{
+a.secondary > span:first-child{
 @apply bg-grey
 }
 
-button.secondary:hover{
+a.secondary:hover{
 @apply border-secondary;
 }
 
-button.secondary:hover > span:first-child{
+a.secondary:hover > span:first-child{
 @apply bg-secondary;
 }
 

@@ -42,14 +42,17 @@
         <button-secondary
           :text="'Github'"
           :icon-url="require('@/assets/icons/github.svg')"
+          :url="'https://github.com/Safiyya'"
         ></button-secondary>
             <button-secondary
           :text="'Stack overflow'"
           :icon-url="require('@/assets/icons/stack_overflow.svg')"
+          :url="'https://stackoverflow.com/users/7092722/safiyya'"
         ></button-secondary>
         <button-secondary
           :text="'Dribble'"
           :icon-url="require('@/assets/icons/dribble.svg')"
+          :url="'https://dribbble.com/safiyya'"
         ></button-secondary>
       </div>
 
