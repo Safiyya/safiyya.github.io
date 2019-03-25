@@ -2,7 +2,7 @@
 
 <template>
 
-    <a :href="url"
+    <a :href="url" target="blank"
       class="social flex items-center rounded-full p-3 h-16 w-16"
     >
       <span class="rounded-full h-wull w-full">
