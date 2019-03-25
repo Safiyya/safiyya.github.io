@@ -3,22 +3,22 @@
     <a
       id="home"
       href="#home"
-      class="no-underline"
+      class="header no-underline"
     >About me</a>
       <a
       id="recent"
       href="#recent"
-      class="mx-32 no-underline"
+      class="header mx-32 no-underline"
     >Recent work</a>
      <a
       id="current"
       href="#current"
-      class="no-underline"
+      class="header no-underline"
     >Currently</a>
      <a
       id="contact"
       href="#contact"
-      class="ml-auto no-underline"
+      class="header ml-auto no-underline"
     >Get in touch</a>
   </nav>
 

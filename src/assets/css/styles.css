@@ -47,22 +47,35 @@ b, .text-bold{
     
 }
 
-a:not(.social){
+a.header{
     letter-spacing: 0.5px;
-    @apply text-secondary-darker border-transparent border-b-4;
+    @apply text-secondary-darker border-transparent border-b-4 pb-2;
 }
 
-a:not(.social):hover{
+a.header:hover{
     @apply border-secondary-darker border-b-4;
 }
 
-button.primary{
-    @apply border-0;
+a.footer{
+    @apply text-white;
 }
 
-button:focus {
+a.social{
+    @apply bg-white text-black ;
+}
+
+a.social:hover{
+    @apply bg-secondary text-white;
+}
+
+button.primary{
+    @apply border-0 font-bold bg-primary text-white uppercase border rounded-full p-3 ;
+}
+
+button:focus, a:focus {
     outline: 0; 
 }
+
 
 
 /* :root{

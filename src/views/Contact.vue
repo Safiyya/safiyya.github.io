@@ -4,18 +4,18 @@
       Remote working is second nature to me, I spend my time between Paris, London, Beirut and Vancouver.  
     </div>
 
-    <h6 class="mt-8">Let's meet, coffee is on me.</h6>
+    <h6 class="mt-8">How can I help?</h6>
 
-    <div class="relative w-full flex justify-center mb-48">
-      <div class="w-4/5 bg-white shadow-lg rounded-lg h-96  absolute my-12 ">
-
+    <div class="relative w-full flex justify-center  h-96">
+      <div class="w-4/5  bg-white shadow-lg rounded-lg h-auto p-8 absolute my-3 ">
+        <contact-form class="w-full"></contact-form>
       </div>
 
     </div>
 
-    <div class="bg-secondary-darker text-white w-full h-96 mt-48 flex flex-col items-center justify-center">
+    <div class="bg-secondary-darker text-white w-full h-108 mt-48 flex flex-col items-center justify-center">
 
-      <div class="w-2/5 mt-24 flex justify-between">
+      <div class="w-2/5 mt-48 flex justify-between">
         <social-button
           :icon-url="require('@/assets/icons/twitter.svg')"
           :url="'https://twitter.com/safiyyababio'"
@@ -42,13 +42,22 @@
         ></social-button>
       </div>
       <div class="mt-8 mb-2">
-        Designed and developer by me (C) Babioz Ltd
+        Designed and developed by me © Babioz Ltd
+      </div>
+      <div class="my-2 text-white">
+        Made with <a
+          class="footer"
+          href="https://vuejs.org/"
+        >Vue.js</a> and <a
+          class="footer"
+          href="http://tailwindcss.com"
+        >TailwindCSS</a>
       </div>
       <div class="my-2">
-        Made with Vue and TailwindCSS
-      </div>
-      <div class="my-2">
-        Illustrations from Absurd Design
+        Illustrations from <a
+          class="footer"
+          href="https://absurd.design/"
+        >Absurd Design</a>
       </div>
 
     </div>
@@ -59,10 +68,12 @@
 import { Component, Vue } from "vue-property-decorator";
 import Badge from "@/components/Badge.vue";
 import SocialButton from "@/components/buttons/SocialButton.vue";
+import ContactForm from "@/components/forms/ContactForm.vue";
 
 @Component({
   components: {
-    "social-button": SocialButton
+    "social-button": SocialButton,
+    "contact-form":ContactForm
   }
 })
 export default class Contact extends Vue {}

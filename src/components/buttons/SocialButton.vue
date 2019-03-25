@@ -3,11 +3,11 @@
 <template>
 
     <a :href="url"
-      class="social bg-white text-black flex items-center rounded-full p-3 h-16 w-16"
+      class="social flex items-center rounded-full p-3 h-16 w-16"
     >
       <span class="rounded-full h-wull w-full">
         <simple-svg
-          class="text-black  fill-current flex justify-center items-center h-full"
+          class="fill-current flex justify-center items-center h-full"
           :filepath="iconUrl"
           :width="'50%'"
           :height="'50%'"

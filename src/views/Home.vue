@@ -20,7 +20,7 @@
        </h4>
      
 
-        <button class="primary text-bold bg-primary text-white uppercase border rounded-full p-3 my-5">
+        <button class="primary my-5">
           What do you need?
         </button>
 
