@@ -1,46 +1,54 @@
 <template>
 
   <card>
-    <div
-      @mouseover="toggleDetails()"
-      @mouseout="toggleDetails()"
-      class="w-full h-full company-background rounded-lg flex justify-center items-center"
-      :style="!!job.company.background && 'background-image: url('+job.company.background+')'"
-      :class="{'bg-gradient-secondary': !job.company.background}"
-    >
+    <div class="job-card w-full h-full rounded-lg flex justify-center items-center">
       <div
-        class="opacity-screen rounded-lg"
-        v-show="!showDetails"
+        class="company-background rounded-lg absolute"
+        :style="!!job.company.background && 'background-image: url('+job.company.background+')'"
+        :class="{'bg-gradient-secondary': !job.company.background}"
       >
+        <div class="opacity-screen rounded-lg">
+        </div>
 
       </div>
       <img
-        v-show="!showDetails"
         class="absolute w-3/5 self-center company-picture p-4"
         :src="job.company.picture"
         alt=""
       >
 
-      <div
-        v-show="showDetails"
-        class="rounded-lg p-8 w-full h-full flex flex-col justify-center items-center  bg-secondary-darkest text-grey-lightest"
-      >
+      <div class="details rounded-lg p-8 w-full h-full flex flex-col justify-between items-center  bg-secondary-darkest text-grey-lightest">
         <div class="text-xl">
           {{job.company.vision}}
         </div>
-        <button
+
+        <a
           :href="job.company.url"
           target="blank"
-          class="mt-4 p-3 rounded-full flex text-white text-bold uppercase border border-2 border-primary"
+          class="button mt-4 p-3 rounded-full flex items-center text-white text-sm text-bold uppercase border border-2 border-primary"
         >Visit website
           <simple-svg
-            class="text-white w-8 h-8 fill-current flex justify-center items-center h-full"
+            class="text-white w-6 h-6 fill-current flex justify-center items-center h-full"
             :filepath="require('@/assets/icons/chevron-right.svg')"
-            :width="'50%'"
-            :height="'50%'"
+            :width="'100%'"
+            :height="'100%'"
           />
+        </a>
 
-        </button>
+        <div class="flex w-full justify-between mt-8">
+          <icon-with-text 
+            :class="{'invisible':!!!job.location.country}"
+            :icon-url="require('@/assets/icons/map-pin.svg')"
+            :text="job.location.country"
+          ></icon-with-text>
+           <icon-with-text
+            :class="{'invisible':!!!job.company.industry}"
+            :icon-url="require('@/assets/icons/briefcase.svg')"
+            :text="job.company.industry"
+          ></icon-with-text>
+        </div>
+
+        
       </div>
 
     </div>
@@ -64,26 +72,43 @@ import Card from "@/components/cards/Card.vue";
 export default class JobCard extends Vue {
   @Prop() public job: Job;
   @Prop() public isExpanded: boolean;
-  showDetails: boolean = false;
-
-  toggleDetails() {
-    this.showDetails = !this.showDetails;
-  }
 }
 </script>
 
 <style>
+.job-card > .company-background {
+  opacity: 1;
+  transition: all 400ms;
+}
+
+.job-card:hover > .company-background {
+  opacity: 0;
+  transition: all 400ms;
+}
+
+.job-card > .company-picture {
+  opacity: 1;
+  transition: all 400ms;
+}
+
+.job-card:hover > .company-picture {
+  opacity: 0;
+  transform: scale(1.25);
+  transition: all 400ms;
+}
+
 .company-background {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   background-origin: content-box;
+  @apply h-full w-full;
 }
 
-.company-background:hover > .company-picture {
+/* .company-background:hover > .company-picture {
   transform: scale(1.25);
   transition: all 400ms;
-}
+} */
 
 .company-picture {
   background-repeat: no-repeat;
@@ -96,14 +121,8 @@ export default class JobCard extends Vue {
 .opacity-screen {
   top: 0;
   left: 0;
-  filter: grayscale(0.75) opacity(0.5);
+  filter: grayscale(0.5) opacity(0.5);
   @apply absolute w-full h-full absolute bg-secondary;
-}
-
-.blur {
-  filter: blur(10px) opacity(0.5);
-  transform: scale(2);
-  pointer-events: none;
 }
 </style>
 

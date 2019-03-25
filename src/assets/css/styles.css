@@ -55,6 +55,10 @@ a.header:hover{
     @apply border-secondary-darker border-b-4;
 }
 
+a.button{
+    @apply no-underline;
+}
+
 a.footer{
     @apply text-white;
 }

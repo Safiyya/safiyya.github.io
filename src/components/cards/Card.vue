@@ -3,8 +3,8 @@
 <template>
 
   <div class=" flex flex-col justify-around box  bg-white rounded-lg ">
-    <div class="content ">
-      <div class="w-full h-full  ">
+    <div class="content rounded-lg">
+      <div class="w-full h-full rounded-lg ">
         <slot></slot>
 
       </div>
