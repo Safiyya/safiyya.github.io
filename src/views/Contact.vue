@@ -1,6 +1,6 @@
 <template>
-  <div class="pt-48 w-full flex flex-col items-center relative">
-    <div class="text-3xl w-2/3 flex justify-center text-center">
+  <div class=" w-full flex flex-col items-center relative">
+    <div class="pt-48 text-3xl w-2/3 flex justify-center text-center">
       Remote working is second nature to me, I spend my time between Paris, London, Beirut and Vancouver.  
     </div>
 

@@ -43,6 +43,16 @@ b, .text-bold{
     
 }
 
+a{
+    transition: all 250ms;
+    @apply text-secondary;
+}
+
+a:hover{
+    transition: all 250ms;
+    @apply text-secondary-darker underline;
+}
+
 a.header{
     /* letter-spacing: 0.5px; */
     transition: all 250ms;
