@@ -1,17 +1,17 @@
 <template>
   <div class=" w-full flex flex-col items-center relative">
-    <div class="pt-48 text-3xl w-2/3 flex justify-center text-center">
+    <div class="pt-32 text-3xl w-2/3 flex justify-center text-center">
       Remote working is second nature to me, I spend my time between Paris, London, Beirut and Vancouver.  
     </div>
 
     <h6 class="mt-8 mb-2">How can I help?</h6>
-    <div class="w-full px-32 mb-48 pb-24">
+    <div class="w-full px-32 mb-48 pb-24 z-10">
       <contact-form class="shadow-lg rounded-lg bg-white p-8"></contact-form>
 
     </div>
 
-    <div style="z-index:-1" class="absolute pin-b pt-32  bg-secondary-darker text-white w-full  mt-48 flex flex-col items-center justify-center">
-      <div class="w-2/5 mt-48 flex justify-between">
+    <div  class="absolute pin-b pt-32  bg-secondary-darker text-white w-full  mt-48 flex flex-col items-center justify-center">
+      <div class="w-2/5 z-20 mt-48 flex justify-between">
         <social-button
           :icon-url="require('@/assets/icons/twitter.svg')"
           :url="'https://twitter.com/safiyyababio'"
