@@ -1,5 +1,5 @@
 body {
-    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+    font-family: "Libre Franklin", Helvetica, Arial, sans-serif;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -16,7 +16,6 @@ h1{
 }
 
 h2{
-    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
     font-weight: 500;
     @apply text-3xl;
 }
@@ -31,24 +30,21 @@ h3{
 
 
 h4{
-    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
     font-weight: 300;
     @apply text-xl;
 }
 
 h6{
-    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
     @apply text-sm font-bold text-primary uppercase; 
 }
 
 b, .text-bold{
-    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
     font-weight: 600;
     
 }
 
 a.header{
-    letter-spacing: 0.5px;
+    /* letter-spacing: 0.5px; */
     @apply text-secondary-darker border-transparent border-b-4 pb-2;
 }
 
