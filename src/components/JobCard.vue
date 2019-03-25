@@ -78,11 +78,13 @@ export default class JobCard extends Vue {
 <style>
 .job-card > .company-background {
   opacity: 1;
+  display:block;
   transition: all 400ms;
 }
 
 .job-card:hover > .company-background {
   opacity: 0;
+  visibility:hidden;
   transition: all 400ms;
 }
 
@@ -93,6 +95,7 @@ export default class JobCard extends Vue {
 
 .job-card:hover > .company-picture {
   opacity: 0;
+  visibility:hidden;
   transform: scale(1.25);
   transition: all 400ms;
 }
