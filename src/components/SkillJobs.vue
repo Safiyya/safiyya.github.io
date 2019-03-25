@@ -59,7 +59,7 @@
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
 import Job from "@/models/job";
-import JobCard from "@/components/JobCard.vue";
+import JobCard from "@/components/cards/JobCard.vue";
 import Modal from "@/components/Modal.vue";
 import ButtonClose from "@/components/buttons/ButtonClose.vue";
 

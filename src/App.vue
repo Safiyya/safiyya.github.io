@@ -18,7 +18,7 @@
     <skills></skills>
     <experience class="px-32 mb-32"></experience>
     <currently></currently>
-     <contact ></contact>
+     <contact  ></contact>
     <div>
 
     </div>

@@ -5,16 +5,12 @@
     </div>
 
     <h6 class="mt-8">How can I help?</h6>
-
-    <div class="relative w-full flex justify-center  h-96">
-      <div class="w-4/5  bg-white shadow-lg rounded-lg h-auto p-8 absolute my-3 ">
-        <contact-form class="w-full"></contact-form>
-      </div>
+    <div class="w-full px-32 mb-48 pb-24">
+      <contact-form class="shadow-lg rounded-lg bg-white p-8"></contact-form>
 
     </div>
 
-    <div class="bg-secondary-darker text-white w-full h-108 mt-48 flex flex-col items-center justify-center">
-
+    <div style="z-index:-1" class="absolute pin-b pt-32  bg-secondary-darker text-white w-full  mt-48 flex flex-col items-center justify-center">
       <div class="w-2/5 mt-48 flex justify-between">
         <social-button
           :icon-url="require('@/assets/icons/twitter.svg')"
@@ -73,7 +69,7 @@ import ContactForm from "@/components/forms/ContactForm.vue";
 @Component({
   components: {
     "social-button": SocialButton,
-    "contact-form":ContactForm
+    "contact-form": ContactForm
   }
 })
 export default class Contact extends Vue {}

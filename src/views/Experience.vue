@@ -65,7 +65,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import ButtonRadioSkill from "@/components/buttons/ButtonRadioSkill.vue";
 import Job from "@/models/job";
-import JobCard from "@/components/JobCard.vue";
+import JobCard from "@/components/cards/JobCard.vue";
 import { jobsService } from "@/services/jobs.service";
 import Button from "@/components/buttons/Button.vue";
 

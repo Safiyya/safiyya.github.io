@@ -29,7 +29,7 @@
 import { Vue, Component, Prop, Provide } from "vue-property-decorator";
 import { jobsService } from "@/services/jobs.service";
 import Job from "@/models/job";
-import JobCard from "@/components/JobCard.vue";
+import JobCard from "@/components/cards/JobCard.vue";
 import { wrapGrid } from "animate-css-grid";
 
 @Component({

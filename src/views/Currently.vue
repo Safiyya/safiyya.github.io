@@ -2,60 +2,36 @@
   <div class="bg-secondary flex flex-col items-center h-96 pt-16 text-white relative mb-32">
     <div class="w-3/5 text-center">
       <h3 class="text-white">
-        Current obsessions
+        Currently working on
       </h3>
       <div>
-        Startup projects, podcasts binging or random learning crusade.
+        Startup projects, podcasts binging or learning crusade, I never miss a chance to push myself.
       </div>
     </div>
     <div
-      class="w-2/3 justify-around flex absolute "
+      class="w-full -mx-2 px-32 justify-between flex absolute "
       style="top:14rem"
     >
-      <card class="w-1/3 shadow-lg h-full">
-        <div class="p-4 text-black">
-          <div class="flex items-center mb-8">
-            <img
-              class="w-16 h-16 rounded-full"
-              src="https://app.maptio.com/assets/images/logo-full.png"
-              alt=""
-              srcset=""
-            >
-            <span class="text-2xl  mx-2">Maptio</span>
-          </div>
-          <div class="my-3 self-end">
-            <div>
-              I cofounded Maptio with Tom Nixon in 2017.
+      <current-card
+        class="w-1/3 px-2 shadow-lg h-full"
+        :title="'Maptio'"
+        :text="'With beautiful &amp; intuitive visualisations, Maptio gets self-managed teams better align to a single vision.'"
+        :icon-url="'https://app.maptio.com/assets/images/logo-full.png'"
+      ></current-card>
 
-            </div>
-            <div>
-              With beautiful &amp; intuitive visualisations, Maptio gets self-managed teams better align to a single vision.
-            </div>
-          </div>
+        <current-card
+        class="w-1/3 px-2  shadow-lg h-full"
+        :title="'Podcasts'"
+        :text="'   Startups, design, software, story-telling, true crimes, comedy, social commentary… my ears never rest ;)'"
+        :icon-url="'https://cdn6.aptoide.com/imgs/f/b/2/fb2e8f869a475c9b0a33446b2be063e1_icon.png?w=240'"
+      ></current-card>
 
-        </div>
-
-      </card>
-        <card class="w-1/3 shadow-lg h-full">
-        <div class="p-4 text-black">
-          <div class="flex items-center mb-8">
-            <img 
-              class="w-16 h-16 rounded-full"
-              src="https://cdn6.aptoide.com/imgs/f/b/2/fb2e8f869a475c9b0a33446b2be063e1_icon.png?w=240"
-              alt=""
-              srcset=""
-            >
-            <span class="text-2xl  mx-2">Podcasts</span>
-          </div>
-          <div class="my-3 self-end">
-            <div>
-              Startups, design, software, story-telling, true crimes, comedy, social commentary… my ears never rest ;) 
-            </div>
-          </div>
-
-        </div>
-
-      </card>
+      <current-card
+        class="w-1/3 px-2  shadow-lg h-full"
+        :title="'Podcasts'"
+        :text="'   Startups, design, software, story-telling, true crimes, comedy, social commentary… my ears never rest ;)'"
+        :icon-url="'https://cdn6.aptoide.com/imgs/f/b/2/fb2e8f869a475c9b0a33446b2be063e1_icon.png?w=240'"
+      ></current-card>
 
     </div>
 
@@ -64,11 +40,11 @@
  
 <script lang="ts">
 import { Component, Vue, Emit, Prop } from "vue-property-decorator";
-import Card from "@/components/cards/Card.vue";
+import CurrentCard from "@/components/cards/CurrentCard.vue";
 
 @Component({
   components: {
-    card: Card
+    "current-card": CurrentCard
   }
 })
 export default class Currently extends Vue {}

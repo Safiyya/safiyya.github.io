@@ -60,7 +60,6 @@
 import { Vue, Component, Prop, Provide } from "vue-property-decorator";
 import Job from "@/models/job";
 import IconWithTextVue from "@/components/IconWithText.vue";
-import "../extensions/string.extensions";
 import Card from "@/components/cards/Card.vue";
 
 @Component({
