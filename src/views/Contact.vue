@@ -4,7 +4,7 @@
       Remote working is second nature to me, I spend my time between Paris, London, Beirut and Vancouver.  
     </div>
 
-    <h6 class="mt-8">How can I help?</h6>
+    <h6 class="mt-8 mb-2">How can I help?</h6>
     <div class="w-full px-32 mb-48 pb-24">
       <contact-form class="shadow-lg rounded-lg bg-white p-8"></contact-form>
 
@@ -49,7 +49,7 @@
           href="http://tailwindcss.com"
         >TailwindCSS</a>
       </div>
-      <div class="my-2">
+      <div class="my-2 mb-8">
         Illustrations from <a
           class="footer"
           href="https://absurd.design/"
