@@ -45,7 +45,7 @@
         ></button-secondary>
             <button-secondary
           :text="'Stack overflow'"
-          :icon-url="require('@/assets/icons/dribble.svg')"
+          :icon-url="require('@/assets/icons/stack_overflow.svg')"
         ></button-secondary>
         <button-secondary
           :text="'Dribble'"

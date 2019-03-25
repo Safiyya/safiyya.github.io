@@ -14,7 +14,7 @@
       type="radio"
       name="skill-selection"
       class="skill-button pr-3"
-      :class="{'bg-primary':active, 'bg-white border border-primary':!active}"
+      :class="{'bg-primary active cursor-auto':active, 'bg-white border border-primary cursor-pointer':!active}"
     >
       <span class="rounded-full h-12 w-12 bg-primary">
         <simple-svg
@@ -27,7 +27,7 @@
 
       <span
         class="mx-3"
-        :class="{'bg-white text-black':!active}"
+        :class="{'text-black':!active}"
       > {{text}}</span></button>
   </div>
 
@@ -48,8 +48,15 @@ export default class ButtonRadioSkill extends Vue {
 
 <style scoped lang="css">
 .skill-button {
+  transition:all 250ms;
   @apply text-sm font-bold flex items-center  text-white rounded-full;
 }
+
+.skill-button:not(.active):hover, .skill-button:not(.active):hover > span   {
+  transition:all 250ms;
+  @apply bg-primary text-white;
+}
+
 
 .skill-button > span {
   @apply uppercase;

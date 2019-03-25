@@ -45,10 +45,13 @@ b, .text-bold{
 
 a.header{
     /* letter-spacing: 0.5px; */
+    transition: all 250ms;
     @apply text-secondary-darker border-transparent border-b-4 pb-2;
+    
 }
 
 a.header:hover{
+    transition: all 250ms;
     @apply border-secondary-darker border-b-4;
 }
 
@@ -65,7 +68,13 @@ a.social:hover{
 }
 
 button.primary{
+    transition: all 250ms;
     @apply border-0 font-bold bg-primary text-white uppercase border rounded-full p-3 ;
+}
+
+button.primary:hover{
+    transition: all 250ms;
+    @apply bg-primary-darker;
 }
 
 button:focus, a:focus {
