@@ -1,12 +1,16 @@
 <template>
   <div class=" w-full flex flex-col items-center relative">
-    <div class="pt-32 text-xl xl:text-3xl w-2/3 flex justify-center text-center">
-      Remote working is second nature to me, I spend my time between Paris, London, Beirut and Vancouver.  
+    <div class=" pt-32 text-xl xl:text-3xl w-2/3 flex justify-center text-center">
+      Interested in working together? 
+      
     </div>
 
-    <h6 class="mt-8 mb-2">How can I help?</h6>
+    <h6 class="mt-8 mb-2">Let's talk.</h6>
     <div class="w-4/5 xl:w-full xl:px-32 mb-48 pb-24 z-10">
+    <div class="xl:pr-4">
+
       <contact-form class="shadow-lg rounded-lg bg-white p-8"></contact-form>
+    </div>
 
     </div>
 
@@ -75,7 +79,11 @@ import ContactForm from "@/components/forms/ContactForm.vue";
     "contact-form": ContactForm
   }
 })
-export default class Contact extends Vue {}
+export default class Contact extends Vue {
+
+    // Remote working is second nature to me, I spend my time between Paris, London, Beirut and Vancouver.
+    
+}
 </script>
 
 <style scoped>

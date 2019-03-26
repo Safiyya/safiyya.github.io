@@ -27,7 +27,7 @@
           @click="goToContact()"
           class="primary my-8 xl:my-5"
         >
-          What do you need?
+          Tell me about your project
         </button>
 
       </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center w-full">
+  <div class="flex flex-col items-center w-full -mx-2 ">
     <h3 class="text-black my-4">Recent work</h3>
     <div class="hidden md:flex rounded-full bg-grey-light p-3 w-2/3 justify-between">
 
@@ -26,7 +26,7 @@
 
     </div>
 
-    <div class="hidden md:flex flex-wrap md:w-4/5 xl:w-full -mx-2 my-8">
+    <div class="hidden md:flex justify-between flex-wrap md:w-4/5 xl:w-full  my-8">
       <div
         class="md:w-1/2 lg:w-1/3 px-2 my-2"
         v-for="(job, jix) in filteredJobs"

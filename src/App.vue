@@ -4,7 +4,7 @@
     id="app"
     class="h-full"
   >
-    <span
+    <!-- <span
       class="fixed text-red text-3xl z-50"
       style="top:3rem"
     >
@@ -13,11 +13,11 @@
       <span class="hidden md:block lg:hidden">MD</span>
       <span class="hidden lg:block xl:hidden">LG</span>
       <span class="hidden xl:block">XL</span>
-    </span>
+    </span> -->
 
     <header-menu
       @navigate="$scrollTo($event)"
-      class="md:w-4/5 flex mx-auto lg:mx-32"
+      class="md:w-4/5 xl:w-full flex  lg:px-32"
     ></header-menu>
     <div v-scroll-spy="{data: 'section'}">
       <home
