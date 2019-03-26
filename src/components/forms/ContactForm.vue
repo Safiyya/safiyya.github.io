@@ -9,7 +9,7 @@
     <div class="flex flex-wrap -mx-3 mb-3">
 
       <div class="w-full">
-        <div class="form-group w-1/2">
+        <div class="form-group w-full xl:w-1/2">
           <label for="email-address">Email Address</label>
           <input
             type="email"
@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="w-full">
-         <div class="form-group w-1/2">
+        <div class="form-group w-full xl:w-1/2">
           <label for="company">Company/Organization name</label>
           <input
             type="text"
@@ -44,7 +44,7 @@
         </div>
       </div>
 
-      <div class="w-1/4 form-group relative">
+      <div class="w-full xl:w-1/4 form-group relative">
         <label for="project-type">I need a ...</label>
         <select>
           <option value="Web development">Website developed</option>
@@ -63,7 +63,7 @@
           />
         </div>
       </div>
-      <div class="w-1/4 form-group relative">
+      <div class="w-full xl:w-1/4 form-group relative">
         <label for="project-deadline">My deadline is</label>
         <select>
           <option value="Immeditely">Immediately</option>
@@ -82,24 +82,32 @@
         </div>
       </div>
 
-      <div class="w-1/2 form-group">
+      <div class="w-full xl:w-1/2 form-group">
         <label for="project-budget">Budget</label>
-        <div class="flex h-full items-center">
-          <input
-            type="radio"
-            name="project-budget"
-            value="low"
-          > Under $5000
-          <input
-            type="radio"
-            name="project-budget"
-            value="medium"
-          > Between $5000 and $10000
-          <input
-            type="radio"
-            name="project-budget"
-            value="high"
-          > Above $10000
+        <div class="flex flex-col items-start xl:flex-row h-full xl:items-center text-sm xl:text-base">
+          <span>
+            <input
+              type="radio"
+              name="project-budget"
+              value="low"
+            > Under $5000
+          </span>
+          <span>
+            <input
+              type="radio"
+              name="project-budget"
+              value="medium"
+            > Between $5000 and $10000
+          </span>
+
+          <span>
+            <input
+              type="radio"
+              name="project-budget"
+              value="high"
+            > Above $10000
+          </span>
+
         </div>
 
       </div>

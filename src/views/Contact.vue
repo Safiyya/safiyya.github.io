@@ -1,17 +1,17 @@
 <template>
   <div class=" w-full flex flex-col items-center relative">
-    <div class="pt-32 text-3xl w-2/3 flex justify-center text-center">
+    <div class="pt-32 text-xl xl:text-3xl w-2/3 flex justify-center text-center">
       Remote working is second nature to me, I spend my time between Paris, London, Beirut and Vancouver.  
     </div>
 
     <h6 class="mt-8 mb-2">How can I help?</h6>
-    <div class="w-full px-32 mb-48 pb-24 z-10">
+    <div class="w-4/5 xl:w-full xl:px-32 mb-48 pb-24 z-10">
       <contact-form class="shadow-lg rounded-lg bg-white p-8"></contact-form>
 
     </div>
 
     <div  class="absolute pin-b pt-32  bg-secondary-darker text-white w-full  mt-48 flex flex-col items-center justify-center">
-      <div class="w-2/5 z-20 mt-48 flex justify-between">
+      <div class="w-4/5 lg:w-2/5 z-20 mt-48 flex justify-between">
         <social-button
           :icon-url="require('@/assets/icons/twitter.svg')"
           :url="'https://twitter.com/safiyyababio'"
@@ -37,10 +37,10 @@
           :url="'https://lists.pocketcasts.com/ea8d9037-e5df-42eb-9175-009e4583523f'"
         ></social-button>
       </div>
-      <div class="mt-8 mb-2">
+      <div class="mt-8 mb-2 text-sm xl:text-base">
         Designed and developed by me © Babioz Ltd
       </div>
-      <div class="my-2 text-white">
+      <div class="my-2 text-white text-sm xl:text-base">
         Made with <a
           class="footer"
           href="https://vuejs.org/"
@@ -49,7 +49,7 @@
           href="http://tailwindcss.com"
         >TailwindCSS</a>
       </div>
-      <div class="my-2 mb-8">
+      <div class="my-2 mb-8 text-sm xl:text-base">
         Illustrations from <a
           class="footer"
           href="https://absurd.design/"

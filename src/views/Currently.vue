@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-secondary flex flex-col items-center h-96 pt-16 text-white relative mb-48">
+  <div class="bg-secondary flex flex-col items-center h-96 pt-16 text-white relative ">
     <div class="w-3/5 text-center">
       <h3 class="text-white">
         Currently busy with
@@ -20,7 +20,7 @@
          </current-card>
       </div>
 
-      <div class="md:w-1/3 md:px-2 my-4 md:my-0 xl:py-0">
+      <!-- <div class="md:w-1/3 md:px-2 my-4 md:my-0 xl:py-0">
         <current-card
           class=" shadow-lg h-full "
           :title="'LearnUI.Design'"
@@ -31,8 +31,8 @@
          
 
         </current-card>
-      </div>
-
+      </div> -->
+<!-- 
       <div class="md:w-1/3 md:px-2">
         <current-card
           class="shadow-lg h-full"
@@ -44,7 +44,7 @@
       
       
         </current-card>
-      </div>
+      </div> -->
 
     </div>
 
