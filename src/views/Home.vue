@@ -1,26 +1,29 @@
 <template>
-  <div class="flex justify-betwen">
+  <div class="flex relative flex-col xl:flex-row lg:justify-around xl:justify-end">
 
-    <div class="flex-grow">
-      <div class="hero">
+    <div class="hidden relative md:flex xl:block xl:absolute  pin-l xl:mx-32 xl:w-1/2">
 
-      </div>
+      <img
+        class="h-full w-full object-contain object-center"
+        :src="require('../assets/images/hero-cropped.png')"
+        alt=""
+        srcset=""
+      >
 
     </div>
-    <div class="flex flex-col">
-      <div class="flex flex-col items-center pt-32 mt-16">
-        <h1 class=" text-right">Full-stack developer &amp; designer</h1>
-       <h4>
-    <div class="text-xl text-center subtitle pt-2 ">
-          Reliable software from the ground up for small business owners
-        </div>
-        <div class="text-xl text-center subtitle  ">
-          and early-stage startups.
-        </div>
-       </h4>
-     
+    <div class="flex flex-col xl:items-end  ">
+      <div class="flex flex-col items-center mt-16 xl:pt-24">
+        <h1 class="text-center">Full-stack developer &amp; designer</h1>
+        <h4 class="my-4 xl:my-1">
+          <div class="text-center subtitle pt-2 ">
+            Reliable software from the ground up for small business owners
+          </div>
+          <div class="text-center subtitle  ">
+            and early-stage startups.
+          </div>
+        </h4>
 
-        <button class="primary my-5">
+        <button class="primary my-8 xl:my-5">
           What do you need?
         </button>
 
@@ -62,9 +65,6 @@ export default class Home extends Vue {
 
 .hero {
   background: url("../assets/images/hero-cropped.png") no-repeat;
-  background-size: contain;
-  background-position-x: right;
-  background-position-y: top;
   height: 100%;
 }
 

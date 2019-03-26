@@ -3,7 +3,7 @@
     class="md:py-20  flex uppercase font-bold text-secondary"
     :class="{'bg-secondary text-white md:bg-white md:text-secondary':isMobileMenuVisible}"
   >
-    <div class=" w-8 h-8 md:hidden">
+    <div class=" w-12 h-12 md:hidden">
       <button
         @click="toggle()"
         class="flex items-center p-1 text-secondary"

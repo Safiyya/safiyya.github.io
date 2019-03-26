@@ -3,7 +3,8 @@
   <div
     id="app"
     class="h-full"
-  > <span
+  >
+    <span
       class="fixed text-red text-3xl z-50"
       style="top:3rem"
     >
@@ -15,9 +16,12 @@
     </span>
 
     <header-menu class="md:mx-12 lg:mx-32"></header-menu>
-    <!-- <home style="height:calc(100vh - 16rem + 3rem)" class="xl:px-32 "></home>
+    <home
+      style="height:calc(100vh - 16rem + 3rem)"
+      class="lg:px-32 px-4 "
+    ></home>
     <about></about>
-    <skills></skills>
+    <!--<skills></skills>
     <experience class="xl:px-32 xl:mb-32"></experience>
     <currently></currently>
      <contact  ></contact> -->
