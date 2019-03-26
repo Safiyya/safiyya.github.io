@@ -23,7 +23,10 @@
           </div>
         </h4>
 
-        <button class="primary my-8 xl:my-5">
+        <button
+          @click="goToContact()"
+          class="primary my-8 xl:my-5"
+        >
           What do you need?
         </button>
 
@@ -46,14 +49,8 @@ import ButtonSection from "@/components/buttons/ButtonSection.vue";
   }
 })
 export default class Home extends Vue {
-  private goToPage(index: number) {
-    this.$emit("show-page", index);
-  }
-
-  private getClass() {
-    const i = Math.floor(Math.random() * 25);
-    const j = Math.floor(Math.random() * 25);
-    return `elem${i} anim-delay${j} fill-current`;
+  private goToContact() {
+    this.$emit("navigate", 5)
   }
 }
 </script>
@@ -61,106 +58,6 @@ export default class Home extends Vue {
 <style scoped lang="css">
 .subtitle {
   letter-spacing: 0.65px;
-}
-
-.hero {
-  background: url("../assets/images/hero-cropped.png") no-repeat;
-  height: 100%;
-}
-
-/* 
-
-@-webkit-keyframes filter-animation {
-  0% {
-    -webkit-filter: blur(5px);
-  }
-
-  100% {
-    -webkit-filter: blur(0px);
-  }
-} */
-
-.button-link:hover > span {
-  @apply text-pink;
-}
-
-.rotate-on-hover > svg {
-  transform: rotate(0deg);
-  transition: all 250ms ease;
-}
-
-.rotate-on-hover:hover > svg {
-  transform: rotate(90deg);
-  transition: all 250ms ease;
-}
-
-.sentence {
-  position: relative;
-  @apply text-grey-lightest
-  /* background: white; */;
-}
-
-.sentence span {
-  opacity: 0;
-  /* font-size: 25px;
-  line-height: 25px; */
-  display: inline-block;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-
-.sentence span:nth-of-type(1n) {
-  /* color: orange; */
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
-  -webkit-animation-name: enter;
-  animation-name: enter;
-  -webkit-animation-delay: 0.1s;
-  animation-delay: 0.1s;
-}
-
-.sentence span:nth-of-type(2n) {
-  /* color: blue; */
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  -webkit-animation-name: enter-bottom;
-  animation-name: enter-bottom;
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-}
-
-.sentence span:nth-of-type(3n) {
-  /* color: blue; */
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  -webkit-animation-name: enter;
-  animation-name: enter;
-  -webkit-animation-delay: 0.3s;
-  animation-delay: 0.3s;
-}
-
-.sentence span:nth-of-type(4n) {
-  /* color: blue; */
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  -webkit-animation-name: enter-bottom;
-  animation-name: enter-bottom;
-  -webkit-animation-delay: 0.4s;
-  animation-delay: 0.4s;
-}
-
-.sentence span:nth-of-type(5n) {
-  /* color: blue; */
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  -webkit-animation-name: enter;
-  animation-name: enter;
-  -webkit-animation-delay: 0.5s;
-  animation-delay: 0.5s;
 }
 
 @-webkit-keyframes enter {
