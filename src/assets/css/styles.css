@@ -26,6 +26,10 @@ h1{
     h4 {
         @apply text-xl;
     }
+
+    h2{
+        @apply text-3xl font-normal;
+    }
   }
 
   @screen xl {
@@ -36,7 +40,7 @@ h1{
 
 h2{
     font-weight: 500;
-    @apply text-3xl;
+    @apply text-xl font-semibold;
 }
 
 h3{
@@ -50,6 +54,7 @@ h3{
 
 h4{
     font-weight: 300;
+    line-height: 150%;
     @apply text-base;
 }
 
