@@ -8,8 +8,8 @@
         Startup projects, podcasts binging or learning crusade, I never miss a chance to push myself.
       </div>
     </div>
-    <div class="w-full -mx-2 px-32 justify-between flex absolute mt-32">
-      <div class="px-2 w-1/3 px-2">
+    <div class="w-4/5 xl:w-full -mx-2 xl:px-32 justify-between flex flex-col md:flex-row xl:absolute mt-8 xl:mt-32">
+      <div class="md:w-1/3 md:px-2">
         <current-card
           class=" shadow-lg h-full"
           :title="'Maptio'"
@@ -20,10 +20,10 @@
          </current-card>
       </div>
 
-      <div class="px-2 w-1/3 px-2">
+      <div class="md:w-1/3 md:px-2 my-4 md:my-0 xl:py-0">
         <current-card
-          class=" shadow-lg h-full"
-          :title="'Learn UI Design'"
+          class=" shadow-lg h-full "
+          :title="'LearnUI.Design'"
           :text="'Refreshing my design skills with this online course.'"
           :icon-url="'https://learnui.design/img/video-series-icon.png'"
         >
@@ -33,7 +33,7 @@
         </current-card>
       </div>
 
-      <div class="px-2 w-1/3 px-2">
+      <div class="md:w-1/3 md:px-2">
         <current-card
           class="shadow-lg h-full"
           :title="'Podcasts'"

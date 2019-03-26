@@ -15,7 +15,7 @@
       <span class="hidden xl:block">XL</span>
     </span>
 
-    <header-menu class="md:w-4/5 flex justify-center mx-auto lg:mx-32"></header-menu>
+    <header-menu class="md:w-4/5 flex mx-auto lg:mx-32"></header-menu>
     <home
       style="height:calc(100vh - 16rem + 3rem)"
       class="lg:px-32 px-4 "
@@ -23,8 +23,8 @@
     <about class="mt-16 md:mt-0"></about>
     <skills></skills>
     <experience class="xl:px-32 xl:mb-32 mt-16"></experience>
-    <!--<currently></currently>
-     <contact  ></contact> -->
+    <currently></currently>
+     <!--<contact  ></contact> -->
     <div>
 
     </div>

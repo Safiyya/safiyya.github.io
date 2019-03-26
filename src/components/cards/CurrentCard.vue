@@ -1,20 +1,20 @@
 <template>
   <card class="shadow-lg h-full">
     <div class="p-6 text-black h-full flex flex-col justify-between">
-      <div class="flex justify-center items-center h-half">
+      <div class="flex justify-center items-center xl:h-half">
         <img
-          class="w-12 h-12 rounded-full"
+          class="w-6 h-6 xl:w-12 xl:h-12 rounded-full"
           :src="iconUrl"
           alt=""
           srcset=""
         >
-        <span class="text-2xl font-semibold  mx-2">{{title}}</span>
+        <span class="text-2xl md:text-base xl:text-2xl font-semibold  mx-2">{{title}}</span>
       </div>
 
-      <div class=" self-end text-xl  text-center">
+      <div class=" self-end text-xl md:text-xs xl:text-xl  text-center">
         {{text}}
       </div>
-      <div class="mb-3 flex justify-center">
+      <div class="mb-3 flex justify-center text-xl md:text-xs xl:text-xl " >
         <slot></slot>
       </div>
     </div>
