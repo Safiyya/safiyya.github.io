@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-center w-full">
     <h3 class="text-black my-4">Recent work</h3>
-    <div class="rounded-full bg-grey-light p-3 w-2/3 flex justify-between">
+    <div class="hidden md:flex rounded-full bg-grey-light p-3 w-2/3 justify-between">
 
       <button-radio-skill
         :text="'Front-end'"
@@ -26,10 +26,19 @@
 
     </div>
 
-    <div class="flex flex-wrap w-full -mx-2 my-8">
+    <div class="hidden md:flex flex-wrap md:w-4/5 xl:w-full -mx-2 my-8">
       <div
-        class="w-1/3 px-2"
-        v-for="(job, jix) in jobs"
+        class="md:w-1/2 lg:w-1/3 px-2 my-2"
+        v-for="(job, jix) in filteredJobs"
+        :key="jix"
+      >
+        <job-card :job="job"></job-card>
+      </div>
+    </div>
+    <div class="flex md:hidden flex-wrap w-4/5 -mx-2 my-8">
+      <div
+        class="w-full py-2"
+        v-for="(job, jix) in allJobs"
         :key="jix"
       >
         <job-card :job="job"></job-card>
@@ -38,13 +47,14 @@
 
     <div class="w-full flex flex-col items-center my-8">
       <h4 class="my-4">Want to see more of my code?</h4>
-      <div class="w-2/3 flex justify-between">
+      <div class="w-2/3 flex flex-col md:flex-row  justify-between">
         <button-secondary
           :text="'Github'"
           :icon-url="require('@/assets/icons/github.svg')"
           :url="'https://github.com/Safiyya'"
         ></button-secondary>
-            <button-secondary
+        <button-secondary
+        class="my-2 md:my-0"
           :text="'Stack overflow'"
           :icon-url="require('@/assets/icons/stack_overflow.svg')"
           :url="'https://stackoverflow.com/users/7092722/safiyya'"
@@ -78,19 +88,20 @@ import Button from "@/components/buttons/Button.vue";
 })
 export default class Experience extends Vue {
   selectedSkill: number = 0;
-  jobs: Job[] = [];
+  filteredJobs: Job[] = [];
+  allJobs: Job[] = [];
 
   onSelect(index: number) {
     this.selectedSkill = index;
     switch (index) {
       case 0:
-        this.jobs = jobsService.getFrontEndJobs();
+        this.filteredJobs = jobsService.getFrontEndJobs();
         break;
       case 1:
-        this.jobs = jobsService.getDesignJobs();
+        this.filteredJobs = jobsService.getDesignJobs();
         break;
       case 2:
-        this.jobs = jobsService.getBackendJobs();
+        this.filteredJobs = jobsService.getBackendJobs();
         break;
       default:
         break;
@@ -99,6 +110,7 @@ export default class Experience extends Vue {
 
   private mounted() {
     this.onSelect(this.selectedSkill);
+    this.allJobs = jobsService.get();
   }
 }
 </script>

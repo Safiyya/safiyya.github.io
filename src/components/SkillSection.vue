@@ -22,7 +22,7 @@
         </div>
       </div>
       <div
-        class="lg:w-2/5 lg:py-16 lg:pl-8 py-8 flex flex-col items-start"
+        class="lg:w-2/5 lg:py-16 lg:pl-8 xl:pl-0 py-8 flex flex-col items-start"
         :class="{'pl-0':!even}"
       >
         <h6>{{skill.tagline}}</h6>

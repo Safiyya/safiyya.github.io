@@ -18,7 +18,7 @@
       >
 
       <div class="details rounded-lg p-8 w-full h-full flex flex-col justify-between items-center  bg-secondary-darkest text-grey-lightest">
-        <div class="text-xl">
+        <div class="text-sm xl:text-xl ">
           {{job.company.vision}}
         </div>
 
@@ -35,7 +35,7 @@
           />
         </a>
 
-        <div class="flex w-full justify-between mt-8">
+        <div class="flex w-full justify-between mt-8 text-sm md:text-base">
           <icon-with-text 
             :class="{'invisible':!!!job.location.country}"
             :icon-url="require('@/assets/icons/map-pin.svg')"
