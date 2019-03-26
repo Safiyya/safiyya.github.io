@@ -5,7 +5,7 @@
       <div
         class="company-background rounded-lg absolute"
         :style="!!job.company.background && 'background-image: url('+job.company.background+')'"
-        :class="{'bg-gradient-secondary': !job.company.background}"
+        :class="{'bg-white': !job.company.background}"
       >
         <div class="opacity-screen rounded-lg">
         </div>
