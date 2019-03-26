@@ -78,12 +78,12 @@ b, .text-bold{
 
 a{
     transition: all 250ms;
-    @apply text-secondary;
+    @apply text-secondary ;
 }
 
 a:hover{
     transition: all 250ms;
-    @apply text-secondary-darker underline;
+    @apply text-secondary-darker no-underline;
 }
 
 a.header{
@@ -109,11 +109,11 @@ a.button{
 }
 
 a.footer{
-    @apply text-white;
+    @apply text-white underline;
 }
 
 a.social{
-    @apply bg-white text-black ;
+    @apply bg-white text-black underline ;
 }
 
 a.social:hover{

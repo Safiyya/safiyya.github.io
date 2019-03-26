@@ -25,6 +25,8 @@
       </button>
     </div>
     <div
+      v-scroll-spy-active
+      v-scroll-spy-link
       class="menu-container flex-grow md:flex md:justify-between md:items-center md:w-auto"
       :class="{
         'hidden':!isMobileMenuVisible,
@@ -33,19 +35,33 @@
       <a
         id="home"
         href="#home"
+        class="hidden"
+      >Home</a>
+      <a
+        @click="navigate(1)"
+        id="about"
+        href="#about"
         class="header mb-8 md:mb-0 no-underline"
       >About me</a>
       <a
+        id="skills"
+        href="#skills"
+        class="hidden"
+      >Skills</a>
+      <a
+        @click="navigate(3)"
         id="recent"
         href="#recent"
         class="header lg:mx-12 xl:mx-32 my-8 md:my-0 no-underline"
       >Recent work</a>
       <a
+        @click="navigate(4)"
         id="current"
         href="#current"
         class="header my-8 md:my-0 no-underline"
       >Currently</a>
       <a
+        @click="navigate(5)"
         id="contact"
         href="#contact"
         class="header lg:ml-auto my-8 md:my-0 no-underline"
@@ -66,6 +82,10 @@ export default class extends Vue {
 
   private toggle() {
     this.isMobileMenuVisible = !this.isMobileMenuVisible;
+  }
+
+  private navigate(sectionId: number) {
+    this.$emit("navigate", sectionId);
   }
 }
 </script>

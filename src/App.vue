@@ -4,7 +4,7 @@
     id="app"
     class="h-full"
   >
-    <span
+    <!-- <span
       class="fixed text-red text-3xl z-50"
       style="top:3rem"
     >
@@ -13,18 +13,24 @@
       <span class="hidden md:block lg:hidden">MD</span>
       <span class="hidden lg:block xl:hidden">LG</span>
       <span class="hidden xl:block">XL</span>
-    </span>
+    </span> -->
 
-    <header-menu class="md:w-4/5 flex mx-auto lg:mx-32"></header-menu>
-    <home
-      style="height:calc(100vh - 16rem + 3rem)"
-      class="lg:px-32 px-4 "
-    ></home>
-    <about class="mt-16 md:mt-0"></about>
-    <skills></skills>
-    <experience class="xl:px-32 xl:mb-32 mt-16"></experience>
-    <currently class="mb-32"></currently>
-     <contact  ></contact>
+    <header-menu
+      @navigate="onNavigate($event)"
+      class="md:w-4/5 flex mx-auto lg:mx-32"
+    ></header-menu>
+    <div v-scroll-spy="{data: 'section'}">
+      <home
+        style="height:calc(100vh - 16rem + 3rem)"
+        class="lg:px-32 px-4 "
+      ></home>
+      <about class="mt-16 md:mt-0"></about>
+      <skills></skills>
+      <experience class="xl:px-32 xl:mb-32 mt-16"></experience>
+      <currently class="mb-32"></currently>
+      <contact></contact>
+    </div>
+
     <div>
 
     </div>
@@ -57,7 +63,13 @@ import Skills from "@/views/Skills.vue";
     "header-menu": HeaderVue
   }
 })
-export default class AppVue extends Vue {}
+export default class AppVue extends Vue {
+  private section: number = 0;
+
+  private onNavigate(sectionId: number) {
+    this.section = sectionId;
+  }
+}
 </script>
 
 <style lang="scss">
