@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col w-full">
     <div class="w-full">
-      <div class="w-full">
+      <div class="w-full hidden lg:block">
         <div
           v-for="technology in skill.technologies"
           :key="technology.name"
@@ -15,6 +15,21 @@
           </div>
 
         </div>
+      </div>
+      <div class="block lg:hidden">
+        <div class="flex flex-wrap">
+          <div
+            v-for="technology in skill.technologies"
+            :key="technology.name"
+            class=" flex flex-col"
+          >
+          <span class="mr-2 text-xs my-1 p-2 bg-grey rounded-full text-white ">
+{{technology.name}}
+          </span>
+            
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

@@ -28,7 +28,7 @@
                 },
                 {
                     "name": "Sketch",
-                    "level": 2
+                    "level": 3
                 }
             ]
         },
@@ -47,16 +47,16 @@
                     "level": 5
                 },
                 {
-                    "name": "SQL, NoSQL, MongoDB, RethinkDB",
+                    "name": "SQL",
                     "level": 5
+                },
+                {
+                    "name": "NoSQL: MongoDB, RethinkDB",
+                    "level": 4
                 },
                 {
                     "name": "Node.js",
                     "level": 4
-                },
-                {
-                    "name": "PHP",
-                    "level": 2
                 }
             ]
         },

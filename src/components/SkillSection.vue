@@ -1,28 +1,28 @@
 <template>
-  <div class="flex flex-col w-full my-32 relative">
+  <div class="w-4/5 lg:w-full lg:my-16 xl:my-32 relative">
 
     <div
-      class="flex my-4 align-stretch"
-      :class="{'flex-row-reverse':!even}"
+      class="flex flex-col-reverse lg:flex-row my-4 align-stretch"
+      :class="{'lg:flex-row-reverse':!even}"
     >
-      <div class="w-1/2 relative ">
+      <div class="lg:w-1/2 relative ">
         <div
           v-if="triangle"
-          class="triangle absolute"
+          class="hidden lg:block triangle absolute"
           :class="{'right':even, 'left':!even}"
         ></div>
         <div
-          class="z-50 bg-white border-0 rounded-lg  shadow-lg h-full"
-          :class="{'rounded-l-none mr-20':even, 'rounded-r-none ml-20':!even}"
+          class="z-50 bg-white border-0 rounded-lg  lg:shadow-lg h-full"
+          :class="{'rounded-l-none lg:mr-20':even, 'rounded-r-none lg:ml-20':!even}"
         >
           <skill-list
-            class="py-4 pr-16"
+            class="lg:py-4 lg:pr-16"
             :skill="skill"
           ></skill-list>
         </div>
       </div>
       <div
-        class="w-2/5 py-16 flex flex-col items-start"
+        class="lg:w-2/5 lg:py-16 lg:pl-8 py-8 flex flex-col items-start"
         :class="{'pl-0':!even}"
       >
         <h6>{{skill.tagline}}</h6>

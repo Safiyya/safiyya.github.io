@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-col items-center ">
     <skill-section
       v-for="(skill,six) in skills"
       :key="skill.category"
