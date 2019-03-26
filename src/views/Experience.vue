@@ -54,7 +54,7 @@
           :url="'https://github.com/Safiyya'"
         ></button-secondary>
         <button-secondary
-        class="my-2 md:my-0"
+          class="my-2 md:my-0"
           :text="'Stack overflow'"
           :icon-url="require('@/assets/icons/stack_overflow.svg')"
           :url="'https://stackoverflow.com/users/7092722/safiyya'"
@@ -87,11 +87,11 @@ import Button from "@/components/buttons/Button.vue";
   }
 })
 export default class Experience extends Vue {
-  selectedSkill: number = 0;
-  filteredJobs: Job[] = [];
-  allJobs: Job[] = [];
+  private selectedSkill: number = 0;
+  private filteredJobs: Job[] = [];
+  private allJobs: Job[] = [];
 
-  onSelect(index: number) {
+  private onSelect(index: number) {
     this.selectedSkill = index;
     switch (index) {
       case 0:

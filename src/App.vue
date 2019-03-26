@@ -53,12 +53,12 @@ import Skills from "@/views/Skills.vue";
 
 @Component({
   components: {
-    home: Home,
-    experience: Experience,
-    currently: Currently,
-    about: About,
-    skills: Skills,
-    contact: Contact,
+    "home": Home,
+    "experience": Experience,
+    "currently": Currently,
+    "about": About,
+    "skills": Skills,
+    "contact": Contact,
     "header-menu": HeaderVue
   }
 })

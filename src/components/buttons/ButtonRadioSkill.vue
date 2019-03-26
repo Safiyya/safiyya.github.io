@@ -38,25 +38,24 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class ButtonRadioSkill extends Vue {
-  @Prop() text: string;
-  @Prop() iconUrl: string;
-  @Prop() active: string;
-  @Prop() picked:number;
-
+  @Prop() public text: string;
+  @Prop() public iconUrl: string;
+  @Prop() public active: string;
+  @Prop() public picked: number;
 }
 </script>
 
 <style scoped lang="css">
 .skill-button {
-  transition:all 250ms;
+  transition: all 250ms;
   @apply text-sm font-bold flex items-center  text-white rounded-full;
 }
 
-.skill-button:not(.active):hover, .skill-button:not(.active):hover > span   {
-  transition:all 250ms;
+.skill-button:not(.active):hover,
+.skill-button:not(.active):hover > span {
+  transition: all 250ms;
   @apply bg-primary text-white;
 }
-
 
 .skill-button > span {
   @apply uppercase;

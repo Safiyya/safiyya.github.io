@@ -36,19 +36,18 @@
         </a>
 
         <div class="flex w-full justify-between mt-8 text-sm md:text-base">
-          <icon-with-text 
+          <icon-with-text
             :class="{'invisible':!!!job.location.country}"
             :icon-url="require('@/assets/icons/map-pin.svg')"
             :text="job.location.country"
           ></icon-with-text>
-           <icon-with-text
+          <icon-with-text
             :class="{'invisible':!!!job.company.industry}"
             :icon-url="require('@/assets/icons/briefcase.svg')"
             :text="job.company.industry"
           ></icon-with-text>
         </div>
 
-        
       </div>
 
     </div>
@@ -65,7 +64,7 @@ import Card from "@/components/cards/Card.vue";
 @Component({
   components: {
     "icon-with-text": IconWithTextVue,
-    card: Card
+    "card" : Card
   }
 })
 export default class JobCard extends Vue {
@@ -77,13 +76,13 @@ export default class JobCard extends Vue {
 <style>
 .job-card > .company-background {
   opacity: 1;
-  display:block;
+  display: block;
   transition: all 400ms;
 }
 
 .job-card:hover > .company-background {
   opacity: 0;
-  visibility:hidden;
+  visibility: hidden;
   transition: all 400ms;
 }
 
@@ -94,7 +93,7 @@ export default class JobCard extends Vue {
 
 .job-card:hover > .company-picture {
   opacity: 0;
-  visibility:hidden;
+  visibility: hidden;
   transform: scale(1.25);
   transition: all 400ms;
 }

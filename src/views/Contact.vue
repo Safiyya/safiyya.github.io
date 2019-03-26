@@ -1,20 +1,20 @@
 <template>
   <div class=" w-full flex flex-col items-center relative">
     <div class=" pt-32 text-xl xl:text-3xl w-2/3 flex justify-center text-center">
-      Interested in working together? 
-      
+      Interested in working together?
+
     </div>
 
     <h6 class="mt-8 mb-2">Let's talk.</h6>
     <div class="w-4/5 xl:w-full xl:px-32 mb-48 pb-24 z-10">
-    <div class="xl:pr-4">
+      <div class="xl:pr-4">
 
-      <contact-form class="shadow-lg rounded-lg bg-white p-8"></contact-form>
+        <contact-form class="shadow-lg rounded-lg bg-white p-8"></contact-form>
+      </div>
+
     </div>
 
-    </div>
-
-    <div  class="absolute pin-b pt-32  bg-secondary-darker text-white w-full  mt-48 flex flex-col items-center justify-center">
+    <div class="absolute pin-b pt-32  bg-secondary-darker text-white w-full  mt-48 flex flex-col items-center justify-center">
       <div class="w-4/5 lg:w-2/5 z-20 mt-48 flex justify-between">
         <social-button
           :icon-url="require('@/assets/icons/twitter.svg')"
@@ -42,13 +42,13 @@
         ></social-button>
       </div>
       <div class="mt-8 mb-2 text-sm xl:text-base">
-        Handcrafted by me © Babioz 
+        Handcrafted by me © Babioz
       </div>
       <div class="my-2 text-white text-sm xl:text-base">
         Made with <a
           class="footer"
           href="https://vuejs.org/"
-        >Vue.js</a>,  <a
+        >Vue.js</a>, <a
           class="footer"
           href="http://tailwindcss.com"
         >TailwindCSS</a> and <a
@@ -80,9 +80,7 @@ import ContactForm from "@/components/forms/ContactForm.vue";
   }
 })
 export default class Contact extends Vue {
-
-    // Remote working is second nature to me, I spend my time between Paris, London, Beirut and Vancouver.
-    
+  // Remote working is second nature to me, I spend my time between Paris, London, Beirut and Vancouver.
 }
 </script>
 

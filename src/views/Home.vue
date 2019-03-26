@@ -50,7 +50,7 @@ import ButtonSection from "@/components/buttons/ButtonSection.vue";
 })
 export default class Home extends Vue {
   private goToContact() {
-    this.$emit("navigate", 5)
+    this.$emit("navigate", 5);
   }
 }
 </script>

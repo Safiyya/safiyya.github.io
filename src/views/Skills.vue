@@ -24,11 +24,10 @@ import Skill from "@/models/skill";
   }
 })
 export default class Skills extends Vue {
-  skills: Skill[] = [];
+  private skills: Skill[] = [];
 
-
-  private mounted(){
-      this.skills = skillsService.get();
+  private mounted() {
+    this.skills = skillsService.get();
   }
 }
 </script>

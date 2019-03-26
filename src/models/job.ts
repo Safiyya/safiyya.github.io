@@ -6,7 +6,7 @@ export default class Job {
         crunchbase: string,
         picture: string,
         background?: string,
-        vision:string
+        vision: string
     };
     public freelance: boolean;
     public title: string;
@@ -23,8 +23,4 @@ export default class Job {
         country: string,
         city: string
     };
-
-
-    public isSelected: boolean =false;
-    public isUnselected: boolean = false;
 }

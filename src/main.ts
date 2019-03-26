@@ -11,13 +11,13 @@ import "@/assets/css/styles.css";
 // import "@/assets/css/ribbon.css";
 
 import VueSimpleSVG from "vue-simple-svg";
-import Scrollspy from 'vue2-scrollspy';
+import Scrollspy from "vue2-scrollspy";
 
 
 Vue.use(Scrollspy, {
   data: "section",
   allowNoActive: true,
-  time:500
+  time: 500
 });
 Vue.use(VueSimpleSVG);
 Vue.config.productionTip = false;
