@@ -23,7 +23,7 @@
     <about class="mt-16 md:mt-0"></about>
     <skills></skills>
     <experience class="xl:px-32 xl:mb-32 mt-16"></experience>
-    <currently class="lg:mb-32 xl:mb-48"></currently>
+    <currently class="mb-32"></currently>
      <contact  ></contact>
     <div>
 

@@ -20,7 +20,7 @@
          </current-card>
       </div>
 
-      <!-- <div class="md:w-1/3 md:px-2 my-4 md:my-0 xl:py-0">
+      <div class="hidden md:block md:w-1/3 md:px-2 my-4 md:my-0 xl:py-0">
         <current-card
           class=" shadow-lg h-full "
           :title="'LearnUI.Design'"
@@ -31,9 +31,9 @@
          
 
         </current-card>
-      </div> -->
-<!-- 
-      <div class="md:w-1/3 md:px-2">
+      </div>
+
+      <div class="hidden md:block  md:w-1/3 md:px-2">
         <current-card
           class="shadow-lg h-full"
           :title="'Podcasts'"
@@ -44,7 +44,7 @@
       
       
         </current-card>
-      </div> -->
+      </div>
 
     </div>
 
