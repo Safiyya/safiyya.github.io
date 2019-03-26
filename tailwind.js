@@ -980,13 +980,6 @@ module.exports = {
     require('tailwindcss/plugins/container')({
       // center: true,
       // padding: '1rem',
-    }),
-    require('./plugins/gradient')({
-      gradients: {
-        'primary': [colors['blue'], colors['green']],
-        'secondary': [colors['secondary'], colors['secondary-darkest']],
-      },
-      variants: ['responsive', 'hover'],
     })
   ],
 

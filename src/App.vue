@@ -45,7 +45,6 @@ import Home from "@/views/Home.vue";
 import MenuVue from "@/components/Menu.vue";
 import Experience from "@/views/Experience.vue";
 import About from "@/views/About.vue";
-import Projects from "@/views/Projects.vue";
 import Contact from "@/views/Contact.vue";
 import Currently from "@/views/Currently.vue";
 import { Route } from "vue-router";
@@ -59,7 +58,6 @@ import Skills from "@/views/Skills.vue";
     currently: Currently,
     about: About,
     skills: Skills,
-    projects: Projects,
     contact: Contact,
     "header-menu": HeaderVue
   }

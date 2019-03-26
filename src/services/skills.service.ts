@@ -6,7 +6,7 @@ class SkillsService {
 
     public get(): Skill[] {
         (data.skills as Skill[]).forEach((s: Skill) => {
-            s.resolvedIconUrl = require(`@/assets/${s.iconUrl}`);
+            // s.resolvedIconUrl = require(`@/assets/${s.iconUrl}`);
             s.technologies.sort(this.sortBy('level', 'desc'));
         });
 
