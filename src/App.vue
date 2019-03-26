@@ -1,24 +1,26 @@
 <template>
-  <!-- <span class="fixed text-red text-3xl z-50" style="top:3rem">
-  <span class="block sm:hidden">XS</span>
-  <span class="hidden sm:block md:hidden">SM</span>
-  <span class="hidden md:block lg:hidden">MD</span>
-  <span class="hidden lg:block xl:hidden">LG</span>
-  <span class="hidden xl:block">XL</span>
-</span> -->
 
   <div
     id="app"
     class="h-full"
-  >
+  > <span
+      class="fixed text-red text-3xl z-50"
+      style="top:3rem"
+    >
+      <span class="block sm:hidden">XS</span>
+      <span class="hidden sm:block md:hidden">SM</span>
+      <span class="hidden md:block lg:hidden">MD</span>
+      <span class="hidden lg:block xl:hidden">LG</span>
+      <span class="hidden xl:block">XL</span>
+    </span>
 
-    <header-menu class="mx-32"></header-menu>
-    <home style="height:calc(100vh - 16rem + 3rem)" class="px-32 "></home>
+    <header-menu class="md:mx-12 lg:mx-32"></header-menu>
+    <!-- <home style="height:calc(100vh - 16rem + 3rem)" class="xl:px-32 "></home>
     <about></about>
     <skills></skills>
-    <experience class="px-32 mb-32"></experience>
+    <experience class="xl:px-32 xl:mb-32"></experience>
     <currently></currently>
-     <contact  ></contact>
+     <contact  ></contact> -->
     <div>
 
     </div>
@@ -37,15 +39,15 @@ import Contact from "@/views/Contact.vue";
 import Currently from "@/views/Currently.vue";
 import { Route } from "vue-router";
 import HeaderVue from "@/components/Header.vue";
-import Skills from '@/views/Skills.vue';
+import Skills from "@/views/Skills.vue";
 
 @Component({
   components: {
     home: Home,
     experience: Experience,
-    currently:Currently,
+    currently: Currently,
     about: About,
-    skills:Skills,
+    skills: Skills,
     projects: Projects,
     contact: Contact,
     "header-menu": HeaderVue
@@ -55,5 +57,4 @@ export default class AppVue extends Vue {}
 </script>
 
 <style lang="scss">
-
 </style>

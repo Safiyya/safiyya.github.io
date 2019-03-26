@@ -8,7 +8,7 @@
       <div class="w-1/2 relative ">
         <div
           v-if="triangle"
-          class="triangle absolute bg-red"
+          class="triangle absolute"
           :class="{'right':even, 'left':!even}"
         ></div>
         <div

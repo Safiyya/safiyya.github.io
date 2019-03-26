@@ -1,59 +1,58 @@
 <template>
-  <nav class="py-20  flex uppercase font-bold text-secondary">
-    <a
-      id="home"
-      href="#home"
-      class="header no-underline"
-    >About me</a>
-      <a
-      id="recent"
-      href="#recent"
-      class="header mx-32 no-underline"
-    >Recent work</a>
-     <a
-      id="current"
-      href="#current"
-      class="header no-underline"
-    >Currently</a>
-     <a
-      id="contact"
-      href="#contact"
-      class="header ml-auto no-underline"
-    >Get in touch</a>
-  </nav>
-
-  <!-- <nav class="z-50 h-12 texture-background border-b-4 border-teal flex w-screen">
-
-    <div class="w-full block flex-grow flex items-center justify-start">
-      <div v-scroll-spy-active="{selector: 'a.menu-link', class: 'active'}" v-scroll-spy-link
-        class="md:mx-auto flex justify-around md:w-1/2 w-full text-xs md:text-base"
-        id="header-menu"
+  <nav
+    class="md:py-20  flex uppercase font-bold text-secondary"
+    :class="{'bg-secondary text-white md:bg-white md:text-secondary':isMobileMenuVisible}"
+  >
+    <div class=" w-8 h-8 md:hidden">
+      <button
+        @click="toggle()"
+        class="flex items-center p-1 text-secondary"
       >
-           <a
-        v-scroll-spy-link id="home"
-          href="#home"
-          class="hidden menu-link uppercase text-grey-lighter"
-        >Home</a>
-        <a
-        v-scroll-spy-link id="about"
-          href="#about"
-          class="menu-link uppercase text-grey-lighter"
-        >Skills</a>
-        <a
-        v-scroll-spy-link id="projects"
-          href="/#portfolio"
-          class="menu-link uppercase text-grey-lighter"
-        >Projects</a>
-        <a
-        v-scroll-spy-link id="contact"
-          href="/#contact"
-          class="menu-link uppercase text-grey-lighter"
-        >Contact</a>
-      </div>
-
+        <simple-svg
+          v-show="!isMobileMenuVisible"
+          class="flex justify-center"
+          :filepath="require('@/assets/icons/menu.svg')"
+          :width="'100%'"
+          :height="'100%'"
+        />
+        <simple-svg
+          v-show="isMobileMenuVisible"
+          class="flex justify-center text-white"
+          :filepath="require('@/assets/icons/x.svg')"
+          :width="'100%'"
+          :height="'100%'"
+        />
+      </button>
+    </div>
+    <div
+      class="menu-container flex-grow md:flex md:justify-between md:items-center md:w-auto"
+      :class="{
+        'hidden':!isMobileMenuVisible,
+        'h-screen flex flex-col p-3 justify-between items-end ':isMobileMenuVisible}"
+    >
+      <a
+        id="home"
+        href="#home"
+        class="header mb-8 md:mb-0 no-underline"
+      >About me</a>
+      <a
+        id="recent"
+        href="#recent"
+        class="header lg:mx-12 xl:mx-32 my-8 md:my-0 no-underline"
+      >Recent work</a>
+      <a
+        id="current"
+        href="#current"
+        class="header my-8 md:my-0 no-underline"
+      >Currently</a>
+      <a
+        id="contact"
+        href="#contact"
+        class="header lg:ml-auto my-8 md:my-0 no-underline"
+      >Get in touch</a>
     </div>
 
-  </nav> -->
+  </nav>
 </template>
 
 <script lang="ts">
@@ -62,7 +61,13 @@ import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 @Component({
   components: {}
 })
-export default class extends Vue {}
+export default class extends Vue {
+  private isMobileMenuVisible: boolean = false;
+
+  private toggle() {
+    this.isMobileMenuVisible = !this.isMobileMenuVisible;
+  }
+}
 </script>
 
 <style>
@@ -78,9 +83,23 @@ nav.fixed {
   animation: pop 1s;
 }
 
-@keyframes pop {
+ */
+.menu-container {
+}
+
+.menu-container.h-screen {
+  animation: pop-right 400ms;
+}
+
+@keyframes pop-right {
   0% {
-    transform: translateY(-3rem);
+    transform: translateX(100%);
   }
-} */
+}
+
+@keyframes pop-left {
+  0% {
+    transform: translateX(0%);
+  }
+}
 </style>
