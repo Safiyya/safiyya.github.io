@@ -25,7 +25,7 @@
 
         <button
           @click="goToContact()"
-          class="primary my-8 xl:my-5"
+          class="primary my-1 md:my-8 xl:my-5"
         >
           Tell me about your project
         </button>

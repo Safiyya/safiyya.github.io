@@ -25,7 +25,7 @@
         style="height:calc(100vh - 16rem + 3rem)"
         class="lg:px-32 px-4 "
       ></home>
-      <about class="mt-16 md:mt-0"></about>
+      <about class="mt-24 md:mt-0"></about>
       <skills></skills>
       <experience class="xl:px-32 xl:mb-32 mt-16"></experience>
       <currently class="mb-32 xl:mb-48"></currently>

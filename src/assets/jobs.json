@@ -228,40 +228,6 @@
                 "country": "UK",
                 "city": "London"
             }
-        },
-        {
-            "company": {
-                "name": "Safiyya.io",
-                "url": "https://www.safiyya.io",
-                "crunchbase": "",
-                "industry": "Web development",
-                "picture": "/img/hero.png",
-                "background":"",
-                "vision": "This very website was designed and developed from scratch."
-            },
-            "title": "Front-end Developer",
-            "tasks": [
-                {
-                    "header": "Implemented Kamkalima student webapp new design from high-definition Adobe XD mockups"
-                },
-                {
-                    "header": "Increased test coverage from 0% to 75%"
-                }
-            ],
-            "technologies": [
-                "Vue.js",
-                "Bootstrap",
-                "Jest",
-                "HTML",
-                "CSS",
-                "UX"
-            ],
-            "start": "2019-04-01",
-            "end": "2019-05-01",
-            "location": {
-                "country": "",
-                "city": ""
-            }
         }
     ]
 }
