@@ -1,12 +1,56 @@
 <template>
   <nav
-    class="md:py-20  flex uppercase font-bold text-secondary"
-    :class="{'bg-secondary text-white md:bg-white md:text-secondary':isMobileMenuVisible}"
+    class="md:py-20  flex uppercase font-bold text-secondary justify-end"
+    :class="{' z-50 w-full bg-secondary text-white md:bg-white md:text-secondary':isMobileMenuVisible}"
   >
+
+    <div
+      v-scroll-spy-active
+      v-scroll-spy-link
+      class="menu-container flex-grow md:flex md:justify-between md:items-center md:w-auto"
+      :class="{
+        'hidden':!isMobileMenuVisible,
+        'h-full flex flex-col p-3 justify-between items-start ':isMobileMenuVisible}"
+    >
+      <a
+        id="home"
+        href="#home"
+        class="hidden"
+      >Home</a>
+      <a
+        @click="navigate(1)"
+        id="about"
+        href="#about"
+        class="header mb-4 md:mb-0 no-underline"
+      >About me</a>
+      <a
+        id="skills"
+        href="#skills"
+        class="hidden"
+      >Skills</a>
+      <a
+        @click="navigate(3)"
+        id="recent"
+        href="#recent"
+        class="header lg:mx-12 xl:mx-32 my-4 md:my-0 no-underline"
+      >Recent work</a>
+      <a
+        @click="navigate(4)"
+        id="current"
+        href="#current"
+        class="header my-4 md:my-0 no-underline"
+      >Currently</a>
+      <a
+        @click="navigate(5)"
+        id="contact"
+        href="#contact"
+        class="header lg:ml-auto my-4 md:my-0 no-underline"
+      >Get in touch</a>
+    </div>
     <div class=" w-12 h-12 md:hidden">
       <button
         @click="toggle()"
-        class="flex items-center p-1 text-secondary"
+        class="flex  items-center p-1 text-secondary"
       >
         <simple-svg
           v-show="!isMobileMenuVisible"
@@ -24,50 +68,6 @@
         />
       </button>
     </div>
-    <div
-      v-scroll-spy-active
-      v-scroll-spy-link
-      class="menu-container flex-grow md:flex md:justify-between md:items-center md:w-auto"
-      :class="{
-        'hidden':!isMobileMenuVisible,
-        'h-screen flex flex-col p-3 justify-between items-end ':isMobileMenuVisible}"
-    >
-      <a
-        id="home"
-        href="#home"
-        class="hidden"
-      >Home</a>
-      <a
-        @click="navigate(1)"
-        id="about"
-        href="#about"
-        class="header mb-8 md:mb-0 no-underline"
-      >About me</a>
-      <a
-        id="skills"
-        href="#skills"
-        class="hidden"
-      >Skills</a>
-      <a
-        @click="navigate(3)"
-        id="recent"
-        href="#recent"
-        class="header lg:mx-12 xl:mx-32 my-8 md:my-0 no-underline"
-      >Recent work</a>
-      <a
-        @click="navigate(4)"
-        id="current"
-        href="#current"
-        class="header my-8 md:my-0 no-underline"
-      >Currently</a>
-      <a
-        @click="navigate(5)"
-        id="contact"
-        href="#contact"
-        class="header lg:ml-auto my-8 md:my-0 no-underline"
-      >Get in touch</a>
-    </div>
-
   </nav>
 </template>
 
@@ -107,8 +107,14 @@ nav.fixed {
 .menu-container {
 }
 
-.menu-container.h-screen {
+.menu-container.h-full {
   animation: pop-right 400ms;
+}
+
+.h-full > a.header{
+    transition: all 250ms;
+    @apply text-white;
+    
 }
 
 @keyframes pop-right {

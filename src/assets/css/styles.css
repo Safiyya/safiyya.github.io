@@ -93,11 +93,7 @@ a.header{
     
 }
 
-.h-screen > a.header{
-    transition: all 250ms;
-    @apply text-white;
-    
-}
+
 
 a.header:hover{
     transition: all 250ms;
