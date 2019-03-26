@@ -1,7 +1,7 @@
 <template>
   <div class="flex relative flex-col xl:flex-row lg:justify-around xl:justify-end">
 
-    <div class="hidden relative md:flex xl:block xl:absolute  pin-l xl:mx-32 xl:w-1/2">
+    <div class="hidden relative md:flex xl:block xl:absolute  pin-l xl:mx-32 xl:w-2/5">
 
       <img
         class="h-full w-full object-contain object-center"
@@ -12,7 +12,7 @@
 
     </div>
     <div class="flex flex-col xl:items-end  ">
-      <div class="flex flex-col items-center mt-16 xl:pt-24">
+      <div class="flex flex-col items-center mt-16 xl:pt-32">
         <h1 class="text-center">Full-stack developer &amp; designer</h1>
         <h4 class="my-4 xl:my-1">
           <div class="text-center subtitle pt-2 ">
