@@ -4,7 +4,7 @@
     id="app"
     class="h-full"
   >
-    <!-- <span
+    <span
       class="fixed text-red text-3xl z-50"
       style="top:3rem"
     >
@@ -13,7 +13,7 @@
       <span class="hidden md:block lg:hidden">MD</span>
       <span class="hidden lg:block xl:hidden">LG</span>
       <span class="hidden xl:block">XL</span>
-    </span> -->
+    </span>
 
     <header-menu
       @navigate="onNavigate($event)"

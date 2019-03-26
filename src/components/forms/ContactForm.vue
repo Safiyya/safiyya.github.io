@@ -44,7 +44,7 @@
         </div>
       </div>
 
-      <div class="w-full xl:w-1/4 form-group relative">
+      <div class="w-full md:w-1/2  xl:w-1/4 form-group relative">
         <label for="project-type">I need a ...</label>
         <select>
           <option value="Web development">Website developed</option>
@@ -63,7 +63,7 @@
           />
         </div>
       </div>
-      <div class="w-full xl:w-1/4 form-group relative">
+      <div class="w-full md:w-1/2 xl:w-1/4 form-group relative">
         <label for="project-deadline">My deadline is</label>
         <select>
           <option value="Immeditely">Immediately</option>
@@ -84,7 +84,7 @@
 
       <div class="w-full xl:w-1/2 form-group">
         <label for="project-budget">Budget</label>
-        <div class="flex flex-col items-start xl:flex-row h-full xl:items-center text-sm xl:text-base">
+        <div class="flex flex-col justify-between items-start lg:flex-row h-full xl:items-center text-sm xl:text-base">
           <span>
             <input
               type="radio"

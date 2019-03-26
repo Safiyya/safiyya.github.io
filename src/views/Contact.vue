@@ -38,16 +38,19 @@
         ></social-button>
       </div>
       <div class="mt-8 mb-2 text-sm xl:text-base">
-        Designed and developed by me © Babioz Ltd
+        Handcrafted by me © Babioz 
       </div>
       <div class="my-2 text-white text-sm xl:text-base">
         Made with <a
           class="footer"
           href="https://vuejs.org/"
-        >Vue.js</a> and <a
+        >Vue.js</a>,  <a
           class="footer"
           href="http://tailwindcss.com"
-        >TailwindCSS</a>
+        >TailwindCSS</a> and <a
+          class="footer"
+          href="https://feathericons.com/"
+        >Feather</a>
       </div>
       <div class="my-2 mb-8 text-sm xl:text-base">
         Illustrations from <a
