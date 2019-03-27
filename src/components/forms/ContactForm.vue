@@ -87,7 +87,6 @@
         <div class=" w-full flex flex-col justify-between items-start lg:flex-row h-full xl:items-center text-sm xl:text-base">
           <input
             @input="onBudgetChange($event.target.value)"
-
             type="range"
             min="2000"
             max="50000"
@@ -136,9 +135,9 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component({})
 export default class ContactForm extends Vue {
-  private budget:number=10000;
+  private budget: number = 10000;
 
-  private onBudgetChange(budget:number){
+  private onBudgetChange(budget: number) {
     this.budget = budget;
   }
 }

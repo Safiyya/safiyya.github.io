@@ -5,7 +5,7 @@
       <div
         class="company-background rounded-lg absolute"
         :style="!!job.company.background && 'background-image: url('+job.company.background+')'"
-        :class="{'bg-white': !job.company.background}"
+        :class="{'bg-gradient': !job.company.background}"
       >
         <div class="opacity-screen rounded-lg">
         </div>
@@ -28,7 +28,7 @@
           class="button mt-4 p-3 rounded-full flex items-center text-white text-sm text-bold uppercase border border-2 border-primary"
         >Visit website
           <simple-svg
-            class="text-white w-6 h-6 fill-current flex justify-center items-center h-full"
+            class="w-6 h-6 fill-current flex justify-center items-center h-full"
             :filepath="require('@/assets/icons/chevron-right.svg')"
             :width="'100%'"
             :height="'100%'"
@@ -64,7 +64,7 @@ import Card from "@/components/cards/Card.vue";
 @Component({
   components: {
     "icon-with-text": IconWithTextVue,
-    "card" : Card
+    card: Card
   }
 })
 export default class JobCard extends Vue {
@@ -104,6 +104,10 @@ export default class JobCard extends Vue {
   background-position: center center;
   background-origin: content-box;
   @apply h-full w-full;
+}
+
+.bg-gradient {
+  background-image: linear-gradient(to bottom right, #439ba8, #0b2a38);
 }
 
 /* .company-background:hover > .company-picture {

@@ -26,7 +26,7 @@
 
     </div>
 
-    <div class="hidden md:flex justify-between flex-wrap md:w-4/5 xl:w-full  my-8">
+    <div class="hidden md:flex justify-start flex-wrap md:w-4/5 xl:w-full  my-8">
       <div
         class="md:w-1/2 lg:w-1/3 px-2 my-2"
         v-for="(job, jix) in filteredJobs"
