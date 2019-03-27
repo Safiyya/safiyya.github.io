@@ -4,7 +4,7 @@
     <div class="hidden relative md:flex xl:block xl:absolute  pin-l xl:mx-32 xl:w-2/5">
  <picture>
   <source  srcset="../assets/images/hero-cropped.webp">
-  <img :src="require('../assets/images/hero-cropped.png')"  class="h-full w-full object-contain object-center">
+  <img :src="require('../assets/images/hero-cropped.png')" alt="Building wesbite from scratch"  class="h-full w-full object-contain object-center">
 </picture>
 
 
