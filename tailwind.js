@@ -46,15 +46,23 @@ let defaultConfig = require('tailwindcss/defaultConfig')()
 let colors = {
   'transparent': 'transparent',
 
-  'black': '#22292f',
+  'black': '#202324',
   'grey-darkest': '#3d4852',
   'grey-darker': '#606f7b',
   'grey-dark': '#8795a1',
-  'grey': '#b8c2cc',
-  'grey-light': '#dae1e7',
+  'grey': '#597480',
+  'grey-light': '#efefef',
   'grey-lighter': '#f1f5f8',
-  'grey-lightest': '#f8fafc',
+  'grey-lightest': '#FCFCFC',
   'white': '#ffffff',
+
+  'primary':'#F5A802',
+  'primary-darker':'#EF8500',
+
+  'secondary-darker':'#006675',
+  'secondary-darkest':'#0B2A38',
+
+  'secondary':'#439BA8',
 
   'red-darkest': '#3b0d0c',
   'red-darker': '#621b18',
@@ -553,6 +561,8 @@ module.exports = {
     '64': '16rem',
     '80': '20rem',
     '96': '24rem',
+    '108': '32rem',
+    'half': '50%',
     'full': '100%',
     '2x': '200%',
     'screen': '100vh',
@@ -685,6 +695,7 @@ module.exports = {
     '20': '5rem',
     '24': '6rem',
     '32': '8rem',
+    '48': '12rem',
   },
 
 
@@ -721,6 +732,9 @@ module.exports = {
     '20': '5rem',
     '24': '6rem',
     '32': '8rem',
+    '48': '12rem',
+    '64': '16rem',
+    '96': '24rem',
   },
 
 
@@ -779,7 +793,7 @@ module.exports = {
   shadows: {
     default: '0 2px 4px 0 rgba(0,0,0,0.10)',
     'md': '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)',
-    'lg': '0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)',
+    'lg': '0 1px 2px 0 rgba(0,0,0,0.2), 15px 15px 60px 0 rgba(0,0,0,0.30)',
     'inner': 'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
     'outline': '0 0 0 3px rgba(52,144,220,0.5)',
     'none': 'none',
@@ -921,8 +935,8 @@ module.exports = {
     minHeight: ['responsive'],
     minWidth: ['responsive'],
     negativeMargin: ['responsive'],
-    objectFit: false,
-    objectPosition: false,
+    objectFit: ['responsive'],
+    objectPosition: ['responsive'],
     opacity: ['responsive'],
     outline: ['focus'],
     overflow: ['responsive'],
@@ -966,7 +980,7 @@ module.exports = {
     require('tailwindcss/plugins/container')({
       // center: true,
       // padding: '1rem',
-    }),
+    })
   ],
 
 

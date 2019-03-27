@@ -1,83 +1,36 @@
 <template>
-  <div class="wrapper p-4 home texture-background flex flex-col items-center justify-around md:justify-center">
+  <div class="flex relative flex-col xl:flex-row lg:justify-around xl:justify-end">
 
-    <!-- <div
-      v-for="i in 250"
-      :key="i"
-      class="particle"
-      v-bind:class="getClass()"
-    ></div> -->
-    <div class="align-self-center flex text-4xl md:text-5xl flex-col items-center justify-center container mx-auto">
-      <div class="sentence">
-        <span>H</span>
-        <span>i</span>
-        <span>,</span>
-        <span>&nbsp;</span>
-        <span>I</span>
-        <span>'</span>
-        <span>m</span>
-        <span>&nbsp;</span>
-        <span class="text-pink-dark">Safiyya Babio</span>
-        <span>.</span>
-      </div>
-      <div class="flex flex-col md:flex-row">
-<div class="sentence my-3">
-        <span>I</span>
-        <span>'</span>
-        <span>m</span>
-        <span>&nbsp;</span>
-        <span>a</span>
-        <span>&nbsp;</span>
-        <span>f</span>
-        <span>u</span>
-        <span>l</span>
-        <span>l</span>
-        <span>-</span>
-        <span>s</span>
-        <span>t</span>
-        <span>a</span>
-        <span>c</span>
-        <span>k</span>
-        <span>&nbsp;</span>
+    <div class="hidden relative md:flex xl:block xl:absolute  pin-l xl:mx-32 xl:w-2/5">
 
-      </div>
-      <div class="sentence my-3">
-        <span>d</span>
-        <span>e</span>
-        <span>v</span>
-        <span>e</span>
-        <span>l</span>
-        <span>o</span>
-        <span>p</span>
-        <span>e</span>
-        <span>r</span>
-        <span>.</span>
-      </div>
-      </div>
-      
-      <!-- <span class="fade-in vibrate">BUTTON</span> -->
+      <img
+        class="h-full w-full object-contain object-center"
+        :src="require('../assets/images/hero-cropped.png')"
+        alt=""
+        srcset=""
+      >
 
     </div>
-    <div class="slide-in-bottom flex flex-wrap items-center lg:flex-row w-full lg:w-3/5 justify-around my-4 lg:my-16">
-      <button-section
-        class=""
-        @click.native="goToPage(1)"
-        :icon-url="require('@/assets/heroicons/heroicons-sm/heroicon-tools-sm.svg')"
-        :text="'Skills'"
-      ></button-section>
-      <button-section
-        class="my-4"
-        @click.native="goToPage(2)"
-        :icon-url="require('@/assets/heroicons/heroicons-sm/heroicon-puzzle-sm.svg')"
-        :text="'Projects'"
-      ></button-section>
-      <button-section
-        class=""
-        @click.native="goToPage(3)"
-        :is-rotate=true
-        :icon-url="require('@/assets/heroicons/heroicons-sm/heroicon-paper-airplane-sm.svg')"
-        :text="'Contact'"
-      ></button-section>
+    <div class="flex flex-col xl:items-end  ">
+      <div class="flex flex-col items-center mt-16 xl:pt-32">
+        <h1 class="text-center">Full-stack developer &amp; designer</h1>
+        <h4 class="my-4 xl:my-1">
+          <div class="text-center subtitle pt-2 ">
+            Reliable software from the ground up for small business owners
+          </div>
+          <div class="text-center subtitle  ">
+            and early-stage startups.
+          </div>
+        </h4>
+
+        <button
+          @click="goToContact()"
+          class="primary my-1 md:my-8 xl:my-5"
+        >
+          Tell me about your project
+        </button>
+
+      </div>
 
     </div>
 
@@ -96,112 +49,15 @@ import ButtonSection from "@/components/buttons/ButtonSection.vue";
   }
 })
 export default class Home extends Vue {
-  private goToPage(index: number) {
-    this.$emit("show-page", index);
-  }
-
-  private getClass() {
-    const i = Math.floor(Math.random() * 25);
-    const j = Math.floor(Math.random() * 25);
-    return `elem${i} anim-delay${j} fill-current`;
+  private goToContact() {
+    this.$emit("navigate", 5);
   }
 }
 </script>
 
 <style scoped lang="css">
-/* 
-
-@-webkit-keyframes filter-animation {
-  0% {
-    -webkit-filter: blur(5px);
-  }
-
-  100% {
-    -webkit-filter: blur(0px);
-  }
-} */
-
-.button-link:hover > span {
-  @apply text-pink;
-}
-
-.rotate-on-hover > svg {
-  transform: rotate(0deg);
-  transition: all 250ms ease;
-}
-
-.rotate-on-hover:hover > svg {
-  transform: rotate(90deg);
-  transition: all 250ms ease;
-}
-
-.sentence {
-  position: relative;
-  @apply text-grey-lightest
-  /* background: white; */;
-}
-
-.sentence span {
-  opacity: 0;
-  /* font-size: 25px;
-  line-height: 25px; */
-  display: inline-block;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-
-.sentence span:nth-of-type(1n) {
-  /* color: orange; */
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
-  -webkit-animation-name: enter;
-  animation-name: enter;
-  -webkit-animation-delay: 0.1s;
-  animation-delay: 0.1s;
-}
-
-.sentence span:nth-of-type(2n) {
-  /* color: blue; */
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  -webkit-animation-name: enter-bottom;
-  animation-name: enter-bottom;
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-}
-
-.sentence span:nth-of-type(3n) {
-  /* color: blue; */
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  -webkit-animation-name: enter;
-  animation-name: enter;
-  -webkit-animation-delay: 0.3s;
-  animation-delay: 0.3s;
-}
-
-.sentence span:nth-of-type(4n) {
-  /* color: blue; */
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  -webkit-animation-name: enter-bottom;
-  animation-name: enter-bottom;
-  -webkit-animation-delay: 0.4s;
-  animation-delay: 0.4s;
-}
-
-.sentence span:nth-of-type(5n) {
-  /* color: blue; */
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  -webkit-animation-name: enter;
-  animation-name: enter;
-  -webkit-animation-delay: 0.5s;
-  animation-delay: 0.5s;
+.subtitle {
+  letter-spacing: 0.65px;
 }
 
 @-webkit-keyframes enter {
