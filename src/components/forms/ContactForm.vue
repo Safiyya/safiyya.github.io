@@ -13,7 +13,7 @@
           <label for="email-address">Email Address</label>
           <input
             type="email"
-            id="email"
+            id="email-address"
             name="email"
             required
           >
@@ -46,7 +46,7 @@
 
       <div class="w-full md:w-1/2  xl:w-1/2 form-group relative">
         <label for="project-type">I need a ...</label>
-        <select>
+        <select id="project-type">
           <option value="Web development">Website developed</option>
           <option value="Web design">Website designed</option>
           <option value="Web design">Website designed and developed</option>
@@ -65,7 +65,7 @@
       </div>
       <div class="w-full md:w-1/2 xl:w-1/2 form-group relative">
         <label for="project-deadline">My deadline is</label>
-        <select>
+        <select id="project-deadline">
           <option value="Immeditely">Immediately</option>
           <option value="within 1 month">Within the month </option>
           <option value="within 3 months">In the next 3 months</option>
@@ -102,9 +102,10 @@
       <div class="mt-8 w-full flex flex-wrap">
 
         <div class="form-group w-full">
-          <label for="comment">Project details</label>
+          <label for="project-details">Project details</label>
 
           <textarea
+          id="project-details"
             rows="4"
             cols="50"
             name="comment"

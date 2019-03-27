@@ -7,6 +7,7 @@
       :href="url"
       target="blank"
       class="secondary"
+      :aria-label="text"
     >
       <span class="rounded-full h-12 w-12">
         <simple-svg

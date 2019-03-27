@@ -25,6 +25,7 @@
         <a
           :href="job.company.url"
           target="blank"
+          :aria-label="job.company.vision + 'website'"
           class="button mt-4 p-3 rounded-full flex items-center text-white text-sm text-bold uppercase border border-2 border-primary"
         >Visit website
           <simple-svg

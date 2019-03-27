@@ -17,6 +17,7 @@
           :icon-url="'https://app.maptio.com/assets/images/logo-full.png'"
         >
           <a
+            aria-label="Maptio website"
             target="blank"
             href="http://maptio.com"
           >www.maptio.com</a>
@@ -32,6 +33,7 @@
         >
           <a
             target="blank"
+            aria-label="LearnUI design website"
             href="https://learnui.design/"
           >https://learnui.design/</a>
 
@@ -46,6 +48,7 @@
           :icon-url="'https://cdn6.aptoide.com/imgs/f/b/2/fb2e8f869a475c9b0a33446b2be063e1_icon.png?w=240'"
         >
           <a
+            aria-label="Pocket casts personal page"
             target="blank"
             href="https://lists.pocketcasts.com/5d986af4-0615-40ab-804a-acca141e9f8f"
           >Currated list</a>

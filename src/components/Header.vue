@@ -16,35 +16,41 @@
         id="home"
         href="#home"
         class="hidden"
+        aria-label="Home" aria-hidden="true"
       >Home</a>
       <a
         @click="navigate(1)"
         id="about"
         href="#about"
         class="header mb-4 md:mb-0 no-underline"
+        aria-label="About me" aria-hidden="false"
       >About me</a>
       <a
         id="skills"
         href="#skills"
         class="hidden"
+        aria-label="Skills" aria-hidden="true"
       >Skills</a>
       <a
         @click="navigate(3)"
         id="recent"
         href="#recent"
         class="header lg:mx-12 xl:mx-32 my-4 md:my-0 no-underline"
+        aria-label="Recent work" aria-hidden="false"
       >Recent work</a>
       <a
         @click="navigate(4)"
         id="current"
         href="#current"
         class="header my-4 md:my-0 no-underline"
+        aria-label="Currently" aria-hidden="false"
       >Currently</a>
       <a
         @click="navigate(5)"
         id="contact"
         href="#contact"
         class="header lg:ml-auto my-4 md:my-0 no-underline"
+        aria-label="Contact" aria-hidden="false"
       >Get in touch</a>
     </div>
     <div class=" w-12 h-12 md:hidden">

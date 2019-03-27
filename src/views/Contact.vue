@@ -17,26 +17,31 @@
     <div class="absolute pin-b pt-32  bg-secondary-darker text-white w-full  mt-48 flex flex-col items-center justify-center">
       <div class="w-4/5 lg:w-2/5 z-20 mt-48 flex justify-between">
         <social-button
+          id="twitter" aria-label="Twitter"
           :icon-url="require('@/assets/icons/twitter.svg')"
           :url="'https://twitter.com/safiyyababio'"
         ></social-button>
 
         <social-button
+          id="linkedin" aria-label="LinkedIn"
           :icon-url="require('@/assets/icons/linkedin.svg')"
           :url="'https://www.linkedin.com/in/safiyyasaidoubabio/'"
         ></social-button>
 
         <social-button
+          id="github" aria-label="Github"
           :icon-url="require('@/assets/icons/github.svg')"
           :url="'https://github.com/Safiyya'"
         ></social-button>
 
         <social-button
+          id="dribble" aria-label="Dribble"
           :icon-url="require('@/assets/icons/dribble.svg')"
           :url="'https://dribbble.com/safiyya'"
         ></social-button>
 
         <social-button
+          id="pocket-casts" aria-label="Pocket casts"
           :icon-url="require('@/assets/icons/pocket-casts.svg')"
           :url="'https://lists.pocketcasts.com/ea8d9037-e5df-42eb-9175-009e4583523f'"
         ></social-button>
@@ -45,19 +50,22 @@
         Handcrafted by me © Babioz
       </div>
       <div class="my-2 text-white text-sm xl:text-base">
-        Made with <a
+        Made with <a aria-label="Vue.js"
           class="footer"
           href="https://vuejs.org/"
         >Vue.js</a>, <a
+        aria-label="Tailwind CSS"
           class="footer"
           href="http://tailwindcss.com"
         >TailwindCSS</a> and <a
+        aria-label="Feather icons"
           class="footer"
           href="https://feathericons.com/"
         >Feather</a>
       </div>
       <div class="my-2 mb-8 text-sm xl:text-base">
         Illustrations from <a
+        aria-label="Absurd design"
           class="footer"
           href="https://absurd.design/"
         >Absurd Design</a>
