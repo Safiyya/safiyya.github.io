@@ -64,7 +64,7 @@ import Card from "@/components/cards/Card.vue";
 @Component({
   components: {
     "icon-with-text": IconWithTextVue,
-    card: Card
+    "card": Card
   }
 })
 export default class JobCard extends Vue {
