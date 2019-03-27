@@ -13,16 +13,6 @@ export default new Router({
       component: Home
     },
     {
-      path: "/jobs",
-      name: "jobs",
-      component: () => import(/* webpackChunkName: "jobs" */ "./views/Jobs.vue")
-    },
-    {
-      path: "/projects",
-      name: "projects",
-      component: () => import(/* webpackChunkName: "projects" */ "./views/Projects.vue")
-    },
-    {
       path: "/about",
       name: "about",
       component: () => import(/* webpackChunkName: "about" */ "./views/About.vue")
@@ -31,11 +21,6 @@ export default new Router({
       path: "/contact",
       name: "contact",
       component: () => import(/* webpackChunkName: "contact" */ "./views/Contact.vue")
-    },
-    {
-      path: "/bookshelf",
-      name: "bookshelf",
-      component: () => import(/* webpackChunkName: "bookshelf" */ "./views/Bookshelf.vue")
     }
   ]
 });

@@ -3,23 +3,18 @@
     <span class="rounded-full w-4 h-4 flex justify-center items-baseline mr-1">
 
       <span class="svg-icon w-full h-full text-grey-dark fill-current">
-        <slot></slot>
+        <simple-svg
+          class="flex justify-center items-center "
+          :filepath="iconUrl"
+          :width="'100%'"
+          :height="'100%'"
+        />
       </span>
 
     </span>
 
     <span class="font-semibold text-grey">
-      <a
-        v-if="url"
-        :href="url"
-        target="blank"
-      >{{text}}</a>
-      <router-link
-        v-else-if="to"
-        :to="to"
-        active-class="active"
-      >{{text}}</router-link>
-      <span v-else>{{text}}</span>
+      <span>{{text}}</span>
     </span>
 
   </p>
@@ -31,8 +26,7 @@ import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 @Component({})
 export default class extends Vue {
   @Prop() public text: string;
-  @Prop({ required: false }) public url: string;
-  @Prop({ required: false }) public to: string;
+  @Prop() public iconUrl: string;
 }
 </script>
 

@@ -1,9 +1,7 @@
 <template>
-  <button
-    class="button-link w-32 h-32 sm:w-24 sm:h-24 md:w-32 md:h-32 "
-  >
+  <button class="button-link w-32 h-32 sm:w-24 sm:h-24 md:w-32 md:h-32 ">
     <simple-svg
-      class="flex justify-center items-center " 
+      class="flex justify-center items-center "
       :class="{'rotate':isRotate}"
       :filepath="iconUrl"
       :width="'60%'"
@@ -18,29 +16,24 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class ButtonSection extends Vue {
-    @Prop() text:string;
-    @Prop() iconUrl:string;
-    @Prop() isRotate:boolean;
-
-    
+  @Prop() public text: string;
+  @Prop() public iconUrl: string;
+  @Prop() public isRotate: boolean;
 }
 </script>
 
 <style scoped lang="css">
-
-.rotate{
-    transform: rotate(90deg)
+.rotate {
+  transform: rotate(90deg);
 }
 
 .button-link {
-
   transform: scale(1);
   transition: all 250ms ease;
   @apply bg-grey-darkest flex flex-col items-center justify-center items-center border-0 rounded-full;
 }
 
-.button-link:hover{
-
+.button-link:hover {
   transform: scale(1.05);
   transition: all 250ms ease;
 }
@@ -52,5 +45,4 @@ export default class ButtonSection extends Vue {
 .button-link:hover > span {
   @apply text-pink;
 }
-
 </style>

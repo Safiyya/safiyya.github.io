@@ -15,15 +15,36 @@ class JobsService {
         return sorted;
     }
 
-    public filterByTechnologies(technologies: string[]): Job[] {
-        return this.get().filter((j:Job)=>{
-                return this.intersection([j.technologies, technologies]).length > 0
-            })
-        
+
+    public getFrontEndJobs(): Job[] {
+        return this.get().filter((j: Job) =>
+            j.company.name === "Kamkalima"
+            || j.company.name === "Gretta"
+            || j.company.name === "Optinac");
     }
 
-    private intersection(arrays: any[][]): any[]{
-        return arrays.reduce((a, b) => a.filter(c => b.includes(c)))
+    public getDesignJobs(): Job[] {
+        return this.get().filter((j: Job) =>
+            j.company.name === "NG Martin"
+            || j.company.name === "Gordon Finlayson"
+            || j.company.name === "Safiyya.io");
+    }
+
+    public getBackendJobs(): Job[] {
+        return this.get().filter((j: Job) =>
+            j.company.name === "DataShaka"
+            || j.company.name === "Eurofins"
+            || j.company.name === "Virtuoz");
+    }
+
+    public filterByTechnologies(technologies: string[]): Job[] {
+        return this.get().filter((j: Job) => {
+            return this.intersection([j.technologies, technologies]).length > 0;
+        });
+    }
+
+    private intersection(arrays: any[][]): any[] {
+        return arrays.reduce((a: any, b: any) => a.filter((c: any) => b.includes(c)));
     }
 
 }

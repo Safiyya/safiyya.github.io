@@ -1,4 +1,138 @@
-:root{
+body {
+    font-family: "Libre Franklin", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply text-black bg-grey-lightest max-w-full overflow-x-hidden ;
+  }
+
+  html{
+      @apply overflow-x-hidden;
+  }
+
+
+h1{
+    font-family: "Abril Fatface", Helvetica, serif;
+    letter-spacing: 0.88px;
+    font-weight: 400;
+    @apply text-3xl;
+}
+
+@screen lg {
+    h1 {
+        @apply text-3xl;
+    }
+
+    h2{
+        @apply text-3xl font-normal;
+    }
+
+    h3{
+        @apply text-4xl;
+    }
+
+    h4 {
+        @apply text-xl;
+    }
+
+    h6 {
+        @apply text-sm;
+    }
+
+    
+  }
+
+  @screen xl {
+    h1 {
+        @apply text-4xl;
+    }
+  }
+
+h2{
+    font-weight: 500;
+    @apply text-xl font-semibold;
+}
+
+h3{
+    font-family: "Abril Fatface", Helvetica, serif;
+    letter-spacing: 1.04px;
+    font-weight: 400;
+    @apply text-2xl text-secondary-darker;
+}
+
+
+h4{
+    font-weight: 300;
+    line-height: 150%;
+    @apply text-xl;
+}
+
+h6{
+    @apply text-xs font-bold text-primary uppercase; 
+}
+
+b, .text-bold{
+    font-weight: 600;
+    
+}
+
+a{
+    transition: all 250ms;
+    @apply text-secondary ;
+}
+
+a:hover{
+    transition: all 250ms;
+    @apply text-secondary-darker no-underline;
+}
+
+a.header{
+    /* letter-spacing: 0.5px; */
+    transition: all 250ms;
+    @apply text-secondary-darker border-transparent border-b-4 pb-2;
+    
+}
+
+
+
+a.header:hover{
+    transition: all 250ms;
+    @apply border-secondary-darker border-b-4;
+}
+
+a.button{
+    @apply no-underline;
+}
+
+a.footer{
+    @apply text-white underline;
+}
+
+a.social{
+    @apply bg-white text-black underline ;
+}
+
+a.social:hover{
+    @apply bg-secondary text-white;
+}
+
+button.primary{
+    transition: all 250ms;
+    @apply border-0 font-bold bg-primary text-white uppercase  rounded-full p-3 ;
+}
+
+button.primary:hover{
+    transition: all 250ms;
+    @apply bg-primary-darker;
+}
+
+button:focus, a:focus {
+    outline: 0; 
+}
+
+
+
+/* :root{
     --accent: #F66D9B;
     --black:#22292f;
     --white:#f8fafc;
@@ -63,19 +197,4 @@ a.button:hover{
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%231c3d5a' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }
 
-.box {
-    position: relative;
-  }
-  .box:before {
-    content: "";
-    display: block;
-    padding-top: 100%;
-  }
-  
-  .content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-  }
+ */
