@@ -44,7 +44,7 @@
         </div>
       </div>
 
-      <div class="w-full md:w-1/2  xl:w-1/4 form-group relative">
+      <div class="w-full md:w-1/2  xl:w-1/2 form-group relative">
         <label for="project-type">I need a ...</label>
         <select>
           <option value="Web development">Website developed</option>
@@ -63,7 +63,7 @@
           />
         </div>
       </div>
-      <div class="w-full md:w-1/2 xl:w-1/4 form-group relative">
+      <div class="w-full md:w-1/2 xl:w-1/2 form-group relative">
         <label for="project-deadline">My deadline is</label>
         <select>
           <option value="Immeditely">Immediately</option>
@@ -82,32 +82,21 @@
         </div>
       </div>
 
-      <div class="w-full xl:w-1/2 form-group">
+      <div class="w-full xl:w-1/2 form-group hidden">
         <label for="project-budget">Budget</label>
-        <div class="flex flex-col justify-between items-start lg:flex-row h-full xl:items-center text-sm xl:text-base">
-          <span>
-            <input
-              type="radio"
-              name="project-budget"
-              value="low"
-            > Under $5000
-          </span>
-          <span>
-            <input
-              type="radio"
-              name="project-budget"
-              value="medium"
-            > Between $5000 and $10000
-          </span>
+        <div class=" w-full flex flex-col justify-between items-start lg:flex-row h-full xl:items-center text-sm xl:text-base">
+          <input
+            @input="onBudgetChange($event.target.value)"
 
-          <span>
-            <input
-              type="radio"
-              name="project-budget"
-              value="high"
-            > Above $10000
-          </span>
-
+            type="range"
+            min="2000"
+            max="50000"
+            step="1000"
+            :value="budget"
+            class="flex-grow slider mr-1"
+            id="project-budget"
+          >
+          $ {{budget}}
         </div>
 
       </div>
@@ -147,6 +136,11 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component({})
 export default class ContactForm extends Vue {
+  private budget:number=10000;
+
+  private onBudgetChange(budget:number){
+    this.budget = budget;
+  }
 }
 </script>
 
