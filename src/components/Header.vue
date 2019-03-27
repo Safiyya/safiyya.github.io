@@ -55,6 +55,7 @@
     </div>
     <div class=" w-12 h-12 md:hidden">
       <button
+      aria-label="Menu"
         @click="toggle()"
         class="flex  items-center p-1 text-secondary"
       >
