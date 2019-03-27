@@ -2,13 +2,11 @@
   <div class="flex relative flex-col xl:flex-row lg:justify-around xl:justify-end">
 
     <div class="hidden relative md:flex xl:block xl:absolute  pin-l xl:mx-32 xl:w-2/5">
+ <picture>
+  <source  srcset="../assets/images/hero-cropped.webp">
+  <img :src="require('../assets/images/hero-cropped.png')"  class="h-full w-full object-contain object-center">
+</picture>
 
-      <img
-        class="h-full w-full object-contain object-center"
-        :src="require('../assets/images/hero-cropped.png')"
-        alt=""
-        srcset=""
-      >
 
     </div>
     <div class="flex flex-col xl:items-end  ">
