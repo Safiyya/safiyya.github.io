@@ -45,25 +45,28 @@
       </div>
     </div>
 
-    <div class="w-full flex flex-col items-center my-8">
-      <h4 class="my-4">Want to see more of my code?</h4>
-      <div class="w-2/3 flex flex-col md:flex-row  justify-between">
-        <button-secondary
+    <div class="w-1/3 flex flex-col items-center my-8">
+      <h4 class="my-4">Want to see some of my code?</h4>
+      <div class=" flex flex-col  justify-around">
+         <button-secondary
+         class="my-2 "
           :text="'Github'"
           :icon-url="require('@/assets/icons/github.svg')"
-          :url="'https://github.com/Safiyya'"
+          :url="'https://github.com/Safiyya/safiyya.github.io/tree/development'"
         ></button-secondary>
-        <button-secondary
-          class="my-2 md:my-0"
+         <button-secondary
+          class="my-2"
           :text="'Stack overflow'"
           :icon-url="require('@/assets/icons/stack_overflow.svg')"
-          :url="'https://stackoverflow.com/users/7092722/safiyya'"
+          :url="'https://stackoverflow.com/users/7092722/safiyya?tab=topactivity'"
         ></button-secondary>
-        <button-secondary
+       
+       
+        <!-- <button-secondary
           :text="'Dribble'"
           :icon-url="require('@/assets/icons/dribble.svg')"
           :url="'https://dribbble.com/safiyya'"
-        ></button-secondary>
+        ></button-secondary> -->
       </div>
 
     </div>

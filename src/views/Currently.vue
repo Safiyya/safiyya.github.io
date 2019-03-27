@@ -47,7 +47,7 @@
         >
           <a
             target="blank"
-            href="https://lists.pocketcasts.com/ea8d9037-e5df-42eb-9175-009e4583523f"
+            href="https://lists.pocketcasts.com/5d986af4-0615-40ab-804a-acca141e9f8f"
           >Currated list</a>
 
         </current-card>
