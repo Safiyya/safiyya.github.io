@@ -35,15 +35,9 @@
         ></social-button>
 
         <social-button
-          id="dribble" aria-label="Dribble"
-          :icon-url="require('@/assets/icons/dribble.svg')"
-          :url="'https://dribbble.com/safiyya'"
-        ></social-button>
-
-        <social-button
           id="pocket-casts" aria-label="Pocket casts"
           :icon-url="require('@/assets/icons/pocket-casts.svg')"
-          :url="'https://lists.pocketcasts.com/ea8d9037-e5df-42eb-9175-009e4583523f'"
+          :url="'https://lists.pocketcasts.com/66673eba-0910-4402-98e8-89d3a5ac11e8'"
         ></social-button>
       </div>
       <div class="mt-8 mb-2 text-sm xl:text-base">
