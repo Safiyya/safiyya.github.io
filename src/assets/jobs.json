@@ -228,6 +228,40 @@
                 "country": "UK",
                 "city": "London"
             }
+        },
+        {
+            "company": {
+                "name": "Gordon Finlayson",
+                "url": "https://www.jamesgordonfinlayson.com",
+                "crunchbase": "",
+                "industry": "Academia",
+                "picture": "",
+                "background":"https://images.squarespace-cdn.com/content/v1/5ca649e2b9144911b2a85f12/1554755963361-E6YIFZ5UATTUV0ID5BBC/ke17ZwdGBToddI8pDm48kOgdHaFoCkRvBedbwFHmZvlZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVFNfnowbp7FNOvEsFbbNFAJy1OHRJfxDf0t0V7jelwRXx3Ye91CEgaaEUzIoM0iF6k/habernas-book-cover.jpg",
+                "vision": "Gordon Finlayson is a reader in philosophy at the University of Sussex"
+            },
+            "title": "Front-end Developer",
+            "tasks": [
+                {
+                    "header": "Implemented Kamkalima student webapp new design from high-definition Adobe XD mockups"
+                },
+                {
+                    "header": "Increased test coverage from 0% to 75%"
+                }
+            ],
+            "technologies": [
+                "Vue.js",
+                "Bootstrap",
+                "Jest",
+                "HTML",
+                "CSS",
+                "UX"
+            ],
+            "start": "2016-11-01",
+            "end": "2016-12-01",
+            "location": {
+                "country": "UK",
+                "city": "London"
+            }
         }
     ]
 }

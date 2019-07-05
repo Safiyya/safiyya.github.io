@@ -37,12 +37,10 @@
  
 <script lang="ts">
 import { Component, Vue, Emit } from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 import ButtonSection from "@/components/buttons/ButtonSection.vue";
 
 @Component({
   components: {
-    HelloWorld,
     "button-section": ButtonSection
   }
 })
