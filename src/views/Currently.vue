@@ -43,15 +43,15 @@
       <div class="hidden md:block  md:w-1/3 md:px-2">
         <current-card
           class="shadow-lg h-full"
-          :title="'Podcasts'"
-          :text="'   Startups, design, software, story-telling, true crimes, comedy, social commentary… my ears never rest ;)'"
-          :icon-url="'https://cdn6.aptoide.com/imgs/f/b/2/fb2e8f869a475c9b0a33446b2be063e1_icon.png?w=240'"
+          :title="'Cuddle Waffle'"
+          :text="'List & import in Sketch all the colors from a webpage in a few seconds. No more color pickers!'"
+          :icon-url="require('@/assets/images/cuddly-waffle.svg')"
         >
-          <a
-            aria-label="Pocket casts personal page"
+          <i
+            aria-label=""
             target="blank"
-            href="https://lists.pocketcasts.com/5d986af4-0615-40ab-804a-acca141e9f8f"
-          >Currated list</a>
+            href=""
+          >Coming soon</i>
 
         </current-card>
       </div>
