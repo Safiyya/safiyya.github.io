@@ -1,115 +1,114 @@
 {
-    "skills": [
+  "skills": [
+    {
+      "category": "Front-end",
+      "iconUrl": "heroicons/heroicons-lg/heroicon-browser-lg.svg",
+      "tagline": "Fast load times & intuitive layouts",
+      "headline": "User experience is my first priority",
+      "summary": [
+        "I want to build products that people love to use.  My skills range from modern javascript frameworks to simple Sketch designs, I love to build beautiful and useful interfaces."
+      ],
+      "technologies": [
         {
-            "category": "Front-end",
-            "iconUrl": "heroicons/heroicons-lg/heroicon-browser-lg.svg",
-            "tagline": "Fast load times & intuitive layouts",
-            "headline": "User experience is my first priority",
-            "summary": [
-                "I want to build products that people love to use.  My skills range from modern javascript frameworks to simple SKetch designs, I can make  your online presentce a delight for your customers or users",
-                "A slow website is the online equivalent of being late for a meeting, let me make sure that you’re always on time."
-            ],
-            "technologies": [
-                {
-                    "name": "HTML/CSS",
-                    "level": 5
-                },
-                {
-                    "name": "Typescript/Javascript",
-                    "level": 5
-                },
-                {
-                    "name": "Angular/Vue.js",
-                    "level": 5
-                },
-                {
-                    "name": "D3.js",
-                    "level": 4
-                },
-                {
-                    "name": "Sketch",
-                    "level": 3
-                }
-            ]
+          "name": "HTML/CSS",
+          "level": 5
         },
         {
-            "category": "Back-end",
-            "iconUrl": "heroicons/heroicons-lg/heroicon-database-lg.svg",
-            "tagline": "Flexible and robust architecture",
-            "headline": "My code is made for a fast growing business",
-            "summary": [
-                "Requirements evolve and priorities change. I dont live in a software ivory tower and understand that code is only a mean not the goal.",
-                "To serve your product needs, I strive to make my code modular and easy to modify while keeping a high quality standard. "
-            ],
-            "technologies": [
-                {
-                    "name": "C#, ASP.NET, WebAPI",
-                    "level": 5
-                },
-                {
-                    "name": "SQL",
-                    "level": 5
-                },
-                {
-                    "name": "NoSQL: MongoDB, RethinkDB",
-                    "level": 4
-                },
-                {
-                    "name": "Node.js",
-                    "level": 4
-                }
-            ]
+          "name": "Typescript/Javascript",
+          "level": 5
         },
         {
-            "category": "Product",
-            "iconUrl": "heroicons/heroicons-lg/heroicon-chart-lg.svg",
-            "tagline": "Ship early, ship often.",
-            "headline": "\"Build, Measure, Learn\" is my personal mantra",
-            "summary": [
-                "My startup experience taught me to be data-driven. Metrics are an important part of a product release cycle and I get excited about setting up analytics and helping you optimize for success."
-            ], 
-            "technologies": [
-                {
-                    "name": "Lean startup / MVP",
-                    "level": 5
-                },
-                {
-                    "name": "Agile / Kanban / Scrum",
-                    "level": 5
-                },
-                {
-                    "name": "Google analytics / Mixpanel / FullStory",
-                    "level": 4
-                }
-            ]
+          "name": "React/Angular/Vue.js",
+          "level": 5
         },
         {
-            "category": "Testing",
-            "iconUrl": "heroicons/heroicons-lg/heroicon-heart-lg.svg",
-            "tagline": "Built with love",
-            "headline": "I care so I test...thoroughly",
-            "summary": [
-                "Untested software is a ticking time bomb. The users shouldn’t have to pay for my occasional daydreaming or invevitable typos, so I test so users dont have to.",
-                "I have taught quality code practices to junior developers with success and helped them make more reliable software. "
-            ],
-            "technologies": [
-                {
-                    "name": "Unit testing",
-                    "level": 5
-                },
-                {
-                    "name": "Continuous integration/delivery/deployment",
-                    "level": 5
-                },
-                {
-                    "name": "Remote working",
-                    "level": 5
-                },
-                {
-                    "name": "Code versionning",
-                    "level": 5
-                }
-            ]
+          "name": "D3.js",
+          "level": 4
+        },
+        {
+          "name": "Sketch",
+          "level": 3
         }
-    ]
+      ]
+    },
+    {
+      "category": "Back-end",
+      "iconUrl": "heroicons/heroicons-lg/heroicon-database-lg.svg",
+      "tagline": "Flexible and robust architecture",
+      "headline": "My code is made for a fast growing business",
+      "summary": [
+        "Requirements evolve and priorities change. I dont live in a software ivory tower and understand that code is only a mean not the goal.",
+        "To serve the product needs, I strive to make my code modular and easy to modify while keeping a high quality standard. "
+      ],
+      "technologies": [
+        {
+          "name": "C#, ASP.NET, WebAPI",
+          "level": 5
+        },
+        {
+          "name": "SQL",
+          "level": 5
+        },
+        {
+          "name": "NoSQL: MongoDB, RethinkDB",
+          "level": 4
+        },
+        {
+          "name": "Node.js",
+          "level": 4
+        }
+      ]
+    },
+    {
+      "category": "Product",
+      "iconUrl": "heroicons/heroicons-lg/heroicon-chart-lg.svg",
+      "tagline": "Ship early, ship often.",
+      "headline": "\"Build, Measure, Learn\" is my personal mantra",
+      "summary": [
+        "My startup experience taught me to be data-driven. Metrics are an important part of a product release cycle and I get excited about setting up analytics and helping my team optimize for success."
+      ],
+      "technologies": [
+        {
+          "name": "Lean startup / MVP",
+          "level": 5
+        },
+        {
+          "name": "Agile / Kanban / Scrum",
+          "level": 5
+        },
+        {
+          "name": "Google analytics / Mixpanel / FullStory",
+          "level": 4
+        }
+      ]
+    },
+    {
+      "category": "Testing",
+      "iconUrl": "heroicons/heroicons-lg/heroicon-heart-lg.svg",
+      "tagline": "Built with love",
+      "headline": "I care so I test...thoroughly",
+      "summary": [
+        "Untested software is a ticking time bomb. The users shouldn’t have to pay for my occasional daydreaming or invevitable typos, so I test so users dont have to.",
+        "I have taught quality code practices to junior developers with success and helped them make more reliable software. "
+      ],
+      "technologies": [
+        {
+          "name": "Unit testing",
+          "level": 5
+        },
+        {
+          "name": "Continuous integration/delivery/deployment",
+          "level": 5
+        },
+        {
+          "name": "Remote working",
+          "level": 5
+        },
+        {
+          "name": "Code versionning",
+          "level": 5
+        }
+      ]
+    }
+  ]
 }

@@ -1,26 +1,45 @@
 <template>
-  <div class="bg-secondary flex flex-col items-center h-96 pt-16 text-white relative ">
+  <div
+    class="bg-secondary flex flex-col items-center h-96 pt-16 text-white relative  "
+  >
     <div class="w-3/5 text-center">
       <h3 class="text-white">
         Currently busy with
       </h3>
       <div class="my-2">
-        Startup projects, podcasts binging or learning crusade, I never miss a chance to push myself.
+        Current job, startup projects and a couple other things that keep me
+        busy...
       </div>
     </div>
-    <div class="w-4/5 xl:w-full -mx-2 xl:px-32 justify-between flex flex-col md:flex-row xl:absolute mt-8 xl:mt-32">
+    <div
+      class="w-4/5 xl:w-full -mx-2 xl:px-32 justify-between flex flex-col md:flex-row xl:absolute mt-8 xl:mt-32"
+    >
+      <div class="md:w-1/3 md:px-2">
+        <current-card
+          class=" shadow-lg h-full"
+          :title="'tiney'"
+          :text="'Find amazing childcare near you'"
+          :icon-url="
+            'https://www.tiney.co/static/071ef6b440e96b2edcdd9ced400dcf34/6d87b/tiney.png'
+          "
+        >
+          <a aria-label="tiney website" target="blank" href="http://tiney.co"
+            >www.tiney.co</a
+          >
+        </current-card>
+      </div>
       <div class="md:w-1/3 md:px-2">
         <current-card
           class=" shadow-lg h-full"
           :title="'Maptio'"
-          :text="'With beautiful &amp; intuitive visualisations, Maptio gets self-managed teams better align to a single vision.'"
+          :text="
+            'With beautiful &amp; intuitive visualisations, Maptio gets self-managed teams better align to a single vision.'
+          "
           :icon-url="'https://app.maptio.com/assets/images/logo-full.png'"
         >
-          <a
-            aria-label="Maptio website"
-            target="blank"
-            href="http://maptio.com"
-          >www.maptio.com</a>
+          <a aria-label="Maptio website" target="blank" href="http://maptio.com"
+            >www.maptio.com</a
+          >
         </current-card>
       </div>
 
@@ -35,8 +54,8 @@
             target="blank"
             aria-label="LearnUI design website"
             href="https://learnui.design/"
-          >https://learnui.design/</a>
-
+            >https://learnui.design/</a
+          >
         </current-card>
       </div>
 
@@ -44,23 +63,18 @@
         <current-card
           class="shadow-lg h-full"
           :title="'Cuddle Waffle'"
-          :text="'List & import in Sketch all the colors from a webpage in a few seconds. No more color pickers!'"
+          :text="
+            'List & import in Sketch all the colors from a webpage in a few seconds. No more color pickers!'
+          "
           :icon-url="require('@/assets/images/cuddly-waffle.svg')"
         >
-          <i
-            aria-label=""
-            target="blank"
-            href=""
-          >Coming soon</i>
-
+          <i aria-label="" target="blank" href="">Coming soon</i>
         </current-card>
       </div>
-
     </div>
-
   </div>
 </template>
- 
+
 <script lang="ts">
 import { Component, Vue, Emit, Prop } from "vue-property-decorator";
 import CurrentCard from "@/components/cards/CurrentCard.vue";
@@ -69,11 +83,9 @@ import Button from "@/components/buttons/Button.vue";
 @Component({
   components: {
     "current-card": CurrentCard,
-    "button-secondary": Button
-  }
+    "button-secondary": Button,
+  },
 })
 export default class Currently extends Vue {}
 </script>
-<style scoped>
-</style>
-
+<style scoped></style>

@@ -1,17 +1,22 @@
 <template>
-  <div class="flex relative flex-col xl:flex-row lg:justify-around xl:justify-end">
-
-    <div class="hidden relative md:flex xl:block xl:absolute  pin-l xl:mx-32 xl:w-2/5">
- <picture>
-  <source  srcset="../assets/images/hero-cropped.webp">
-  <img :src="require('../assets/images/hero-cropped.png')" alt="Building wesbite from scratch"  class="h-full w-full object-contain object-center">
-</picture>
-
-
+  <div
+    class="flex relative flex-col xl:flex-row lg:justify-around xl:justify-end"
+  >
+    <div
+      class="hidden relative md:flex xl:block xl:absolute  pin-l xl:mx-32 xl:w-2/5"
+    >
+      <picture>
+        <source srcset="../assets/images/hero-cropped.webp" />
+        <img
+          :src="require('../assets/images/hero-cropped.png')"
+          alt="Building wesbite from scratch"
+          class="h-full w-full object-contain object-center"
+        />
+      </picture>
     </div>
     <div class="flex flex-col xl:items-end  ">
       <div class="flex flex-col items-center mt-16 xl:pt-32">
-        <h1 class="text-center">Full-stack developer &amp; designer</h1>
+        <h1 class="text-center">Full-stack developer</h1>
         <h4 class="my-4 xl:my-1">
           <div class="text-center subtitle pt-2 ">
             Reliable software from the ground up for small business owners
@@ -21,28 +26,22 @@
           </div>
         </h4>
 
-        <button
-          @click="goToContact()"
-          class="primary my-1 md:my-8 xl:my-5"
-        >
+        <button @click="goToContact()" class="primary my-1 md:my-8 xl:my-5">
           Tell me about your project
         </button>
-
       </div>
-
     </div>
-
   </div>
 </template>
- 
+
 <script lang="ts">
 import { Component, Vue, Emit } from "vue-property-decorator";
 import ButtonSection from "@/components/buttons/ButtonSection.vue";
 
 @Component({
   components: {
-    "button-section": ButtonSection
-  }
+    "button-section": ButtonSection,
+  },
 })
 export default class Home extends Vue {
   private goToContact() {
@@ -117,4 +116,3 @@ export default class Home extends Vue {
   }
 }
 </style>
-
